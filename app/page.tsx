@@ -14,14 +14,14 @@ export default function Home() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-        style={{ filter: "brightness(1.4)" }}
+        style={{ filter: "brightness(1.35)" }}
       />
 
-      {/* Balanced Darkened Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/65"></div>
+      {/* Overlay (now safe, never blocks buttons) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/65 z-0 pointer-events-none"></div>
 
       {/* NAVBAR */}
-      <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
+      <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-30">
         <div className="flex items-center gap-3">
           <img
             src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main.png"
@@ -46,12 +46,18 @@ export default function Home() {
               rounded-lg
               font-semibold
               bg-[#0A84FF]
-              hover:bg-[#1A8FFF]
-              transition-all duration-300
               text-white
+              transition-all duration-300
+              hover:bg-[#1A8FFF]
+              hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
+              hover:-translate-y-[3px]
+              active:translate-y-[1px]
+              z-20
             "
           >
             <span className="relative z-20">Get Started</span>
+
+            {/* highlight UNDER text */}
             <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
           </button>
         </div>
@@ -79,7 +85,7 @@ export default function Home() {
         </p>
 
         {/* BUTTONS */}
-        <div className="flex gap-5 mb-28">
+        <div className="flex gap-5 mb-28 z-20">
 
           {/* PRIMARY BUTTON */}
           <button
@@ -91,11 +97,26 @@ export default function Home() {
               px-10 py-3.5
               rounded-xl
               font-semibold text-lg
-              transition-all duration-300
+              transition-all duration-300 ease-out
+              hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
+              hover:-translate-y-[4px]
+              active:translate-y-[1px]
+              focus:ring-4 focus:ring-[#00E9FF]/30
+              z-20
             "
           >
             <span className="relative z-20">Run An Enterprise Pilot</span>
-            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+
+            <span
+              className="
+                highlight
+                absolute inset-0
+                z-10
+                bg-white/10
+                pointer-events-none
+                transition-all duration-300
+              "
+            ></span>
           </button>
 
           {/* SECONDARY BUTTON */}
@@ -103,22 +124,39 @@ export default function Home() {
             className="
               magnetic-btn
               relative overflow-hidden
+              border border-[#00C8FF]
+              text-[#00E9FF]
               px-10 py-3.5
               rounded-xl
               font-semibold text-lg
-              border border-[#00C8FF]
-              text-[#00E9FF]
-              transition-all duration-300
+              transition-all duration-300 ease-out
+              hover:bg-[#00C8FF]
+              hover:text-[#001019]
+              hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
+              hover:-translate-y-[3px]
+              active:translate-y-[1px]
+              focus:ring-4 focus:ring-[#00E9FF]/40
+              z-20
             "
           >
             <span className="relative z-20">Get Started</span>
-            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+
+            <span
+              className="
+                highlight
+                absolute inset-0
+                z-10
+                bg-white/10
+                pointer-events-none
+                transition-all duration-300
+              "
+            ></span>
           </button>
 
         </div>
 
         {/* BACKED BY GLOBAL SCALE */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 z-20">
 
           <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
             Backed by Global Scale
@@ -131,44 +169,34 @@ export default function Home() {
         </div>
 
         {/* STATS */}
-        <div className="flex gap-16 text-center drop-shadow-md">
+        <div className="flex gap-16 text-center drop-shadow-md z-20">
 
-          {/* STAT 1 */}
           <div className="max-w-[180px]">
             <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
             <p className="text-sm text-white font-medium">Active GPU Providers</p>
-            <p className="text-xs text-gray-300 mt-1">
-              Distributed across 40+ countries.
-            </p>
+            <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
           </div>
 
-          {/* STAT 2 */}
           <div className="max-w-[180px]">
             <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
             <p className="text-sm text-white font-medium">Cost Reduction</p>
-            <p className="text-xs text-gray-300 mt-1">
-              Compared to centralized cloud pricing.
-            </p>
+            <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
           </div>
 
-          {/* STAT 3 */}
           <div className="max-w-[180px]">
             <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
             <p className="text-sm text-white font-medium">Network Uptime</p>
-            <p className="text-xs text-gray-300 mt-1">
-              Automated failover and redundancy.
-            </p>
+            <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
           </div>
 
         </div>
 
-        {/* CLAIMS LINE UNDER STATS */}
-        <p className="text-sm text-gray-400 mt-6 mb-24 text-center">
+        {/* CLAIM BELOW STATS */}
+        <p className="text-sm text-gray-400 mt-6 mb-24 text-center z-20">
           Real Providers. Real Workloads. No hypothetical capacity claims.
         </p>
 
       </div>
-
     </main>
   );
 }
