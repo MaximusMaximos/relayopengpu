@@ -323,12 +323,12 @@ export default function HowOGPUWorks() {
   return (
     <section className="w-full bg-white py-28 px-6 relative overflow-hidden">
 
-      {/* Subtle background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 opacity-80 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-20 z-10">
 
-        {/* LEFT SIDE (Unchanged) */}
+        {/* LEFT SIDE */}
         <div className="space-y-10">
 
           <h2 className="text-4xl md:text-5xl font-semibold text-[#0A0F2C]">
@@ -345,14 +345,14 @@ export default function HowOGPUWorks() {
             {/* Step 1 */}
             <div>
               <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
-                                 text-white flex items-center justify-center shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
                   </svg>
                 </span>
                 Step 1 – Submit a Workload
               </h3>
+
               <p className="text-[#475569] mt-2">
                 You send an AI or rendering task…
               </p>
@@ -361,14 +361,14 @@ export default function HowOGPUWorks() {
             {/* Step 2 */}
             <div>
               <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
-                                 text-white flex items-center justify-center shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.125 1.125 0 011.591 0L21.75 12M4.5 9.75V21h15V9.75" />
                   </svg>
                 </span>
                 Step 2 – Routing & Provider Selection
               </h3>
+
               <p className="text-[#475569] mt-2">
                 OGPU compares GPUs worldwide…
               </p>
@@ -377,19 +377,18 @@ export default function HowOGPUWorks() {
             {/* Step 3 */}
             <div>
               <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
-                                 text-white flex items-center justify-center shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </span>
                 Step 3 – Execute End-to-End
               </h3>
+
               <p className="text-[#475569] mt-2">
                 Your workload runs start-to-finish…
               </p>
             </div>
-
           </div>
 
           <p className="text-[#0A0F2C] font-medium border-t border-gray-200 pt-5">
@@ -401,78 +400,83 @@ export default function HowOGPUWorks() {
           </button>
         </div>
 
-        {/* RIGHT COLUMN DIAGRAM (OGPU EXACT STYLE) */}
-<div className="flex flex-col items-center space-y-16">
+        {/* ========================= */}
+        {/* RIGHT-SIDE FLOW DIAGRAM   */}
+        {/* ========================= */}
+        <div className="flex flex-col items-center space-y-16">
 
-  {/* NODE 1 */}
-  <motion.div
-    className="flex flex-col items-center"
-    animate={{ scale: [1, 1.05, 1] }}
-    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-  >
-    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-      <img src="/icons/upload.svg" className="w-8 h-8 text-cyan-600" />
-    </div>
-    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-      Submit Workload
-    </p>
-  </motion.div>
+          {/* NODE 1 */}
+          <motion.div
+            className="flex flex-col items-center"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+              {/* INLINE SVG ICON 1 */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
+              </svg>
+            </div>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#0A0F2C]">
+              Submit Workload
+            </p>
+          </motion.div>
 
-  {/* CONNECTOR 1 (SEPARATE, SHORT, ANIMATED) */}
-  <motion.div 
-    className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden"
-  >
-    <motion.div
-      className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
-      animate={{ y: ["-100%", "100%"] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-    />
-  </motion.div>
+          {/* CONNECTOR 1 */}
+          <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-300 to-blue-600 rounded-full relative overflow-hidden">
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
 
-  {/* NODE 2 */}
-  <motion.div
-    className="flex flex-col items-center"
-    animate={{ scale: [1, 1.05, 1] }}
-    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-  >
-    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-      <img src="/icons/clock.svg" className="w-8 h-8 text-cyan-600" />
-    </div>
-    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-      Relay Routing Engine
-    </p>
-  </motion.div>
+          {/* NODE 2 */}
+          <motion.div
+            className="flex flex-col items-center"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+          >
+            <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+              {/* INLINE SVG ICON 2 */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#0A0F2C]">
+              Relay Routing Engine
+            </p>
+          </motion.div>
 
-  {/* CONNECTOR 2 (SEPARATE, SHORT, ANIMATED) */}
-  <motion.div 
-    className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden"
-  >
-    <motion.div
-      className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
-      animate={{ y: ["-100%", "100%"] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-    />
-  </motion.div>
+          {/* CONNECTOR 2 */}
+          <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-300 to-blue-600 rounded-full relative overflow-hidden">
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+            />
+          </motion.div>
 
-  {/* NODE 3 */}
-  <motion.div
-    className="flex flex-col items-center"
-    animate={{ scale: [1, 1.05, 1] }}
-    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-  >
-    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-      <img src="/icons/gpu.svg" className="w-8 h-8 text-cyan-600" />
-    </div>
-    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-      GPU Provider
-    </p>
-  </motion.div>
-
-</div>
-
+          {/* NODE 3 */}
+          <motion.div
+            className="flex flex-col items-center"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+          >
+            <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+              {/* INLINE SVG ICON 3 */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.
+                </path>
+              </svg>
+                </div>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#0A0F2C]">
+              GPU Provider
+            </p>
+          </motion.div>
+        </div>
 
       </div>
-
     </section>
   );
 }
