@@ -298,43 +298,41 @@ export default function Home() {
   {/* THREE-CARD FEATURE ROW */}
 <div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-
   {/* Card 1 */}
-  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
-    <div className="text-[#0A84FF] mb-4 text-3xl">🌐</div>
-    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+  <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
+    <div className="text-[#0A84FF] mb-5 text-4xl">🌐</div>
+    <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
       Global Capacity Network
     </h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
+    <p className="text-base text-gray-600 leading-relaxed">
       Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.
     </p>
   </div>
 
   {/* Card 2 */}
-  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
-    <div className="text-[#0A84FF] mb-4 text-3xl">📈</div>
-    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+  <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
+    <div className="text-[#0A84FF] mb-5 text-4xl">📈</div>
+    <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
       Elastic Scaling
     </h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
+    <p className="text-base text-gray-600 leading-relaxed">
       On-demand scale inference or fine-tuning. No reservations, queuing, or region limits.
     </p>
   </div>
 
   {/* Card 3 */}
-  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
-    <div className="text-[#0A84FF] mb-4 text-3xl">💸</div>
-    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+  <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
+    <div className="text-[#0A84FF] mb-5 text-4xl">💸</div>
+    <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
       Lower Operational Cost
     </h3>
-    <p className="text-gray-600 text-sm leading-relaxed">
-      Pay only for executed work. Task-based billing cuts idle costs by 60-80%.
+    <p className="text-base text-gray-600 leading-relaxed">
+      Pay only for executed work. Task-based billing cuts idle costs by 60–80%.
     </p>
   </div>
 
 </div>
-
-
+  
 </section>
 
 
