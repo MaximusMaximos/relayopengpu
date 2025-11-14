@@ -21,8 +21,8 @@ export default function Home() {
       transition: {
         duration: 28,
         repeat: Infinity,
-        ease: "linear"
-      }
+        ease: "linear",
+      },
     });
   }, [controls]);
 
@@ -32,24 +32,27 @@ export default function Home() {
       {/* ========================================= */}
       {/* HERO SECTION */}
       {/* ========================================= */}
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-full min-h-screen">
 
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-          style={{ filter: "brightness(1.4)" }}
-        />
+        {/* Background video + overlay wrapper */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
+            style={{ filter: "brightness(1.4)" }}
+          />
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
+        </div>
 
         {/* HERO CONTENT */}
-        <div className="relative z-20 h-full flex flex-col">
+        <div className="relative z-20 flex flex-col min-h-screen">
 
           {/* NAVBAR */}
           <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7">
@@ -67,7 +70,6 @@ export default function Home() {
               <a href="#" className="hover:text-white transition">Docs</a>
               <a href="#" className="hover:text-white transition">Company</a>
 
-              {/* NAV GET STARTED BUTTON */}
               <button
                 className="
                   px-7 py-2.5 rounded-lg font-semibold
@@ -75,7 +77,7 @@ export default function Home() {
                   transition-all duration-300
                   hover:bg-[#1A8FFF]
                   hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
-                  hover:-translate-y-[3px]
+                  hover:-translate-y-[2px]
                   active:translate-y-[1px]
                 "
               >
@@ -84,8 +86,8 @@ export default function Home() {
             </div>
           </nav>
 
-          {/* HERO TEXT */}
-          <div className="relative flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48 pb-24">
+          {/* HERO TEXT BLOCK */}
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-40 pb-32 md:pt-48 md:pb-40">
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
               A Datacenter<br />Without Walls
@@ -105,37 +107,40 @@ export default function Home() {
               We don’t replace the cloud, we route across it.
             </p>
 
-           {/* BUTTONS */}
-<div className="flex gap-5 mb-10">
+            {/* BUTTONS */}
+            <div className="flex gap-5 mb-4 md:mb-6">
 
-  {/* ENTERPRISE PILOT */}
-  <button
-    className="
-      bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-      text-white px-10 py-3.5 rounded-xl font-semibold text-lg
-      shadow-[0_4px_14px_rgba(0,160,255,0.45)]
-      transition-all duration-300
-      hover:shadow-[0_10px_30px_rgba(0,160,255,0.55)]
-      hover:scale-[1.02]">
-    Run An Enterprise Pilot
-  </button>
+              {/* ENTERPRISE PILOT */}
+              <button
+                className="
+                  bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+                  text-white px-10 py-3.5 rounded-xl font-semibold text-lg
+                  shadow-[0_4px_14px_rgba(0,160,255,0.45)]
+                  transition-all duration-300
+                  hover:shadow-[0_10px_30px_rgba(0,160,255,0.55)]
+                  hover:scale-[1.02]
+                "
+              >
+                Run An Enterprise Pilot
+              </button>
 
-  {/* GET STARTED */}
-  <button
-    className="
-      px-10 py-3.5 rounded-xl font-semibold text-lg
-      border border-[#00C8FF]
-      text-[#00E9FF]
-      transition-all duration-300
-      hover:bg-[#00C8FF]
-      hover:text-[#001019]
-      hover:shadow-[0_10px_30px_rgba(0,200,255,0.45)]
-      hover:scale-[1.02]">
-    Get Started
-  </button>
+              {/* GET STARTED */}
+              <button
+                className="
+                  px-10 py-3.5 rounded-xl font-semibold text-lg
+                  border border-[#00C8FF]
+                  text-[#00E9FF]
+                  transition-all duration-300
+                  hover:bg-[#00C8FF]
+                  hover:text-[#001019]
+                  hover:shadow-[0_10px_30px_rgba(0,200,255,0.45)]
+                  hover:scale-[1.02]
+                "
+              >
+                Get Started
+              </button>
 
-</div>
-
+            </div>
 
           </div>
         </div>
@@ -196,8 +201,15 @@ export default function Home() {
             transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
           >
             {[...baseLogos, ...baseLogos].map((logo, i) => (
-              <div key={i} className="flex items-center justify-center opacity-80 hover:opacity-100 transition">
-                <img src={logo.src} alt={logo.alt} className="h-12 md:h-14 object-contain" />
+              <div
+                key={i}
+                className="flex items-center justify-center opacity-80 hover:opacity-100 transition"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 md:h-14 object-contain"
+                />
               </div>
             ))}
           </motion.div>
@@ -220,7 +232,9 @@ export default function Home() {
 
           <div className="max-w-xl">
 
-            <span className="text-[#007BFF] font-semibold tracking-wide text-base">WHY OGPU</span>
+            <span className="text-[#007BFF] font-semibold tracking-wide text-base">
+              WHY OGPU
+            </span>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-3 mb-1 text-[#0A0F2C] whitespace-nowrap">
               Decentralized compute,
@@ -237,14 +251,15 @@ export default function Home() {
               and reduces cost.
             </p>
 
-            {/* CLEANED BUTTON (NO HIGHLIGHT OVERLAY) */}
             <button
               className="
-                px-10 py-4 rounded-xl font-semibold text-white text-lg
+                px-10 py-4
+                rounded-xl
+                font-semibold text-white text-lg
                 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
                 hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
-                hover:-translate-y-[3px]
                 transition-all duration-300
+                hover:-translate-y-[3px]
               "
             >
               Explore dApp
@@ -256,24 +271,23 @@ export default function Home() {
 
         <div className="h-16" />
 
-        {/* CARD ROW */}
         <div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             {
               icon: "🌐",
               title: "Global Capacity Network",
-              text: "Access GPU capacity worldwide. OGPU routes tasks instantly to available compute."
+              text: "Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.",
             },
             {
               icon: "📈",
               title: "Elastic Scaling",
-              text: "On-demand scale inference or fine-tuning. No reservations, queuing or region limits."
+              text: "On-demand scale inference or fine-tuning. No reservations, queuing or region limits.",
             },
             {
               icon: "💸",
               title: "Lower Operational Cost",
-              text: "Pay only for executed work. Task-based billing cuts idle costs by 60–80%."
-            }
+              text: "Pay only for executed work. Task-based billing cuts idle costs by 60–80%.",
+            },
           ].map((card, i) => (
             <div
               key={i}
