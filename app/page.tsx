@@ -30,11 +30,12 @@ export default function Home() {
     <main className="relative w-full bg-[#040814] text-white">
 
      
+{/* ========================================= */}
 {/* HERO SECTION */}
 {/* ========================================= */}
 <section className="relative w-full pt-40 pb-32 lg:pt-48 lg:pb-40">
 
-  {/* Background video + overlay wrapper */}
+  {/* Background video + overlay */}
   <div className="absolute inset-0 overflow-hidden">
     <video
       autoPlay
@@ -43,7 +44,8 @@ export default function Home() {
       playsInline
       className="w-full h-full object-cover"
       src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-      style={{ filter: "brightness(1.4)" }}/>
+      style={{ filter: "brightness(1.4)" }}
+    />
 
     <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
   </div>
@@ -75,7 +77,9 @@ export default function Home() {
             hover:bg-[#1A8FFF]
             hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
             hover:-translate-y-[2px]
-            active:translate-y-[1px]">
+            active:translate-y-[1px]
+          "
+        >
           Get Started
         </button>
       </div>
@@ -139,6 +143,7 @@ export default function Home() {
 
   </div>
 </section>
+
 
 
       {/* STATS SECTION */}
