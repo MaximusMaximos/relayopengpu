@@ -236,13 +236,14 @@ export default function Home() {
               WHY OGPU
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-3 mb-1 text-[#0A0F2C] whitespace-nowrap">
-              Decentralized compute,
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-3 mb-1 text-[#0A0F2C]">
+  Decentralized compute,
+</h2>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent whitespace-nowrap">
-              built for real AI workloads.
-            </h2>
+<h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
+  built for real AI workloads.
+</h2>
+
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
               AI workloads are outgrowing centralized cloud capacity. OGPU connects GPU
