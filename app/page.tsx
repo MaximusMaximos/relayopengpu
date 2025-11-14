@@ -105,37 +105,37 @@ export default function Home() {
               We don’t replace the cloud, we route across it.
             </p>
 
-            {/* HERO BUTTONS */}
-            <div className="flex gap-5 mb-10">
+           {/* BUTTONS */}
+<div className="flex gap-5 mb-10">
 
-              <button
-                className="
-                  bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-                  text-white px-10 py-3.5 rounded-xl font-semibold text-lg
-                  hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
-                  hover:-translate-y-[4px]
-                  transition-all duration-300 ease-out
-                "
-              >
-                Run An Enterprise Pilot
-              </button>
+  {/* ENTERPRISE PILOT */}
+  <button
+    className="
+      bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+      text-white px-10 py-3.5 rounded-xl font-semibold text-lg
+      shadow-[0_4px_14px_rgba(0,160,255,0.45)]
+      transition-all duration-300
+      hover:shadow-[0_10px_30px_rgba(0,160,255,0.55)]
+      hover:scale-[1.02]">
+    Run An Enterprise Pilot
+  </button>
 
-              <button
-                className="
-                  px-10 py-3.5 rounded-xl font-semibold text-lg
-                  border border-[#00C8FF]
-                  text-[#00E9FF]
-                  hover:bg-[#00C8FF]
-                  hover:text-[#001019]
-                  hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
-                  hover:-translate-y-[3px]
-                  transition-all duration-300
-                "
-              >
-                Get Started
-              </button>
+  {/* GET STARTED */}
+  <button
+    className="
+      px-10 py-3.5 rounded-xl font-semibold text-lg
+      border border-[#00C8FF]
+      text-[#00E9FF]
+      transition-all duration-300
+      hover:bg-[#00C8FF]
+      hover:text-[#001019]
+      hover:shadow-[0_10px_30px_rgba(0,200,255,0.45)]
+      hover:scale-[1.02]">
+    Get Started
+  </button>
 
-            </div>
+</div>
+
 
           </div>
         </div>
