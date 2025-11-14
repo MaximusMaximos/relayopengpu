@@ -401,66 +401,75 @@ export default function HowOGPUWorks() {
           </button>
         </div>
 
-        {/* ================= RIGHT SIDE DIAGRAM ================= */}
-        <div className="relative flex flex-col items-center space-y-14">
+        {/* RIGHT COLUMN DIAGRAM (OGPU EXACT STYLE) */}
+<div className="flex flex-col items-center space-y-16">
 
-          {/* FIXED BLUE LINE (PERFECT HEIGHT) */}
-          <motion.div
-            className="absolute left-1/2 -translate-x-1/2 w-[3px] top-16 bottom-16
-                       bg-gradient-to-b from-cyan-300/40 via-cyan-500/40 to-blue-600/40 rounded-full overflow-hidden"
-          >
-            {/* ANIMATED SHIMMER */}
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full
-                         bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </motion.div>
+  {/* NODE 1 */}
+  <motion.div
+    className="flex flex-col items-center"
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+      <img src="/icons/upload.svg" className="w-8 h-8 text-cyan-600" />
+    </div>
+    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+      Submit Workload
+    </p>
+  </motion.div>
 
-          {/* Node 1 */}
-          <motion.div
-            className="relative z-10 flex flex-col items-center"
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ repeat: Infinity, duration: 3 }}
-          >
-            <div className="w-24 h-24 rounded-2xl bg-white/60 border border-cyan-100 shadow-md flex items-center justify-center">
-              <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path d="M4 16v2..." />
-              </svg>
-            </div>
-            <p className="text-sm mt-3 font-semibold uppercase text-[#1E293B]">Submit Workload</p>
-          </motion.div>
+  {/* CONNECTOR 1 (SEPARATE, SHORT, ANIMATED) */}
+  <motion.div 
+    className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden"
+  >
+    <motion.div
+      className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+      animate={{ y: ["-100%", "100%"] }}
+      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+    />
+  </motion.div>
 
-          {/* Node 2 */}
-          <motion.div
-            className="relative z-10 flex flex-col items-center"
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ repeat: Infinity, duration: 3, delay: 1 }}
-          >
-            <div className="w-24 h-24 rounded-2xl bg-white/60 border border-cyan-100 shadow-md flex items-center justify-center">
-              <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
-                <path d="M12 6v6..." />
-              </svg>
-            </div>
-            <p className="text-sm mt-3 font-semibold uppercase text-[#1E293B]">Relay Routing Engine</p>
-          </motion.div>
+  {/* NODE 2 */}
+  <motion.div
+    className="flex flex-col items-center"
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+  >
+    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+      <img src="/icons/clock.svg" className="w-8 h-8 text-cyan-600" />
+    </div>
+    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+      Relay Routing Engine
+    </p>
+  </motion.div>
 
-          {/* Node 3 */}
-          <motion.div
-            className="relative z-10 flex flex-col items-center"
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ repeat: Infinity, duration: 3, delay: 2 }}
-          >
-            <div className="w-24 h-24 rounded-2xl bg-white/60 border border-cyan-100 shadow-md flex items-center justify-center">
-              <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
-                <path d="M9.75 3v4..." />
-              </svg>
-            </div>
-            <p className="text-sm mt-3 font-semibold uppercase text-[#1E293B]">GPU Provider</p>
-          </motion.div>
+  {/* CONNECTOR 2 (SEPARATE, SHORT, ANIMATED) */}
+  <motion.div 
+    className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden"
+  >
+    <motion.div
+      className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+      animate={{ y: ["-100%", "100%"] }}
+      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+    />
+  </motion.div>
 
-        </div>
+  {/* NODE 3 */}
+  <motion.div
+    className="flex flex-col items-center"
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+  >
+    <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+      <img src="/icons/gpu.svg" className="w-8 h-8 text-cyan-600" />
+    </div>
+    <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+      GPU Provider
+    </p>
+  </motion.div>
+
+</div>
+
 
       </div>
 
