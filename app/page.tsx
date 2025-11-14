@@ -189,6 +189,57 @@ export default function Home() {
         </div> {/* END hero inner wrapper */}
 
       </section> {/* END HERO SECTION */}
+{/* DARK STATS SECTION */}
+<section className="w-full bg-[#040814] pt-32 pb-24 px-6">
+
+  <div className="text-center max-w-3xl mx-auto mb-16">
+    <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
+      Backed by Global Scale
+    </h2>
+    <p className="text-lg text-gray-300 drop-shadow">
+      The OGPU Network is live, production-tested, and running real AI workloads worldwide.
+    </p>
+  </div>
+
+  {/* STATS */}
+  <div className="flex justify-center gap-20 text-center mb-12">
+    <div className="max-w-[180px]">
+      <h3 className="text-3xl font-bold text-[#00E9FF]">230+</h3>
+      <p className="text-sm text-white font-medium">Active GPU Providers</p>
+      <p className="text-xs text-gray-300 mt-1">Distributed Across 40+ countries.</p>
+    </div>
+
+    <div className="max-w-[180px]">
+      <h3 className="text-3xl font-bold text-[#00E9FF]">70%–80%</h3>
+      <p className="text-sm text-white font-medium">Cost Reduction</p>
+      <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
+    </div>
+
+    <div className="max-w-[180px]">
+      <h3 className="text-3xl font-bold text-[#00E9FF]">99.2%+</h3>
+      <p className="text-sm text-white font-medium">Network Uptime</p>
+      <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
+    </div>
+  </div>
+
+  <p className="text-sm text-gray-400 text-center">
+    Real Providers. Real Workloads. No Hypothetical capacity claims.
+  </p>
+
+</section>
+{/* GRADIENT TO WHITE */}
+<div className="w-full h-48 bg-gradient-to-b from-[#040814] to-white"></div>
+<section className="w-full bg-white py-20 text-center text-black">
+  <h3 className="text-xl font-semibold mb-10">
+    Trusted by teams building the future of AI infrastructure
+  </h3>
+
+  <div className="flex items-center justify-center gap-20">
+    <img src="https://digitalgramophone.com/ogpu/Images/nosana.png" className="h-12" />
+    <img src="https://digitalgramophone.com/ogpu/Images/lena.png" className="h-12" />
+    <img src="https://digitalgramophone.com/ogpu/Images/ozak.png" className="h-12" />
+  </div>
+</section>
 
 
       {/* ========================================= */}
