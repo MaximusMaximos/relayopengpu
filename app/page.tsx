@@ -178,18 +178,45 @@ export default function Home() {
       {/* GRADIENT TRANSITION */}
       <div className="w-full h-48 bg-gradient-to-b from-[#040814] to-white"></div>
 
-      {/* PARTNER LOGOS */}
-      <section className="w-full bg-white py-20 text-center text-black">
-        <h3 className="text-xl font-semibold mb-10">
-          Trusted by teams building the future of AI infrastructure
-        </h3>
+      {/* PARTNER LOGO SLIDER */}
+<section className="w-full bg-white py-20 overflow-hidden relative">
 
-        <div className="flex items-center justify-center gap-20">
-          <img src="https://digitalgramophone.com/ogpu/Images/nosana.png" className="h-12" />
-          <img src="https://digitalgramophone.com/ogpu/Images/lena.png" className="h-12" />
-          <img src="https://digitalgramophone.com/ogpu/Images/ozak.png" className="h-12" />
+  <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-10">
+    Trusted by teams building the future of AI infrastructure
+  </h2>
+
+  {/* Infinite Scroll Wrapper */}
+  <div className="relative w-full overflow-hidden">
+    <motion.div
+      className="flex items-center gap-20"
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{
+        duration: 22,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+    >
+      {[...[
+        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
+        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
+        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
+      ], ...[
+        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
+        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
+        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
+      ]].map((logo, i) => (
+        <div key={i} className="flex items-center justify-center opacity-80 hover:opacity-100 transition">
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            className="h-12 md:h-14 w-auto object-contain"
+          />
         </div>
-      </section>
+      ))}
+    </motion.div>
+  </div>
+
+</section>
 
     </main>
   );
