@@ -37,7 +37,7 @@ export default function LiveStats() {
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
+          <h3 className="text-3xl font-bold text-[#00E9FF]">60%–0%</h3>
           <p className="text-sm text-white font-medium">Cost Reduction</p>
           <p className="text-xs text-gray-300 mt-1">
             Compared to centralized cloud pricing.
