@@ -107,26 +107,24 @@ export default function Home() {
               We don’t replace the cloud, we route across it.
             </p>
 
-        {/* BUTTONS */}
+       {/* BUTTONS */}
 <div className="flex gap-5 mb-10">
-
   {/* ENTERPRISE PILOT */}
   <button
     className="
-      magnetic-btn relative overflow-hidden
+      relative
       bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
       text-white px-10 py-3.5 rounded-xl font-semibold text-lg
       hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
       hover:-translate-y-[4px]
       transition-all duration-300 ease-out">
-    <span className="relative z-30">Run An Enterprise Pilot</span>
-    <span className="absolute inset-0 z-10 bg-white/5 pointer-events-none"></span>
+    Run An Enterprise Pilot
   </button>
 
   {/* GET STARTED */}
   <button
     className="
-      magnetic-btn relative overflow-hidden
+      relative
       px-10 py-3.5 rounded-xl font-semibold text-lg
       border border-[#00C8FF]
       text-[#00E9FF]
@@ -135,11 +133,10 @@ export default function Home() {
       hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
       hover:-translate-y-[3px]
       transition-all duration-300">
-    <span className="relative z-30">Get Started</span>
-    <span className="absolute inset-0 z-10 bg-white/5 pointer-events-none"></span>
+    Get Started
   </button>
-
 </div>
+
 
 
           </div>
