@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <main className="relative w-full bg-[#040814] text-white">
 
-      {/* HERO SECTION – UNTIL NAV */}
-      <div className="relative w-full h-screen overflow-hidden">
+      {/* HERO SECTION (true 100vh scrollable hero) */}
+      <section className="relative w-full h-screen overflow-hidden">
 
         {/* Background Video */}
         <video
@@ -20,11 +20,11 @@ export default function Home() {
           style={{ filter: "brightness(1.4)" }}
         />
 
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
 
-        {/* CONTENT ABOVE VIDEO */}
-        <div className="relative z-20">
+        {/* EVERYTHING inside the hero must be wrapped like this */}
+        <div className="relative z-20 h-full flex flex-col">
 
         {/* NAVBAR */}
         <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
