@@ -81,64 +81,21 @@ export default function Home() {
         <div className="flex gap-5 mb-20">
 
           {/* PREMIUM PRIMARY BUTTON */}
-          <button
-            className="
-              magnetic-btn
-              bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-              text-white
-              px-10 py-3.5
-              rounded-xl
-              font-semibold text-lg
-              transition-all duration-300 ease-out
-              shadow-[0_0_0_0_rgba(0,200,255,0)]
-              hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
-              hover:-translate-y-[4px]
-              active:translate-y-[1px]
-              active:shadow-[0_6px_16px_rgba(0,150,255,0.3)]
-              focus:ring-4 focus:ring-[#00E9FF]/30
-              relative overflow-hidden
-            "
-          >
-            <span className="relative z-10">Run An Enterprise Pilot</span>
-            <span
-              className="
-                absolute inset-0 
-                bg-gradient-to-r from-white/10 to-transparent
-                opacity-0 hover:opacity-100
-                transition-opacity duration-500
-              "
-            ></span>
-          </button>
+          <button className="magnetic-btn relative overflow-hidden ...">
+  <span className="z-10 relative"> Enterprise Pilot</span>
+
+  {/* highlight layer */}
+  <span className="highlight absolute inset-0 bg-white/10 pointer-events-none transition-all duration-300"></span>
+</button>
 
           {/* PREMIUM SECONDARY BUTTON */}
-          <button
-            className="
-              magnetic-btn
-              px-10 py-3.5
-              rounded-xl
-              font-semibold text-lg
-              border border-[#00C8FF]
-              text-[#00E9FF]
-              transition-all duration-300 ease-out
-              hover:bg-[#00C8FF]
-              hover:text-[#001019]
-              hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
-              hover:-translate-y-[3px]
-              active:translate-y-[1px]
-              focus:ring-4 focus:ring-[#00E9FF]/40
-              relative overflow-hidden
-            "
-          >
-            <span className="relative z-10">Get Started</span>
-            <span
-              className="
-                absolute inset-0 
-                bg-gradient-to-r from-white/10 to-transparent
-                opacity-0 hover:opacity-100
-                transition-opacity duration-500
-              "
-            ></span>
-          </button>
+          <button className="magnetic-btn relative overflow-hidden ...">
+  <span className="z-10 relative">Get Started</span>
+
+  {/* highlight layer */}
+  <span className="highlight absolute inset-0 bg-white/10 pointer-events-none transition-all duration-300"></span>
+</button>
+
 
         </div>
 
