@@ -206,81 +206,93 @@ export default function Home() {
       </section>
 
       {/* WHY OGPU SECTION */}
-<section className="w-full bg-[#F7F9FC] py-28 px-6">
+      <section className="w-full bg-[#F7F9FC] py-28 px-6">
 
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[52%_48%] gap-20 items-center">
 
-    {/* LEFT COLUMN : IMAGE */}
-    <div>
-      <img
-        src="https://digitalgramophone.com/ogpu/Images/screen1-transparant.png"
-        alt="OGPU Platform Screens"
-        className="w-full rounded-xl object-cover"
-      />
-    </div>
+          <div>
+            <img
+              src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
+              alt="OGPU Platform Screens"
+              className="w-full rounded-xl object-cover"
+            />
+          </div>
 
-    {/* RIGHT COLUMN : TEXT */}
-    <div>
+          <div className="max-w-xl">
 
-      {/* Label */}
-      <span className="text-[#007BFF] font-semibold tracking-wide text-sm">
-        WHY OGPU
-      </span>
+            <span className="text-[#007BFF] font-semibold tracking-wide text-base">WHY OGPU</span>
 
-      {/* Headline */}
-      <h2 className="text-3xl md:text-4xl font-bold leading-tight mt-4 mb-6 text-[#0A0F2C]">
-        Decentralized compute,<br />
-        <span className="bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
-          built for real AI workloads.
-        </span>
-      </h2>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-3 mb-1 text-[#0A0F2C] whitespace-nowrap">
+              Decentralized compute,
+            </h2>
 
-      {/* Paragraph */}
-      <p className="text-gray-600 text-[17px] leading-relaxed mb-10 max-w-md">
-        AI workloads are outgrowing centralized cloud capacity.
-        OGPU connects GPU providers across data centers, clouds, and independent operators 
-        into one network, routing workloads to available capacity. 
-        This improves reliability and reduces cost.
-      </p>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent whitespace-nowrap">
+              built for real AI workloads.
+            </h2>
 
-      {/* OGPU SHINY GRADIENT BUTTON */}
-      <button
-        className="
-          px-8 py-3.5
-          rounded-xl
-          font-semibold
-          text-white
-          bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-          shadow-[0_0_0_rgba(0,0,0,0)]
-          hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
-          transition-all duration-300
-          hover:-translate-y-[3px]
-          relative overflow-hidden
-        "
-      >
-        <span className="relative z-10">Explore dApp</span>
-        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-40 transition-opacity duration-300"></span>
-      </button>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
+              AI workloads are outgrowing centralized cloud capacity. OGPU connects GPU
+              providers across data centers, clouds and independent operators into one
+              network, routing workloads to available capacity. This improves reliability
+              and reduces cost.
+            </p>
 
-    </div>
+            {/* CLEANED BUTTON (NO HIGHLIGHT OVERLAY) */}
+            <button
+              className="
+                px-10 py-4 rounded-xl font-semibold text-white text-lg
+                bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+                hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
+                hover:-translate-y-[3px]
+                transition-all duration-300
+              "
+            >
+              Explore dApp
+            </button>
 
-  </div>
+          </div>
 
-  {/* SPACE */}
-  <div className="h-20"></div>
+        </div>
 
-  {/* THREE-CARD ROW - screenshot 2 */}
-  <div className="max-w-7xl mx-auto">
-    <img
-      src="https://digitalgramophone.com/ogpu/Images/screen2-transparant.png"
-      className="w-full rounded-xl shadow-lg object-cover"
-      alt="OGPU Feature Cards"
-    />
-  </div>
+        <div className="h-16" />
 
-</section>
+        {/* CARD ROW */}
+        <div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+          {[
+            {
+              icon: "🌐",
+              title: "Global Capacity Network",
+              text: "Access GPU capacity worldwide. OGPU routes tasks instantly to available compute."
+            },
+            {
+              icon: "📈",
+              title: "Elastic Scaling",
+              text: "On-demand scale inference or fine-tuning. No reservations, queuing or region limits."
+            },
+            {
+              icon: "💸",
+              title: "Lower Operational Cost",
+              text: "Pay only for executed work. Task-based billing cuts idle costs by 60–80%."
+            }
+          ].map((card, i) => (
+            <div
+              key={i}
+              className="
+                bg-white rounded-2xl p-10 flex flex-col border border-gray-100
+                shadow-[0_4px_16px_rgba(0,0,0,0.06)]
+                transition-all duration-300 ease-out
+                hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
+                hover:-translate-y-2 hover:scale-[1.02]
+              "
+            >
+              <div className="text-[#0A84FF] mb-5 text-4xl">{card.icon}</div>
+              <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">{card.title}</h3>
+              <p className="text-base text-gray-600 leading-relaxed">{card.text}</p>
+            </div>
+          ))}
+        </div>
 
-
+      </section>
 
     </main>
   );
