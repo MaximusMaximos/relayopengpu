@@ -208,28 +208,27 @@ export default function Home() {
       {/* WHY OGPU SECTION */}
 <section className="w-full bg-[#F7F9FC] py-28 px-6">
 
-  {/* MAIN GRID WITH BETTER BALANCE */}
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[58%_42%] gap-20 items-center">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
     {/* LEFT COLUMN : IMAGE */}
     <div>
       <img
-        src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
+        src="https://digitalgramophone.com/ogpu/Images/screen1-transparant.png"
         alt="OGPU Platform Screens"
         className="w-full rounded-xl object-cover"
       />
     </div>
 
     {/* RIGHT COLUMN : TEXT */}
-    <div className="max-w-2xl">
+    <div>
 
       {/* Label */}
-      <span className="text-[#007BFF] font-semibold tracking-wide text-base">
+      <span className="text-[#007BFF] font-semibold tracking-wide text-sm">
         WHY OGPU
       </span>
 
       {/* Headline */}
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-3 mb-6 text-[#0A0F2C]">
+      <h2 className="text-3xl md:text-4xl font-bold leading-tight mt-4 mb-6 text-[#0A0F2C]">
         Decentralized compute,<br />
         <span className="bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
           built for real AI workloads.
@@ -237,20 +236,20 @@ export default function Home() {
       </h2>
 
       {/* Paragraph */}
-      <p className="text-xl text-gray-600 leading-relaxed mb-10">
-        AI workloads are outgrowing centralized cloud capacity. OGPU connects GPU
-        providers across data centers, clouds, and independent operators into one
-        network, routing workloads to available capacity. This improves reliability
-        and reduces cost.
+      <p className="text-gray-600 text-[17px] leading-relaxed mb-10 max-w-md">
+        AI workloads are outgrowing centralized cloud capacity.
+        OGPU connects GPU providers across data centers, clouds, and independent operators 
+        into one network, routing workloads to available capacity. 
+        This improves reliability and reduces cost.
       </p>
 
       {/* OGPU SHINY GRADIENT BUTTON */}
       <button
         className="
-          px-10 py-4
+          px-8 py-3.5
           rounded-xl
           font-semibold
-          text-white text-lg
+          text-white
           bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
           shadow-[0_0_0_rgba(0,0,0,0)]
           hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
@@ -267,48 +266,20 @@ export default function Home() {
 
   </div>
 
-  {/* TIGHTER SPACING TO MATCH MOCKUP */}
-  <div className="h-16"></div>
+  {/* SPACE */}
+  <div className="h-20"></div>
 
-  {/* THREE-CARD FEATURE ROW */}
-  <div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-    {/* Card 1 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">🌐</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Global Capacity Network
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.
-      </p>
-    </div>
-
-    {/* Card 2 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">📈</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Elastic Scaling
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        On-demand scale inference or fine-tuning. No reservations, queuing, or region limits.
-      </p>
-    </div>
-
-    {/* Card 3 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">💸</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Lower Operational Cost
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        Pay only for executed work. Task-based billing cuts idle costs by 60–80%.
-      </p>
-    </div>
-
+  {/* THREE-CARD ROW - screenshot 2 */}
+  <div className="max-w-7xl mx-auto">
+    <img
+      src="https://digitalgramophone.com/ogpu/Images/screen2-transparant.png"
+      className="w-full rounded-xl shadow-lg object-cover"
+      alt="OGPU Feature Cards"
+    />
   </div>
 
 </section>
+
 
 
     </main>
