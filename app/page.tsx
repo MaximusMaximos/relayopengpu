@@ -261,7 +261,7 @@ export default function Home() {
     {/* RIGHT COLUMN IMAGE */}
     <div>
       <img
-        src="https://digitalgramophone.com/ogpu/Images/screen1-transparant.png"
+        src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
         className="w-full rounded-xl shadow-lg object-cover"
       />
     </div>
