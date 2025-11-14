@@ -34,9 +34,35 @@ export default function Home() {
           <a href="#" className="hover:text-white transition">Docs</a>
           <a href="#" className="hover:text-white transition">Company</a>
 
-          <button className="bg-[#0A84FF] text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-500 transition">
-            Get Started
-          </button>
+          <button
+  className="
+    magnetic-btn
+    px-9 py-3.5
+    rounded-xl
+    font-semibold text-lg
+    border border-[#00C8FF]
+    text-[#00E9FF]
+    transition-all duration-300 ease-out
+    hover:bg-[#00C8FF]
+    hover:text-[#001019]
+    hover:shadow-[0_10px_26px_rgba(0,200,255,0.35)]
+    hover:-translate-y-[3px]
+    active:translate-y-[1px]
+    focus:ring-4 focus:ring-[#00E9FF]/40
+    relative overflow-hidden
+  "
+>
+  <span className="relative z-10">Get Started</span>
+  <span
+    className="
+      absolute inset-0 
+      bg-gradient-to-r from-white/10 to-transparent
+      opacity-0 hover:opacity-100
+      transition-opacity duration-500
+    "
+  ></span>
+</button>
+
         </div>
       </nav>
 
@@ -63,9 +89,35 @@ export default function Home() {
 
         {/* BUTTONS */}
         <div className="flex gap-4 mb-16">
-          <button className="bg-[#0A84FF] text-white px-8 py-3 rounded-xl font-semibold text-lg hover:bg-blue-500 transition">
-            Run An Enterprise Pilot
-          </button>
+          <button
+  className="
+    magnetic-btn
+    bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+    text-white
+    px-9 py-3.5
+    rounded-xl
+    font-semibold text-lg
+    transition-all duration-300 ease-out
+    shadow-[0_0_0_0_rgba(0,200,255,0)]
+    hover:shadow-[0_12px_32px_rgba(0,150,255,0.45)]
+    hover:-translate-y-[4px]
+    active:translate-y-[1px]
+    active:shadow-[0_6px_16px_rgba(0,150,255,0.3)]
+    focus:ring-4 focus:ring-[#00E9FF]/30
+    relative overflow-hidden
+  "
+>
+  <span className="relative z-10">Run An Enterprise Pilot</span>
+  <span
+    className="
+      absolute inset-0 
+      bg-gradient-to-r from-white/10 to-transparent
+      opacity-0 hover:opacity-100
+      transition-opacity duration-500
+    "
+  ></span>
+</button>
+
 
           <button className="px-8 py-3 rounded-xl font-semibold text-lg border border-[#0A84FF] text-[#0A84FF] hover:bg-[#0A84FF] hover:text-white transition">
             Get Started
