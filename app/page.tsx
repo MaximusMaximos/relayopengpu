@@ -186,55 +186,57 @@ export default function Home() {
       {/* GRADIENT */}
       <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white"></div>
 
-      {/* UPGRADED PARTNER SLIDER */}
-      <section className="w-full bg-white py-20 overflow-hidden relative">
+      {/* UPGRADED PARTNER SLIDER (Full-Size Logos) */}
+<section className="w-full bg-white py-20 overflow-hidden relative">
 
-        <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-12">
-          Trusted by teams building the future of AI infrastructure
-        </h2>
+  <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-12">
+    Trusted by teams building the future of AI infrastructure
+  </h2>
 
-        <div
-          className="relative w-full overflow-hidden"
-          onMouseEnter={() => controls.stop()}
-          onMouseLeave={() =>
-            controls.start({
-              x: ["0%", "-50%"],
-              transition: {
-                duration: 28,
-                repeat: Infinity,
-                ease: "linear"
-              }
-            })
-          }
+  {/* Slider Wrapper */}
+  <div
+    className="relative w-full overflow-hidden"
+    onMouseEnter={() => controls.stop()}
+    onMouseLeave={() =>
+      controls.start({
+        x: ["0%", "-50%"],
+        transition: {
+          duration: 28,
+          repeat: Infinity,
+          ease: "linear"
+        }
+      })
+    }
+  >
+
+    {/* FADE MASKS */}
+    <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 bg-gradient-to-r from-white to-transparent"></div>
+    <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 bg-gradient-to-l from-white to-transparent"></div>
+
+    {/* MOVING TRACK */}
+    <motion.div
+      className="flex items-center gap-28 px-10"
+      animate={controls}
+    >
+      {logos.map((logo, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.08, opacity: 1 }}
+          className="opacity-80 transition px-8"
         >
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            className="w-auto h-auto object-contain"
+            loading="lazy"
+          />
+        </motion.div>
+      ))}
+    </motion.div>
 
-          {/* Fade masks */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 bg-gradient-to-r from-white to-transparent"></div>
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 bg-gradient-to-l from-white to-transparent"></div>
+  </div>
 
-          {/* Logo Track */}
-          <motion.div
-            className="flex items-center gap-24 px-10"
-            animate={controls}
-          >
-            {logos.map((logo, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.12, opacity: 1 }}
-                className="opacity-80 transition"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-14 md:h-16 w-auto object-contain"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
-
-      </section>
+</section>
 
     </main>
   );
