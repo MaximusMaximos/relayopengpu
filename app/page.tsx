@@ -33,9 +33,9 @@ export default function Home() {
 {/* ========================================= */}
 {/* HERO SECTION */}
 {/* ========================================= */}
-<section className="relative w-full pt-40 pb-32 lg:pt-48 lg:pb-40">
+<section className="relative w-full min-h-screen">
 
-  {/* Background video + overlay */}
+  {/* Background video + overlay wrapper */}
   <div className="absolute inset-0 overflow-hidden">
     <video
       autoPlay
@@ -51,7 +51,7 @@ export default function Home() {
   </div>
 
   {/* HERO CONTENT */}
-  <div className="relative z-20 flex flex-col">
+  <div className="relative z-20 flex flex-col h-full">
 
     {/* NAVBAR */}
     <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7">
@@ -86,7 +86,7 @@ export default function Home() {
     </nav>
 
     {/* HERO TEXT BLOCK */}
-    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-6">
+    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24">
 
       <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
         A Datacenter<br />Without Walls
@@ -102,7 +102,7 @@ export default function Home() {
         This improves performance, reliability and cost efficiency at scale.
       </p>
 
-      <p className="text-lg font-semibold text-white mb-12 drop-shadow-lg">
+      <p className="text-lg font-semibold text-white mb-10 drop-shadow-lg">
         We don’t replace the cloud, we route across it.
       </p>
 
