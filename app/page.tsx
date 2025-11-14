@@ -130,6 +130,18 @@ export default function Home() {
 
         </div>
 
+        {/* BACKED BY GLOBAL SCALE */}
+<div className="text-center max-w-3xl mx-auto mb-16 z-20">
+
+  <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
+    Backed by Global Scale
+  </h2>
+
+  <p className="text-lg text-gray-300 drop-shadow">
+    The OGPU Network is live, production-tested, and running real AI workloads worldwide.
+  </p>
+
+</div>
         {/* STATS */}
         <div className="flex gap-16 text-center drop-shadow-md">
 
