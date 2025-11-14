@@ -18,7 +18,7 @@ export default function Home() {
       />
 
       {/* Lightened Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/65"></div>
 
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
