@@ -467,12 +467,8 @@ export default function Home() {
 
   </div>
 
-    </section>
-  );
-}
+   </section>   {/* END HOW IT WORKS SECTION */}
 
-  
-
-    </main>
-  );
+</main>      {/* END MAIN WRAPPER */}
+);
 }
