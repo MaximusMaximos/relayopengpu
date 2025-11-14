@@ -404,82 +404,78 @@ export default function Home() {
       </motion.a>
     </motion.div>
 
-    {/* RIGHT COLUMN – PERFECT TIMELINE */}
-<motion.div 
-  className="relative flex flex-col items-center"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.25 }}
-  variants={{
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.2, staggerChildren: 0.25 } }
-  }}
->
+    {/* ========================= */}
+{/*   RIGHT COLUMN DIAGRAM    */}
+{/* ========================= */}
 
-  {/* FULL VERTICAL LINE BEHIND ICONS */}
-  <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[3px] 
-                  bg-gradient-to-b from-[#00C8FF] to-[#007BFF] opacity-60 rounded-full"></div>
+<div className="relative flex flex-col items-center space-y-10">
 
-  {/* STEP 1 */}
-  <motion.div 
-    className="relative z-10 flex flex-col items-center mb-20"
-    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+  {/* Flow shimmer line behind icons */}
+  <motion.div
+    className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] 
+               bg-gradient-to-b from-cyan-300/40 via-cyan-500/40 to-blue-600/40 rounded-full overflow-hidden"
   >
-    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-      
-      {/* INLINE UPLOAD ICON */}
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
-          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M8 12l4-4m0 0l4 4m-4-4v12" />
+    <motion.div
+      className="absolute top-0 left-0 w-full h-full 
+                 bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+      animate={{ y: ["-100%", "100%"] }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    />
+  </motion.div>
+
+  {/* NODE 1 */}
+  <motion.div
+    className="relative z-10 flex flex-col items-center"
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+  >
+    <div className="backdrop-blur-md bg-white/80 border border-cyan-100 
+                    shadow-md shadow-cyan-100/50 w-20 h-20 rounded-2xl flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
       </svg>
     </div>
-
-    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
+    <p className="mt-3 text-xs font-semibold text-[#0A0F2C] uppercase tracking-wide">
       Submit Workload
     </p>
   </motion.div>
 
-  {/* STEP 2 */}
-  <motion.div 
-    className="relative z-10 flex flex-col items-center mb-20"
-    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+  {/* NODE 2 */}
+  <motion.div
+    className="relative z-10 flex flex-col items-center"
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 1 }}
   >
-    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-
-      {/* INLINE CLOCK ICON */}
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
-          d="M12 6v6l4 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <div className="backdrop-blur-md bg-white/80 border border-cyan-100 
+                    shadow-md shadow-cyan-100/50 w-20 h-20 rounded-2xl flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     </div>
-
-    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
+    <p className="mt-3 text-xs font-semibold text-[#0A0F2C] uppercase tracking-wide">
       Relay Routing Engine
     </p>
   </motion.div>
 
-  {/* STEP 3 */}
-  <motion.div 
+  {/* NODE 3 */}
+  <motion.div
     className="relative z-10 flex flex-col items-center"
-    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 2 }}
   >
-    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-
-      {/* INLINE GPU ICON */}
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
-          d="M3 5h18M3 12h18M3 19h18M8 5v14M16 5v14" />
+    <div className="backdrop-blur-md bg-white/80 border border-cyan-100 
+                    shadow-md shadow-cyan-100/50 w-20 h-20 rounded-2xl flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-cyan-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
       </svg>
     </div>
-
-    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
+    <p className="mt-3 text-xs font-semibold text-[#0A0F2C] uppercase tracking-wide">
       GPU Provider
     </p>
   </motion.div>
 
-</motion.div>
+</div>
 
-  </div>
 
   {/* FOOTER LINE */}
   <p className="text-center text-sm text-[#607081] mt-14">
