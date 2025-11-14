@@ -117,25 +117,21 @@ export default function Home() {
 
         </div>
 
-        {/* BACKED BY GLOBAL SCALE (NOW IN THE RIGHT PLACE) */}
+        {/* BACKED BY GLOBAL SCALE */}
         <div className="text-center max-w-3xl mx-auto mb-16">
 
           <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
             Backed by Global Scale
           </h2>
 
-          <p className="text-lg text-gray-300 mb-2 drop-shadow">
+          <p className="text-lg text-gray-300 drop-shadow">
             The OGPU Network is live, production-tested, and running real AI workloads worldwide.
-          </p>
-
-          <p className="text-sm text-gray-500">
-            Real Providers. Real Workloads. No hypothetical capacity claims.
           </p>
 
         </div>
 
         {/* STATS */}
-        <div className="flex gap-16 text-center drop-shadow-md pb-32">
+        <div className="flex gap-16 text-center drop-shadow-md">
 
           {/* STAT 1 */}
           <div className="max-w-[180px]">
@@ -166,9 +162,13 @@ export default function Home() {
 
         </div>
 
+        {/* CLAIMS LINE UNDER STATS */}
+        <p className="text-sm text-gray-400 mt-6 mb-24 text-center">
+          Real Providers. Real Workloads. No hypothetical capacity claims.
+        </p>
+
       </div>
 
     </main>
   );
 }
-   
