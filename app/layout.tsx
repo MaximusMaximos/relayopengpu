@@ -24,36 +24,52 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
 
-        {/* Magnetic Lighting Script */}
+        {/* MAGNETIC BUTTON HIGHLIGHT SCRIPT */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               document.addEventListener('mousemove', (e) => {
                 document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                  const rect = btn.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
 
+                  const rect = btn.getBoundingClientRect();
                   const highlight = btn.querySelector('.highlight');
                   if (!highlight) return;
 
-                  highlight.style.transform =
-                    'translate(' + (x - rect.width/2) * 0.12 + 'px, ' +
-                    (y - rect.height/2) * 0.12 + 'px)';
-                });
-              });
+                  // Check if mouse is INSIDE this button
+                  const inside =
+                    e.clientX >= rect.left &&
+                    e.clientX <= rect.right &&
+                    e.clientY >= rect.top &&
+                    e.clientY <= rect.bottom;
 
-              document.addEventListener('mouseleave', () => {
-                document.querySelectorAll('.magnetic-btn .highlight').forEach(h => {
-                  h.style.transform = 'translate(0px,0px)';
+                  if (!inside) {
+                    // Reset glow when leaving the button
+                    highlight.style.transform = 'translate(0px,0px)';
+                    return;
+                  }
+
+                  // Mouse position inside the button
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+
+                  // Move the highlight subtly
+                  highlight.style.transform =
+                    'translate(' +
+                    (x - rect.width / 2) * 0.12 +
+                    'px, ' +
+                    (y - rect.height / 2) * 0.12 +
+                    'px)';
                 });
               });
             `,
           }}
         />
+
       </body>
     </html>
   );
