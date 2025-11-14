@@ -1,14 +1,37 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home() {
+  const controls = useAnimation();
+
+  const baseLogos = [
+    { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
+    { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
+    { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
+  ];
+
+  // Repeat logos 4x for long scrolling effect
+  const logos = [...baseLogos, ...baseLogos, ...baseLogos, ...baseLogos];
+
+  useEffect(() => {
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 28,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    });
+  }, [controls]);
+
   return (
     <main className="relative w-full bg-[#040814] text-white">
 
       {/* ========================================= */}
-      {/* HERO SECTION - FULL SCREEN + SCROLLS AWAY */}
+      {/* HERO SECTION                              */}
       {/* ========================================= */}
       <section className="relative w-full h-screen overflow-hidden">
 
@@ -26,7 +49,7 @@ export default function Home() {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
 
-        {/* HERO CONTENT (all hero items MUST stay inside here) */}
+        {/* HERO CONTENT */}
         <div className="relative z-20 h-full flex flex-col">
 
           {/* NAVBAR */}
@@ -47,13 +70,9 @@ export default function Home() {
 
               <button
                 className="
-                  magnetic-btn
-                  relative overflow-hidden
-                  px-7 py-2.5
-                  rounded-lg
-                  font-semibold
-                  bg-[#0A84FF]
-                  text-white
+                  magnetic-btn relative overflow-hidden
+                  px-7 py-2.5 rounded-lg font-semibold
+                  bg-[#0A84FF] text-white
                   transition-all duration-300
                   hover:bg-[#1A8FFF]
                   hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
@@ -62,12 +81,12 @@ export default function Home() {
                 "
               >
                 <span className="relative z-20">Get Started</span>
-                <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+                <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none"></span>
               </button>
             </div>
           </nav>
 
-          {/* HERO TEXT CONTENT */}
+          {/* HERO TEXT */}
           <div className="relative flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48 pb-24">
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
@@ -90,55 +109,43 @@ export default function Home() {
 
             {/* BUTTONS */}
             <div className="flex gap-5 mb-10">
-
-              {/* PRIMARY */}
               <button
                 className="
-                  magnetic-btn
-                  relative overflow-hidden
+                  magnetic-btn relative overflow-hidden
                   bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-                  text-white px-10 py-3.5 rounded-xl
-                  font-semibold text-lg
-                  transition-all duration-300 ease-out
+                  text-white px-10 py-3.5 rounded-xl font-semibold text-lg
                   hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
                   hover:-translate-y-[4px]
+                  transition-all duration-300 ease-out
                 "
               >
                 <span className="relative z-20">Run An Enterprise Pilot</span>
-                <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+                <span className="highlight absolute inset-0 z-10 bg-white/10"></span>
               </button>
 
-              {/* SECONDARY */}
               <button
                 className="
-                  magnetic-btn
-                  relative overflow-hidden
-                  px-10 py-3.5 rounded-xl
-                  font-semibold text-lg
+                  magnetic-btn relative overflow-hidden
+                  px-10 py-3.5 rounded-xl font-semibold text-lg
                   border border-[#00C8FF]
                   text-[#00E9FF]
-                  transition-all duration-300
                   hover:bg-[#00C8FF]
                   hover:text-[#001019]
                   hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
                   hover:-translate-y-[3px]
+                  transition-all duration-300
                 "
               >
                 <span className="relative z-20">Get Started</span>
-                <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+                <span className="highlight absolute inset-0 z-10 bg-white/10"></span>
               </button>
-
             </div>
 
-          </div> {/* end hero text */}
+          </div>
+        </div>
+      </section>
 
-        </div> {/* end hero wrapper */}
-
-      </section> {/* END HERO */}
-
-      {/* ========================================= */}
-      {/* DARK STATS SECTION BELOW HERO             */}
-      {/* ========================================= */}
+      {/* STATS SECTION */}
       <section className="w-full bg-[#000104] pt-32 pb-24 px-6">
 
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -151,19 +158,19 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center gap-20 text-center mb-12">
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
             <p className="text-sm text-white font-medium">Active GPU Providers</p>
             <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
           </div>
 
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
             <p className="text-sm text-white font-medium">Cost Reduction</p>
             <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
           </div>
 
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
             <p className="text-sm text-white font-medium">Network Uptime</p>
             <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
@@ -176,48 +183,58 @@ export default function Home() {
 
       </section>
 
-      {/* GRADIENT TRANSITION */}
-      <div className="w-full h-48 bg-gradient-to-b from-[#040814] to-white"></div>
+      {/* GRADIENT */}
+      <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white"></div>
 
-      {/* PARTNER LOGO SLIDER */}
-<section className="w-full bg-white py-20 overflow-hidden relative">
+      {/* UPGRADED PARTNER SLIDER */}
+      <section className="w-full bg-white py-20 overflow-hidden relative">
 
-  <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-10">
-    Trusted by teams building the future of AI infrastructure
-  </h2>
+        <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-12">
+          Trusted by teams building the future of AI infrastructure
+        </h2>
 
-  {/* Infinite Scroll Wrapper */}
-  <div className="relative w-full overflow-hidden">
-    <motion.div
-      className="flex items-center gap-20"
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{
-        duration: 22,
-        repeat: Infinity,
-        ease: "linear"
-      }}
-    >
-      {[...[
-        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
-        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
-        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
-      ], ...[
-        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
-        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
-        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
-      ]].map((logo, i) => (
-        <div key={i} className="flex items-center justify-center opacity-80 hover:opacity-100 transition">
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            className="h-12 md:h-14 w-auto object-contain"
-          />
+        <div
+          className="relative w-full overflow-hidden"
+          onMouseEnter={() => controls.stop()}
+          onMouseLeave={() =>
+            controls.start({
+              x: ["0%", "-50%"],
+              transition: {
+                duration: 28,
+                repeat: Infinity,
+                ease: "linear"
+              }
+            })
+          }
+        >
+
+          {/* Fade masks */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 bg-gradient-to-r from-white to-transparent"></div>
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 bg-gradient-to-l from-white to-transparent"></div>
+
+          {/* Logo Track */}
+          <motion.div
+            className="flex items-center gap-24 px-10"
+            animate={controls}
+          >
+            {logos.map((logo, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.12, opacity: 1 }}
+                className="opacity-80 transition"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-14 md:h-16 w-auto object-contain"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
-      ))}
-    </motion.div>
-  </div>
 
-</section>
+      </section>
 
     </main>
   );
