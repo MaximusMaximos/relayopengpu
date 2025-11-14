@@ -4,24 +4,21 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="relative w-full bg-[#040814] text-white pb-12">
+    <main className="relative w-full min-h-screen bg-[#040814] text-white pb-12">
 
-      {/* HERO WRAPPER */}
-      <div className="relative w-full h-screen overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
+        style={{ filter: "brightness(1.4)" }}
+      />
 
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-          style={{ filter: "brightness(1.4)" }}
-        />
-
-        {/* Darkened Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
 
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
