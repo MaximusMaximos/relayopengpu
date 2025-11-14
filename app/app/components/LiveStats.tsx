@@ -62,6 +62,11 @@ export default function LiveStats() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
           Backed by Global Scale
         </h2>
+        <div className="flex items-center gap-2 text-sm text-cyan-300 mb-4">
+  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
+  <span>Live • Updates every 30 seconds</span>
+</div>
+
         <p className="text-lg text-gray-300 drop-shadow">
           Live production data from the OGPU Network.
         </p>
