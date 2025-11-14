@@ -296,13 +296,44 @@ export default function Home() {
   <div className="h-20"></div>
 
   {/* THREE-CARD ROW - screenshot 2 */}
-  <div className="max-w-7xl mx-auto">
-    <img
-      src="https://digitalgramophone.com/ogpu/Images/screen2-transparant.png"
-      className="w-full rounded-xl shadow-lg object-cover"
-      alt="OGPU Feature Cards"
-    />
+  {/* THREE-CARD FEATURE ROW */}
+<div className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+  {/* Card 1 */}
+  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
+    <div className="text-[#0A84FF] mb-4 text-3xl">🌐</div>
+    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+      Global Capacity Network
+    </h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.
+    </p>
   </div>
+
+  {/* Card 2 */}
+  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
+    <div className="text-[#0A84FF] mb-4 text-3xl">📈</div>
+    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+      Elastic Scaling
+    </h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      On-demand scale inference or fine-tuning. No reservations, queuing, or region limits.
+    </p>
+  </div>
+
+  {/* Card 3 */}
+  <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
+    <div className="text-[#0A84FF] mb-4 text-3xl">💸</div>
+    <h3 className="font-semibold text-lg text-[#0A0F2C] mb-2">
+      Lower Operational Cost
+    </h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      Pay only for executed work. Task-based billing cuts idle costs by 60-80%.
+    </p>
+  </div>
+
+</div>
+
 
 </section>
 
