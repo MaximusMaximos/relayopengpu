@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-   
+     <LiveStats />
 
       {/* GRADIENT TRANSITION */}
       <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white" />
