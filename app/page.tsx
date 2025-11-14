@@ -233,7 +233,7 @@ export default function Home() {
 {/* WHY OGPU SECTION */}
 <section className="w-full bg-[#F7F9FC] py-28 px-6">
 
-  {/* MAIN GRID WITH BETTER BALANCE */}
+  {/* MAIN GRID WITH PERFECT BALANCE */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[58%_42%] gap-20 items-center">
 
     {/* LEFT COLUMN : IMAGE */}
@@ -246,7 +246,7 @@ export default function Home() {
     </div>
 
     {/* RIGHT COLUMN : TEXT */}
-    <div className="max-w-2xl">
+    <div className="max-w-xl">
 
       {/* Label */}
       <span className="text-[#007BFF] font-semibold tracking-wide text-base">
@@ -262,22 +262,20 @@ export default function Home() {
       </h2>
 
       {/* Paragraph */}
-      <p className="text-xl text-gray-600 leading-relaxed mb-10">
+      <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
         AI workloads are outgrowing centralized cloud capacity. OGPU connects GPU
         providers across data centers, clouds, and independent operators into one
         network, routing workloads to available capacity. This improves reliability
         and reduces cost.
       </p>
 
-      {/* OGPU SHINY GRADIENT BUTTON */}
+      {/* Gradient Button */}
       <button
         className="
           px-10 py-4
           rounded-xl
-          font-semibold
-          text-white text-lg
+          font-semibold text-white text-lg
           bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-          shadow-[0_0_0_rgba(0,0,0,0)]
           hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
           transition-all duration-300
           hover:-translate-y-[3px]
@@ -292,7 +290,7 @@ export default function Home() {
 
   </div>
 
-  {/* TIGHTER SPACING TO MATCH MOCKUP */}
+  {/* SPACING */}
   <div className="h-16"></div>
 
   {/* THREE-CARD FEATURE ROW */}
@@ -334,6 +332,7 @@ export default function Home() {
   </div>
 
 </section>
+      
 
 </main>
 
