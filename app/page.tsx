@@ -147,42 +147,42 @@ export default function Home() {
 
 
       {/* STATS SECTION */}
-      <section className="w-full bg-[#000104] pt-32 pb-24 px-6">
+      <section className="w-full bg-[#000104] pt-20 pb-16 px-6">
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
-            Backed by Global Scale
-          </h2>
-          <p className="text-lg text-gray-300 drop-shadow">
-            The OGPU Network is live, production-tested and running real AI workloads worldwide.
-          </p>
-        </div>
+  <div className="text-center max-w-3xl mx-auto mb-12">
+    <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-xl">
+      Backed by Global Scale
+    </h2>
+    <p className="text-lg text-gray-300 drop-shadow">
+      The OGPU Network is live, production-tested and running real AI workloads worldwide.
+    </p>
+  </div>
 
-        <div className="flex justify-center gap-20 text-center mb-12">
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
-            <p className="text-sm text-white font-medium">Active GPU Providers</p>
-            <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
-          </div>
+  <div className="flex justify-center gap-16 text-center mb-10">
+    <div>
+      <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
+      <p className="text-sm text-white font-medium">Active GPU Providers</p>
+      <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
+    </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
-            <p className="text-sm text-white font-medium">Cost Reduction</p>
-            <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
-          </div>
+    <div>
+      <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
+      <p className="text-sm text-white font-medium">Cost Reduction</p>
+      <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
+    </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
-            <p className="text-sm text-white font-medium">Network Uptime</p>
-            <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
-          </div>
-        </div>
+    <div>
+      <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
+      <p className="text-sm text-white font-medium">Network Uptime</p>
+      <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
+    </div>
+  </div>
 
-        <p className="text-sm text-gray-400 text-center">
-          Real Providers. Real Workloads. No hypothetical capacity claims.
-        </p>
+  <p className="text-sm text-gray-400 text-center">
+    Real Providers. Real Workloads. No hypothetical capacity claims.
+  </p>
 
-      </section>
+</section>
 
       {/* GRADIENT */}
       <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white" />
