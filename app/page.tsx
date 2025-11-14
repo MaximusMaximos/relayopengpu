@@ -294,41 +294,43 @@ export default function Home() {
   {/* SPACING BEFORE CARDS */}
   <div className="h-16"></div>
 
-  {/* THREE-CARD FEATURE ROW */}
-  <div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+ {/* THREE-CARD FEATURE ROW */}
+<div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-    {/* Card 1 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">🌐</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Global Capacity Network
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.
-      </p>
-    </div>
+  {/* CARD TEMPLATE */}
+  {[
+    {
+      icon: "🌐",
+      title: "Global Capacity Network",
+      text: "Access GPU capacity worldwide. OGPU routes tasks instantly to available compute.",
+    },
+    {
+      icon: "📈",
+      title: "Elastic Scaling",
+      text: "On-demand scale inference or fine-tuning. No reservations, queuing, or region limits.",
+    },
+    {
+      icon: "💸",
+      title: "Lower Operational Cost",
+      text: "Pay only for executed work. Task-based billing cuts idle costs by 60–80%.",
+    },
+  ].map((card, i) => (
+    <div
+      key={i}
+      className="
+        bg-white rounded-2xl p-10 flex flex-col border border-gray-100
+        shadow-[0_4px_16px_rgba(0,0,0,0.06)]
+        transition-all duration-300 ease-out
 
-    {/* Card 2 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">📈</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Elastic Scaling
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        On-demand scale inference or fine-tuning. No reservations, queuing, or region limits.
-      </p>
-    </div>
-
-    {/* Card 3 */}
-    <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col">
-      <div className="text-[#0A84FF] mb-5 text-4xl">💸</div>
-      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">
-        Lower Operational Cost
-      </h3>
-      <p className="text-base text-gray-600 leading-relaxed">
-        Pay only for executed work. Task-based billing cuts idle costs by 60–80%.
-      </p>
-    </div>
+        hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
+        hover:-translate-y-2 hover:scale-[1.02]
+      "
+    >
+      <div className="text-[#0A84FF] mb-5 text-4xl">{card.icon}</div>
+      <h3 className="font-semibold text-xl text-[#0A0F2C] mb-3">{card.title}</h3>
+      <p className="text-base text-gray-600 leading-relaxed">{card.text}</p>
+      
+</div>
 
   </div>
 
