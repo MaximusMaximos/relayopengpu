@@ -234,54 +234,77 @@ export default function Home() {
 {/* WHY OGPU SECTION */}
 <section className="w-full bg-[#F7F9FC] py-28 px-6">
 
-  {/* MAX WIDTH CONTAINER */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-    {/* LEFT COLUMN TEXT */}
+    {/* LEFT COLUMN : IMAGE */}
     <div>
+      <img
+        src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
+        alt="OGPU Platform Screens"
+        className="w-full rounded-xl object-cover"
+      />
+    </div>
+
+    {/* RIGHT COLUMN : TEXT */}
+    <div>
+
+      {/* Label */}
       <span className="text-[#007BFF] font-semibold tracking-wide text-sm">
         WHY OGPU
       </span>
 
-      <h2 className="text-3xl md:text-4xl font-bold text-[#0A0F2C] mt-4 mb-6">
-        Decentralized compute, built for real AI workloads.
+      {/* Headline */}
+      <h2 className="text-3xl md:text-4xl font-bold leading-tight mt-4 mb-6 text-[#0A0F2C]">
+        Decentralized compute,<br />
+        <span className="bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
+          built for real AI workloads.
+        </span>
       </h2>
 
-      <p className="text-gray-600 text-lg mb-8">
-        OGPU provides a unified gateway to decentralized global GPU supply  
-        across providers, clouds, and independent operators.  
-        Built for inference, training, and high-volume enterprise workloads.
+      {/* Paragraph */}
+      <p className="text-gray-600 text-[17px] leading-relaxed mb-10 max-w-md">
+        AI workloads are outgrowing centralized cloud capacity.
+        OGPU connects GPU providers across data centers, clouds, and independent operators 
+        into one network, routing workloads to available capacity. 
+        This improves reliability and reduces cost.
       </p>
 
-      <button className="px-6 py-3 bg-[#007BFF] text-white rounded-lg font-semibold hover:bg-[#0A8CFF] transition">
-        Explore OGPU
+      {/* OGPU SHINY GRADIENT BUTTON */}
+      <button
+        className="
+          px-8 py-3.5
+          rounded-xl
+          font-semibold
+          text-white
+          bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+          shadow-[0_0_0_rgba(0,0,0,0)]
+          hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
+          transition-all duration-300
+          hover:-translate-y-[3px]
+          relative overflow-hidden
+        "
+      >
+        <span className="relative z-10">Explore dApp</span>
+        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-40 transition-opacity duration-300"></span>
       </button>
-    </div>
 
-    {/* RIGHT COLUMN IMAGE */}
-    <div>
-      <img
-        src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
-        className="w-full rounded-xl shadow-lg object-cover"
-      />
     </div>
 
   </div>
 
-  {/* SPACING */}
+  {/* SPACE */}
   <div className="h-20"></div>
 
-  {/* 3-CARD ROW (SCREENSHOT 2) */}
+  {/* THREE-CARD ROW - screenshot 2 */}
   <div className="max-w-7xl mx-auto">
     <img
       src="https://digitalgramophone.com/ogpu/Images/screen2-transparant.png"
       className="w-full rounded-xl shadow-lg object-cover"
+      alt="OGPU Feature Cards"
     />
   </div>
 
 </section>
-
-
 
 
 </main>
