@@ -154,24 +154,30 @@ export default function Home() {
         </div>
 
         {/* STATS */}
-        <div className="flex gap-16 text-center drop-shadow-md">
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
-            <p className="text-sm text-gray-300">Active GPU Providers</p>
-          </div>
+<div className="flex gap-16 text-center drop-shadow-md">
+  
+  {/* STAT 1 */}
+  <div className="max-w-[180px]">
+    <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
+    <p className="text-sm text-white font-medium">Active GPU Providers</p>
+    <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
+  </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
-            <p className="text-sm text-gray-300">Cost Reduction</p>
-          </div>
+  {/* STAT 2 */}
+  <div className="max-w-[180px]">
+    <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
+    <p className="text-sm text-white font-medium">Cost Reduction</p>
+    <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
+  </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
-            <p className="text-sm text-gray-300">Network Uptime</p>
-          </div>
-        </div>
+  {/* STAT 3 */}
+  <div className="max-w-[180px]">
+    <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
+    <p className="text-sm text-white font-medium">Network Uptime</p>
+    <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
+  </div>
 
-      </div>
+</div>
     </main>
   );
 }
