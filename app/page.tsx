@@ -295,9 +295,9 @@ export default function Home() {
   {/* SPACE */}
   <div className="h-20"></div>
 
-  {/* THREE-CARD ROW - screenshot 2 */}
   {/* THREE-CARD FEATURE ROW */}
-<div className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
+<div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+
 
   {/* Card 1 */}
   <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
