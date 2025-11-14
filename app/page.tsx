@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-[#040814] text-white">
+    <main className="relative w-full min-h-screen overflow-hidden bg-[#040814] text-white">
 
       {/* Background Video */}
       <video
