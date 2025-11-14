@@ -22,7 +22,7 @@ export default function LiveStats() {
     <section className="w-full bg-[#000104] pt-20 pb-16 px-6">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-xl">
-          Backed by Global Scale
+          Backed by Global
         </h2>
         <p className="text-lg text-gray-300 drop-shadow">
           The OGPU Network is live, production-tested and running real AI workloads worldwide.
