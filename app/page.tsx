@@ -49,10 +49,6 @@ export default function Home() {
               hover:bg-[#1A8FFF]
               transition-all duration-300
               text-white
-              shadow-[0_0_0_0_rgba(10,132,255,0)]
-              hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
-              hover:-translate-y-[3px]
-              active:translate-y-[1px]
             "
           >
             <span className="relative z-20">Get Started</span>
@@ -62,7 +58,7 @@ export default function Home() {
       </nav>
 
       {/* HERO CONTENT */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48 pb-32">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48">
 
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
           A Datacenter<br />Without Walls
@@ -83,7 +79,7 @@ export default function Home() {
         </p>
 
         {/* BUTTONS */}
-        <div className="flex gap-5 mb-20">
+        <div className="flex gap-5 mb-28">
 
           {/* PRIMARY BUTTON */}
           <button
@@ -95,28 +91,11 @@ export default function Home() {
               px-10 py-3.5
               rounded-xl
               font-semibold text-lg
-              transition-all duration-300 ease-out
-              shadow-[0_0_0_0_rgba(0,200,255,0)]
-              hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
-              hover:-translate-y-[4px]
-              active:translate-y-[1px]
-              active:shadow-[0_6px_16px_rgba(0,150,255,0.3)]
-              focus:ring-4 focus:ring-[#00E9FF]/30
+              transition-all duration-300
             "
           >
             <span className="relative z-20">Run An Enterprise Pilot</span>
-
-            {/* Highlight */}
-            <span
-              className="
-                highlight
-                absolute inset-0
-                z-10
-                bg-white/10
-                pointer-events-none
-                transition-all duration-300
-              "
-            ></span>
+            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
           </button>
 
           {/* SECONDARY BUTTON */}
@@ -129,32 +108,34 @@ export default function Home() {
               font-semibold text-lg
               border border-[#00C8FF]
               text-[#00E9FF]
-              transition-all duration-300 ease-out
-              hover:bg-[#00C8FF]
-              hover:text-[#001019]
-              hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
-              hover:-translate-y-[3px]
-              active:translate-y-[1px]
-              focus:ring-4 focus:ring-[#00E9FF]/40
+              transition-all duration-300
             "
           >
             <span className="relative z-20">Get Started</span>
-
-            <span
-              className="
-                highlight
-                absolute inset-0
-                z-10
-                bg-white/10
-                pointer-events-none
-                transition-all duration-300
-              "
-            ></span>
+            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
           </button>
+
+        </div>
+
+        {/* BACKED BY GLOBAL SCALE (NOW IN THE RIGHT PLACE) */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
+            Backed by Global Scale
+          </h2>
+
+          <p className="text-lg text-gray-300 mb-2 drop-shadow">
+            The OGPU Network is live, production-tested, and running real AI workloads worldwide.
+          </p>
+
+          <p className="text-sm text-gray-500">
+            Real Providers. Real Workloads. No hypothetical capacity claims.
+          </p>
+
         </div>
 
         {/* STATS */}
-        <div className="flex gap-16 text-center drop-shadow-md">
+        <div className="flex gap-16 text-center drop-shadow-md pb-32">
 
           {/* STAT 1 */}
           <div className="max-w-[180px]">
@@ -187,23 +168,7 @@ export default function Home() {
 
       </div>
 
-      {/* BACKED BY GLOBAL SCALE SECTION */}
-      <div className="mt-4 text-center max-w-3xl mx-auto px-6">
-
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
-          Backed by Global Scale
-        </h2>
-
-        <p className="text-lg text-gray-300 mb-2 drop-shadow">
-          The OGPU Network is live, production-tested, and running real AI workloads worldwide.
-        </p>
-
-        <p className="text-sm text-gray-500">
-          Real Providers. Real Workloads. No Hypothetical capacity claims.
-        </p>
-
-      </div>
-
     </main>
   );
 }
+   
