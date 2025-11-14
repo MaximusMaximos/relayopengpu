@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen bg-[#040814] text-white pb-12">
+    <main className="relative w-full h-screen overflow-hidden bg-[#040814] text-white">
 
       {/* Background Video */}
       <video
@@ -17,8 +17,8 @@ export default function Home() {
         style={{ filter: "brightness(1.4)" }}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
+      {/* Lightened Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/50"></div>
 
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
@@ -37,31 +37,27 @@ export default function Home() {
           <a href="#" className="hover:text-white transition">Docs</a>
           <a href="#" className="hover:text-white transition">Company</a>
 
-          <button
-            className="
-              magnetic-btn
-              relative overflow-hidden
-              px-7 py-2.5
-              rounded-lg
-              font-semibold
-              bg-[#0A84FF]
-              text-white
-              transition-all duration-300
-              hover:bg-[#1A8FFF]
-              hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
-              hover:-translate-y-[3px]
-              active:translate-y-[1px]
-              z-20
-            "
-          >
-            <span className="relative z-20">Get Started</span>
-            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+          <button className="
+            magnetic-btn
+            px-7 py-2.5
+            rounded-lg
+            font-semibold
+            bg-[#0A84FF]
+            hover:bg-[#1A8FFF]
+            transition-all duration-300
+            text-white
+            shadow-[0_0_0_0_rgba(10,132,255,0)]
+            hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
+            hover:-translate-y-[3px]
+            active:translate-y-[1px]
+          ">
+            Get Started
           </button>
         </div>
       </nav>
 
       {/* HERO CONTENT */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48 pb-24">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48">
 
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
           A Datacenter<br />Without Walls
@@ -82,93 +78,89 @@ export default function Home() {
         </p>
 
         {/* BUTTONS */}
-        <div className="flex gap-5 mb-32 z-20">
+        <div className="flex gap-5 mb-20">
 
-          {/* PRIMARY BUTTON */}
+          {/* PREMIUM PRIMARY BUTTON */}
           <button
             className="
               magnetic-btn
-              relative overflow-hidden
               bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
               text-white
               px-10 py-3.5
               rounded-xl
               font-semibold text-lg
               transition-all duration-300 ease-out
+              shadow-[0_0_0_0_rgba(0,200,255,0)]
               hover:shadow-[0_14px_36px_rgba(0,160,255,0.45)]
               hover:-translate-y-[4px]
               active:translate-y-[1px]
+              active:shadow-[0_6px_16px_rgba(0,150,255,0.3)]
               focus:ring-4 focus:ring-[#00E9FF]/30
+              relative overflow-hidden
             "
           >
-            <span className="relative z-20">Run An Enterprise Pilot</span>
-            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+            <span className="relative z-10">Run An Enterprise Pilot</span>
+            <span
+              className="
+                absolute inset-0 
+                bg-gradient-to-r from-white/10 to-transparent
+                opacity-0 hover:opacity-100
+                transition-opacity duration-500
+              "
+            ></span>
           </button>
 
-          {/* SECONDARY BUTTON */}
+          {/* PREMIUM SECONDARY BUTTON */}
           <button
             className="
               magnetic-btn
-              relative overflow-hidden
               px-10 py-3.5
               rounded-xl
               font-semibold text-lg
               border border-[#00C8FF]
               text-[#00E9FF]
-              transition-all duration-300
+              transition-all duration-300 ease-out
               hover:bg-[#00C8FF]
               hover:text-[#001019]
               hover:shadow-[0_12px_28px_rgba(0,200,255,0.35)]
               hover:-translate-y-[3px]
               active:translate-y-[1px]
               focus:ring-4 focus:ring-[#00E9FF]/40
+              relative overflow-hidden
             "
           >
-            <span className="relative z-20">Get Started</span>
-            <span className="highlight absolute inset-0 z-10 bg-white/10 pointer-events-none transition-all duration-300"></span>
+            <span className="relative z-10">Get Started</span>
+            <span
+              className="
+                absolute inset-0 
+                bg-gradient-to-r from-white/10 to-transparent
+                opacity-0 hover:opacity-100
+                transition-opacity duration-500
+              "
+            ></span>
           </button>
 
         </div>
 
-        {/* BACKED BY GLOBAL SCALE */}
-<div className="text-center max-w-3xl mx-auto mb-16 z-20">
-
-  <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
-    Backed by Global Scale
-  </h2>
-
-  <p className="text-lg text-gray-300 drop-shadow">
-    The OGPU Network is live, production-tested, and running real AI workloads worldwide.
-  </p>
-
-</div>
         {/* STATS */}
         <div className="flex gap-16 text-center drop-shadow-md">
-
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">259+</h3>
-            <p className="text-sm text-white font-medium">Active GPU Providers</p>
-            <p className="text-xs text-gray-300 mt-1">Distributed across 40+ countries.</p>
+            <p className="text-sm text-gray-300">Active GPU Providers</p>
           </div>
 
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">60%–80%</h3>
-            <p className="text-sm text-white font-medium">Cost Reduction</p>
-            <p className="text-xs text-gray-300 mt-1">Compared to centralized cloud pricing.</p>
+            <p className="text-sm text-gray-300">Cost Reduction</p>
           </div>
 
-          <div className="max-w-[180px]">
+          <div>
             <h3 className="text-3xl font-bold text-[#00E9FF]">99.3%+</h3>
-            <p className="text-sm text-white font-medium">Network Uptime</p>
-            <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
+            <p className="text-sm text-gray-300">Network Uptime</p>
           </div>
-         
         </div>
- <p className="text-sm text-gray-400 mt-6 mb-24 text-center z-20">
-  Real Providers. Real Workloads. No hypothetical capacity claims.
-</p>
-      </div>
 
+      </div>
     </main>
   );
 }
