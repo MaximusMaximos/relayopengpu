@@ -237,18 +237,19 @@ export default function Home() {
             </span>
 
             <h2 className="
-  text-4xl md:text-[2.8rem] lg:text-[3.2rem]
+  text-4xl md:text-[2.4rem] lg:text-[2.6rem]
   font-bold leading-tight mt-3 mb-1 text-[#0A0F2C] whitespace-nowrap">
   Decentralized compute,
 </h2>
 
 <h2 className="
-  text-4xl md:text-[2.8rem] lg:text-[3.2rem]
-  font-bold leading-tight mb-6 
+  text-4xl md:text-[2.4rem] lg:text-[2.6rem]
+  font-bold leading-tight mb-6
   bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent
   whitespace-nowrap">
   built for real AI workloads.
 </h2>
+
 
 
 
