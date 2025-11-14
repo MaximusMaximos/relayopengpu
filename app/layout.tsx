@@ -4,22 +4,22 @@
       document.addEventListener('mousemove', (e) => {
         document.querySelectorAll('.magnetic-btn').forEach(btn => {
           const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
 
-          // Target only the INNER content
-          const inner = btn.querySelector('.inner');
-          if (!inner) return;
+          const highlight = btn.querySelector('.highlight');
+          if (!highlight) return;
 
-          // Apply subtle magnetic effect
-          inner.style.transform = 'translate(' + x * 0.12 + 'px, ' + y * 0.12 + 'px)';
+          // Move the highlight, not the button
+          highlight.style.transform = 'translate(' + (x - rect.width/2) * 0.12 + 'px, ' + (y - rect.height/2) * 0.12 + 'px)';
         });
       });
 
-      // Reset on mouse leave
-      document.addEventListener('mouseout', () => {
-        document.querySelectorAll('.magnetic-btn .inner').forEach(inner => {
-          inner.style.transform = 'translate(0px, 0px)';
+      // Reset highlight when cursor leaves button
+      document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mouseleave', () => {
+          const highlight = btn.querySelector('.highlight');
+          if (highlight) highlight.style.transform = 'translate(0, 0)';
         });
       });
     `,
