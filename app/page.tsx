@@ -230,7 +230,6 @@ export default function Home() {
 </section>   {/* END PARTNER SLIDER */}
 
 
-
 {/* WHY OGPU SECTION */}
 <section className="w-full bg-[#F7F9FC] py-28 px-6">
 
@@ -335,10 +334,6 @@ export default function Home() {
   </div>
 
 </section>
-
-  
-</section>
-
 
 </main>
 
