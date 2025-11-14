@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen bg-[#040814] text-white pb-12">
+    <main className="relative w-full h-screen overflow-hidden bg-[#040814] text-white">
 
       {/* Background Video */}
       <video
@@ -17,8 +17,8 @@ export default function Home() {
         style={{ filter: "brightness(1.4)" }}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
+      {/* Lightened Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/50"></div>
 
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
