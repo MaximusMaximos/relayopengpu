@@ -18,7 +18,7 @@ export default function Home() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-black/65 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none"></div>
 
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7 z-20">
@@ -82,7 +82,7 @@ export default function Home() {
         </p>
 
         {/* BUTTONS */}
-        <div className="flex gap-5 mb-20 z-20">
+        <div className="flex gap-5 mb-32 z-20">
 
           {/* PRIMARY BUTTON */}
           <button
