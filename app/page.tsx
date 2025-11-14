@@ -186,54 +186,45 @@ export default function Home() {
       {/* GRADIENT */}
       <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white"></div>
 
-      {/* UPGRADED PARTNER SLIDER (Fixed Logo Visibility) */}
+      {/* PARTNER LOGO SLIDER – Last Known Working Version */}
 <section className="w-full bg-white py-20 overflow-hidden relative">
 
-  <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-12">
+  <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-10">
     Trusted by teams building the future of AI infrastructure
   </h2>
 
-  {/* Slider Wrapper */}
-  <div
-    className="relative w-full overflow-hidden"
-    onMouseEnter={() => controls.stop()}
-    onMouseLeave={() =>
-      controls.start({
-        x: ["0%", "-50%"],
-        transition: {
-          duration: 28,
-          repeat: Infinity,
-          ease: "linear"
-        }
-      })
-    }
-  >
-
-    {/* Fade masks */}
-    <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 bg-gradient-to-r from-white to-transparent"></div>
-    <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 bg-gradient-to-l from-white to-transparent"></div>
-
-    {/* Moving track */}
+  {/* Infinite Scroll Wrapper */}
+  <div className="relative w-full overflow-hidden">
     <motion.div
-      className="flex items-center gap-24 px-10"
-      animate={controls}
+      className="flex items-center gap-20 px-10"
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{
+        duration: 22,
+        repeat: Infinity,
+        ease: "linear"
+      }}
     >
-      {logos.map((logo, i) => (
-        <motion.div
+      {[...[ // Original logos
+        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
+        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
+        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
+      ], ...[ // Duplicate for infinite scroll
+        { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
+        { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
+        { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" }
+      ]].map((logo, i) => (
+        <div
           key={i}
-          whileHover={{ scale: 1.08, opacity: 1 }}
-          className="opacity-80 transition px-8"
+          className="flex items-center justify-center opacity-80 hover:opacity-100 transition"
         >
           <img
             src={logo.src}
             alt={logo.alt}
-            className="object-contain h-16 md:h-20 w-auto"
-            loading="lazy"
+            className="h-12 md:h-14 object-contain"
           />
-        </motion.div>
+        </div>
       ))}
     </motion.div>
-
   </div>
 
 </section>
