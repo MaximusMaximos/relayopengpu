@@ -138,7 +138,7 @@ export default function Home() {
       {/* ========================================= */}
       {/* DARK STATS SECTION BELOW HERO             */}
       {/* ========================================= */}
-      <section className="w-full bg-[#040814] pt-32 pb-24 px-6">
+      <section className="w-full bg-[#000104] pt-32 pb-24 px-6">
 
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
