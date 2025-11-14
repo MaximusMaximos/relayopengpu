@@ -62,7 +62,7 @@ export default function Home() {
       </nav>
 
       {/* HERO CONTENT */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-48 pb-32">
 
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
           A Datacenter<br />Without Walls
@@ -153,7 +153,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* STATS (with full subtext, 3 lines each) */}
+        {/* STATS */}
         <div className="flex gap-16 text-center drop-shadow-md">
 
           {/* STAT 1 */}
@@ -186,6 +186,24 @@ export default function Home() {
         </div>
 
       </div>
+
+      {/* BACKED BY GLOBAL SCALE SECTION */}
+      <div className="mt-4 text-center max-w-3xl mx-auto px-6">
+
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
+          Backed by Global Scale
+        </h2>
+
+        <p className="text-lg text-gray-300 mb-2 drop-shadow">
+          The OGPU Network is live, production-tested, and running real AI workloads worldwide.
+        </p>
+
+        <p className="text-sm text-gray-500">
+          Real Providers. Real Workloads. No Hypothetical capacity claims.
+        </p>
+
+      </div>
+
     </main>
   );
 }
