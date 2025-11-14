@@ -40,7 +40,6 @@ export default function LiveStats() {
     return () => clearInterval(interval);
   }, [lastUpdated]);
 
-
   const StatBox = ({ label, value }: any) => {
     return (
       <div className="flex flex-col text-center px-6 py-4">
@@ -58,14 +57,28 @@ export default function LiveStats() {
 
   return (
     <section className="w-full bg-[#000104] pt-20 pb-14 px-6 border-b border-white/5">
+
+      {/* HEADER */}
       <div className="text-center max-w-3xl mx-auto mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl">
+        <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-xl">
           Backed by Global Scale
         </h2>
-        <div className="flex items-center gap-2 text-sm text-cyan-300 mb-4">
-  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-  <span>Live • Updates every 30 seconds</span>
-</div>
+
+        {/* LIVE INDICATOR */}
+        <div className="flex items-center justify-center gap-2 text-sm text-cyan-300 mb-4">
+          <span
+            className="
+              inline-block 
+              flex-shrink-0 
+              w-2.5 h-2.5 
+              rounded-full 
+              bg-[#00E9FF] 
+              animate-pulse 
+              shadow-[0_0_10px_3px_rgba(0,233,255,0.9)]
+            "
+          />
+          <span>Live • Updates every 10 seconds</span>
+        </div>
 
         <p className="text-lg text-gray-300 drop-shadow">
           Live production data from the OGPU Network.
@@ -87,16 +100,18 @@ export default function LiveStats() {
 
         <StatBox
           label="Network Uptime"
-          value={`${data?.successRate?.toFixed(1) || "--"}%`}
+          value={`${data?.successRate?.toFixed(2) || "--"}%`}
         />
+
       </div>
 
-      {/* Last Updated */}
+      {/* LAST UPDATED */}
       <p className="text-center text-xs text-gray-400">
         {loading
           ? "Fetching live stats…"
           : `Updated ${secondsAgo}s ago`}
       </p>
+
     </section>
   );
 }
