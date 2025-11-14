@@ -171,6 +171,10 @@ export default function Home() {
   Real Providers. Real Workloads. No hypothetical capacity claims.
 </p>
       </div>
+{/* NEXT SECTION (placeholder to enable scrolling) */}
+<section className="w-full min-h-screen bg-black flex items-center justify-center text-white text-3xl">
+  <p>Next Section Placeholder</p>
+</section>
 
     </main>
   );
