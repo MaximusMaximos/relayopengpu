@@ -162,13 +162,11 @@ export default function Home() {
             <p className="text-sm text-white font-medium">Network Uptime</p>
             <p className="text-xs text-gray-300 mt-1">Automated failover and redundancy.</p>
           </div>
-          <p className="text-sm text-gray-400 mt-6 mb-24 text-center z-20">
+         
+        </div>
+ <p className="text-sm text-gray-400 mt-6 mb-24 text-center z-20">
   Real Providers. Real Workloads. No hypothetical capacity claims.
 </p>
-
-
-        </div>
-
       </div>
 
     </main>
