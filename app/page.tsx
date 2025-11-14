@@ -294,147 +294,196 @@ export default function Home() {
       </section>
 
       {/* HOW OGPU WORKS SECTION */}
-      <section className="w-full bg-white py-28 px-6 relative overflow-hidden">
-        {/* subtle background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 opacity-80 pointer-events-none" />
+<section className="w-full bg-white py-28 px-6 relative overflow-hidden">
 
-        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-20 z-10">
+  {/* Light gradient background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 opacity-80 pointer-events-none" />
 
-          {/* LEFT SIDE CONTENT */}
-          <div className="space-y-10">
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#0A0F2C]">
-              How OGPU Works
-            </h2>
+  <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-20 z-10">
 
-            <p className="text-lg text-[#475569] max-w-lg leading-relaxed">
-              OGPU automatically routes each workload to the best available GPU across the network,
-              balancing speed, reliability and cost with built-in failover and retry.
-            </p>
+    {/* LEFT SIDE */}
+    <div className="space-y-10">
 
-            <div className="space-y-10 border-l-2 border-cyan-400/50 pl-6">
-              {/* Step 1 */}
-              <div>
-                <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                  <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
-                    </svg>
-                  </span>
-                  Step 1: Submit a workload
-                </h3>
-                <p className="text-[#475569] mt-2">
-                  You send an AI or rendering task through the dashboard or API. OGPU detects the GPU needed
-                  and finds the closest and most efficient provider.
-                </p>
-              </div>
+      <h2 className="text-4xl md:text-5xl font-semibold text-[#0A0F2C]">
+        How OGPU Works
+      </h2>
 
-              {/* Step 2 */}
-              <div>
-                <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                  <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.125 1.125 0 011.591 0L21.75 12M4.5 9.75V21h15V9.75" />
-                    </svg>
-                  </span>
-                  Step 2: Routing and provider selection
-                </h3>
-                <p className="text-[#475569] mt-2">
-                  OGPU compares GPUs worldwide and chooses the fastest provider. If a GPU fails mid-run, the task moves
-                  without interruption.
-                </p>
-              </div>
+      <p className="text-lg text-[#475569] max-w-lg leading-relaxed">
+        OGPU automatically routes each workload to the best available GPU across the network,
+        balancing speed, reliability and cost with built-in failover and retry.
+      </p>
 
-              {/* Step 3 */}
-              <div>
-                <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
-                  <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </span>
-                  Step 3: Execute end-to-end
-                </h3>
-                <p className="text-[#475569] mt-2">
-                  Workloads finish on the same GPU for consistency. If needed, OGPU Relay resumes on the next best machine.
-                </p>
-              </div>
-            </div>
+      {/* Steps */}
+      <div className="space-y-10 border-l-2 border-cyan-400/50 pl-6">
 
-            <p className="text-[#0A0F2C] font-medium border-t border-gray-200 pt-5">
-              Single-executor by design. No fragmentation. No resets.
-            </p>
-
-            <button className="mt-8 px-8 py-3 bg-gradient-to-r from-blue-700 to-cyan-400 text-white rounded-xl font-semibold">
-              See Real Workloads Running →
-            </button>
-          </div>
-
-          {/* RIGHT SIDE ANIMATED DIAGRAM */}
-          <div className="flex flex-col items-center space-y-16">
-
-            {/* Node 1 */}
-            <motion.div
-              className="flex flex-col items-center"
-              animate={{ scale: [1, 1.06, 1] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            >
-              <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-                <img src="/icons/upload.svg" className="w-8 h-8" />
-              </div>
-              <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-                Submit Workload
-              </p>
-            </motion.div>
-
-            {/* Connector 1 */}
-            <motion.div className="w-[3px] h-20 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
-              <motion.div
-                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-60"
-                animate={{ y: ["-100%", "100%"] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </motion.div>
-
-            {/* Node 2 */}
-            <motion.div
-              className="flex flex-col items-center"
-              animate={{ scale: [1, 1.06, 1] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.4 }}
-            >
-              <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-                <img src="/icons/clock.svg" className="w-8 h-8" />
-              </div>
-              <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-                Relay Routing Engine
-              </p>
-            </motion.div>
-
-            {/* Connector 2 */}
-            <motion.div className="w-[3px] h-20 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
-              <motion.div
-                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-60"
-                animate={{ y: ["-100%", "100%"] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              />
-            </motion.div>
-
-            {/* Node 3 */}
-            <motion.div
-              className="flex flex-col items-center"
-              animate={{ scale: [1, 1.06, 1] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.8 }}
-            >
-              <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-                <img src="/icons/gpu.svg" className="w-8 h-8" />
-              </div>
-              <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-                GPU Provider
-              </p>
-            </motion.div>
-
-          </div>
+        {/* Step 1 */}
+        <div>
+          <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
+                             text-white flex items-center justify-center shadow-lg">
+              {/* UPLOAD ICON */}
+              <svg xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24"
+                strokeWidth={1.8} stroke="currentColor"
+                className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
+              </svg>
+            </span>
+            Step 1 – Submit a Workload
+          </h3>
+          <p className="text-[#475569] mt-2">
+            You send an AI or rendering task through the dashboard or API. OGPU detects the GPU needed
+            and finds the closest and most efficient provider.
+          </p>
         </div>
-      </section>
+
+        {/* Step 2 */}
+        <div>
+          <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
+                             text-white flex items-center justify-center shadow-lg">
+              {/* CLOCK ICON */}
+              <svg xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24"
+                strokeWidth={1.8} stroke="currentColor"
+                className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            Step 2 – Routing & Provider Selection
+          </h3>
+          <p className="text-[#475569] mt-2">
+            OGPU compares GPUs worldwide and chooses the fastest provider.
+            If a GPU fails mid-run, the task moves without interruption.
+          </p>
+        </div>
+
+        {/* Step 3 */}
+        <div>
+          <h3 className="flex items-center gap-3 text-xl font-medium text-[#1E293B]">
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
+                             text-white flex items-center justify-center shadow-lg">
+              {/* GPU / CHIP ICON */}
+              <svg xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24"
+                strokeWidth={1.8} stroke="currentColor"
+                className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
+              </svg>
+            </span>
+            Step 3 – Execute End-to-End
+          </h3>
+          <p className="text-[#475569] mt-2">
+            Workloads finish on the same GPU for consistency.  
+            If needed, OGPU Relay resumes on the next best machine.
+          </p>
+        </div>
+
+      </div>
+
+      <p className="text-[#0A0F2C] font-medium border-t border-gray-200 pt-5">
+        Single-executor by design. No fragmentation. No resets.
+      </p>
+
+      <button className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-700 to-cyan-400 text-white rounded-xl font-semibold">
+        See Real Workloads Running →
+      </button>
+
+    </div>
+
+    {/* RIGHT SIDE ANIMATED DIAGRAM */}
+    <div className="flex flex-col items-center space-y-16">
+
+      {/* NODE 1 */}
+      <motion.div
+        className="flex flex-col items-center"
+        animate={{ scale: [1, 1.06, 1] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      >
+        <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+          {/* RESTORED UPLOAD ICON */}
+          <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24"
+            strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8 text-cyan-600">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
+          </svg>
+        </div>
+        <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+          Submit Workload
+        </p>
+      </motion.div>
+
+      {/* CONNECTOR 1 */}
+      <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+          animate={{ y: ["-100%", "100%"] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+
+      {/* NODE 2 */}
+      <motion.div
+        className="flex flex-col items-center"
+        animate={{ scale: [1, 1.06, 1] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.35 }}
+      >
+        <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+          {/* RESTORED CLOCK ICON */}
+          <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24"
+            strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8 text-cyan-600">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+          Relay Routing Engine
+        </p>
+      </motion.div>
+
+      {/* CONNECTOR 2 */}
+      <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+          animate={{ y: ["-100%", "100%"] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+        />
+      </motion.div>
+
+      {/* NODE 3 */}
+      <motion.div
+        className="flex flex-col items-center"
+        animate={{ scale: [1, 1.06, 1] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.8 }}
+      >
+        <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
+          {/* RESTORED GPU ICON */}
+          <svg xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24"
+            strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8 text-cyan-600">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
+          </svg>
+        </div>
+        <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
+          GPU Provider
+        </p>
+      </motion.div>
+
+    </div>
+
+  </div>
+
+</section>
+
     </main>
   );
 }
