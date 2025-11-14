@@ -404,74 +404,80 @@ export default function Home() {
       </motion.a>
     </motion.div>
 
-    {/* RIGHT COLUMN – VERTICAL TIMELINE */}
-    <motion.div 
-      className="flex flex-col items-center gap-16"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { delay: 0.2, staggerChildren: 0.25 } }
-      }}
-    >
+    {/* RIGHT COLUMN – PERFECT TIMELINE */}
+<motion.div 
+  className="relative flex flex-col items-center"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.25 }}
+  variants={{
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 0.2, staggerChildren: 0.25 } }
+  }}
+>
 
-      {/* ICON 1 */}
-      <motion.div 
-        className="flex flex-col items-center"
-        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-      >
-        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-          <img src="/icons/upload.svg" className="w-8 h-8 text-[#00A2FF]" />
-        </div>
-        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
-          Submit Workload
-        </p>
-      </motion.div>
+  {/* FULL VERTICAL LINE BEHIND ICONS */}
+  <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[3px] 
+                  bg-gradient-to-b from-[#00C8FF] to-[#007BFF] opacity-60 rounded-full"></div>
 
-      {/* Vertical Line #1 */}
-      <motion.div 
-        className="w-[3px] bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full"
-        initial={{ height: 0 }}
-        whileInView={{ height: 80 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      />
+  {/* STEP 1 */}
+  <motion.div 
+    className="relative z-10 flex flex-col items-center mb-20"
+    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+  >
+    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
+      
+      {/* INLINE UPLOAD ICON */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
+          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M8 12l4-4m0 0l4 4m-4-4v12" />
+      </svg>
+    </div>
 
-      {/* ICON 2 */}
-      <motion.div 
-        className="flex flex-col items-center"
-        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-      >
-        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-          <img src="/icons/clock.svg" className="w-8 h-8 text-[#00A2FF]" />
-        </div>
-        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
-          Relay Routing Engine
-        </p>
-      </motion.div>
+    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
+      Submit Workload
+    </p>
+  </motion.div>
 
-      {/* Vertical Line #2 */}
-      <motion.div 
-        className="w-[3px] bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full"
-        initial={{ height: 0 }}
-        whileInView={{ height: 80 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      />
+  {/* STEP 2 */}
+  <motion.div 
+    className="relative z-10 flex flex-col items-center mb-20"
+    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+  >
+    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
 
-      {/* ICON 3 */}
-      <motion.div 
-        className="flex flex-col items-center"
-        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-      >
-        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
-          <img src="/icons/gpu.svg" className="w-8 h-8 text-[#00A2FF]" />
-        </div>
-        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
-          GPU Provider
-        </p>
-      </motion.div>
+      {/* INLINE CLOCK ICON */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
+          d="M12 6v6l4 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
 
-    </motion.div>
+    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
+      Relay Routing Engine
+    </p>
+  </motion.div>
+
+  {/* STEP 3 */}
+  <motion.div 
+    className="relative z-10 flex flex-col items-center"
+    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+  >
+    <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
+
+      {/* INLINE GPU ICON */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-[#00A2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
+          d="M3 5h18M3 12h18M3 19h18M8 5v14M16 5v14" />
+      </svg>
+    </div>
+
+    <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
+      GPU Provider
+    </p>
+  </motion.div>
+
+</motion.div>
 
   </div>
 
