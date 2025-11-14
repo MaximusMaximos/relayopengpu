@@ -227,7 +227,49 @@ export default function Home() {
     </motion.div>
   </div>
 
+</section>   {/* END PARTNER SLIDER */}
+
+
+
+{/* WHY OGPU SECTION */}
+<section className="w-full bg-[#F7F9FC] py-28 px-6">
+
+  <div className="text-center mb-4">
+    <span className="text-[#007BFF] font-semibold tracking-wide text-sm">
+      WHY OGPU
+    </span>
+  </div>
+
+  <h2 className="text-center text-3xl md:text-4xl font-bold text-[#0A0F2C] mb-6">
+    Decentralized compute, built for real AI workloads.
+  </h2>
+
+  <p className="text-center text-gray-600 max-w-3xl mx-auto text-lg mb-16">
+    OGPU provides a unified gateway to decentralized global GPU supply
+    across providers, clouds, and independent operators. Designed for
+    inference, training, and high-volume enterprise workloads.
+  </p>
+
+  <div className="max-w-6xl mx-auto mb-16">
+    <img
+      src="https://digitalgramophone.com/ogpu/Images/screen1-transparant.png"
+      className="w-full rounded-xl shadow-lg object-cover"
+    />
+  </div>
+
+  <div className="max-w-6xl mx-auto">
+    <img
+      src="https://digitalgramophone.com/ogpu/Images/screen2-transparant.png"
+      className="w-full rounded-xl shadow-lg object-cover"
+    />
+  </div>
+
 </section>
+
+
+
+</main>
+
 
     </main>
   );
