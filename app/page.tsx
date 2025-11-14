@@ -29,122 +29,117 @@ export default function Home() {
   return (
     <main className="relative w-full bg-[#040814] text-white">
 
-      {/* ========================================= */}
-      {/* HERO SECTION */}
-      {/* ========================================= */}
-      <section className="relative w-full min-h-screen">
+     
+{/* HERO SECTION */}
+{/* ========================================= */}
+<section className="relative w-full pt-40 pb-32 lg:pt-48 lg:pb-40">
 
-        {/* Background video + overlay wrapper */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-            style={{ filter: "brightness(1.4)" }}
-          />
+  {/* Background video + overlay wrapper */}
+  <div className="absolute inset-0 overflow-hidden">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+      src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
+      style={{ filter: "brightness(1.4)" }}/>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
-        </div>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
+  </div>
 
-        {/* HERO CONTENT */}
-        <div className="relative z-20 flex flex-col min-h-screen">
+  {/* HERO CONTENT */}
+  <div className="relative z-20 flex flex-col">
 
-          {/* NAVBAR */}
-          <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7">
-            <div className="flex items-center gap-3">
-              <img
-                src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main.png"
-                alt="OGPU Logo"
-                className="h-16 w-auto"
-              />
-            </div>
+    {/* NAVBAR */}
+    <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-7">
+      <div className="flex items-center gap-3">
+        <img
+          src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main.png"
+          alt="OGPU Logo"
+          className="h-16 w-auto"
+        />
+      </div>
 
-            <div className="flex items-center gap-10 text-sm text-gray-200 font-medium">
-              <a href="#" className="hover:text-white transition">Platform</a>
-              <a href="#" className="hover:text-white transition">Solutions</a>
-              <a href="#" className="hover:text-white transition">Docs</a>
-              <a href="#" className="hover:text-white transition">Company</a>
+      <div className="flex items-center gap-10 text-sm text-gray-200 font-medium">
+        <a href="#" className="hover:text-white transition">Platform</a>
+        <a href="#" className="hover:text-white transition">Solutions</a>
+        <a href="#" className="hover:text-white transition">Docs</a>
+        <a href="#" className="hover:text-white transition">Company</a>
 
-              <button
-                className="
-                  px-7 py-2.5 rounded-lg font-semibold
-                  bg-[#0A84FF] text-white
-                  transition-all duration-300
-                  hover:bg-[#1A8FFF]
-                  hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
-                  hover:-translate-y-[2px]
-                  active:translate-y-[1px]
-                "
-              >
-                Get Started
-              </button>
-            </div>
-          </nav>
+        <button
+          className="
+            px-7 py-2.5 rounded-lg font-semibold
+            bg-[#0A84FF] text-white
+            transition-all duration-300
+            hover:bg-[#1A8FFF]
+            hover:shadow-[0_10px_24px_rgba(10,132,255,0.4)]
+            hover:-translate-y-[2px]
+            active:translate-y-[1px]">
+          Get Started
+        </button>
+      </div>
+    </nav>
 
-          {/* HERO TEXT BLOCK */}
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pt-40 pb-32 md:pt-48 md:pb-40">
+    {/* HERO TEXT BLOCK */}
+    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-6">
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
-              A Datacenter<br />Without Walls
-            </h1>
+      <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-xl">
+        A Datacenter<br />Without Walls
+      </h1>
 
-            <p className="text-xl text-[#00E9FF] font-semibold mb-5 drop-shadow-md">
-              A global compute network for AI workloads.
-            </p>
+      <p className="text-xl text-[#00E9FF] font-semibold mb-5 drop-shadow-md">
+        A global compute network for AI workloads.
+      </p>
 
-            <p className="text-lg text-gray-200 leading-relaxed max-w-3xl mb-6 drop-shadow">
-              OGPU routes workloads to the best available GPU capacity across data centers,
-              cloud providers and independent operators without splitting jobs.
-              This improves performance, reliability and cost efficiency at scale.
-            </p>
+      <p className="text-lg text-gray-200 leading-relaxed max-w-3xl mb-6 drop-shadow">
+        OGPU routes workloads to the best available GPU capacity across data centers,
+        cloud providers and independent operators without splitting jobs.
+        This improves performance, reliability and cost efficiency at scale.
+      </p>
 
-            <p className="text-lg font-semibold text-white mb-12 drop-shadow-lg">
-              We don’t replace the cloud, we route across it.
-            </p>
+      <p className="text-lg font-semibold text-white mb-12 drop-shadow-lg">
+        We don’t replace the cloud, we route across it.
+      </p>
 
-            {/* BUTTONS */}
-            <div className="flex gap-5 mb-4 md:mb-6">
+      {/* BUTTONS */}
+      <div className="flex gap-5">
 
-              {/* ENTERPRISE PILOT */}
-              <button
-                className="
-                  bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
-                  text-white px-10 py-3.5 rounded-xl font-semibold text-lg
-                  shadow-[0_4px_14px_rgba(0,160,255,0.45)]
-                  transition-all duration-300
-                  hover:shadow-[0_10px_30px_rgba(0,160,255,0.55)]
-                  hover:scale-[1.02]
-                "
-              >
-                Run An Enterprise Pilot
-              </button>
+        <button
+          className="
+            bg-gradient-to-r from-[#0A84FF] to-[#00C8FF]
+            text-white px-10 py-3.5 rounded-xl font-semibold text-lg
+            shadow-[0_4px_14px_rgba(0,160,255,0.45)]
+            transition-all duration-300
+            hover:shadow-[0_10px_30px_rgba(0,160,255,0.55)]
+            hover:scale-[1.02]
+          "
+        >
+          Run An Enterprise Pilot
+        </button>
 
-              {/* GET STARTED */}
-              <button
-                className="
-                  px-10 py-3.5 rounded-xl font-semibold text-lg
-                  border border-[#00C8FF]
-                  text-[#00E9FF]
-                  transition-all duration-300
-                  hover:bg-[#00C8FF]
-                  hover:text-[#001019]
-                  hover:shadow-[0_10px_30px_rgba(0,200,255,0.45)]
-                  hover:scale-[1.02]
-                "
-              >
-                Get Started
-              </button>
+        <button
+          className="
+            px-10 py-3.5 rounded-xl font-semibold text-lg
+            border border-[#00C8FF]
+            text-[#00E9FF]
+            transition-all duration-300
+            hover:bg-[#00C8FF]
+            hover:text-[#001019]
+            hover:shadow-[0_10px_30px_rgba(0,200,255,0.45)]
+            hover:scale-[1.02]
+          "
+        >
+          Get Started
+        </button>
 
-            </div>
+      </div>
 
-          </div>
-        </div>
-      </section>
+    </div>
+
+  </div>
+</section>
+
 
       {/* STATS SECTION */}
       <section className="w-full bg-[#000104] pt-32 pb-24 px-6">
