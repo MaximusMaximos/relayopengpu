@@ -186,7 +186,7 @@ export default function Home() {
       {/* GRADIENT */}
       <div className="w-full h-48 bg-gradient-to-b from-[#000104] to-white"></div>
 
-      {/* UPGRADED PARTNER SLIDER (Full-Size Logos) */}
+      {/* UPGRADED PARTNER SLIDER (Fixed Logo Visibility) */}
 <section className="w-full bg-white py-20 overflow-hidden relative">
 
   <h2 className="text-center text-2xl md:text-3xl font-semibold text-[#0A0F2C] mb-12">
@@ -209,13 +209,13 @@ export default function Home() {
     }
   >
 
-    {/* FADE MASKS */}
+    {/* Fade masks */}
     <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 bg-gradient-to-r from-white to-transparent"></div>
     <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 bg-gradient-to-l from-white to-transparent"></div>
 
-    {/* MOVING TRACK */}
+    {/* Moving track */}
     <motion.div
-      className="flex items-center gap-28 px-10"
+      className="flex items-center gap-24 px-10"
       animate={controls}
     >
       {logos.map((logo, i) => (
@@ -227,7 +227,7 @@ export default function Home() {
           <img
             src={logo.src}
             alt={logo.alt}
-            className="w-auto h-auto object-contain"
+            className="object-contain h-16 md:h-20 w-auto"
             loading="lazy"
           />
         </motion.div>
