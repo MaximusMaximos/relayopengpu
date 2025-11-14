@@ -109,6 +109,7 @@ export default function Home() {
 
        {/* BUTTONS */}
 <div className="flex gap-5 mb-10">
+
   {/* ENTERPRISE PILOT */}
   <button
     className="
@@ -135,6 +136,7 @@ export default function Home() {
       transition-all duration-300">
     Get Started
   </button>
+
 </div>
 
 
