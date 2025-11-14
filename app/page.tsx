@@ -316,147 +316,170 @@ export default function Home() {
         </div>
 
       </section>
-      {/* HOW IT WORKS SECTION */}
-<section className="w-full bg-white py-28 px-6">
+      
+     {/* HOW OGPU WORKS */}
+<section className="w-full bg-gradient-to-r from-[#F7FCFF] via-white to-[#F7FCFF] py-28 px-6">
 
-  <div className="max-w-6xl mx-auto">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
 
-    {/* SECTION LABEL */}
-    <div className="flex justify-between items-start mb-14">
-      <div>
-        <span className="text-[#00A2FF] font-semibold tracking-wide text-base">
-          HOW IT WORKS
-        </span>
+    {/* LEFT COLUMN */}
+    <motion.div 
+      className="max-w-lg"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, duration: 0.5 } }
+      }}
+    >
+      {/* Heading */}
+      <motion.h2 
+        className="text-4xl md:text-5xl font-bold text-[#031A36] mb-6"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        How OGPU Works
+      </motion.h2>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-[#031A36] leading-tight mt-3">
-          How OGPU Connects Your<br className="hidden md:block" />AI to Global GPUs
-        </h2>
-      </div>
-    </div>
+      <motion.p 
+        className="text-lg text-[#4A5560] leading-relaxed mb-10"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        OGPU automatically routes each workload to the best available GPU across the network,
+        balancing speed, reliability, and cost with built-in failover and retry.
+      </motion.p>
 
-    {/* GRID */}
-    <div className="grid md:grid-cols-2 gap-16 items-start">
-
-      {/* LEFT SIDE – TEXT STEPS */}
-      <div className="max-w-xl">
-
-        {/* STEP 1 */}
-        <div className="mb-10 flex gap-4">
-          <div className="w-12 h-12 rounded-xl bg-[#E6F5FF] border border-[#B7E9FF]
-                          flex items-center justify-center text-[#00A2FF] text-xl font-semibold">
-            1
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-[#031A36] mb-2">
-              Step 1: Submit a Workload
-            </h3>
-            <p className="text-[#4A5560] leading-relaxed">
-              You send an AI or rendering task through the dashboard or API. OGPU identifies the 
-              GPU type required and locates the closest, most efficient provider.
-            </p>
-          </div>
-        </div>
-
-        {/* STEP 2 */}
-        <div className="mb-10 flex gap-4">
-          <div className="w-12 h-12 rounded-xl bg-[#E6F5FF] border border-[#B7E9FF]
-                          flex items-center justify-center text-[#00A2FF] text-xl font-semibold">
-            2
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-[#031A36] mb-2">
-              Step 2: Routing & Provider Selection
-            </h3>
-            <p className="text-[#4A5560] leading-relaxed">
-              OGPU compares global GPU performance and assigns your workload to the fastest one 
-              available. If a GPU becomes unavailable mid-execution, Relay safely shifts to the 
-              next-best machine without interruption.
-            </p>
-          </div>
-        </div>
-
-        {/* STEP 3 */}
-        <div className="mb-12 flex gap-4">
-          <div className="w-12 h-12 rounded-xl bg-[#E6F5FF] border border-[#B7E9FF]
-                          flex items-center justify-center text-[#00A2FF] text-xl font-semibold">
-            3
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-[#031A36] mb-2">
-              Step 3: Execute End-to-End
-            </h3>
-            <p className="text-[#4A5560] leading-relaxed">
-              Your workload runs start-to-finish on a single GPU for predictable output. If 
-              disruption occurs, Relay resumes progress seamlessly — never restarting or fragmenting.
-            </p>
-          </div>
-        </div>
-
-        {/* SINGLE EXECUTOR LINE */}
-        <p className="text-[#031A36] font-semibold bg-[#E6F7FF] border border-[#B7E9FF]
-                      rounded-xl px-5 py-4 mb-10">
-          Single-executor by design. Tasks are reassigned and resumed — never fragmented or restarted.
+      {/* STEP 1 */}
+      <motion.div 
+        className="mb-10 border-l-4 border-[#00C8FF] pl-5"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <h3 className="text-xl font-semibold text-[#031A36] mb-2">Step 1 – Submit a Workload</h3>
+        <p className="text-[#4A5560] leading-relaxed">
+          You send an AI or rendering task through the dashboard or API. OGPU instantly checks
+          what type of GPU is needed (A100, 4090, etc.) and finds the closest and most efficient provider.
         </p>
+      </motion.div>
 
-        {/* CTA */}
-        <button
-          className="bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white 
-                     px-8 py-3.5 rounded-xl font-semibold shadow-md
-                     hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)]
-                     transition-all duration-300 hover:-translate-y-[3px]">
-          See Real Workloads Running →
-        </button>
+      {/* STEP 2 */}
+      <motion.div 
+        className="mb-10 border-l-4 border-[#00C8FF] pl-5"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <h3 className="text-xl font-semibold text-[#031A36] mb-2">Step 2 – Routing & Provider Selection</h3>
+        <p className="text-[#4A5560] leading-relaxed">
+          OGPU compares GPUs globally and assigns your task to the one that can deliver results fastest.
+          If a GPU becomes unavailable mid-run, OGPU seamlessly shifts execution to another provider
+          without interrupting progress.
+        </p>
+      </motion.div>
 
-      </div>
+      {/* STEP 3 */}
+      <motion.div 
+        className="mb-10 border-l-4 border-[#00C8FF] pl-5"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <h3 className="text-xl font-semibold text-[#031A36] mb-2">Step 3 – Execute End-to-End</h3>
+        <p className="text-[#4A5560] leading-relaxed">
+          Your workload runs start-to-finish on a single GPU for consistent outputs. If a disruption occurs,
+          the OGPU Relay resumes the process on the next best machine — never restarting or fragmenting.
+        </p>
+      </motion.div>
 
-      {/* RIGHT SIDE – VERTICAL TIMELINE */}
-      <div className="flex justify-center">
-        <div className="flex flex-col items-center gap-20">
+      {/* Single Executor Note */}
+      <motion.p 
+        className="text-[#031A36] font-semibold bg-[#E6F7FF] border border-[#B7E9FF] rounded-xl px-5 py-4 mb-8"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        Single-executor by design. Tasks seamlessly reassign and resume — never fragmented.
+      </motion.p>
 
-          {/* STEP ICON 1 */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 bg-white border border-[#C6E6FF] shadow-md rounded-2xl
-                            flex items-center justify-center">
-              <img src="/icons/upload.svg" className="w-7 h-7 text-[#00A2FF]" />
-            </div>
-            <p className="mt-3 text-sm font-semibold text-[#031A36] tracking-wide uppercase">
-              Submit Workload
-            </p>
-          </div>
+      {/* CTA */}
+      <motion.a
+        href="#"
+        className="inline-block bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white px-8 py-4 rounded-xl font-semibold shadow-md hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)] transition-transform hover:-translate-y-[3px]"
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+      >
+        See Real Workloads Running →
+      </motion.a>
+    </motion.div>
 
-          {/* LINE */}
-          <div className="w-[3px] h-20 bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full opacity-80"></div>
+    {/* RIGHT COLUMN – VERTICAL TIMELINE */}
+    <motion.div 
+      className="flex flex-col items-center gap-16"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { delay: 0.2, staggerChildren: 0.25 } }
+      }}
+    >
 
-          {/* STEP ICON 2 */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 bg-white border border-[#C6E6FF] shadow-md rounded-2xl
-                            flex items-center justify-center">
-              <img src="/icons/routing.svg" className="w-7 h-7 text-[#00A2FF]" />
-            </div>
-            <p className="mt-3 text-sm font-semibold text-[#031A36] tracking-wide uppercase text-center">
-              Relay Routing Engine
-            </p>
-          </div>
-
-          {/* LINE */}
-          <div className="w-[3px] h-20 bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full opacity-80"></div>
-
-          {/* STEP ICON 3 */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 bg-white border border-[#C6E6FF] shadow-md rounded-2xl
-                            flex items-center justify-center">
-              <img src="/icons/gpu.svg" className="w-7 h-7 text-[#00A2FF]" />
-            </div>
-            <p className="mt-3 text-sm font-semibold text-[#031A36] tracking-wide uppercase">
-              GPU Provider
-            </p>
-          </div>
-
+      {/* ICON 1 */}
+      <motion.div 
+        className="flex flex-col items-center"
+        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
+          <img src="/icons/upload.svg" className="w-8 h-8 text-[#00A2FF]" />
         </div>
-      </div>
+        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
+          Submit Workload
+        </p>
+      </motion.div>
 
-    </div>
+      {/* Vertical Line #1 */}
+      <motion.div 
+        className="w-[3px] bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full"
+        initial={{ height: 0 }}
+        whileInView={{ height: 80 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      />
+
+      {/* ICON 2 */}
+      <motion.div 
+        className="flex flex-col items-center"
+        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
+          <img src="/icons/clock.svg" className="w-8 h-8 text-[#00A2FF]" />
+        </div>
+        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide text-center">
+          Relay Routing Engine
+        </p>
+      </motion.div>
+
+      {/* Vertical Line #2 */}
+      <motion.div 
+        className="w-[3px] bg-gradient-to-b from-[#00C8FF] to-[#007BFF] rounded-full"
+        initial={{ height: 0 }}
+        whileInView={{ height: 80 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      />
+
+      {/* ICON 3 */}
+      <motion.div 
+        className="flex flex-col items-center"
+        variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+      >
+        <div className="w-20 h-20 bg-white border border-[#C6E6FF] shadow-lg rounded-2xl flex items-center justify-center">
+          <img src="/icons/gpu.svg" className="w-8 h-8 text-[#00A2FF]" />
+        </div>
+        <p className="mt-3 text-sm font-semibold text-[#031A36] uppercase tracking-wide">
+          GPU Provider
+        </p>
+      </motion.div>
+
+    </motion.div>
+
   </div>
+
+  {/* FOOTER LINE */}
+  <p className="text-center text-sm text-[#607081] mt-14">
+    On-chain verification • Auto-failover • Task-based billing
+  </p>
+
 </section>
 
 
