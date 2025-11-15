@@ -26,7 +26,7 @@ body {
 }
 
 /* ========================================================= */
-/* SMOOTH FADE-IN UP ANIMATION FOR CARDS                     */
+/* CARD FADE-IN UP ANIMATION                                 */
 /* ========================================================= */
 
 @keyframes fadeInUp {
@@ -44,8 +44,19 @@ body {
   opacity: 0;
   animation: fadeInUp 0.65s ease-out forwards;
 }
+
 /* ========================================================= */
-/* LIVE DOT PULSE (triggered only when data updates)         */
+/* TAILWIND UTILITIES LAYER (MUST BE ABOVE CUSTOM ANIMATIONS) */
+/* ========================================================= */
+
+@layer utilities {
+  .live-dot-pulse {
+    animation: livePulse 1.2s ease-in-out forwards;
+  }
+}
+
+/* ========================================================= */
+/* LIVE DOT PULSE ANIMATION                                  */
 /* ========================================================= */
 
 @keyframes livePulse {
@@ -63,15 +74,5 @@ body {
     transform: scale(1);
     opacity: 1;
     box-shadow: 0 0 0px rgba(0, 233, 255, 0.6);
-  }
-}
-
-.live-dot-pulse {
-  animation: livePulse 1.2s ease-in-out;
-}
-
-@layer utilities {
-  .live-dot-pulse {
-    animation: livePulse 1.2s ease-in-out forwards;
   }
 }
