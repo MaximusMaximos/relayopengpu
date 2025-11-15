@@ -70,3 +70,8 @@ body {
   animation: livePulse 1.2s ease-in-out;
 }
 
+@layer utilities {
+  .live-dot-pulse {
+    animation: livePulse 1.2s ease-in-out forwards;
+  }
+}
