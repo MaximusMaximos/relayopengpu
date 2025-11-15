@@ -7,6 +7,7 @@ export default function LiveStats() {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [secondsAgo, setSecondsAgo] = useState(0);
+  const [justUpdated, setJustUpdated] = useState(false);
 
   async function fetchStats() {
     try {
@@ -19,19 +20,22 @@ export default function LiveStats() {
       setData(json.data);
       setLastUpdated(new Date());
       setLoading(false);
+
+      // Pulse the green dot when new data arrives
+      setJustUpdated(true);
+      setTimeout(() => setJustUpdated(false), 1200);
+
     } catch (err) {
       console.error("Stats fetch error:", err);
     }
   }
 
-  // Fetch on load + refresh every 10s
   useEffect(() => {
     fetchStats();
     const interval = setInterval(fetchStats, 10000);
     return () => clearInterval(interval);
   }, []);
 
-  // Update "seconds ago" counter
   useEffect(() => {
     if (!lastUpdated) return;
     const interval = setInterval(() => {
@@ -58,7 +62,6 @@ export default function LiveStats() {
   return (
     <section className="w-full bg-[#000104] pt-20 pb-14 px-6 border-b border-white/5">
 
-      {/* HEADER */}
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-xl">
           Backed by Global Scale
@@ -67,15 +70,9 @@ export default function LiveStats() {
         {/* LIVE INDICATOR */}
         <div className="flex items-center justify-center gap-2 text-sm text-cyan-300 mb-4">
           <span
-            className="
-              inline-block 
-              flex-shrink-0 
-              w-2.5 h-2.5 
-              rounded-full 
-              bg-[#00E9FF] 
-              animate-pulse 
-              shadow-[0_0_10px_3px_rgba(0,233,255,0.9)]
-            "
+            className={`w-2.5 h-2.5 rounded-full bg-[#00E9FF]
+              ${justUpdated ? "live-dot-pulse" : ""}
+            `}
           />
           <span>Live • Updates every 10 seconds</span>
         </div>
@@ -85,33 +82,15 @@ export default function LiveStats() {
         </p>
       </div>
 
-      {/* STATS GRID */}
       <div className="flex justify-center gap-16 text-center mb-6">
-
-        <StatBox
-          label="Active GPU Providers"
-          value={`${data?.activeProviders || "--"}+`}
-        />
-
-        <StatBox
-          label="Cost Reduction"
-          value={`${data ? "60%–80%" : "--"}`}
-        />
-
-        <StatBox
-          label="Network Uptime"
-          value={`${data?.successRate?.toFixed(2) || "--"}%`}
-        />
-
+        <StatBox label="Active GPU Providers" value={`${data?.activeProviders || "--"}+`} />
+        <StatBox label="Cost Reduction" value={`${data ? "60%–80%" : "--"}`} />
+        <StatBox label="Network Uptime" value={`${data?.successRate?.toFixed(2) || "--"}%`} />
       </div>
 
-      {/* LAST UPDATED */}
       <p className="text-center text-xs text-gray-400">
-        {loading
-          ? "Fetching live stats…"
-          : `Updated ${secondsAgo}s ago`}
+        {loading ? "Fetching live stats…" : `Updated ${secondsAgo}s ago`}
       </p>
-
     </section>
   );
 }
