@@ -69,26 +69,25 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-        {/* FIXED HEADER */}
+{/* FIXED HEADER */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF] flex items-center justify-between">
-    
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+
     {/* LOGO */}
     <div className="flex items-center">
       <img
         src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
         alt="OGPU Logo"
-        className="h-10 w-auto md:h-16 lg:h-20"
+        className="h-10 w-auto md:h-16"
       />
     </div>
 
-    {/* DESKTOP NAV */}
-    <div className="hidden md:flex items-center gap-8 text-lg text-gray-200 font-medium">
+    {/* NAV LINKS DESKTOP */}
+    <div className="hidden md:flex items-center gap-8 text-base text-gray-200 font-medium">
       <a href="#" className="hover:text-white transition">Platform</a>
       <a href="#" className="hover:text-white transition">Solutions</a>
       <a href="#" className="hover:text-white transition">Docs</a>
       <a href="#" className="hover:text-white transition">Company</a>
-
       <a
         href="https://opengpu.network/get-started"
         className="px-8 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
@@ -97,53 +96,42 @@ export default function Home() {
       </a>
     </div>
 
-    {/* MOBILE BURGER BUTTON */}
+    {/* MOBILE MENU BUTTON */}
     <button
       id="mobile-menu-btn"
-      className="md:hidden text-gray-200 focus:outline-none"
+      className="md:hidden text-white text-3xl focus:outline-none"
       onClick={() => {
-        const menu = document.getElementById("mobile-menu");
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
+        const m = document.getElementById("mobile-menu");
+        if (!m) return;
+        m.classList.toggle("hidden");
       }}
     >
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
+      ☰
     </button>
-
   </nav>
 
-  {/* MOBILE MENU DROPDOWN */}
+  {/* MOBILE MENU */}
   <div
     id="mobile-menu"
-    className="hidden md:hidden bg-[#00040F]/90 backdrop-blur-xl border-b border-[#00C8FF] px-6 py-5 space-y-4 text-gray-200 text-base"
+    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl border-b border-[#00C8FF] px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
   >
-    <a href="#" className="block hover:text-white transition">Platform</a>
-    <a href="#" className="block hover:text-white transition">Solutions</a>
-    <a href="#" className="block hover:text-white transition">Docs</a>
-    <a href="#" className="block hover:text-white transition">Company</a>
+    <a href="#" className="hover:text-white transition">Platform</a>
+    <a href="#" className="hover:text-white transition">Solutions</a>
+    <a href="#" className="hover:text-white transition">Docs</a>
+    <a href="#" className="hover:text-white transition">Company</a>
 
     <a
       href="https://opengpu.network/get-started"
-      className="block w-full text-center px-6 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] hover:bg-[#00B5E2] hover:text-[#001019] transition"
+      className="mt-2 px-6 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
     >
       Get Started
     </a>
   </div>
 
-  {/* BLUE RULE LINE */}
+  {/* GRADIENT BAR */}
   <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
 </header>
+
 
 
         {/* HERO CONTENT */}
