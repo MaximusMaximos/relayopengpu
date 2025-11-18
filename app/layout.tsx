@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        id="fade-wrapper"
+        className={`${geistSans.variable} ${geistMono.variable} antialiased opacity-0 transition-opacity duration-500`}
       >
         {children}
 
@@ -35,12 +36,10 @@ export default function RootLayout({
             __html: `
               document.addEventListener('mousemove', (e) => {
                 document.querySelectorAll('.magnetic-btn').forEach(btn => {
-
                   const rect = btn.getBoundingClientRect();
                   const highlight = btn.querySelector('.highlight');
                   if (!highlight) return;
 
-                  // Check if mouse is INSIDE this button
                   const inside =
                     e.clientX >= rect.left &&
                     e.clientX <= rect.right &&
@@ -48,16 +47,13 @@ export default function RootLayout({
                     e.clientY <= rect.bottom;
 
                   if (!inside) {
-                    // Reset glow when leaving the button
                     highlight.style.transform = 'translate(0px,0px)';
                     return;
                   }
 
-                  // Mouse position inside the button
                   const x = e.clientX - rect.left;
                   const y = e.clientY - rect.top;
 
-                  // Move the highlight subtly
                   highlight.style.transform =
                     'translate(' +
                     (x - rect.width / 2) * 0.12 +
@@ -70,6 +66,37 @@ export default function RootLayout({
           }}
         />
 
+        {/* PAGE FADE SCRIPT */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', function () {
+                const wrapper = document.getElementById('fade-wrapper');
+
+                // Fade in smoothly after hydration
+                setTimeout(() => {
+                  wrapper.style.opacity = '1';
+                }, 50);
+
+                // Fade out when clicking a normal link
+                document.querySelectorAll('a[href]').forEach(link => {
+                  link.addEventListener('click', function (e) {
+                    const url = this.getAttribute('href');
+
+                    if (!url || url.startsWith('#') || url.startsWith('javascript:')) return;
+
+                    e.preventDefault();
+                    wrapper.style.opacity = '0';
+
+                    setTimeout(() => {
+                      window.location.href = url;
+                    }, 300);
+                  });
+                });
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

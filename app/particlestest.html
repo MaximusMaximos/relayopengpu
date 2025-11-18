@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Mesh - OGPU Network</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background-color: #0d1b2a; /* Dark background to fit the mesh */
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 50, // Reduced number of particles for subtlety
+                    density: {
+                        enable: true,
+                        value_area: 500 // Lower the density for even more subtlety
+                    }
+                },
+                shape: {
+                    type: 'circle', // Keep it simple
+                },
+                opacity: {
+                    value: 0.3, // Lower opacity for a more subtle look
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                    }
+                },
+                size: {
+                    value: 3, // Smaller particle size
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 0.5, // Slower size animation
+                        size_min: 0.1
+                    }
+                },
+                move: {
+                    enable: true,
+                    speed: 0.5, // Slower movement speed for a more subtle effect
+                    direction: 'none',
+                    random: true,
+                    out_mode: 'out',
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 100, // Shorter distance between linked particles
+                    color: '#ffffff',
+                    opacity: 0.2, // Lighter lines connecting particles
+                    width: 1
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: false, // Disable hover interaction
+                    },
+                    onclick: {
+                        enable: false, // Disable click interaction
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
