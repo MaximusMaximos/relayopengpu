@@ -171,36 +171,57 @@ export default function Home() {
         Whether you want to run models or provide GPU compute, OGPU gets you online instantly.
       </p>
     </div>
+{/* TABS */}
+<div className="flex justify-center mb-10">
+  <div className="bg-black/20 backdrop-blur-sm p-1 rounded-xl flex">
 
-    {/* TABS */}
-    <div className="flex justify-center mb-10">
-      <div className="bg-black/20 backdrop-blur-sm p-1 rounded-xl flex">
-        <button
-          className="px-6 py-2 rounded-lg text-white bg-[#0A84FF] font-semibold"
-          onClick={() => {
-            document.getElementById("quickstart-clients").style.display = "block";
-            document.getElementById("quickstart-providers").style.display = "none";
-            document.getElementById("quickstart-clients-btn").classList.add("bg-[#0A84FF]", "text-white");
-            document.getElementById("quickstart-providers-btn").classList.remove("bg-[#0A84FF]", "text-white");
-          }}
-          id="quickstart-clients-btn"
-        >
-          Clients
-        </button>
-        <button
-          className="px-6 py-2 rounded-lg text-gray-300 hover:text-white transition"
-          onClick={() => {
-            document.getElementById("quickstart-clients").style.display = "none";
-            document.getElementById("quickstart-providers").style.display = "block";
-            document.getElementById("quickstart-providers-btn").classList.add("bg-[#0A84FF]", "text-white");
-            document.getElementById("quickstart-clients-btn").classList.remove("bg-[#0A84FF]", "text-white");
-          }}
-          id="quickstart-providers-btn"
-        >
-          Providers
-        </button>
-      </div>
-    </div>
+    {/* CLIENTS BUTTON */}
+    <button
+      className="px-6 py-2 rounded-lg text-white bg-[#0A84FF] font-semibold"
+      id="quickstart-clients-btn"
+      onClick={() => {
+        const clients = document.getElementById("quickstart-clients");
+        const providers = document.getElementById("quickstart-providers");
+        const clientsBtn = document.getElementById("quickstart-clients-btn");
+        const providersBtn = document.getElementById("quickstart-providers-btn");
+
+        if (clients && providers && clientsBtn && providersBtn) {
+          clients.style.display = "block";
+          providers.style.display = "none";
+
+          clientsBtn.classList.add("bg-[#0A84FF]", "text-white");
+          providersBtn.classList.remove("bg-[#0A84FF]", "text-white");
+        }
+      }}
+    >
+      Clients
+    </button>
+
+    {/* PROVIDERS BUTTON */}
+    <button
+      className="px-6 py-2 rounded-lg text-white font-semibold"
+      id="quickstart-providers-btn"
+      onClick={() => {
+        const clients = document.getElementById("quickstart-clients");
+        const providers = document.getElementById("quickstart-providers");
+        const clientsBtn = document.getElementById("quickstart-clients-btn");
+        const providersBtn = document.getElementById("quickstart-providers-btn");
+
+        if (clients && providers && clientsBtn && providersBtn) {
+          clients.style.display = "none";
+          providers.style.display = "block";
+
+          providersBtn.classList.add("bg-[#0A84FF]", "text-white");
+          clientsBtn.classList.remove("bg-[#0A84FF]", "text-white");
+        }
+      }}
+    >
+      Providers
+    </button>
+
+  </div>
+</div>
+
 
     {/* CLIENTS PANEL */}
     <div id="quickstart-clients" className="block">
