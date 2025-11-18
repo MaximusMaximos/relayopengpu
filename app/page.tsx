@@ -69,11 +69,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-        <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+        {/* FIXED HEADER */}
+<header className="fixed top-0 left-0 w-full z-[999]">
+  <nav className="w-full px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF] flex items-center justify-between">
     
     {/* LOGO */}
-    <div className="flex items-center gap-3">
+    <div className="flex items-center">
       <img
         src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
         alt="OGPU Logo"
@@ -81,8 +82,8 @@ export default function Home() {
       />
     </div>
 
-    {/* NAV LINKS (mobile + desktop) */}
-    <div className="flex items-center gap-4 md:gap-8 text-sm md:text-lg text-gray-200 font-medium">
+    {/* DESKTOP NAV */}
+    <div className="hidden md:flex items-center gap-8 text-lg text-gray-200 font-medium">
       <a href="#" className="hover:text-white transition">Platform</a>
       <a href="#" className="hover:text-white transition">Solutions</a>
       <a href="#" className="hover:text-white transition">Docs</a>
@@ -90,17 +91,60 @@ export default function Home() {
 
       <a
         href="https://opengpu.network/get-started"
-        className="px-6 py-2 rounded-xl font-semibold text-sm md:text-base border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
+        className="px-8 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
       >
         Get Started
       </a>
     </div>
 
+    {/* MOBILE BURGER BUTTON */}
+    <button
+      id="mobile-menu-btn"
+      className="md:hidden text-gray-200 focus:outline-none"
+      onClick={() => {
+        const menu = document.getElementById("mobile-menu");
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }}
+    >
+      <svg
+        className="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
   </nav>
 
+  {/* MOBILE MENU DROPDOWN */}
+  <div
+    id="mobile-menu"
+    className="hidden md:hidden bg-[#00040F]/90 backdrop-blur-xl border-b border-[#00C8FF] px-6 py-5 space-y-4 text-gray-200 text-base"
+  >
+    <a href="#" className="block hover:text-white transition">Platform</a>
+    <a href="#" className="block hover:text-white transition">Solutions</a>
+    <a href="#" className="block hover:text-white transition">Docs</a>
+    <a href="#" className="block hover:text-white transition">Company</a>
 
-          <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
-        </header>
+    <a
+      href="https://opengpu.network/get-started"
+      className="block w-full text-center px-6 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] hover:bg-[#00B5E2] hover:text-[#001019] transition"
+    >
+      Get Started
+    </a>
+  </div>
+
+  {/* BLUE RULE LINE */}
+  <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
+</header>
+
 
         {/* HERO CONTENT */}
         <div className="relative z-20 flex flex-col h-full">
