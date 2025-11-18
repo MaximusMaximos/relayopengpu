@@ -73,7 +73,7 @@ export default function LiveStats() {
 
         <p className="text-lg font-semibold text-white leading-tight mb-1">
           {loading ? (
-            <div className="w-32 h-4 bg-gray-300 animate-pulse rounded" />
+            <span className="w-32 h-4 bg-gray-300 animate-pulse rounded" />
           ) : (
             label
           )}
