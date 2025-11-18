@@ -81,8 +81,8 @@ export default function Home() {
       />
     </div>
 
-    {/* NAV LINKS */}
-    <div className="hidden md:flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
+    {/* NAV LINKS (mobile + desktop) */}
+    <div className="flex items-center gap-4 md:gap-8 text-sm md:text-lg text-gray-200 font-medium">
       <a href="#" className="hover:text-white transition">Platform</a>
       <a href="#" className="hover:text-white transition">Solutions</a>
       <a href="#" className="hover:text-white transition">Docs</a>
@@ -90,7 +90,7 @@ export default function Home() {
 
       <a
         href="https://opengpu.network/get-started"
-        className="px-10 py-3.5 rounded-xl font-semibold text-base border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
+        className="px-6 py-2 rounded-xl font-semibold text-sm md:text-base border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
       >
         Get Started
       </a>
