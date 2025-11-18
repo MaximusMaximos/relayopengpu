@@ -71,14 +71,15 @@ export default function Home() {
 
         {/* FIXED HEADER */}
         <header className="fixed top-0 left-0 w-full z-[999]">
-          <nav className="w-full flex items-center justify-between px-10 py-4 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
-            <div className="flex items-center gap-3">
-              <img
-                src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
-                alt="OGPU Logo"
-                className="h-20 w-auto"
-              />
-            </div>
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-4 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+    <div className="flex items-center gap-3">
+      <img
+        src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
+        alt="OGPU Logo"
+        className="h-12 w-auto md:h-20"
+      />
+    </div>
+
 
             <div className="flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
               <a href="#" className="hover:text-white transition">Platform</a>

@@ -117,26 +117,27 @@ export default function LiveStats() {
           </p>
         </div>
 
-        {/* 3 COLUMNS */}
-        <div className="flex justify-center gap-28 mb-8">
-          <StatBox
-            value={`${data?.activeProviders || "--"}+`}
-            label="Active GPU Providers"
-            subtitle="Distributed across 40+ countries."
-          />
+        {/* 3 COLUMNS (RESPONSIVE) */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 place-items-center">
+  <StatBox
+    value={`${data?.activeProviders || "--"}+`}
+    label="Active GPU Providers"
+    subtitle="Distributed across 40+ countries."
+  />
 
-          <StatBox
-            value={data ? "60%–80%" : "--"}
-            label="Cost Reduction"
-            subtitle="Compared to centralized cloud pricing."
-          />
+  <StatBox
+    value={data ? "60%–80%" : "--"}
+    label="Cost Reduction"
+    subtitle="Compared to centralized cloud pricing."
+  />
 
-          <StatBox
-            value={`${data?.successRate?.toFixed(2) || "--"}%`}
-            label="Network Uptime"
-            subtitle="Automated failover & redundancy."
-          />
-        </div>
+  <StatBox
+    value={`${data?.successRate?.toFixed(2) || "--"}%`}
+    label="Network Uptime"
+    subtitle="Automated failover & redundancy."
+  />
+</div>
+
 
         {/* TAGLINE */}
         <p className="text-center text-sm text-gray-400 mt-4">
