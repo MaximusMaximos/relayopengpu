@@ -69,33 +69,35 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-        {/* FIXED HEADER */}
-<header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-6 md:px-10 py-3 md:py-4 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+        <header className="fixed top-0 left-0 w-full z-[999]">
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+    
+    {/* LOGO */}
     <div className="flex items-center gap-3">
       <img
         src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
         alt="OGPU Logo"
-        className="h-10 md:h-20 w-auto"
+        className="h-10 w-auto md:h-16 lg:h-20"
       />
     </div>
 
+    {/* NAV LINKS */}
+    <div className="hidden md:flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
+      <a href="#" className="hover:text-white transition">Platform</a>
+      <a href="#" className="hover:text-white transition">Solutions</a>
+      <a href="#" className="hover:text-white transition">Docs</a>
+      <a href="#" className="hover:text-white transition">Company</a>
 
+      <a
+        href="https://opengpu.network/get-started"
+        className="px-10 py-3.5 rounded-xl font-semibold text-base border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
+      >
+        Get Started
+      </a>
+    </div>
 
-            <div className="flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
-              <a href="#" className="hover:text-white transition">Platform</a>
-              <a href="#" className="hover:text-white transition">Solutions</a>
-              <a href="#" className="hover:text-white transition">Docs</a>
-              <a href="#" className="hover:text-white transition">Company</a>
+  </nav>
 
-              <a
-                href="https://opengpu.network/get-started"
-                className="px-10 py-3.5 rounded-xl font-semibold text-base md:text-lg border border-[#00E9FF] text-[#00E9FF] transition-all duration-800 ease-in-out hover:bg-[#00B5E2] hover:text-[#001019]"
-              >
-                Get Started
-              </a>
-            </div>
-          </nav>
 
           <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
         </header>
