@@ -6,97 +6,82 @@ import { createContext, useContext, useEffect, useState } from "react";
 /*                                LIVE STATS CONTEXT                           */
 /* -------------------------------------------------------------------------- */
 const LiveStatsContext = createContext<any>(null);
-
 export function useLiveStats() {
   return useContext(LiveStatsContext);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                  COMPONENT                                  */
-/* -------------------------------------------------------------------------- */
-
 export default function LiveStats() {
   const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
   const [justUpdated, setJustUpdated] = useState(false);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 
-  /* --------------------------- Fetch Dashboard Stats --------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                               FETCH STATS                              */
+  /* ---------------------------------------------------------------------- */
   async function fetchStats() {
     try {
       const res = await fetch(
         "https://management-backend.opengpu.network/api/dashboard/stats",
-        { cache: "no-store" }
+        {
+          cache: "no-store",
+          next: { revalidate: 0 }, // <-- stops Vercel from caching stale data
+        }
       );
-      const json = await res.json();
 
+      const json = await res.json();
       setData(json.data);
-      setLoading(false);
+
+      if (!hasLoadedOnce) setHasLoadedOnce(true);
 
       setJustUpdated(true);
       setTimeout(() => setJustUpdated(false), 1200);
-    } catch (e) {
-      console.error("Stats error:", e);
+    } catch (error) {
+      console.error("Stats fetch error:", error);
     }
   }
 
+  /* Initial + interval fetch */
   useEffect(() => {
     fetchStats();
     const interval = setInterval(fetchStats, 10000);
     return () => clearInterval(interval);
   }, []);
 
-  /* ----------------------------- LIVE VERIFICATION ----------------------------- */
-  const BASE_VERIFIED = 532_000_000; // adjust anytime using OGPU Scan
-  const TPS = 9500; // estimated verified tasks per second
+  /* ---------------------------------------------------------------------- */
+  /*                        REALTIME TPS VERIFICATION                       */
+  /* ---------------------------------------------------------------------- */
+  const BASE_VERIFIED = 532_000_000;
+  const TPS = 9500;
 
   const [verified, setVerified] = useState(BASE_VERIFIED);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVerified((prev) => prev + TPS);
-    }, 1000);
-
-    return () => clearInterval(interval);
+    const t = setInterval(() => setVerified((v) => v + TPS), 1000);
+    return () => clearInterval(t);
   }, []);
 
-  /* ------------------------------ StatBox UI --------------------------------- */
-  const StatBox = ({ value, label, subtitle }: any) => {
-    return (
-      <div className="flex flex-col items-center text-center max-w-[240px]">
-        <div className="text-4xl font-bold text-[#00E9FF] mb-1">
-          {loading ? (
-            <div className="w-20 h-6 bg-gray-300 animate-pulse rounded" />
-          ) : (
-            value
-          )}
-        </div>
-
-        <p className="text-lg font-semibold text-white leading-tight mb-1">
-          {loading ? (
-            <span className="w-32 h-4 bg-gray-300 animate-pulse rounded" />
-          ) : (
-            label
-          )}
-        </p>
-
-        <p className="text-sm text-gray-400 leading-snug">
-          {loading ? (
-            <span className="w-36 h-3 bg-gray-300 animate-pulse rounded" />
-          ) : (
-            subtitle
-          )}
-        </p>
+  /* ---------------------------------------------------------------------- */
+  /*                              STAT BOX UI                                */
+  /* ---------------------------------------------------------------------- */
+  const StatBox = ({ value, label, subtitle }: any) => (
+    <div className="flex flex-col items-center text-center max-w-[240px]">
+      <div className="text-4xl font-bold text-[#00E9FF] mb-1">
+        {hasLoadedOnce ? value : "--"}
       </div>
-    );
-  };
 
-  /* -------------------------------------------------------------------------- */
-  /*                                COMPONENT RETURN                            */
-  /* -------------------------------------------------------------------------- */
+      <p className="text-lg font-semibold text-white leading-tight mb-1">
+        {label}
+      </p>
+
+      <p className="text-sm text-gray-400 leading-snug">{subtitle}</p>
+    </div>
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /*                                RENDER                                   */
+  /* ---------------------------------------------------------------------- */
 
   return (
-    <LiveStatsContext.Provider value={{ data, loading, verified }}>
-      {/* BACKED BY GLOBAL SCALE SECTION */}
+    <LiveStatsContext.Provider value={{ data, verified }}>
       <section className="w-full bg-[#000104] pt-10 pb-20 px-6 border-b border-white/5">
         {/* TITLE */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -111,35 +96,33 @@ export default function LiveStats() {
             <span>Live • Updates every 10 seconds</span>
           </div>
 
-          {/* FIXED SENTENCE */}
           <p className="text-lg text-gray-300 mt-4">
-            The OGPU Network is live, production-tested, and running real AI workloads worldwide.
+            The OGPU Network is live, production-tested, and running real AI
+            workloads worldwide.
           </p>
         </div>
 
-        {/* 3 COLUMNS (RESPONSIVE) */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 place-items-center">
-  <StatBox
-    value={`${data?.activeProviders || "--"}+`}
-    label="Active GPU Providers"
-    subtitle="Distributed across 40+ countries."
-  />
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 place-items-center">
+          <StatBox
+            value={`${data?.activeProviders || "--"}+`}
+            label="Active GPU Providers"
+            subtitle="Distributed across 40+ countries."
+          />
 
-  <StatBox
-    value={data ? "60%–80%" : "--"}
-    label="Cost Reduction"
-    subtitle="Compared to centralized cloud pricing."
-  />
+          <StatBox
+            value={data ? "60%–80%" : "--"}
+            label="Cost Reduction"
+            subtitle="Compared to centralized cloud pricing."
+          />
 
-  <StatBox
-    value={`${data?.successRate?.toFixed(2) || "--"}%`}
-    label="Network Uptime"
-    subtitle="Automated failover & redundancy."
-  />
-</div>
+          <StatBox
+            value={`${data?.successRate?.toFixed(2) || "--"}%`}
+            label="Network Uptime"
+            subtitle="Automated failover & redundancy."
+          />
+        </div>
 
-
-        {/* TAGLINE */}
         <p className="text-center text-sm text-gray-400 mt-4">
           Real Providers. Real Workloads. No hypothetical capacity claims.
         </p>

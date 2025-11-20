@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import LiveStats from "./components/LiveStats"; 
+import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
 
 const fadeIn = {
@@ -17,23 +17,35 @@ const fadeIn = {
 export default function Home() {
   const controls = useAnimation();
 
+  // HERO opacity state
   const [heroOpacity, setHeroOpacity] = React.useState(1);
 
+  // Smooth scroll fade logic
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const fadeLimit = window.innerHeight * 0.6;
-      const newOpacity = Math.max(0.5, 1 - scrollY / fadeLimit);
-      setHeroOpacity(newOpacity);
+
+      const fadeStart = 200;   // scrolling before this does not fade
+      const fadeEnd = 900;     // fades out much slower now
+
+      if (scrollY < fadeStart) {
+        setHeroOpacity(1);
+      } else if (scrollY > fadeEnd) {
+        setHeroOpacity(0.45);
+      } else {
+        const progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        setHeroOpacity(1 - progress * 0.55);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const baseLogos = [
-    { src: "https://digitalgramophone.com/ogpu/Images/nosana.png", alt: "Nosana" },
-    { src: "https://digitalgramophone.com/ogpu/Images/lena.png", alt: "Lena AI" },
-    { src: "https://digitalgramophone.com/ogpu/Images/ozak.png", alt: "Ozak AI" },
+    { src: "/Images/nosana.png", alt: "Nosana" },
+    { src: "/Images/lena.png", alt: "Lena AI" },
+    { src: "/Images/ozak.png", alt: "Ozak AI" }
   ];
 
   const logos = [...baseLogos, ...baseLogos, ...baseLogos, ...baseLogos];
@@ -44,145 +56,146 @@ export default function Home() {
       transition: {
         duration: 28,
         repeat: Infinity,
-        ease: "linear",
-      },
+        ease: "linear"
+      }
     });
   }, [controls]);
 
   return (
     <main className="relative w-full bg-[#040814] text-white">
-      
+
       {/* HERO SECTION */}
       <section className="relative w-full min-h-screen">
-        
-        {/* Background Video + Gradient */}
+        {/* Background Video + Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <video
             autoPlay
-            loop
             muted
+            loop
             playsInline
+            preload="auto"
             className="w-full h-full object-cover"
-            src="https://digitalgramophone.com/ogpu/Videos/MAIN-loop.mp4"
-            style={{ filter: "brightness(1.2)" }}
+            src="/Videos/MAIN-loop.mp4"
+            poster="/Images/hero-poster.jpg"
+            style={{
+              WebkitUserSelect: "none",
+              WebkitTouchCallout: "none",
+              WebkitTapHighlightColor: "transparent"
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-{/* FIXED HEADER */}
-<header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+  {/* FIXED HEADER */}
+  <header className="fixed top-0 left-0 w-full z-[999]">
+    <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
+      <div className="flex items-center">
+        <img src="/Images/OGPU-LOGO-Main-final.png" alt="OGPU Logo" className="h-10 w-auto md:h-16" />
+      </div>
 
-    {/* LOGO */}
-    <div className="flex items-center">
-      <img
-        src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
-        alt="OGPU Logo"
-        className="h-10 w-auto md:h-16"
-      />
-    </div>
+      {/* DESKTOP NAV */}
+      <div className="hidden md:flex items-center gap-8 text-base text-gray-200 font-medium">
+        <a href="#" className="hover:text-white transition">Platform</a>
+        <a href="#" className="hover:text-white transition">Solutions</a>
+        <a href="#" className="hover:text-white transition">Docs</a>
+        <a href="#" className="hover:text-white transition">Company</a>
+        {/* GET STARTED = #0A84FF */}
+        <a
+          href="https://opengpu.network/get-started"
+          className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
+        >
+          Get Started
+        </a>
+      </div>
 
-    {/* NAV LINKS DESKTOP */}
-    <div className="hidden md:flex items-center gap-8 text-base text-gray-200 font-medium">
+      <button
+        id="mobile-menu-btn"
+        className="md:hidden text-white text-3xl focus:outline-none"
+        onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden")}
+      >
+        
+      </button>
+    </nav>
+
+    {/* MOBILE MENU */}
+    <div
+      id="mobile-menu"
+      className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl border-b border-[#0A84FF]/40 px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
+    >
       <a href="#" className="hover:text-white transition">Platform</a>
       <a href="#" className="hover:text-white transition">Solutions</a>
       <a href="#" className="hover:text-white transition">Docs</a>
       <a href="#" className="hover:text-white transition">Company</a>
       <a
         href="https://opengpu.network/get-started"
-        className="px-8 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
+        className="mt-2 px-6 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90"
       >
         Get Started
       </a>
     </div>
 
-    {/* MOBILE MENU BUTTON */}
-    <button
-      id="mobile-menu-btn"
-      className="md:hidden text-white text-3xl focus:outline-none"
-      onClick={() => {
-        const m = document.getElementById("mobile-menu");
-        if (!m) return;
-        m.classList.toggle("hidden");
-      }}
-    >
-      ☰
-    </button>
-  </nav>
+    {/* ELECTRIC GLOW BAR */}
+    <div className="relative w-full h-[4px] overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00e9ff] to-transparent" />
+      <div className="absolute inset-0 bg-[#00e9ff] opacity-70 blur-md" />
+    </div>
+  </header>
 
-  {/* MOBILE MENU */}
-  <div
-    id="mobile-menu"
-    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl border-b border-[#00C8FF] px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
+  {/* HERO CONTENT */}
+  <div className="relative z-20 flex flex-col h-full">
+    <div className="pt-40 md:pt-48 lg:pt-52" />
+
+    <div
+      style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
+      className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-16 md:pb-20 lg:pb-24"
+    >
+      <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-xl">
+        A Datacenter
+        <br />
+        Without Walls
+      </h1>
+
+      <p className="text-lg md:text-xl text-[#00e9ff] font-semibold mb-5 drop-shadow-md">
+        A global compute network for AI workloads.
+      </p>
+
+      <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mb-6 drop-shadow">
+        OGPU routes workloads to the best available GPU capacity across data centers,
+        cloud providers and independent operators without splitting jobs.
+        This improves performance, reliability and cost efficiency at scale.
+      </p>
+
+      <p className="text-base md:text-lg font-semibold text-white mb-10 drop-shadow-lg">
+        We do not replace the cloud, we route across it.
+      </p>
+
+      {/* HERO BUTTONS – SWAPPED AS REQUESTED */}
+      <div className="flex flex-wrap justify-center gap-5">
+
+  {/* PRIMARY CTA — Run an Enterprise Pilot (should be first) */}
+  <button
+    onClick={() => (window.location.href = "/enterprisehome")}
+    className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
+               bg-[#00C6FF] transition-all duration-300 
+               hover:bg-[#00AEE5] hover:shadow-[0_12px_32px_rgba(0,198,255,0.4)] hover:-translate-y-1"
   >
-    <a href="#" className="hover:text-white transition">Platform</a>
-    <a href="#" className="hover:text-white transition">Solutions</a>
-    <a href="#" className="hover:text-white transition">Docs</a>
-    <a href="#" className="hover:text-white transition">Company</a>
+    Run An Enterprise Pilot
+  </button>
 
-    <a
-      href="https://opengpu.network/get-started"
-      className="mt-2 px-6 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
-    >
-      Get Started
-    </a>
+  {/* SECONDARY CTA — Get Started */}
+  <a
+    href="https://opengpu.network/get-started"
+    className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
+               bg-[#0A84FF] transition-all duration-300 
+               hover:bg-[#005DEA] hover:shadow-[0_12px_32px_rgba(10,132,255,0.4)] hover:-translate-y-1"
+  >
+    Get Started
+  </a>
+
+</div>
+    </div>
   </div>
-
-  {/* GRADIENT BAR */}
-  <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
-</header>
-
-
-
-        {/* HERO CONTENT */}
-        <div className="relative z-20 flex flex-col h-full">
-          <div className="pt-40 md:pt-48 lg:pt-52" />
-
-          {/* FADING CONTENT */}
-          <div
-            style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-            className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-16 md:pb-20 lg:pb-24"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-xl">
-              A Datacenter
-              <br />
-              Without Walls
-            </h1>
-
-            <p className="text-lg md:text-xl text-[#00E9FF] font-semibold mb-5 drop-shadow-md">
-              A global compute network for AI workloads.
-            </p>
-
-            <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mb-6 drop-shadow">
-              OGPU routes workloads to the best available GPU capacity across data centers,
-              cloud providers and independent operators without splitting jobs.
-              This improves performance, reliability and cost efficiency at scale.
-            </p>
-
-            <p className="text-base md:text-lg font-semibold text-white mb-10 drop-shadow-lg">
-              We do not replace the cloud, we route across it.
-            </p>
-
-            {/* BUTTONS */}
-            <div className="flex flex-wrap justify-center gap-5">
-              <button
-                onClick={() => (window.location.href = "/enterprisehome")}
-                className="bg-[#0A84FF] text-white px-10 py-3.5 rounded-xl font-semibold text-base md:text-lg transition-all duration-800 ease-in-out hover:bg-[#003B73]"
-              >
-                Run An Enterprise Pilot
-              </button>
-
-              <a
-                href="https://opengpu.network/get-started"
-                className="px-10 py-3.5 rounded-xl font-semibold text-base md:text-lg border border-[#00E9FF] text-[#00E9FF] transition-all duration-800 ease-in-out hover:bg-[#00B5E2] hover:text-[#001019]"
-              >
-                Get Started
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </section>
+</section>
 
 
       {/* Live Stats */}
@@ -285,7 +298,7 @@ print(result.output)`}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="https://opengpu.network/client-dapp"
-          className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold text-base shadow-[0_8px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_12px_32px_rgba(0,160,255,0.45)] hover:-translate-y-[3px] transition"
+          className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#005dea] to-[#00c6ff] text-white font-semibold text-base shadow-[0_8px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_12px_32px_rgba(0,160,255,0.45)] hover:-translate-y-[3px] transition"
         >
           Open Client Dashboard →
         </a>
@@ -348,45 +361,70 @@ chmod +x provider-install.sh
       
 
 {/* GRADIENT TRANSITION */}
-<div className="w-full h-12 bg-gradient-to-b from-[#000104] to-white" />
+<div className="w-full h-15 bg-gradient-to-b from-[#000104] to-white" />
 
 
 
-{/* PARTNER SLIDER */}
-<section className="w-full bg-white py-16 md:py-18 overflow-hidden relative">
-  <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#0A0F2C] mb-6 leading-tight">
+{/* PARTNER SLIDER — FIXED FOR MOBILE PORTRAIT */}
+<section className="w-full bg-white py-16 md:py-20 overflow-hidden relative">
+  <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#0A0F2C] mb-10 leading-tight">
     Trusted by teams building the future of AI infrastructure
   </h2>
 
-  <div className="relative w-full overflow-hidden">
-    <motion.div
-      className="flex items-center gap-16 px-8"
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-    >
-      {[...baseLogos, ...baseLogos].map((logo, i) => (
-        <div
-          key={i}
-          className="flex items-center justify-center opacity-80 hover:opacity-100 transition"
-        >
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            className="h-12 md:h-14 object-contain"
-          />
-        </div>
-      ))}
-    </motion.div>
+  <div className="relative overflow-hidden w-full">
+    <div className="flex w-max"> 
+      {/* TRACK 1 */}
+      <motion.div
+        className="flex items-center gap-16 pr-16 flex-none"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+      >
+        {baseLogos.map((logo, i) => (
+          <div
+            key={`t1-${i}`}
+            className="flex items-center justify-center opacity-80 hover:opacity-100 transition flex-none"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="h-12 md:h-14 object-contain flex-none"
+            />
+          </div>
+        ))}
+      </motion.div>
+
+      {/* TRACK 2 (duplicate) */}
+      <motion.div
+        className="flex items-center gap-16 pr-16 flex-none"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+      >
+        {baseLogos.map((logo, i) => (
+          <div
+            key={`t2-${i}`}
+            className="flex items-center justify-center opacity-80 hover:opacity-100 transition flex-none"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="h-12 md:h-14 object-contain flex-none"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   </div>
 </section>
+
+
      
-      {/* WHY OGPU SECTION */}
+      {/* ========== SECTION: WHY OGPU ========== */}
 <section className="w-full bg-[#F7F9FC] py-16 md:py-20 px-6">
 
   {/* Image + Text Row */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[52%_48%] gap-12 md:gap-16 items-center">
 
-    {/* LEFT IMAGE (slides in from left) */}
+    {/* LEFT IMAGE */}
     <motion.div
       initial={{ opacity: 0, x: -30 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -394,13 +432,13 @@ chmod +x provider-install.sh
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <img
-        src="https://digitalgramophone.com/ogpu/Images/screenmain-transparant.png"
+        src="/Images/screenmain-transparant.png"
         alt="OGPU Platform Screens"
         className="w-full rounded-xl object-cover"
       />
     </motion.div>
 
-    {/* RIGHT TEXT (slides in from right) */}
+    {/* RIGHT TEXT */}
     <motion.div
       initial={{ opacity: 0, x: 30 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -408,7 +446,7 @@ chmod +x provider-install.sh
       transition={{ duration: 0.45, ease: "easeOut" }}
       className="max-w-xl"
     >
-      <span className="text-[#007BFF] font-semibold tracking-wide text-xs md:text-sm uppercase">
+      <span className="text-[#005DEA] font-semibold tracking-wide text-xs md:text-sm uppercase">
         Why OGPU
       </span>
 
@@ -416,7 +454,8 @@ chmod +x provider-install.sh
         Decentralized compute,
       </h2>
 
-      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
+      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF] bg-clip-text text-transparent">
         built for real AI workloads.
       </h2>
 
@@ -426,9 +465,13 @@ chmod +x provider-install.sh
         to available capacity. This improves reliability and reduces cost.
       </p>
 
+      {/* CTA — Explore dApp (GRADIENT) */}
       <a
         href="https://management.opengpu.network/"
-        className="px-8 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)] transition-all duration-300 hover:-translate-y-[3px] block text-center"
+        className="px-8 py-3.5 rounded-2xl font-semibold text-white text-base md:text-lg 
+                   bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                   hover:shadow-[0_12px_32px_rgba(0,160,255,0.35)] 
+                   transition-all duration-300 hover:-translate-y-[3px] block text-center"
       >
         Explore dApp
       </a>
@@ -438,7 +481,7 @@ chmod +x provider-install.sh
 
   <div className="h-10" />
 
-  {/* CARD GRID (fade up subtly as one group) */}
+  {/* CARD GRID */}
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -461,9 +504,13 @@ chmod +x provider-install.sh
     }].map((card, i) => (
       <div
         key={i}
-        className="bg-white rounded-2xl p-7 md:p-8 flex flex-col border border-gray-100 shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-2 hover:scale-[1.02]"
+        className="bg-white rounded-2xl p-7 md:p-8 flex flex-col border border-gray-100 
+                   shadow-[0_4px_16px_rgba(0,0,0,0.06)]
+                   transition-all duration-300 ease-out 
+                   hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
+                   hover:-translate-y-2 hover:scale-[1.02]"
       >
-        <div className="text-[#0A84FF] mb-4 text-3xl md:text-4xl">
+        <div className="text-[#005DEA] mb-4 text-3xl md:text-4xl">
           {card.icon}
         </div>
         <h3 className="font-semibold text-lg md:text-xl text-[#0A0F2C] mb-2 leading-snug">
@@ -478,7 +525,7 @@ chmod +x provider-install.sh
 
 </section>
 
-{/* HOW OGPU WORKS SECTION */}
+{/* ========== SECTION: HOW OGPU WORKS ========== */}
 <section className="w-full bg-white py-16 md:py-20 px-6 relative overflow-hidden">
 
   {/* Light gradient background */}
@@ -495,7 +542,7 @@ chmod +x provider-install.sh
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      <span className="text-[#007BFF] font-semibold tracking-wide text-xs md:text-sm uppercase">
+      <span className="text-[#005DEA] font-semibold tracking-wide text-xs md:text-sm uppercase">
         How It Works
       </span>
 
@@ -503,24 +550,28 @@ chmod +x provider-install.sh
         How OGPU connects
       </h2>
 
-      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4 bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
+      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF] bg-clip-text text-transparent">
         your AI to global GPUs.
       </h2>
 
       <p className="text-base md:text-lg text-[#475569] leading-relaxed mb-8 max-w-lg">
         OGPU automatically routes each workload to the best available GPU across the network,
-        balancing speed, reliability and cost with built in failover and retry.
+        balancing speed, reliability and cost with built-in failover and retry.
       </p>
 
       {/* STEPS */}
-      <div className="space-y-6 border-l-2 border-cyan-400/50 pl-6">
+      <div className="space-y-6 border-l-2 border-[#00C6FF]/50 pl-6">
 
         {/* STEP 1 */}
         <div className="space-y-2">
           <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
+                             text-white flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" 
+                      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
               </svg>
             </span>
             Step 1 · Submit a workload
@@ -535,33 +586,41 @@ chmod +x provider-install.sh
         {/* STEP 2 */}
         <div className="space-y-2">
           <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
+                             text-white flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" 
+                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </span>
             Step 2 · Routing and provider selection
           </h3>
 
           <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-            OGPU evaluates all available GPUs across the network and routes the task to the provider that can deliver the fastest results.
-            If a machine becomes unavailable mid run, the protocol shifts execution to the next best GPU without interrupting progress.
+            OGPU evaluates all available GPUs across the network and routes the task to the provider 
+            that can deliver the fastest results. If a machine becomes unavailable mid–run, the protocol 
+            shifts the execution to the next best GPU without interrupting progress.
           </p>
         </div>
 
         {/* STEP 3 */}
         <div className="space-y-2">
           <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
+                             text-white flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                      d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
               </svg>
             </span>
             Step 3 · Execute end to end
           </h3>
 
           <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-            Each task executes on the chosen GPU for consistency. If a provider fails, OGPU seamlessly migrates the workload to the next best machine.
+            Each task executes on the chosen GPU for consistency. If a provider fails, OGPU seamlessly
+            migrates the workload to the next best machine.
           </p>
         </div>
 
@@ -572,15 +631,18 @@ chmod +x provider-install.sh
         Single executor by design, with on-chain verification, automatic failover and task-based billing.
       </p>
 
+      {/* CTA */}
       <a
         href="https://ogpuscan.io/"
-        className="mt-4 px-10 py-4 bg-gradient-to-r from-blue-700 to-cyan-400 text-white rounded-xl font-semibold text-base md:text-lg shadow-md hover:opacity-95 transition block text-center"
+        className="mt-4 px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
+                   bg-gradient-to-r from-blue-700 to-[#00C6FF]
+                   shadow-md hover:opacity-95 transition block text-center"
       >
         See real workloads running →
       </a>
     </motion.div>
 
-    {/* RIGHT SIDE — Fade + slide from RIGHT (SAFE WRAPPER PATTERN) */}
+    {/* RIGHT SIDE — Steps Animation + Icons */}
     <div className="flex flex-col items-center space-y-16">
       <motion.div
         initial={{ opacity: 0, x: 25 }}
@@ -589,15 +651,18 @@ chmod +x provider-install.sh
         transition={{ duration: 0.45, ease: "easeOut" }}
         className="w-full flex flex-col items-center space-y-16"
       >
+
         {/* NODE 1 */}
         <motion.div
           className="flex flex-col items-center"
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-cyan-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
+          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
+              <path strokeLinecap="round" strokeLinejoin="round" 
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
             </svg>
           </div>
           <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
@@ -606,9 +671,9 @@ chmod +x provider-install.sh
         </motion.div>
 
         {/* CONNECTOR 1 */}
-        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
+        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-[#005DEA] to-[#00C6FF] rounded-full relative overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#00C6FF] via-[#00C6FF] to-[#005DEA] opacity-70"
             animate={{ y: ["-100%", "100%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -620,9 +685,11 @@ chmod +x provider-install.sh
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.35 }}
         >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-cyan-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
+              <path strokeLinecap="round" strokeLinejoin="round" 
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
@@ -631,9 +698,9 @@ chmod +x provider-install.sh
         </motion.div>
 
         {/* CONNECTOR 2 */}
-        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full relative overflow-hidden">
+        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-[#005DEA] to-[#00C6FF] rounded-full relative overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-200 via-cyan-400 to-blue-500 opacity-70"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#00C6FF] via-[#00C6FF] to-[#005DEA] opacity-70"
             animate={{ y: ["-100%", "100%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
           />
@@ -645,15 +712,18 @@ chmod +x provider-install.sh
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.8 }}
         >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-cyan-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-cyan-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
+          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
+              <path strokeLinecap="round" strokeLinejoin="round" 
+                    d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
             </svg>
           </div>
           <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
             Execute end to end
           </p>
         </motion.div>
+
       </motion.div>
     </div>
 
@@ -671,7 +741,9 @@ chmod +x provider-install.sh
       Single executor by design, with on-chain verification, automatic failover and task-based billing.
     </p>
 
-    <button className="px-10 py-4 bg-gradient-to-r from-blue-700 to-cyan-400 text-white rounded-xl font-semibold text-base md:text-lg shadow-md hover:opacity-95 transition">
+    <button className="px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
+                       bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                       shadow-md hover:opacity-95 transition">
       Explore the cost advantage →
     </button>
   </motion.div>
@@ -1002,14 +1074,15 @@ chmod +x provider-install.sh
     <h3 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] leading-snug">
       Relay makes OGPU easy to use.
       <br />
-      <span className="bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+ bg-clip-text text-transparent">
         Now let us show who it unlocks value for.
       </span>
     </h3>
   </motion.div>
 </section>
 
-{/* COMMUNITY SECTION — NETWORK MESH */}
+{/* ================= SECTION: BUILT FOR EVERYONE ================= */}
 <section className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden">
   
   {/* BACKGROUND MESH */}
@@ -1041,44 +1114,68 @@ chmod +x provider-install.sh
     <div className="relative max-w-5xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
 
-        {/* Developers */}
+        {/* DEVELOPERS */}
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
-          <motion.div className="relative mb-5" animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }} transition={{ duration: 2.6, repeat: Infinity }}>
-            <div className="w-5 h-5 rounded-full bg-[#00C8FF] shadow-[0_0_20px_6px_rgba(0,200,255,0.45)]" />
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
           </motion.div>
           <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Developers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">Run or experiment instantly without provisioning or DevOps.</p>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Run or experiment instantly without provisioning or DevOps.
+          </p>
         </motion.div>
 
-        {/* Enterprises */}
+        {/* ENTERPRISES */}
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }} className="flex flex-col items-center">
-          <motion.div className="relative mb-5" animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }} transition={{ duration: 2.6, repeat: Infinity }}>
-            <div className="w-5 h-5 rounded-full bg-[#00C8FF] shadow-[0_0_20px_6px_rgba(0,200,255,0.45)]" />
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
           </motion.div>
           <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Enterprises</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">Migrate compute seamlessly and reduce operational cost with Relay.</p>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Migrate compute seamlessly and reduce operational cost with Relay.
+          </p>
         </motion.div>
 
-        {/* Researchers */}
+        {/* RESEARCHERS */}
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="flex flex-col items-center">
-          <motion.div className="relative mb-5" animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }} transition={{ duration: 2.6, repeat: Infinity }}>
-            <div className="w-5 h-5 rounded-full bg-[#00C8FF] shadow-[0_0_20px_6px_rgba(0,200,255,0.45)]" />
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
           </motion.div>
           <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Researchers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">Scale experiments and simulations without GPU wait times.</p>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Scale experiments and simulations without GPU wait times.
+          </p>
         </motion.div>
 
-        {/* Providers */}
+        {/* GPU PROVIDERS */}
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.95 }} className="flex flex-col items-center">
-          <motion.div className="relative mb-5" animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }} transition={{ duration: 2.6, repeat: Infinity }}>
-            <div className="w-5 h-5 rounded-full bg-[#00C8FF] shadow-[0_0_20px_6px_rgba(0,200,255,0.45)]" />
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
           </motion.div>
           <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">GPU providers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">Earn per task with on chain verification.</p>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Earn per task with on-chain verification.
+          </p>
         </motion.div>
 
       </div>
-    </div>  {/* ← THIS was the missing closure */}
+    </div>
 
     {/* TAGLINE */}
     <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}
@@ -1092,8 +1189,15 @@ chmod +x provider-install.sh
       {/* LEFT — EXPLORE ECOSYSTEM */}
       <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
         <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Explore the OGPU ecosystem</h3>
-        <p className="text-sm md:text-base text-[#475569] mb-5">Discover workloads, tools, dashboards and open infrastructure powering the global compute network.</p>
-        <motion.a whileHover={{ scale: 1.04 }} href="#" className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
+        <p className="text-sm md:text-base text-[#475569] mb-5">
+          Discover workloads, tools, dashboards and open infrastructure powering the global compute network.
+        </p>
+        <motion.a 
+          whileHover={{ scale: 1.04 }} 
+          href="#"
+          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
           Explore ecosystem →
         </motion.a>
       </div>
@@ -1101,63 +1205,22 @@ chmod +x provider-install.sh
       {/* RIGHT — JOIN COMMUNITY */}
       <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
         <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Join the OGPU community</h3>
-        <p className="text-sm md:text-base text-[#475569] mb-8">Be part of a fast-growing global ecosystem. Get updates, help shape the roadmap, and connect with builders.</p>
+        <p className="text-sm md:text-base text-[#475569] mb-8">
+          Be part of a fast-growing global ecosystem. Get updates, help shape the roadmap, and connect with builders.
+        </p>
 
-<div className="flex items-center justify-center gap-8 mb-8 text-[#0A3C66]">
-
-  {/* X */}
-  <a href="https://x.com/OGPU_Network" target="_blank" className="hover:opacity-70 transition-opacity">
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.2 3h3.3l-7.3 8 8 10h-3.4l-6.3-7.7L7.1 21H3.8l7.6-8.8L3.8 3h3.5l6 7.4L18.2 3z"/>
-    </svg>
-  </a>
-
-  {/* Discord */}
-  <a href="https://discord.gg/opengpu" target="_blank" className="hover:opacity-70 transition-opacity">
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.3 5.1c-1.2-.5-2.6-.9-3.9-1l-.6 1.1a13.7 13.7 0 00-7.7 0l-.6-1.1c-1.3.1-2.7.5-3.9 1C2 9.2 1.8 13.1 2.9 17c1.6 1.2 3.2 2 5 2.3l1-2c-.9-.3-1.8-.8-2.6-1.4-.1-.1 0-.2.1-.1 3.8 1.8 8 1.8 11.8 0 .1-.1.2 0 .1.1-.8.6-1.7 1.1-2.6 1.4l1 2c1.8-.3 3.4-1.1 5-2.3C22.2 13 22 9.2 20.3 5.1zM9.2 14.1c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm5.6 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/>
-    </svg>
-  </a>
-
-  {/* YouTube */}
-  <a href="#" target="_blank" className="hover:opacity-70 transition-opacity">
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M21.6 7.2c-.2-1-1-1.8-2-2C17.7 5 12 5 12 5S6.3 5 4.4 5.2c-1 .2-1.8 1-2 2A28 28 0 002 12c0 1.7.2 3.3.4 4.9.2 1 1 1.8 2 2C6.3 19 12 19 12 19s5.7 0 7.6-.1c1-.2 1.8-1 2-2 .2-1.6.4-3.2.4-4.9 0-1.6-.2-3.2-.4-4.8zM10 15V9l5 3-5 3z"/>
-    </svg>
-  </a>
-
-  {/* LinkedIn */}
-  <a href="#" target="_blank" className="hover:opacity-70 transition-opacity">
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4.9 3.5c0 1.1-.8 2-1.9 2S1 4.6 1 3.5 1.9 1.5 3 1.5s1.9.9 1.9 2zM1.2 22h3.6V7.8H1.2V22zm6.8-14.2V22h3.6v-7.5c0-2 1.8-2 2.2-2s1.8.2 1.8 2V22H19v-8.6c0-4.3-2.5-6-5.6-6-2 0-3.2 1-3.8 2v-1.6H8z"/>
-    </svg>
-  </a>
-
-  {/* TikTok */}
-  <a href="#" target="_blank" className="hover:opacity-70 transition-opacity">
-   <svg
-  xmlns="http://www.w3.org/2000/svg"
-  className="w-6 h-6 shrink-0 translate-y-[0.5px]"
-  viewBox="4 0 24 24"
-  fill="currentColor"
->
-  <path d="M15.5 3v3.2c.8.7 1.8 1.1 3 1.1v2.4c-1.3-.1-2.4-.5-3.4-1.2v6.5A5.3 5.3 0 119.8 9.7h.7v2.4h-.7a2.9 2.9 0 102.9 2.9V3h2.8z"/>
-</svg>
-
-
-
-  </a>
-
-</div>
-
-        {/* Big Telegram CTA */}
-        <motion.a whileHover={{ scale: 1.04 }} href="https://t.me/opengpu_network"
-          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
+        <motion.a 
+          whileHover={{ scale: 1.04 }} 
+          href="https://t.me/opengpu_network"
+          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
           Join Telegram →
         </motion.a>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -1587,7 +1650,7 @@ chmod +x provider-install.sh
 <footer className="relative w-full bg-[#0A0F2C] text-white pt-30 pb-14 px-6 mt-0">
 
   {/* OVERLAPPING CTA BANNER */}
-  <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6">
+<div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 mb-40 md:mb-56">
     <div className="rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
       <div className="relative px-8 md:px-10 py-10 md:py-12 bg-gradient-to-r from-[#071426] via-[#0A2A4A] to-[#0B3C66] text-white">
 
@@ -1645,9 +1708,13 @@ chmod +x provider-install.sh
           placeholder="Enter your email"
           className="flex-1 bg-transparent outline-none text-white placeholder-white/60 px-3 text-sm"
         />
-        <button className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] font-semibold text-white hover:opacity-90 transition text-sm">
-          Subscribe
-        </button>
+        <button
+  className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
+             font-semibold text-white hover:opacity-90 transition text-sm"
+>
+  Subscribe
+</button>
+
       </div>
 
       <p className="text-xs text-white/40 mt-3">
@@ -1698,7 +1765,7 @@ chmod +x provider-install.sh
 
     <div className="flex items-center gap-3">
       <img
-        src="https://digitalgramophone.com/ogpu/Images/OGPU-LOGO-Main-final.png"
+        src="/Images/OGPU-LOGO-Main-final.png"
         className="h-20 opacity-90"
         alt="OGPU Logo"
       />
