@@ -135,11 +135,11 @@ export default function Home() {
     </div>
 
     {/* ELECTRIC GLOW BAR */}
-    <div className="relative w-full h-[4px] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00e9ff] to-transparent" />
-      <div className="absolute inset-0 bg-[#00e9ff] opacity-70 blur-md" />
-    </div>
-  </header>
+   <div className="relative w-full h-[1.5px] overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00E9FF] to-transparent opacity-80" />
+    <div className="absolute inset-0 bg-[#00E9FF] opacity-40 blur-sm" />
+  </div>
+</header>
 
   {/* HERO CONTENT */}
   <div className="relative z-20 flex flex-col h-full">

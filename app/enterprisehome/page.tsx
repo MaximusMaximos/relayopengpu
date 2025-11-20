@@ -9,9 +9,9 @@ export default function EnterprisePage() {
   return (
     <main className="relative w-full min-h-screen bg-[#040814] text-white">
 
-      {/* FIXED HEADER — IDENTICAL TO MAIN SITE */}
+      {/* FIXED HEADER — MATCHING MAIN SITE EXACTLY */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#00C8FF]">
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl">
 
     {/* LOGO */}
     <a href="/" className="flex items-center">
@@ -29,13 +29,16 @@ export default function EnterprisePage() {
       <a href="/" className="hover:text-white transition">Docs</a>
       <a href="/" className="hover:text-white transition">Company</a>
 
-      <a href="/" className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]">
-      
+      {/* CTA button identical style to main-site Get Started */}
+      <a
+        href="/"
+        className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
+      >
         Back to main site
       </a>
     </div>
 
-    {/* MOBILE MENU BUTTON */}
+    {/* MOBILE TOGGLE */}
     <button
       id="mobile-menu-btn"
       className="md:hidden text-white text-3xl focus:outline-none"
@@ -49,10 +52,10 @@ export default function EnterprisePage() {
     </button>
   </nav>
 
-  {/* MOBILE MENU (IDENTICAL TO MAIN PAGE) */}
+  {/* MOBILE MENU */}
   <div
     id="mobile-menu"
-    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl border-b border-[#00C8FF] px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
+    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
   >
     <a href="/" className="hover:text-white transition">Platform</a>
     <a href="/" className="hover:text-white transition">Solutions</a>
@@ -61,14 +64,17 @@ export default function EnterprisePage() {
 
     <a
       href="/"
-      className="mt-2 px-6 py-3 rounded-xl font-semibold border border-[#00E9FF] text-[#00E9FF] transition hover:bg-[#00B5E2] hover:text-[#001019]"
+      className="mt-2 px-6 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/85"
     >
       Back to main site
     </a>
   </div>
 
-  {/* THIN GRADIENT LINE */}
-  <div className="w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500" />
+  {/* ELECTRIC GLOW BAR — SAME AS MAIN SITE */}
+  <div className="relative w-full h-[1.5px] overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00E9FF] to-transparent opacity-80" />
+    <div className="absolute inset-0 bg-[#00E9FF] opacity-40 blur-sm" />
+  </div>
 </header>
 
       {/* PAGE CONTENT */}
