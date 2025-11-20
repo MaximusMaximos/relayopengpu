@@ -898,7 +898,7 @@ chmod +x provider-install.sh
 
     {/* Arrows (unchanged) */}
     <motion.div
-      className="absolute top-[50%] left-[14%] -translate-y-1/2 text-cyan-500 text-2xl"
+      className="absolute top-[50%] left-[17%] -translate-y-1/2 text-cyan-500 text-2xl"
       animate={{ x: [0, 8, 0], opacity: [0.8, 1, 0.8] }}
       transition={{ duration: 2, repeat: Infinity }}
     >
@@ -906,7 +906,7 @@ chmod +x provider-install.sh
     </motion.div>
 
     <motion.div
-      className="absolute top-[50%] right-[14%] -translate-y-1/2 text-cyan-500 text-2xl"
+      className="absolute top-[50%] right-[20%] -translate-y-1/2 text-cyan-500 text-2xl"
       animate={{ x: [0, -8, 0], opacity: [0.8, 1, 0.8] }}
       transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
     >
