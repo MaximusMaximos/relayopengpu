@@ -202,163 +202,77 @@ export default function Home() {
       <LiveStats />
 
 {/* UNIVERSAL QUICK START */}
-<motion.section
-  variants={fadeIn}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: false, amount: 0.2 }}   // 👈 updated here
-  className="w-full bg-[#040814] py-24 px-6 border-t border-white/5"
->
+<section className="w-full bg-[#040814] py-24 px-6 border-t border-white/5">
   <div className="max-w-6xl mx-auto">
 
     {/* Header */}
-    <div className="text-center mb-12">
+    <div className="text-center mb-14">
       <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
-        Start in Minutes
+        Provider Suite Installer
       </h2>
       <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-        Whether you want to run models or provide GPU compute, OGPU gets you online instantly.
+        Start earning with your GPU resources today. Download the provider suite for your operating system.
       </p>
     </div>
-{/* TABS */}
-<div className="flex justify-center mb-10">
-  <div className="bg-black/20 backdrop-blur-sm p-1 rounded-xl flex">
 
-    {/* CLIENTS BUTTON */}
-    <button
-      className="px-6 py-2 rounded-lg text-white bg-[#0A84FF] font-semibold"
-      id="quickstart-clients-btn"
-      onClick={() => {
-        const clients = document.getElementById("quickstart-clients");
-        const providers = document.getElementById("quickstart-providers");
-        const clientsBtn = document.getElementById("quickstart-clients-btn");
-        const providersBtn = document.getElementById("quickstart-providers-btn");
+    {/* GRID */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        if (clients && providers && clientsBtn && providersBtn) {
-          clients.style.display = "block";
-          providers.style.display = "none";
+      {/* macOS */}
+      <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,200,255,0.18)] text-center">
+        <img src="/Assets/apple.png" className="w-14 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-white mb-2">macOS</h3>
 
-          clientsBtn.classList.add("bg-[#0A84FF]", "text-white");
-          providersBtn.classList.remove("bg-[#0A84FF]", "text-white");
-        }
-      }}
-    >
-      Clients
-    </button>
+        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+          Download for macOS →
+        </button>
 
-    {/* PROVIDERS BUTTON */}
-    <button
-      className="px-6 py-2 rounded-lg text-white font-semibold"
-      id="quickstart-providers-btn"
-      onClick={() => {
-        const clients = document.getElementById("quickstart-clients");
-        const providers = document.getElementById("quickstart-providers");
-        const clientsBtn = document.getElementById("quickstart-clients-btn");
-        const providersBtn = document.getElementById("quickstart-providers-btn");
+        <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
+          View macOS docs →
+        </a>
+      </div>
 
-        if (clients && providers && clientsBtn && providersBtn) {
-          clients.style.display = "none";
-          providers.style.display = "block";
+      {/* Windows */}
+      <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,200,255,0.18)] text-center">
+        <img src="/Assets/windows.png" className="w-14 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-white mb-2">Windows</h3>
 
-          providersBtn.classList.add("bg-[#0A84FF]", "text-white");
-          clientsBtn.classList.remove("bg-[#0A84FF]", "text-white");
-        }
-      }}
-    >
-      Providers
-    </button>
+        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+          Download for Windows →
+        </button>
 
-  </div>
-</div>
+        <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
+          View Windows docs →
+        </a>
+      </div>
 
+      {/* Linux */}
+      <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,200,255,0.18)]">
+        <div className="text-center">
+          <img src="/Assets/linux.png" className="w-16 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold text-white mb-2">Linux</h3>
+        </div>
 
-    {/* CLIENTS PANEL */}
-    <div id="quickstart-clients" className="block">
-      <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,200,255,0.12)] mb-10">
-        <p className="text-sm text-cyan-300 font-semibold mb-3">
-          Python Quick Start
+        <p className="text-xs md:text-sm text-gray-400 mb-3">
+          Install via CLI:
         </p>
 
-        <pre className="text-sm md:text-base text-gray-200 overflow-x-auto whitespace-pre leading-relaxed">
-{`pip install ogpu
-
-from ogpu import Client
-client = Client(api_key="YOUR_API_KEY")
-
-result = client.run(
-    model="llama-3.1",
-    input="Hello from OGPU"
-)
-
-print(result.output)`} 
-        </pre>
-      </div>
-
-      {/* CLIENT BUTTONS */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="https://opengpu.network/client-dapp"
-          className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#005dea] to-[#00c6ff] text-white font-semibold text-base shadow-[0_8px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_12px_32px_rgba(0,160,255,0.45)] hover:-translate-y-[3px] transition"
-        >
-          Open Client Dashboard →
-        </a>
-
-        <a
-          href="#"
-          className="px-8 py-4 rounded-xl border border-cyan-400/40 text-cyan-200 font-semibold text-base hover:bg-cyan-400/10 transition"
-        >
-          View API Docs
-        </a>
-      </div>
-    </div>
-
-    {/* PROVIDERS PANEL */}
-    <div id="quickstart-providers" className="hidden">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        {/* Linux */}
-        <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-6 shadow-[0_0_40px_rgba(0,200,255,0.12)]">
-          <h3 className="text-xl font-semibold text-cyan-300 mb-4">Linux</h3>
-          <pre className="text-sm text-gray-200 bg-black/20 rounded-lg p-4 overflow-x-auto whitespace-pre">
+        <pre className="text-xs md:text-sm text-gray-200 bg-black/20 rounded-xl p-4 overflow-x-auto whitespace-pre leading-relaxed mb-6">
 {`curl -o provider-install.sh \\
   https://raw.githubusercontent.com/OpenGPU-Network/provider-suite/main/install.sh
 chmod +x provider-install.sh
 ./provider-install.sh`}
-          </pre>
-          <a href="#" className="inline-block mt-5 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
-            View Linux Docs →
-          </a>
-        </div>
+        </pre>
 
-        {/* macOS */}
-        <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-6 shadow-[0_0_40px_rgba(0,200,255,0.12)]">
-          <h3 className="text-xl font-semibold text-cyan-300 mb-4">macOS</h3>
-          <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-            Download macOS App →
-          </button>
-          <a href="#" className="inline-block mt-5 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
-            View macOS Docs →
-          </a>
-        </div>
-
-        {/* Windows */}
-        <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-6 shadow-[0_0_40px_rgba(0,200,255,0.12)]">
-          <h3 className="text-xl font-semibold text-cyan-300 mb-4">Windows</h3>
-          <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-            Download Windows App →
-          </button>
-          <a href="#" className="inline-block mt-5 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
-            View Windows Docs →
-          </a>
-        </div>
-
+        <a href="#" className="block text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition text-center">
+          View Linux docs →
+        </a>
       </div>
+
     </div>
-
   </div>
-</motion.section>
+</section>
 
-      
 
 {/* GRADIENT TRANSITION */}
 <div className="w-full h-15 bg-gradient-to-b from-[#000104] to-white" />
@@ -481,7 +395,7 @@ chmod +x provider-install.sh
 
   <div className="h-10" />
 
- {/* CARD GRID */}
+{/* CARD GRID */}
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -514,12 +428,23 @@ chmod +x provider-install.sh
                  hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
                  hover:-translate-y-2 hover:scale-[1.02]"
     >
-      {/* ICON */}
-      <img
-        src={card.imgSrc}
-        alt={card.title}
-        className="w-9 h-9 object-contain mb-5"
-      />
+
+      {/* ICON CHIP */}
+      <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                      bg-gradient-to-br from-[#0A84FF] to-[#00C6FF]
+                      shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                      transition-transform duration-300 hover:scale-110">
+        <img
+          src={card.imgSrc}
+          alt={card.title}
+          className="w-6 h-6 object-contain"
+          style={{
+            filter: "none",
+            WebkitFilter: "none",
+            mixBlendMode: "normal"
+          }}
+        />
+      </div>
 
       {/* TITLE */}
       <h3 className="font-semibold text-lg md:text-xl text-[#0A0F2C] mb-2 leading-snug">
@@ -530,9 +455,11 @@ chmod +x provider-install.sh
       <p className="text-sm md:text-base text-[#475569] leading-relaxed">
         {card.text}
       </p>
+
     </div>
   ))}
 </motion.div>
+
 </section>
 
 
@@ -799,111 +726,71 @@ chmod +x provider-install.sh
  {/* Workload Cards */}
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto">
 
-  {/* Model Serving */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
-    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-  >
-    <img
-      src="/Assets/tbnetwork.png"
-      alt="Model Serving"
-      className="w-9 h-9 object-contain mb-5"
-    />
-    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-      Model serving and inference
-    </h4>
-    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-      Run LLMs or vision models with predictable performance at any scale.
-      Serve production workloads reliably from pilots to global deployments.
-    </p>
-    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-      Learn more →
-    </a>
-  </motion.div>
+  {[
+    {
+      src: "/Assets/tbnetwork.png",
+      title: "Model serving and inference",
+      text: "Run LLMs or vision models with predictable performance at any scale. Serve production workloads reliably from pilots to global deployments."
+    },
+    {
+      src: "/Assets/learning.png",
+      title: "Training and fine tuning",
+      text: "Execute batch or streaming training with elastic allocation. Automatically scale up or down for efficiency and cost control."
+    },
+    {
+      src: "/Assets/magic.png",
+      title: "Generative media and 3D",
+      text: "Accelerate video, image, audio and 3D generation with high throughput GPU power. Built for agents, creative pipelines and automation."
+    },
+    {
+      src: "/Assets/atom.png",
+      title: "Simulation and research",
+      text: "Run reinforcement learning, simulations or large scale experiments without limits. Expand capacity instantly as demand grows."
+    }
+  ].map((item, i) => (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.75, ease: "easeOut", delay: i * 0.12 }}
+      className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
+                 shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
+    >
 
-  {/* Training */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.75, ease: "easeOut", delay: 0.12 }}
-    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-  >
-    <img
-      src="/Assets/learning.png"
-      alt="Training"
-      className="w-9 h-9 object-contain mb-5"
-    />
-    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-      Training and fine tuning
-    </h4>
-    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-      Execute batch or streaming training with elastic allocation.
-      Automatically scale up or down for efficiency and cost control.
-    </p>
-    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-      Learn more →
-    </a>
-  </motion.div>
+      {/* ICON CHIP */}
+      <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                      bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                      shadow-inner shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                      transition-transform duration-300 hover:scale-110
+                      [filter:none]">
+        <img
+          src={item.src}
+          alt={item.title}
+          className="w-6 h-6 object-contain !invert-0 !brightness-100 !contrast-100"
+          style={{ filter: "none" }}
+        />
+      </div>
 
-  {/* Generative */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.75, ease: "easeOut", delay: 0.24 }}
-    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-  >
-    <img
-      src="/Assets/magic.png"
-      alt="Generative"
-      className="w-9 h-9 object-contain mb-5"
-    />
-    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-      Generative media and 3D
-    </h4>
-    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-      Accelerate video, image, audio and 3D generation with high throughput GPU power.
-      Built for agents, creative pipelines and automation.
-    </p>
-    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-      Learn more →
-    </a>
-  </motion.div>
+      {/* TITLE */}
+      <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
+        {item.title}
+      </h4>
 
-  {/* Simulation */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.75, ease: "easeOut", delay: 0.36 }}
-    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-  >
-    <img
-      src="/Assets/atom.png"
-      alt="Simulation"
-      className="w-9 h-9 object-contain mb-5"
-    />
-    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-      Simulation and research
-    </h4>
-    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-      Run reinforcement learning, simulations or large scale experiments without limits.
-      Expand capacity instantly as demand grows.
-    </p>
-    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-      Learn more →
-    </a>
-  </motion.div>
+      {/* DESCRIPTION */}
+      <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
+        {item.text}
+      </p>
+
+      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+        Learn more →
+      </a>
+
+    </motion.div>
+  ))}
 
 </div>
+
 
 
   {/* Trust Line */}
@@ -1029,45 +916,88 @@ chmod +x provider-install.sh
   </motion.div>
 
   {/* BOTTOM CARDS — fade UP staggered */}
-  <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    {/* Card 1 */}
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
-      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-    >
-      <h3 className="text-lg font-semibold mb-3">No wallets or tokens</h3>
-      <p className="text-sm text-[#475569]">Relay enables full enterprise compute with fiat billing.</p>
-    </motion.div>
+  {/* Card 1 */}
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
+    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
+  >
 
-    {/* Card 2 */}
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-    >
-      <h3 className="text-lg font-semibold mb-3">Unified usage dashboard</h3>
-      <p className="text-sm text-[#475569]">Clean analytics, logs and tracking in one interface.</p>
-    </motion.div>
+    {/* ICON CHIP */}
+    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                    transition-transform duration-300 hover:scale-110">
+      <img
+        src="/Assets/bsfillcreditcard2frontfill.png"
+        alt="No wallets or tokens"
+        className="w-6 h-6 object-contain"
+        style={{ filter: "none" }}
+      />
+    </div>
 
-    {/* Card 3 */}
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.24 }}
-      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-    >
-      <h3 className="text-lg font-semibold mb-3">Drop-in integration</h3>
-      <p className="text-sm text-[#475569]">Works with existing workflows without rewrites.</p>
-    </motion.div>
+    <h3 className="text-lg font-semibold mb-3">No wallets or tokens</h3>
+    <p className="text-sm text-[#475569]">Relay enables full enterprise compute with fiat billing.</p>
+  </motion.div>
 
-  </div>
+  {/* Card 2 */}
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
+    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
+  >
+
+    {/* ICON CHIP */}
+    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                    transition-transform duration-300 hover:scale-110">
+      <img
+        src="/Assets/madashboardcustomize.png"
+        alt="Unified usage dashboard"
+        className="w-6 h-6 object-contain"
+        style={{ filter: "none" }}
+      />
+    </div>
+
+    <h3 className="text-lg font-semibold mb-3">Unified usage dashboard</h3>
+    <p className="text-sm text-[#475569]">Clean analytics, logs and tracking in one interface.</p>
+  </motion.div>
+
+  {/* Card 3 */}
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.7, ease: "easeOut", delay: 0.24 }}
+    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
+  >
+
+    {/* ICON CHIP */}
+    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                    transition-transform duration-300 hover:scale-110">
+      <img
+        src="/Assets/bsplugin.png"
+        alt="Drop-in integration"
+        className="w-6 h-6 object-contain"
+        style={{ filter: "none" }}
+      />
+    </div>
+
+    <h3 className="text-lg font-semibold mb-3">Drop-in integration</h3>
+    <p className="text-sm text-[#475569]">Works with existing workflows without rewrites.</p>
+  </motion.div>
+
+</div>
+
 
   {/* CTA */}
   <motion.div
@@ -1237,20 +1167,63 @@ chmod +x provider-install.sh
           Be part of a fast-growing global ecosystem. Get updates, help shape the roadmap, and connect with builders.
         </p>
 
+        {/* MAIN CTA */}
         <motion.a 
           whileHover={{ scale: 1.04 }} 
           href="https://t.me/opengpu_network"
           className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
                      bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
+                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all mb-8">
           Join Telegram →
         </motion.a>
+
+        {/* SOCIAL GRID */}
+<div className="grid grid-cols-7 gap-4 mt-2">
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://x.com/OGPU_Network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/x.png" className="w-6 h-6 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">X</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://t.me/opengpu_network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/telegram.png" className="w-6 h-6" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Telegram</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://discord.com/invite/opengpunetwork" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/discord.png" className="w-6 h-6" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Discord</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://www.tiktok.com/@opengpu.network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/tiktok.png" className="w-6 h-6 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">TikTok</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://www.linkedin.com/company/opengpu" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/linkedin.png" className="w-6 h-6 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">LinkedIn</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://instagram.com/opengpu.network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/instagram.png" className="w-6 h-6" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Instagram</span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://youtube.com/@opengpunetwork" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/youtube.png" className="w-6 h-6 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">YouTube</span>
+  </motion.a>
+
+</div>
+
       </div>
 
     </div>
 
   </div>
 </section>
+
 
 
 
