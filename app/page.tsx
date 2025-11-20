@@ -25,8 +25,8 @@ export default function Home() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      const fadeStart = 200;   // scrolling before this does not fade
-      const fadeEnd = 900;     // fades out much slower now
+      const fadeStart = 200;   
+      const fadeEnd = 900;     
 
       if (scrollY < fadeStart) {
         setHeroOpacity(1);
@@ -169,10 +169,10 @@ export default function Home() {
         We do not replace the cloud, we route across it.
       </p>
 
-      {/* HERO BUTTONS – SWAPPED AS REQUESTED */}
+      {/* HERO BUTTONS */}
       <div className="flex flex-wrap justify-center gap-5">
 
-  {/* PRIMARY CTA — Run an Enterprise Pilot (should be first) */}
+  {/* PRIMARY CTA — Run an Enterprise Pilot */}
   <button
     onClick={() => (window.location.href = "/enterprisehome")}
     className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
@@ -481,49 +481,60 @@ chmod +x provider-install.sh
 
   <div className="h-10" />
 
-  {/* CARD GRID */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.45, ease: "easeOut" }}
-    className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-  >
-    {[{
-      icon: "🌐",
+ {/* CARD GRID */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.2 }}
+  transition={{ duration: 0.45, ease: "easeOut" }}
+  className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+>
+  {[
+    {
+      imgSrc: "/Assets/outlineglobal.png",
       title: "Global Capacity Network",
       text: "Access GPU capacity worldwide. OGPU routes tasks instantly to available compute."
-    }, {
-      icon: "📈",
+    },
+    {
+      imgSrc: "/Assets/scaling.png",
       title: "Elastic Scaling",
-      text: "On-demand scale inference or fine-tuning. No reservations, queuing or region limits."
-    }, {
-      icon: "💸",
+      text: "On-demand scale inference or fine-tuning instantly. No reservations, queueing or region limits."
+    },
+    {
+      imgSrc: "/Assets/percentage.png",
       title: "Lower Operational Cost",
       text: "Pay only for executed work. Task-based billing cuts idle costs by 60 to 80 percent."
-    }].map((card, i) => (
-      <div
-        key={i}
-        className="bg-white rounded-2xl p-7 md:p-8 flex flex-col border border-gray-100 
-                   shadow-[0_4px_16px_rgba(0,0,0,0.06)]
-                   transition-all duration-300 ease-out 
-                   hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
-                   hover:-translate-y-2 hover:scale-[1.02]"
-      >
-        <div className="text-[#005DEA] mb-4 text-3xl md:text-4xl">
-          {card.icon}
-        </div>
-        <h3 className="font-semibold text-lg md:text-xl text-[#0A0F2C] mb-2 leading-snug">
-          {card.title}
-        </h3>
-        <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-          {card.text}
-        </p>
-      </div>
-    ))}
-  </motion.div>
+    }
+  ].map((card, i) => (
+    <div
+      key={i}
+      className="bg-white rounded-2xl p-7 md:p-8 flex flex-col border border-gray-100 
+                 shadow-[0_4px_16px_rgba(0,0,0,0.06)]
+                 transition-all duration-300 ease-out 
+                 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]
+                 hover:-translate-y-2 hover:scale-[1.02]"
+    >
+      {/* ICON */}
+      <img
+        src={card.imgSrc}
+        alt={card.title}
+        className="w-9 h-9 object-contain mb-5"
+      />
 
+      {/* TITLE */}
+      <h3 className="font-semibold text-lg md:text-xl text-[#0A0F2C] mb-2 leading-snug">
+        {card.title}
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p className="text-sm md:text-base text-[#475569] leading-relaxed">
+        {card.text}
+      </p>
+    </div>
+  ))}
+</motion.div>
 </section>
+
 
 {/* ========== SECTION: HOW OGPU WORKS ========== */}
 <section className="w-full bg-white py-16 md:py-20 px-6 relative overflow-hidden">
@@ -785,98 +796,115 @@ chmod +x provider-install.sh
     </div>
   </motion.div>
 
-  {/* Workload Cards */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto">
+ {/* Workload Cards */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto">
 
-    {/* Model Serving */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
-      className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-                 shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-    >
-      <div className="text-3xl md:text-4xl mb-5">🌐</div>
-      <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-        Model serving and inference
-      </h4>
-      <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-        Run LLMs or vision models with predictable performance at any scale.
-        Serve production workloads reliably from pilots to global deployments.
-      </p>
-      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-        Learn more →
-      </a>
-    </motion.div>
+  {/* Model Serving */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.75, ease: "easeOut", delay: 0 }}
+    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
+               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
+  >
+    <img
+      src="/Assets/tbnetwork.png"
+      alt="Model Serving"
+      className="w-9 h-9 object-contain mb-5"
+    />
+    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
+      Model serving and inference
+    </h4>
+    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
+      Run LLMs or vision models with predictable performance at any scale.
+      Serve production workloads reliably from pilots to global deployments.
+    </p>
+    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+      Learn more →
+    </a>
+  </motion.div>
 
-    {/* Training */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.75, ease: "easeOut", delay: 0.12 }}
-      className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-                 shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-    >
-      <div className="text-3xl md:text-4xl mb-5">🧱</div>
-      <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-        Training and fine tuning
-      </h4>
-      <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-        Execute batch or streaming training with elastic allocation.
-        Automatically scale up or down for efficiency and cost control.
-      </p>
-      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-        Learn more →
-      </a>
-    </motion.div>
+  {/* Training */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.75, ease: "easeOut", delay: 0.12 }}
+    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
+               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
+  >
+    <img
+      src="/Assets/learning.png"
+      alt="Training"
+      className="w-9 h-9 object-contain mb-5"
+    />
+    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
+      Training and fine tuning
+    </h4>
+    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
+      Execute batch or streaming training with elastic allocation.
+      Automatically scale up or down for efficiency and cost control.
+    </p>
+    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+      Learn more →
+    </a>
+  </motion.div>
 
-    {/* Generative */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.75, ease: "easeOut", delay: 0.24 }}
-      className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-                 shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-    >
-      <div className="text-3xl md:text-4xl mb-5">✨</div>
-      <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-        Generative media and 3D
-      </h4>
-      <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-        Accelerate video, image, audio and 3D generation with high throughput GPU power.
-        Built for agents, creative pipelines and automation.
-      </p>
-      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-        Learn more →
-      </a>
-    </motion.div>
+  {/* Generative */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.75, ease: "easeOut", delay: 0.24 }}
+    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
+               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
+  >
+    <img
+      src="/Assets/magic.png"
+      alt="Generative"
+      className="w-9 h-9 object-contain mb-5"
+    />
+    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
+      Generative media and 3D
+    </h4>
+    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
+      Accelerate video, image, audio and 3D generation with high throughput GPU power.
+      Built for agents, creative pipelines and automation.
+    </p>
+    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+      Learn more →
+    </a>
+  </motion.div>
 
-    {/* Simulation */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.75, ease: "easeOut", delay: 0.36 }}
-      className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
-                 shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
-    >
-      <div className="text-3xl md:text-4xl mb-5">⚛️</div>
-      <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
-        Simulation and research
-      </h4>
-      <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
-        Run reinforcement learning, simulations or large scale experiments without limits.
-        Expand capacity instantly as demand grows.
-      </p>
-      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
-        Learn more →
-      </a>
-    </motion.div>
+  {/* Simulation */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.75, ease: "easeOut", delay: 0.36 }}
+    className="backdrop-blur-md bg-white/90 border border-gray-200 rounded-2xl p-7 md:p-8 
+               shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1"
+  >
+    <img
+      src="/Assets/atom.png"
+      alt="Simulation"
+      className="w-9 h-9 object-contain mb-5"
+    />
+    <h4 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-3 leading-snug">
+      Simulation and research
+    </h4>
+    <p className="text-sm md:text-base text-[#475569] mb-4 leading-relaxed">
+      Run reinforcement learning, simulations or large scale experiments without limits.
+      Expand capacity instantly as demand grows.
+    </p>
+    <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+      Learn more →
+    </a>
+  </motion.div>
 
-  </div>
+</div>
+
 
   {/* Trust Line */}
   <div className="text-center mt-12 md:mt-16">
@@ -1446,38 +1474,7 @@ chmod +x provider-install.sh
       </div>
     </motion.div>
 
-    {/* FEATURE CARDS — staggered bottom-up */}
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl w-full mb-16">
-      {[
-        {
-          title: "Advanced performance",
-          text: "Parallel execution with sub-second blocks and high throughput.",
-        },
-        {
-          title: "ORC 20 token standard",
-          text: "A compute-centered token format with richer metadata and workloads built-in.",
-        },
-        {
-          title: "Compute native settlement",
-          text: "Providers and tasks are settled directly on-chain with transparent proofs.",
-        },
-      ].map((c, idx) => (
-        <motion.div
-          key={c.title}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: "easeOut", delay: 0.55 + idx * 0.12 }}
-          whileHover={{ y: -6, boxShadow: "0 18px 45px rgba(37,99,235,0.45)" }}
-          className="relative overflow-hidden rounded-2xl bg-[#020617] border border-sky-700/50 px-6 py-7"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 via-transparent to-transparent pointer-events-none" />
-          <h3 className="relative text-lg md:text-xl font-semibold mb-3">{c.title}</h3>
-          <p className="relative text-sm md:text-base text-sky-100/85 leading-relaxed">{c.text}</p>
-        </motion.div>
-      ))}
-    </div>
-
+    
     {/* CTA ROW — bottom-to-top final sequence */}
     <motion.div
       initial={{ opacity: 0, y: 35 }}
