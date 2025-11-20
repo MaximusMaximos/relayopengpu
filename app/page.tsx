@@ -1181,37 +1181,37 @@ chmod +x provider-install.sh
 <div className="grid grid-cols-7 gap-4 mt-2">
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://x.com/OGPU_Network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/x.png" className="w-6 h-6 invert" />
+    <img src="/Assets/x.png" className="w-5 h-5 invert" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">X</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://t.me/opengpu_network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/telegram.png" className="w-6 h-6" />
+    <img src="/Assets/telegram.png" className="w-5 h-5" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Telegram</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://discord.com/invite/opengpunetwork" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/discord.png" className="w-6 h-6" />
+    <img src="/Assets/discord.png" className="w-5 h-5" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Discord</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://www.tiktok.com/@opengpu.network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/tiktok.png" className="w-6 h-6 invert" />
+    <img src="/Assets/tiktok.png" className="w-5 h-5 invert" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">TikTok</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://www.linkedin.com/company/opengpu" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/linkedin.png" className="w-6 h-6 invert" />
+    <img src="/Assets/linkedin.png" className="w-5 h-5 invert" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">LinkedIn</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://instagram.com/opengpu.network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/instagram.png" className="w-6 h-6" />
+    <img src="/Assets/instagram.png" className="w-5 h-5" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">Instagram</span>
   </motion.a>
 
   <motion.a whileHover={{ scale: 1.08 }} href="https://youtube.com/@opengpunetwork" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/youtube.png" className="w-6 h-6 invert" />
+    <img src="/Assets/youtube.png" className="w-5 h-5 invert" />
     <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]">YouTube</span>
   </motion.a>
 
