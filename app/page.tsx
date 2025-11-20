@@ -874,48 +874,46 @@ chmod +x provider-install.sh
       <p className="relative text-xl font-semibold text-[#0A0F2C] drop-shadow-sm">Relay</p>
     </motion.div>
 
-{/* Clients label — fade left → right */}
-<motion.div
-  initial={{ opacity: 0, x: -18 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: false, amount: 0.4 }}
-  transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-  className="absolute top-[50%] left-0 -translate-y-1/2 text-left"
->
-  <p className="text-[#0A0F2C] font-medium">Clients</p>
-</motion.div>
+    {/* Clients label — fade left → right */}
+    <motion.div
+      initial={{ opacity: 0, x: -18 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+      className="absolute top-[50%] left-0 -translate-y-1/2 text-left"
+    >
+      <p className="text-[#0A0F2C] font-medium">Clients</p>
+    </motion.div>
 
-{/* Providers label — fade right → left */}
-<motion.div
-  initial={{ opacity: 0, x: 18 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: false, amount: 0.4 }}
-  transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-  className="absolute right-0 text-right mt-4 md:mt-0 top-[55%] md:top-[50%] -translate-y-1/2"
->
-  <p className="text-[#0A0F2C] font-medium">Providers</p>
-</motion.div>
+    {/* Providers label — fade right → left */}
+    <motion.div
+      initial={{ opacity: 0, x: 18 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+      className="absolute top-[50%] right-0 -translate-y-1/2 text-right"
+    >
+      <p className="text-[#0A0F2C] font-medium">Providers</p>
+    </motion.div>
 
-{/* Left Arrow */}
-<motion.div
-  className="absolute top-[50%] left-[14%] -translate-y-1/2 text-cyan-500 text-2xl"
-  animate={{ x: [0, 8, 0], opacity: [0.8, 1, 0.8] }}
-  transition={{ duration: 2, repeat: Infinity }}
->
-  →
-</motion.div>
+    {/* Arrows (unchanged) */}
+    <motion.div
+      className="absolute top-[50%] left-[17%] -translate-y-1/2 text-cyan-500 text-2xl"
+      animate={{ x: [0, 8, 0], opacity: [0.8, 1, 0.8] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      →
+    </motion.div>
 
-{/* Right Arrow */}
-<motion.div
-  className="absolute right-[14%] text-cyan-500 text-2xl top-[55%] md:top-[50%] -translate-y-1/2"
-  animate={{ x: [0, -8, 0], opacity: [0.8, 1, 0.8] }}
-  transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
->
-  →
-</motion.div>
+    <motion.div
+      className="absolute top-[50%] right-[20%] -translate-y-1/2 text-cyan-500 text-2xl"
+      animate={{ x: [0, -8, 0], opacity: [0.8, 1, 0.8] }}
+      transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
+    >
+      →
+    </motion.div>
 
-</motion.div>
-
+  </motion.div>
 
   {/* BOTTOM CARDS — fade UP staggered */}
 <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
