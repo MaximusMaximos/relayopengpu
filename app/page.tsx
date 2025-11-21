@@ -65,7 +65,8 @@ export default function Home() {
     <main className="relative w-full bg-[#040814] text-white">
 
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen">
+      <section id="hero" 
+      className="relative w-full min-h-screen">
         {/* Background Video + Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <video
@@ -86,53 +87,66 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-  {/* FIXED HEADER */}
-  <header className="fixed top-0 left-0 w-full z-[999]">
-    <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
-      <div className="flex items-center">
-        <img src="/Images/OGPU-LOGO-Main-final.png" alt="OGPU Logo" className="h-10 w-auto md:h-16" />
-      </div>
+        {/* FIXED HEADER — MATCHING MAIN SITE EXACTLY */}
+<header className="fixed top-0 left-0 w-full z-[999]">
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl">
 
-      {/* DESKTOP NAV */}
-      <div className="hidden md:flex items-center gap-8 text-base text-gray-200 font-medium">
-        <a href="#" className="hover:text-white transition">Platform</a>
-        <a href="#" className="hover:text-white transition">Solutions</a>
-        <a href="#" className="hover:text-white transition">Docs</a>
-        <a href="#" className="hover:text-white transition">Company</a>
-        {/* GET STARTED = #0A84FF */}
-        <a
-          href="https://opengpu.network/get-started"
-          className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
-        >
-          Get Started
-        </a>
-      </div>
+    {/* LOGO */}
+    <a href="/" className="flex items-center">
+      <img
+        src="/Images/OGPU-LOGO-Main-final.png"
+        alt="OGPU Logo"
+        className="h-10 w-auto md:h-16 cursor-pointer"
+      />
+    </a>
 
-      <button
-        id="mobile-menu-btn"
-        className="md:hidden text-white text-3xl focus:outline-none"
-        onClick={() => document.getElementById("mobile-menu")?.classList.toggle("hidden")}
-      >
-        
-      </button>
-    </nav>
+    {/* NAV LINKS DESKTOP */}
+    <div className="hidden md:flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
+      <a href="/" className="hover:text-white transition">Platform</a>
+      <a href="/" className="hover:text-white transition">Solutions</a>
+      <a href="/" className="hover:text-white transition">Docs</a>
+      <a href="/" className="hover:text-white transition">Company</a>
 
-    {/* MOBILE MENU */}
-    <div
-      id="mobile-menu"
-      className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl border-b border-[#0A84FF]/40 px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
-    >
-      <a href="#" className="hover:text-white transition">Platform</a>
-      <a href="#" className="hover:text-white transition">Solutions</a>
-      <a href="#" className="hover:text-white transition">Docs</a>
-      <a href="#" className="hover:text-white transition">Company</a>
+      {/* CTA button identical style to main-site Get Started */}
       <a
-        href="https://opengpu.network/get-started"
-        className="mt-2 px-6 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90"
+        href="/"
+        className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
       >
         Get Started
       </a>
     </div>
+
+    {/* MOBILE TOGGLE */}
+    <button
+      id="mobile-menu-btn"
+      className="md:hidden text-white text-3xl focus:outline-none"
+      onClick={() => {
+        const m = document.getElementById("mobile-menu");
+        if (!m) return;
+        m.classList.toggle("hidden");
+      }}
+    >
+      ☰
+    </button>
+  </nav>
+
+  {/* MOBILE MENU */}
+  <div
+    id="mobile-menu"
+    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
+  >
+    <a href="/" className="hover:text-white transition">Platform</a>
+    <a href="/" className="hover:text-white transition">Solutions</a>
+    <a href="/" className="hover:text-white transition">Docs</a>
+    <a href="/" className="hover:text-white transition">Company</a>
+
+    <a
+      href="/"
+      className="mt-2 px-6 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/85"
+    >
+      Back to main site
+    </a>
+  </div>
 
     {/* ELECTRIC GLOW BAR */}
    <div className="relative w-full h-[1.5px] overflow-hidden">
@@ -140,6 +154,78 @@ export default function Home() {
     <div className="absolute inset-0 bg-[#00E9FF] opacity-40 blur-sm" />
   </div>
 </header>
+
+{/* QUICK NAV MENU (Floating Right Side) */}
+<div className="fixed right-4 top-1/2 -translate-y-1/2 z-[998] hidden md:flex flex-col gap-3">
+
+  <a href="#quickstart"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Quick Start
+  </a>
+
+  <a href="#why-ogpu"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Why OGPU
+  </a>
+
+  <a href="#how-ogpu-works"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    How It Works
+  </a>
+
+  <a href="#workloads"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Workloads
+  </a>
+
+  <a href="#relay"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Relay
+  </a>
+
+  <a href="#built-for-everyone"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Built For Everyone
+  </a>
+
+  <a href="#blockchain"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    Blockchain
+  </a>
+
+  <a href="#news"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                transition shadow-md">
+    News & Footer
+  </a>
+
+  {/* Back to Top */}
+  <a href="#hero"
+     className="mt-2 px-3 py-2 rounded-lg bg-[#0A84FF] text-white text-xs
+                border border-[#0A84FF]/40 backdrop-blur-lg hover:bg-[#006CE0]
+                transition shadow-md">
+    ↑ Top
+  </a>
+
+</div>
+
+
+
 
   {/* HERO CONTENT */}
   <div className="relative z-20 flex flex-col h-full">
@@ -173,14 +259,18 @@ export default function Home() {
       <div className="flex flex-wrap justify-center gap-5">
 
   {/* PRIMARY CTA — Run an Enterprise Pilot */}
-  <button
-    onClick={() => (window.location.href = "/enterprisehome")}
-    className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
-               bg-[#00C6FF] transition-all duration-300 
-               hover:bg-[#00AEE5] hover:shadow-[0_12px_32px_rgba(0,198,255,0.4)] hover:-translate-y-1"
-  >
-    Run An Enterprise Pilot
-  </button>
+ <button
+  onClick={() => (window.location.href = "/enterprisehome")}
+  className="px-12 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg
+             border-[2px] border-[#00E9FF]/80 bg-white/10 backdrop-blur-md
+             hover:bg-white/20 hover:border-[#00E9FF]
+             transition-all duration-300 hover:-translate-y-1
+             shadow-[0_0_25px_rgba(0,233,255,0.20)] hover:shadow-[0_0_40px_rgba(0,233,255,0.45)]">
+  Run A Free Enterprise Pilot
+</button>
+
+
+
 
   {/* SECONDARY CTA — Get Started */}
   <a
@@ -202,7 +292,8 @@ export default function Home() {
       <LiveStats />
 
 {/* UNIVERSAL QUICK START */}
-<section className="w-full bg-[#040814] py-24 px-6 border-t border-white/5">
+<section id="quickstart"
+ className="w-full bg-[#040814] py-24 px-6 border-t border-white/5">
   <div className="max-w-6xl mx-auto">
 
     {/* Header */}
@@ -216,7 +307,27 @@ export default function Home() {
     </div>
 
     {/* GRID */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      {/* Client */}
+      <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,200,255,0.18)] text-center">
+        
+        <h3 className="text-xl font-semibold text-white mb-2">
+          Run Models
+        </h3>
+
+        <p className="text-sm text-gray-400 mb-5">
+          Access decentralized GPUs instantly using the Client Dashboard.
+        </p>
+
+        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+          Run Models →
+        </button>
+
+        <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
+          API Docs →
+        </a>
+      </div>
 
       {/* macOS */}
       <div className="bg-[#0A0F1D] border border-cyan-400/30 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,200,255,0.18)] text-center">
@@ -333,7 +444,8 @@ chmod +x provider-install.sh
 
      
       {/* ========== SECTION: WHY OGPU ========== */}
-<section className="w-full bg-[#F7F9FC] py-16 md:py-20 px-6">
+<section id="why-ogpu"
+ className="w-full bg-[#F7F9FC] py-16 md:py-20 px-6">
 
   {/* Image + Text Row */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[52%_48%] gap-12 md:gap-16 items-center">
@@ -464,7 +576,8 @@ chmod +x provider-install.sh
 
 
 {/* ========== SECTION: HOW OGPU WORKS ========== */}
-<section className="w-full bg-white py-16 md:py-20 px-6 relative overflow-hidden">
+<section id="how-ogpu-works"
+ className="w-full bg-white py-16 md:py-20 px-6 relative overflow-hidden">
 
   {/* Light gradient background */}
   <div className="absolute inset-0 bg-gradient-to-br from-[#F5FAFF] via-white to-[#E6F2FF] opacity-90 pointer-events-none" />
@@ -690,7 +803,8 @@ chmod +x provider-install.sh
 
 
       {/* BUILT FOR REAL AI WORKLOADS SECTION */}
-<section className="w-full bg-[#F6F9FA] py-24 px-6">
+<section id="workloads"
+className="w-full bg-[#F6F9FA] py-24 px-6">
 
   {/* PREMIUM ENTERPRISE WORKLOADS BANNER */}
   <motion.div
@@ -806,7 +920,8 @@ chmod +x provider-install.sh
 
 
 {/* RELAY: ENTERPRISE GATEWAY TO OGPU */}
-<section className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
+<section id="relay"
+className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
 
   {/* CENTERED PURE ORANGE GLOW */}
   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -906,7 +1021,7 @@ chmod +x provider-install.sh
     </motion.div>
 
     <motion.div
-      className="absolute top-[50%] right-[20%] -translate-y-1/2 text-cyan-500 text-2xl"
+      className="absolute top-[50%] right-[20.5%] -translate-y-1/2 text-cyan-500 text-2xl"
       animate={{ x: [0, -8, 0], opacity: [0.8, 1, 0.8] }}
       transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
     >
@@ -1041,7 +1156,8 @@ chmod +x provider-install.sh
 </section>
 
 {/* ================= SECTION: BUILT FOR EVERYONE ================= */}
-<section className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden">
+<section id="built-for-everyone"
+ className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden">
   
   {/* BACKGROUND MESH */}
   <div className="absolute inset-0 pointer-events-none opacity-[0.20] z-0">
@@ -1230,7 +1346,8 @@ chmod +x provider-install.sh
 
 
     {/* BLOCKCHAIN SECTION — SYSTEM BOOT SEQUENCE */}
-<section className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
+<section id="blockchain" 
+className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
   {/* BACKGROUND GRID + GLOW */}
   <div className="absolute inset-0 pointer-events-none">
     <div className="absolute inset-0 opacity-25">
@@ -1497,7 +1614,8 @@ chmod +x provider-install.sh
 
 
 {/* NEWS & MOMENTUM SECTION */}
-<section className="w-full bg-white py-24 md:py-28 px-6">
+<section id="news"
+className="w-full bg-white py-24 md:py-28 px-6">
 
   {/* HEADER — fade down */}
   <motion.div
@@ -1662,35 +1780,39 @@ chmod +x provider-install.sh
   </div>
 
 
-  {/* MAIN FOOTER GRID */}
-  <div className="max-w-7xl mx-auto mt-24 grid grid-cols-1 lg:grid-cols-[42%_1fr_1fr_1fr] gap-10 md:gap-14">
+ {/* MAIN FOOTER GRID */}
+<div className="max-w-7xl mx-auto mt-14 md:mt-24 grid grid-cols-1 lg:grid-cols-[42%_1fr_1fr_1fr] gap-10 md:gap-14">
 
-    {/* LEFT */}
-    <div>
-      <h3 className="text-2xl md:text-3xl font-semibold leading-snug mb-5">
-        Compute without walls.<br />
-        Route across clouds and providers.
-      </h3>
+  {/* LEFT */}
+  <div className="mt-2 md:mt-0">
+    <h3 className="text-2xl md:text-3xl font-semibold leading-snug mb-4 md:mb-5">
+      Compute without walls.<br />
+      Route across clouds and providers.
+    </h3>
 
-      <div className="flex items-center bg-white/10 rounded-xl p-2 backdrop-blur-sm border border-white/10 max-w-md">
-        <SafeInput
-          type="email"
-          placeholder="Enter your email"
-          className="flex-1 bg-transparent outline-none text-white placeholder-white/60 px-3 text-sm"
-        />
-        <button
-  className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-             font-semibold text-white hover:opacity-90 transition text-sm"
->
-  Subscribe
-</button>
+    {/* SUBSCRIBE BOX — hidden on mobile */}
+    <div className="hidden md:flex items-center bg-white/10 rounded-xl p-2 
+                    backdrop-blur-sm border border-white/10 max-w-md mt-5">
+      <SafeInput
+        type="email"
+        placeholder="Enter your email"
+        className="flex-1 bg-transparent outline-none text-white 
+                   placeholder-white/60 px-3 text-sm"
+      />
 
-      </div>
-
-      <p className="text-xs text-white/40 mt-3">
-        By subscribing you agree to receive product updates. No spam, unsubscribe anytime.
-      </p>
+      <button
+        className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
+                   font-semibold text-white hover:opacity-90 transition text-sm"
+      >
+        Subscribe
+      </button>
     </div>
+
+    {/* DISCLAIMER — hidden on mobile */}
+    <p className="hidden md:block text-xs text-white/40 mt-3">
+      By subscribing you agree to receive product updates. No spam, unsubscribe anytime.
+    </p>
+  </div>
 
 
     {/* Product */}
@@ -1758,6 +1880,46 @@ chmod +x provider-install.sh
   </div>
 
 </footer>
+
+{/* MOBILE QUICK NAV — Minimal 5 Icons */}
+<div className="fixed bottom-0 left-0 w-full z-[999] md:hidden 
+                bg-[#000814]/95 backdrop-blur-xl border-t border-white/10">
+
+  <div className="flex justify-around py-2 px-2 text-[12px] text-gray-200">
+
+    {/* Quick Start */}
+    <a href="#quickstart" className="flex flex-col items-center hover:text-white">
+      <span className="text-xl">⚡</span>
+      <span className="text-[10px]">Quick</span>
+    </a>
+
+    {/* How It Works */}
+    <a href="#how-ogpu-works" className="flex flex-col items-center hover:text-white">
+      <span className="text-xl">🔄</span>
+      <span className="text-[10px]">How</span>
+    </a>
+
+    {/* Workloads */}
+    <a href="#workloads" className="flex flex-col items-center hover:text-white">
+      <span className="text-xl">📦</span>
+      <span className="text-[10px]">Loads</span>
+    </a>
+
+    {/* Relay */}
+    <a href="#relay" className="flex flex-col items-center hover:text-white">
+      <span className="text-xl">🚀</span>
+      <span className="text-[10px]">Relay</span>
+    </a>
+
+    {/* Back to Top */}
+    <a href="#hero" className="flex flex-col items-center text-white">
+      <span className="text-xl">⬆️</span>
+      <span className="text-[10px]">Top</span>
+    </a>
+
+  </div>
+</div>
+
 
     </main>
   );
