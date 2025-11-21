@@ -86,7 +86,9 @@ export default function GetStartedPage() {
                       allowFullScreen
                     />
                   </div>
+                
                 </div>
+                 
 
                 <a
                   href="https://www.youtube.com/watch?v=6ZARCPQrJGM"
@@ -95,6 +97,10 @@ export default function GetStartedPage() {
                 >
                   macOS users: click here to watch the macOS setup tutorial →
                 </a>
+                 {/* RIGHT – LIVE MINI STATS */}
+              <LiveMiniStats />
+
+            
               </div>
 
             </motion.div>
@@ -102,47 +108,44 @@ export default function GetStartedPage() {
 
           {/* HOW IT WORKS */}
           <section className="space-y-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeUp}
-              transition={{ duration: 0.45 }}
-              className="space-y-2"
-            >
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
-                Overview
-              </p>
-              <h2 className="text-2xl md:text-3xl font-semibold">Learn how OpenGPU works</h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
-                OpenGPU links providers and AI clients through a global network,
-                routing workloads intelligently and tracking rewards in real time.
-              </p>
-            </motion.div>
+           <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={fadeUp}
+  transition={{ duration: 0.45, delay: 0.05 }}
+  className="grid gap-4 md:gap-5 md:grid-cols-4"
+>
+  {[
+    {
+      title: "Connect your GPU and wallet",
+      body: "Install the OpenGPU Provider Suite and connect your wallet so you can receive rewards and register your hardware.",
+    },
+    {
+      title: "Workloads are assigned automatically",
+      body: "The network distributes AI and ML tasks to your GPU based on availability and performance. No Relay interaction needed.",
+    },
+    {
+      title: "Tasks execute instantly",
+      body: "Your GPU processes real AI, ML, and rendering jobs with zero DevOps or manual configuration.",
+    },
+    {
+      title: "Earn in real time",
+      body: "Track rewards, utilization, and tasks through the Management dApp as they happen.",
+    },
+  ].map((item) => (
+    <div
+      key={item.title}
+      className="rounded-2xl border border-slate-200 bg-white px-4 py-4 md:px-5 md:py-5 shadow-sm"
+    >
+      <h3 className="text-sm md:text-base font-semibold mb-2">
+        {item.title}
+      </h3>
+      <p className="text-xs md:text-sm text-slate-600">{item.body}</p>
+    </div>
+  ))}
+</motion.div>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeUp}
-              transition={{ duration: 0.45, delay: 0.05 }}
-              className="grid gap-4 md:gap-5 md:grid-cols-4"
-            >
-              {[
-                { title: "Connect your GPU", body: "Install the OpenGPU Provider Suite to contribute your hardware to the network." },
-                { title: "Relay distributes tasks", body: "AI workloads are automatically routed across the network by Relay." },
-                { title: "Tasks execute automatically", body: "Your GPU runs AI and ML jobs with no manual DevOps or configuration." },
-                { title: "Earn in real time", body: "Track rewards, utilization, and tasks through the Management dApp." },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-4 md:px-5 md:py-5 shadow-sm"
-                >
-                  <h3 className="text-sm md:text-base font-semibold mb-2">{item.title}</h3>
-                  <p className="text-xs md:text-sm text-slate-600">{item.body}</p>
-                </div>
-              ))}
-            </motion.div>
           </section>
 
           {/* PROVIDER SUITE */}
@@ -193,40 +196,7 @@ export default function GetStartedPage() {
             </motion.div>
           </section>
 
-          {/* MAP PLACEHOLDER */}
-          <section className="space-y-4">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeUp}
-              transition={{ duration: 0.45 }}
-              className="space-y-2"
-            >
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
-                Network map
-              </p>
-              <h2 className="text-2xl md:text-3xl font-semibold">Explore the global provider network</h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
-                See how OpenGPU providers are distributed around the world powering AI workloads.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeUp}
-              transition={{ duration: 0.45, delay: 0.05 }}
-            >
-              <div className="relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100/60 px-4 md:px-6 py-10 md:py-16 flex items-center justify-center">
-                <div className="text-center space-y-2 text-xs md:text-sm text-slate-500">
-                  <p className="font-semibold">INSERT MAP COMPONENT HERE (DEV)</p>
-                  <p>This will be replaced by the live provider map from the Management dApp.</p>
-                </div>
-              </div>
-            </motion.div>
-          </section>
-
-          {/* MANAGEMENT DAPP */}
+{/* MANAGEMENT DAPP */}
           <section className="space-y-6">
             <motion.div
               initial="hidden"
@@ -278,12 +248,44 @@ export default function GetStartedPage() {
                   After installing the Provider Suite, use the Management dApp to keep full control of your GPUs and rewards.
                 </p>
               </div>
-
-              {/* RIGHT – LIVE MINI STATS */}
-              <LiveMiniStats />
-
+              
             </motion.div>
           </section>
+
+          {/* MAP PLACEHOLDER */}
+          <section className="space-y-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              transition={{ duration: 0.45 }}
+              className="space-y-2"
+            >
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
+                Network map
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold">Explore the global provider network</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
+                See how OpenGPU providers are distributed around the world powering AI workloads.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              transition={{ duration: 0.45, delay: 0.05 }}
+            >
+              <div className="relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100/60 px-4 md:px-6 py-10 md:py-16 flex items-center justify-center">
+                <div className="text-center space-y-2 text-xs md:text-sm text-slate-500">
+                  <p className="font-semibold">INSERT MAP COMPONENT HERE (DEV)</p>
+                  <p>This will be replaced by the live provider map from the Management dApp.</p>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+
+          
 
           {/* LEARN MORE */}
           <section className="space-y-6 mb-24 md:mb-32">

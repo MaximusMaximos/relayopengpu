@@ -35,8 +35,9 @@ export default function LiveMiniStats() {
 
   return (
     <div className="w-full bg-white rounded-2xl border border-slate-200 shadow-sm px-6 py-6 mt-4">
+      
       {/* HEADER */}
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-5">
         <span
           className={`w-2.5 h-2.5 rounded-full bg-emerald-500 ${
             justUpdated ? "animate-ping" : ""
@@ -47,8 +48,8 @@ export default function LiveMiniStats() {
         </p>
       </div>
 
-      {/* GRID OF TWO */}
-      <div className="grid grid-cols-2 gap-6 text-center">
+      {/* GRID OF THREE */}
+      <div className="grid grid-cols-3 gap-6 text-center">
 
         {/* TOTAL TASKS */}
         <div>
@@ -58,14 +59,20 @@ export default function LiveMiniStats() {
           <p className="text-xs text-slate-500 mt-1">Total Tasks</p>
         </div>
 
-        {/* TOTAL TRANSACTIONS */}
+        {/* RESPONDED TASKS */}
         <div>
           <p className="text-2xl font-bold text-slate-900">
-            {data?.totalTransactions
-              ? data.totalTransactions.toLocaleString()
-              : "--"}
+            {data?.respondedTasks ? data.respondedTasks.toLocaleString() : "--"}
           </p>
-          <p className="text-xs text-slate-500 mt-1">Total Transactions</p>
+          <p className="text-xs text-slate-500 mt-1">Responded Tasks</p>
+        </div>
+
+        {/* ACTIVE PROVIDERS */}
+        <div>
+          <p className="text-2xl font-bold text-slate-900">
+            {data?.activeProviders ? data.activeProviders.toLocaleString() : "--"}
+          </p>
+          <p className="text-xs text-slate-500 mt-1">Active Providers</p>
         </div>
 
       </div>
