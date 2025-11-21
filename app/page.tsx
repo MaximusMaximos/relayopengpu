@@ -1,24 +1,52 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 14 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: "easeOut" }
-  }
-};
+export default function Page() {
 
-export default function Home() {
+  // ORB WORKFLOW STATE
+  const [orbStep, setOrbStep] = useState(0);
+
+  // GLOBAL ANIMATION CONTROLS
   const controls = useAnimation();
 
-  // HERO opacity state
-  const [heroOpacity, setHeroOpacity] = React.useState(1);
+  // General fade-in variant used throughout the page
+  const fadeIn = {
+    hidden: { opacity: 0, y: 14 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: "easeOut" }
+    }
+  };
+
+  // Hero opacity (your existing logic kept)
+  const [heroOpacity, setHeroOpacity] = useState(1);
+
+
+ // NAV STATE
+const [openMenu, setOpenMenu] = React.useState<string | null>(null);
+const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
+
+let hoverTimeout: NodeJS.Timeout | null = null;
+
+const open = (menu: string) => {
+  if (hoverTimeout) clearTimeout(hoverTimeout);
+  setOpenMenu(menu);
+};
+
+const close = () => {
+  hoverTimeout = setTimeout(() => {
+    setOpenMenu(null);
+  }, 150); // small delay prevents accidental close
+};
+  
+
+
+  
 
   // Smooth scroll fade logic
   useEffect(() => {
@@ -87,73 +115,419 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-        {/* FIXED HEADER — MATCHING MAIN SITE EXACTLY */}
+{/* FIXED HEADER */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl">
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 
+                  bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
 
     {/* LOGO */}
-    <a href="/" className="flex items-center">
+    <div className="relative z-[1000] bg-transparent backdrop-filter-none">
       <img
         src="/Images/OGPU-LOGO-Main-final.png"
         alt="OGPU Logo"
-        className="h-10 w-auto md:h-16 cursor-pointer"
+        className="h-10 w-auto md:h-16 bg-transparent"
+        style={{
+          backdropFilter: "none",
+          WebkitBackdropFilter: "none"
+        }}
       />
-    </a>
+    </div>
 
-    {/* NAV LINKS DESKTOP */}
-    <div className="hidden md:flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
-      <a href="/" className="hover:text-white transition">Platform</a>
-      <a href="/" className="hover:text-white transition">Solutions</a>
-      <a href="/" className="hover:text-white transition">Docs</a>
-      <a href="/" className="hover:text-white transition">Company</a>
+    {/* DESKTOP NAV */}
+    <div className="hidden md:flex items-center gap-6 text-sm text-gray-200 font-medium">
 
-      {/* CTA button identical style to main-site Get Started */}
+      {/* ===== PLATFORM ===== */}
+      <div 
+        className="relative"
+        onMouseEnter={() => open("platform")}
+        onMouseLeave={() => close()}
+      >
+        <button className={`px-2 py-1 flex items-center gap-1 transition ${
+          openMenu === "platform" ? "text-white" : "hover:text-white"
+        }`}>
+          Platform <span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        {/* Dropdown */}
+        <div
+          className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
+                      border border-white/10 shadow-xl p-6 transition-all duration-200 flex gap-10 z-[999]
+                      ${openMenu === "platform" ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        >
+          {/* LEFT */}
+          <div className="w-1/2 flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-2">The OGPU Platform</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              The routing layer for decentralized AI compute. Explore global workload movement.
+            </p>
+
+            <a
+              href="#hero"
+              className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF] transition"
+            >
+              Platform Overview →
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className="w-1/2 grid grid-cols-1 gap-4">
+            <a href="#hero" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📘</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Overview</p>
+                <p className="text-gray-400 text-xs">Datacenter without walls.</p>
+              </div>
+            </a>
+
+            <a href="#how-ogpu-works" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🧩</div>
+              <div>
+                <p className="text-white text-sm font-semibold">How OGPU Works</p>
+                <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
+              </div>
+            </a>
+
+            <a href="#relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🔌</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Relay Gateway</p>
+                <p className="text-gray-400 text-xs">Enterprise access with fiat.</p>
+              </div>
+            </a>
+
+            <a href="#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">⚙️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">AI Workloads</p>
+                <p className="text-gray-400 text-xs">Inference, training, simulation.</p>
+              </div>
+            </a>
+
+            <a href="#blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">⛓️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Blockchain</p>
+                <p className="text-gray-400 text-xs">High throughput L1.</p>
+              </div>
+            </a>
+
+            <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📊</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Live Network Stats</p>
+                <p className="text-gray-400 text-xs">Tasks, nodes, performance.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== SOLUTIONS ===== */}
+      <div className="relative group/nav">
+        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
+          Solutions <span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
+                     border border-white/10 shadow-xl p-6 opacity-0 invisible group-hover/nav:opacity-100 
+                     group-hover/nav:visible transition-all duration-200 flex gap-10 z-[999]"
+        >
+          {/* LEFT */}
+          <div className="w-1/2 flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-2">Solutions for Every Use Case</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Route AI workloads globally with redundancy and scale.
+            </p>
+            <a href="/enterprisehome" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
+              Explore Solutions →
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className="w-1/2 grid grid-cols-1 gap-4">
+            <a href="#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">⚡</div>
+              <div>
+                <p className="text-white text-sm font-semibold">AI Companies</p>
+                <p className="text-gray-400 text-xs">Run inference & fine tuning.</p>
+              </div>
+            </a>
+
+            <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🏢</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
+                <p className="text-gray-400 text-xs">Route workloads globally.</p>
+              </div>
+            </a>
+
+            <a href="#quickstart" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🖥️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">GPU Providers</p>
+                <p className="text-gray-400 text-xs">Earn per task.</p>
+              </div>
+            </a>
+
+            <a href="#built-for-everyone" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🔬</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Researchers</p>
+                <p className="text-gray-400 text-xs">Zero queue experiments.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== DOCS ===== */}
+      <div className="relative group/nav">
+        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
+          Docs <span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
+                     border border-white/10 shadow-xl p-6 opacity-0 invisible group-hover/nav:opacity-100 
+                     group-hover/nav:visible transition-all duration-200 flex gap-10 z-[999]"
+        >
+          {/* LEFT */}
+          <div className="w-1/2 flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-2">Documentation Hub</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Explore API references, guides, and protocol documents.
+            </p>
+            <a href="https://opengpu.network/docs" className="text-sm font-semibold text-[#00E9FF]">
+              Visit Docs →
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className="w-1/2 grid grid-cols-1 gap-4">
+            <a href="https://opengpu.network/docs" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📘</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Developer Docs</p>
+                <p className="text-gray-400 text-xs">API and client SDKs.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/docs/whitepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📄</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Whitepaper</p>
+                <p className="text-gray-400 text-xs">Technical protocol.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/docs/litepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📑</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Litepaper</p>
+                <p className="text-gray-400 text-xs">High-level overview.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/roadmap" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🛣️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Roadmap</p>
+                <p className="text-gray-400 text-xs">What's coming.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/faq" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">❓</div>
+              <div>
+                <p className="text-white text-sm font-semibold">FAQ</p>
+                <p className="text-gray-400 text-xs">Common questions.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/OpenGPU-Network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">💻</div>
+              <div>
+                <p className="text-white text-sm font-semibold">GitHub Repos</p>
+                <p className="text-gray-400 text-xs">Clients & SDKs.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== COMPANY ===== */}
+      <div className="relative group/nav">
+        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
+          Company <span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
+                     border border-white/10 shadow-xl p-6 opacity-0 invisible group-hover/nav:opacity-100 
+                     group-hover/nav:visible transition-all duration-200 flex gap-10 z-[999]"
+        >
+          {/* LEFT */}
+          <div className="w-1/2 flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-2">About the Company</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Learn more about OGPU, mission, people, and history.
+            </p>
+            <a href="https://opengpu.network/about" className="text-sm font-semibold text-[#00E9FF]">
+              About OGPU →
+            </a>
+          </div>
+
+          {/* RIGHT */}
+          <div className="w-1/2 grid grid-cols-1 gap-4">
+            <a href="https://opengpu.network/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🏛️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">About OGPU</p>
+                <p className="text-gray-400 text-xs">Mission & story.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">👥</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Team</p>
+                <p className="text-gray-400 text-xs">Core contributors.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/press" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">📰</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Press & Media</p>
+                <p className="text-gray-400 text-xs">Logos & coverage.</p>
+              </div>
+            </a>
+
+            <a href="https://opengpu.network/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">💼</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Careers</p>
+                <p className="text-gray-400 text-xs">Join the team.</p>
+              </div>
+            </a>
+
+            <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">✉️</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Contact</p>
+                <p className="text-gray-400 text-xs">Reach OGPU.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA BUTTON */}
       <a
-        href="/"
-        className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
+        href="https://opengpu.network/get-started"
+        className="ml-2 px-8 py-3 rounded-xl font-semibold bg-[#0A84FF]
+                   text-white text-sm transition hover:bg-[#0A84FF]/90 
+                   hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
       >
         Get Started
       </a>
     </div>
 
-    {/* MOBILE TOGGLE */}
+    {/* ===== MOBILE HAMBURGER BUTTON ===== */}
     <button
-      id="mobile-menu-btn"
       className="md:hidden text-white text-3xl focus:outline-none"
-      onClick={() => {
-        const m = document.getElementById("mobile-menu");
-        if (!m) return;
-        m.classList.toggle("hidden");
-      }}
+      onClick={() => setMobileNavOpen(!mobileNavOpen)}
     >
       ☰
     </button>
   </nav>
 
-  {/* MOBILE MENU */}
-  <div
-    id="mobile-menu"
-    className="md:hidden hidden w-full bg-[#00040F]/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-4 text-gray-200 text-lg"
-  >
-    <a href="/" className="hover:text-white transition">Platform</a>
-    <a href="/" className="hover:text-white transition">Solutions</a>
-    <a href="/" className="hover:text-white transition">Docs</a>
-    <a href="/" className="hover:text-white transition">Company</a>
-
-    <a
-      href="/"
-      className="mt-2 px-6 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/85"
+  {/* MOBILE NAV PANEL (SLIDE-IN) */}
+<AnimatePresence>
+  {mobileNavOpen && (
+    <motion.div
+      initial={{ x: "100%", opacity: 0 }}
+      animate={{ x: "0%", opacity: 1 }}
+      exit={{ x: "100%", opacity: 0 }}
+      transition={{ duration: 0.28, ease: "easeOut" }}
+      className="md:hidden fixed top-[65px] left-0 w-full 
+                 h-[calc(100vh-65px)] 
+                 bg-[#00040F]/95 backdrop-blur-xl z-[998] flex flex-col 
+                 px-6 py-6 space-y-6 overflow-y-auto pb-24"
     >
-      Back to main site
-    </a>
-  </div>
 
-    {/* ELECTRIC GLOW BAR */}
-   <div className="relative w-full h-[1.5px] overflow-hidden">
+      {/* PLATFORM */}
+      <div className="flex flex-col space-y-2">
+        <p className="text-white font-semibold text-lg">Platform</p>
+
+        <a href="#hero" className="text-gray-300 text-sm">Overview</a>
+        <a href="#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
+        <a href="#relay" className="text-gray-300 text-sm">Relay Gateway</a>
+        <a href="#workloads" className="text-gray-300 text-sm">AI Workloads</a>
+        <a href="#blockchain" className="text-gray-300 text-sm">Blockchain</a>
+        <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
+      </div>
+
+      <div className="w-full h-px bg-white/10" />
+
+      {/* SOLUTIONS */}
+      <div className="flex flex-col space-y-2">
+        <p className="text-white font-semibold text-lg">Solutions</p>
+        <a href="#workloads" className="text-gray-300 text-sm">AI Companies</a>
+        <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
+        <a href="#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
+        <a href="#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
+      </div>
+
+      <div className="w-full h-px bg-white/10" />
+
+      {/* DOCS */}
+      <div className="flex flex-col space-y-2">
+        <p className="text-white font-semibold text-lg">Docs</p>
+
+        <a href="https://opengpu.network/docs" className="text-gray-300 text-sm">Developer Docs</a>
+        <a href="https://opengpu.network/docs/whitepaper.pdf" className="text-gray-300 text-sm">Whitepaper</a>
+        <a href="https://opengpu.network/docs/litepaper.pdf" className="text-gray-300 text-sm">Litepaper</a>
+        <a href="https://opengpu.network/roadmap" className="text-gray-300 text-sm">Roadmap</a>
+        <a href="https://opengpu.network/faq" className="text-gray-300 text-sm">FAQ</a>
+        <a href="https://github.com/OpenGPU-Network" className="text-gray-300 text-sm">GitHub</a>
+      </div>
+
+      <div className="w-full h-px bg-white/10" />
+
+      {/* COMPANY */}
+      <div className="flex flex-col space-y-2">
+        <p className="text-white font-semibold text-lg">Company</p>
+
+        <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
+        <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
+        <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
+        <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
+        <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
+      </div>
+
+      {/* CTA */}
+      <a
+        href="https://opengpu.network/get-started"
+        className="mt-4 px-6 py-3 rounded-xl text-center font-semibold bg-[#0A84FF] 
+                   text-white shadow-lg"
+      >
+        Get Started
+      </a>
+
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
+  {/* ELECTRIC GLOW BAR */}
+  <div className="relative w-full h-[1.5px] overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00E9FF] to-transparent opacity-80" />
     <div className="absolute inset-0 bg-[#00E9FF] opacity-40 blur-sm" />
   </div>
 </header>
+
 
 {/* QUICK NAV MENU (Floating Right Side) */}
 <div className="fixed right-4 top-1/2 -translate-y-1/2 z-[998] hidden md:flex flex-col gap-3">
@@ -920,9 +1294,10 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
 
 
 {/* RELAY: ENTERPRISE GATEWAY TO OGPU */}
-<section id="relay"
-className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
-
+<section
+  id="relay"
+  className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]"
+>
   {/* CENTERED PURE ORANGE GLOW */}
   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
     <div className="w-[350px] h-[350px] rounded-full bg-orange-200/35 blur-[90px] opacity-65" />
@@ -930,8 +1305,6 @@ className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
 
   {/* HEADER */}
   <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">
-
-    {/* Heading fade only */}
     <motion.h2
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -942,7 +1315,6 @@ className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
       Relay, the enterprise gateway to OGPU.
     </motion.h2>
 
-    {/* Subheading fade only */}
     <motion.p
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -953,166 +1325,229 @@ className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
       Relay unlocks enterprise access to decentralized compute with the same ease as AWS or GCP.
       No wallets. No blockchain interfaces. Just clean cloud workflows.
     </motion.p>
+  </div>
+
+{/* ROUTING DIAGRAM – CLEAN ENTERPRISE WORKFLOW WITH ORB */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.3 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  className="relative max-w-5xl mx-auto mb-24"
+>
+
+  {/* INNER GLOW */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <motion.div
+      className="absolute w-[180px] h-[180px] rounded-full bg-orange-200/40 blur-[80px] opacity-60"
+      animate={{ scale: [1, 1.05, 1] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    />
+  </div>
+
+  {/* DESKTOP LAYOUT */}
+  <div className="hidden md:flex items-center justify-between w-full relative z-10">
+
+    {/* CLIENTS */}
+    <div className="flex flex-col items-center gap-2">
+      <p className="text-[#0A0F2C] font-medium text-lg">Clients</p>
+    </div>
+
+    {/* ORB LINE 1 */}
+    <div className="relative flex items-center justify-center w-20">
+      <div className="relative h-[2px] w-20 bg-cyan-500/20 rounded-full overflow-hidden">
+        {orbStep === 0 && (
+          <motion.div
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]"
+            initial={{ x: 0, opacity: 0.3 }}
+            animate={{ x: 70, opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            onAnimationComplete={() => setOrbStep(1)}
+          />
+        )}
+      </div>
+    </div>
+
+    {/* RELAY LOGO */}
+    <img
+      src="/Images/relay.png"
+      alt="Relay Logo"
+      className="h-10 w-auto drop-shadow-lg"
+    />
+
+    {/* ORB LINE 2 */}
+    <div className="relative flex items-center justify-center w-20">
+      <div className="relative h-[2px] w-20 bg-cyan-500/20 rounded-full overflow-hidden">
+        {orbStep === 1 && (
+          <motion.div
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]"
+            initial={{ x: 0, opacity: 0.3 }}
+            animate={{ x: 70, opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            onAnimationComplete={() => setOrbStep(2)}
+          />
+        )}
+      </div>
+    </div>
+
+    {/* ROUTING LAYER */}
+    <div className="flex flex-col items-center gap-2">
+      <img
+        src="/Images/clean_swivel-gradiant.png"
+        alt="OGPU Routing Logo"
+        className="h-20 w-auto drop-shadow-xl"
+      />
+      <p className="text-[#0A0F2C] font-medium text-sm mt-2">
+        OGPU Routing Layer
+      </p>
+    </div>
+
+    {/* ORB LINE 3 */}
+    <div className="relative flex items-center justify-center w-20">
+      <div className="relative h-[2px] w-20 bg-cyan-500/20 rounded-full overflow-hidden">
+        {orbStep === 2 && (
+          <motion.div
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]"
+            initial={{ x: 0, opacity: 0.3 }}
+            animate={{ x: 70, opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            onAnimationComplete={() => setOrbStep(0)}
+          />
+        )}
+      </div>
+    </div>
+
+    {/* PROVIDERS */}
+    <div className="flex flex-col items-center gap-2">
+      <p className="text-[#0A0F2C] font-medium text-lg">Providers</p>
+    </div>
+  </div>
+
+  {/* MOBILE – simple vertical version */}
+  <div className="md:hidden flex flex-col items-center gap-10 relative z-10">
+
+    <p className="text-[#0A0F2C] font-medium text-lg">Clients</p>
+
+    <img
+      src="/Images/relay.png"
+      alt="Relay Logo"
+      className="h-8 w-auto drop-shadow-lg"
+    />
+
+    <div className="flex flex-col items-center gap-2">
+      <img
+        src="/Images/clean_swivel-gradiant.png"
+        alt="OGPU Routing Logo"
+        className="h-16 w-auto drop-shadow-xl"
+      />
+      <p className="text-[#0A0F2C] font-medium text-sm mt-1">
+        OGPU Routing Layer
+      </p>
+    </div>
+
+    <p className="text-[#0A0F2C] font-medium text-lg">Providers</p>
 
   </div>
 
-  {/* ROUTING DIAGRAM */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.3 }}
-    transition={{ duration: 0.7, ease: "easeOut" }}
-    className="relative max-w-5xl mx-auto mb-24"
-  >
 
-    {/* INNER pure glow */}
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <motion.div
-        className="absolute w-[160px] h-[160px] rounded-full bg-orange-200/40 blur-[70px] opacity-75"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-    </div>
-
-    {/* Relay core node */}
-    <motion.div
+   {/* RETURN FLOW SUBLINE - Providers back to Clients */}
+    <motion.p
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
+      className="mt-8 text-xs md:text-sm text-[#64748B] text-center"
+    >
+      Results flow back from providers to clients over the same unified Relay pipeline.
+    </motion.p>
+
+</motion.div>
+
+  {/* BOTTOM CARDS - unchanged */}
+  <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {/* Card 1 */}
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-      className="relative mx-auto w-36 h-36 rounded-3xl bg-gradient-to-br
-                 from-white via-[#F7F7F7] to-[#E4E7EB]
-                 shadow-[0_0_45px_rgba(255,168,89,0.45)]
-                 border border-white/60 flex items-center justify-center"
+      transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
+      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
     >
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/60 via-transparent to-transparent opacity-70" />
-      <p className="relative text-xl font-semibold text-[#0A0F2C] drop-shadow-sm">Relay</p>
+      <div
+        className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                   bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                   shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                   transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="/Assets/bsfillcreditcard2frontfill.png"
+          alt="No wallets or tokens"
+          className="w-6 h-6 object-contain"
+          style={{ filter: "none" }}
+        />
+      </div>
+
+      <h3 className="text-lg font-semibold mb-3">No wallets or tokens</h3>
+      <p className="text-sm text-[#475569]">
+        Relay enables full enterprise compute with fiat billing.
+      </p>
     </motion.div>
 
-    {/* Clients label — fade left → right */}
+    {/* Card 2 */}
     <motion.div
-      initial={{ opacity: 0, x: -18 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.4 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-      className="absolute top-[50%] left-0 -translate-y-1/2 text-left"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
+      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
     >
-      <p className="text-[#0A0F2C] font-medium">Clients</p>
+      <div
+        className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                   bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                   shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                   transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="/Assets/madashboardcustomize.png"
+          alt="Unified usage dashboard"
+          className="w-6 h-6 object-contain"
+          style={{ filter: "none" }}
+        />
+      </div>
+
+      <h3 className="text-lg font-semibold mb-3">Unified usage dashboard</h3>
+      <p className="text-sm text-[#475569]">
+        Clean analytics, logs and tracking in one interface.
+      </p>
     </motion.div>
 
-    {/* Providers label — fade right → left */}
+    {/* Card 3 */}
     <motion.div
-      initial={{ opacity: 0, x: 18 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.4 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-      className="absolute top-[50%] right-0 -translate-y-1/2 text-right"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.7, ease: "easeOut", delay: 0.24 }}
+      className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
     >
-      <p className="text-[#0A0F2C] font-medium">Providers</p>
+      <div
+        className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                   bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                   shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                   transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="/Assets/bsplugin.png"
+          alt="Drop-in integration"
+          className="w-6 h-6 object-contain"
+          style={{ filter: "none" }}
+        />
+      </div>
+
+      <h3 className="text-lg font-semibold mb-3">Drop-in integration</h3>
+      <p className="text-sm text-[#475569]">
+        Works with existing workflows without rewrites.
+      </p>
     </motion.div>
-
-    {/* Arrows (unchanged) */}
-    <motion.div
-      className="absolute top-[50%] left-[17%] -translate-y-1/2 text-cyan-500 text-2xl"
-      animate={{ x: [0, 8, 0], opacity: [0.8, 1, 0.8] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    >
-      →
-    </motion.div>
-
-    <motion.div
-      className="absolute top-[50%] right-[20.5%] -translate-y-1/2 text-cyan-500 text-2xl"
-      animate={{ x: [0, -8, 0], opacity: [0.8, 1, 0.8] }}
-      transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
-    >
-      →
-    </motion.div>
-
-  </motion.div>
-
-  {/* BOTTOM CARDS — fade UP staggered */}
-<div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-  {/* Card 1 */}
-  <motion.div
-    initial={{ opacity: 0, y: 18 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.3 }}
-    transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
-    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-  >
-
-    {/* ICON CHIP */}
-    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
-                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
-                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
-                    transition-transform duration-300 hover:scale-110">
-      <img
-        src="/Assets/bsfillcreditcard2frontfill.png"
-        alt="No wallets or tokens"
-        className="w-6 h-6 object-contain"
-        style={{ filter: "none" }}
-      />
-    </div>
-
-    <h3 className="text-lg font-semibold mb-3">No wallets or tokens</h3>
-    <p className="text-sm text-[#475569]">Relay enables full enterprise compute with fiat billing.</p>
-  </motion.div>
-
-  {/* Card 2 */}
-  <motion.div
-    initial={{ opacity: 0, y: 18 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.3 }}
-    transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-  >
-
-    {/* ICON CHIP */}
-    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
-                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
-                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
-                    transition-transform duration-300 hover:scale-110">
-      <img
-        src="/Assets/madashboardcustomize.png"
-        alt="Unified usage dashboard"
-        className="w-6 h-6 object-contain"
-        style={{ filter: "none" }}
-      />
-    </div>
-
-    <h3 className="text-lg font-semibold mb-3">Unified usage dashboard</h3>
-    <p className="text-sm text-[#475569]">Clean analytics, logs and tracking in one interface.</p>
-  </motion.div>
-
-  {/* Card 3 */}
-  <motion.div
-    initial={{ opacity: 0, y: 18 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.3 }}
-    transition={{ duration: 0.7, ease: "easeOut", delay: 0.24 }}
-    className="bg-white/80 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-  >
-
-    {/* ICON CHIP */}
-    <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
-                    bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
-                    shadow-[0_4px_14px_rgba(0,150,255,0.25)]
-                    transition-transform duration-300 hover:scale-110">
-      <img
-        src="/Assets/bsplugin.png"
-        alt="Drop-in integration"
-        className="w-6 h-6 object-contain"
-        style={{ filter: "none" }}
-      />
-    </div>
-
-    <h3 className="text-lg font-semibold mb-3">Drop-in integration</h3>
-    <p className="text-sm text-[#475569]">Works with existing workflows without rewrites.</p>
-  </motion.div>
-
-</div>
-
+  </div>
 
   {/* CTA */}
   <motion.div
@@ -1129,8 +1564,8 @@ className="relative w-full py-24 px-6 bg-white overflow-hidden text-[#0A0F2C]">
       Request access to Relay →
     </a>
   </motion.div>
-
 </section>
+
 
 
 
