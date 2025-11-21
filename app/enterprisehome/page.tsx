@@ -1,20 +1,19 @@
 "use client";
 
+// app/enterprise/page.tsx
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 
 export default function EnterprisePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(null);
 
   return (
     <main className="relative w-full min-h-screen bg-[#040814] text-white">
 
-      {/* FULL OGPU HEADER */}
+{/* FIXED HEADER — MATCHING MAIN SITE + WORKING MOBILE */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 
-                  bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
+  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 bg-[#00040F]/70 backdrop-blur-xl">
 
     {/* LOGO */}
     <a href="/" className="flex items-center">
@@ -26,327 +25,22 @@ export default function EnterprisePage() {
     </a>
 
     {/* DESKTOP NAV */}
-    <div className="hidden md:flex items-center gap-6 text-sm text-gray-200 font-medium">
+    <div className="hidden md:flex items-center gap-8 text-base md:text-lg text-gray-200 font-medium">
+      <a href="/" className="hover:text-white transition">Platform</a>
+      <a href="/" className="hover:text-white transition">Solutions</a>
+      <a href="/" className="hover:text-white transition">Docs</a>
+      <a href="/" className="hover:text-white transition">Company</a>
 
-      {/* ============ PLATFORM ============ */}
-      <div
-        className="relative"
-        onMouseEnter={() => setOpenMenu("platform")}
-        onMouseLeave={() => setOpenMenu(null)}
-      >
-        <button
-          className={`px-2 py-1 flex items-center gap-1 transition ${
-            openMenu === "platform" ? "text-white" : "hover:text-white"
-          }`}
-        >
-          Platform <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className={`absolute left-1/2 -translate-x-1/2 mt-3 
-                      w-[620px] rounded-2xl bg-[#020617] border border-white/10 
-                      shadow-xl p-6 flex gap-10 z-[999]
-                      transition-all duration-200
-                      ${
-                        openMenu === "platform"
-                          ? "opacity-100 visible"
-                          : "opacity-0 invisible"
-                      }`}
-        >
-          {/* LEFT */}
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">The OGPU Platform</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              The routing layer for decentralized AI compute.
-              Explore how workloads move, scale, and verify across global GPU providers.
-            </p>
-            <a href="#hero" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              Platform Overview →
-            </a>
-          </div>
-
-          {/* RIGHT GRID */}
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="#hero" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">📘</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Overview</p>
-                <p className="text-gray-400 text-xs">Datacenter without walls.</p>
-              </div>
-            </a>
-
-            <a
-              href="#how-ogpu-works"
-              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5"
-            >
-              <div className="text-[#00E9FF] text-xl">🧩</div>
-              <div>
-                <p className="text-white text-sm font-semibold">How OGPU Works</p>
-                <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
-              </div>
-            </a>
-
-            <a href="#relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🔌</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Relay Gateway</p>
-                <p className="text-gray-400 text-xs">Enterprise access with fiat.</p>
-              </div>
-            </a>
-
-            <a
-              href="#workloads"
-              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5"
-            >
-              <div className="text-[#00E9FF] text-xl">⚙️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">AI Workloads</p>
-                <p className="text-gray-400 text-xs">Inference, training, simulation.</p>
-              </div>
-            </a>
-
-            <a
-              href="#blockchain"
-              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5"
-            >
-              <div className="text-[#00E9FF] text-xl">⛓️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Blockchain</p>
-                <p className="text-gray-400 text-xs">High throughput L1.</p>
-              </div>
-            </a>
-
-            <a
-              href="https://ogpuscan.io"
-              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5"
-            >
-              <div className="text-[#00E9FF] text-xl">📊</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Live Network Stats</p>
-                <p className="text-gray-400 text-xs">Tasks, nodes, performance.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ============ SOLUTIONS ============ */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Solutions <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-6 opacity-0 invisible
-                     group-hover/nav:opacity-100 group-hover/nav:visible
-                     transition-all duration-200 flex gap-10 z-[999]"
-        >
-          {/* LEFT */}
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">Solutions for Every Use Case</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Route AI workloads across global GPU providers with reliability,
-              scale, and no DevOps friction.
-            </p>
-            <a href="/enterprisehome" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              Explore Solutions →
-            </a>
-          </div>
-
-          {/* RIGHT GRID */}
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">⚡</div>
-              <div>
-                <p className="text-white text-sm font-semibold">AI Companies</p>
-                <p className="text-gray-400 text-xs">Run inference and fine tuning.</p>
-              </div>
-            </a>
-
-            <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🏢</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
-                <p className="text-gray-400 text-xs">Global redundancy routing.</p>
-              </div>
-            </a>
-
-            <a href="#quickstart" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🖥️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">GPU Providers</p>
-                <p className="text-gray-400 text-xs">Provider task suite.</p>
-              </div>
-            </a>
-
-            <a href="#built-for-everyone" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🔬</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Researchers</p>
-                <p className="text-gray-400 text-xs">Run experiments instantly.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ============ DOCS ============ */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Docs <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-6 opacity-0 invisible
-                     group-hover/nav:opacity-100 group-hover/nav:visible
-                     transition-all duration-200 flex gap-10 z-[999]"
-        >
-          {/* LEFT */}
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">Documentation Hub</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Everything you need to build on OGPU.
-            </p>
-            <a href="https://opengpu.network/docs" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              Visit Docs →
-            </a>
-          </div>
-
-          {/* RIGHT GRID */}
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="https://opengpu.network/docs" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">📘</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Developer Docs</p>
-                <p className="text-gray-400 text-xs">API & SDK.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/docs/whitepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">📄</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Whitepaper</p>
-                <p className="text-gray-400 text-xs">Architecture.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/docs/litepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">📑</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Litepaper</p>
-                <p className="text-gray-400 text-xs">High-level overview.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/roadmap" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🛣️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Roadmap</p>
-                <p className="text-gray-400 text-xs">What's next.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/faq" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">❓</div>
-              <div>
-                <p className="text-white text-sm font-semibold">FAQ</p>
-                <p className="text-gray-400 text-xs">Common questions.</p>
-              </div>
-            </a>
-
-            <a href="https://github.com/OpenGPU-Network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">💻</div>
-              <div>
-                <p className="text-white text-sm font-semibold">GitHub</p>
-                <p className="text-gray-400 text-xs">Clients & providers.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ============ COMPANY ============ */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Company <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-6 opacity-0 invisible
-                     group-hover/nav:opacity-100 group-hover/nav:visible
-                     transition-all duration-200 flex gap-10 z-[999]"
-        >
-          {/* LEFT */}
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">About the Company</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Learn about OGPU, our mission and contributors.
-            </p>
-            <a href="https://opengpu.network/about" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              About OGPU →
-            </a>
-          </div>
-
-          {/* RIGHT GRID */}
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="https://opengpu.network/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">🏛️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">About OGPU</p>
-                <p className="text-gray-400 text-xs">Mission & story.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">👥</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Team</p>
-                <p className="text-gray-400 text-xs">Core contributors.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/press" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">📰</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Press & Media</p>
-                <p className="text-gray-400 text-xs">Logos & coverage.</p>
-              </div>
-            </a>
-
-            <a href="https://opengpu.network/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">💼</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Careers</p>
-                <p className="text-gray-400 text-xs">Join the team.</p>
-              </div>
-            </a>
-
-            <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5">
-              <div className="text-[#00E9FF] text-xl">✉️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Contact</p>
-                <p className="text-gray-400 text-xs">Reach OGPU.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA BUTTON */}
+      {/* CTA */}
       <a
         href="/"
-        className="ml-2 px-8 py-3 rounded-xl font-semibold bg-[#0A84FF]
-                   text-white text-sm transition hover:bg-[#0A84FF]/90 
-                   hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
+        className="px-8 py-3 rounded-xl font-semibold bg-[#0A84FF] text-white transition hover:bg-[#0A84FF]/90 hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
       >
-        Back To Main Site
+        Back to main site
       </a>
     </div>
 
-    {/* MOBILE MENU BUTTON */}
+    {/* MOBILE HAMBURGER */}
     <button
       className="md:hidden text-white text-3xl focus:outline-none"
       onClick={() => setMobileOpen(!mobileOpen)}
@@ -355,80 +49,81 @@ export default function EnterprisePage() {
     </button>
   </nav>
 
- {/* MOBILE NAV PANEL (SLIDE-IN) */}
-<AnimatePresence>
-  {mobileOpen && (
-    <motion.div
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: "0%", opacity: 1 }}
-      exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 0.28, ease: "easeOut" }}
-      className="md:hidden fixed top-[65px] left-0 w-full 
-                 h-[calc(100vh-65px)] 
-                 bg-[#00040F]/95 backdrop-blur-xl z-[998] flex flex-col 
-                 px-6 py-6 space-y-6 overflow-y-auto pb-24"
-    >
+  {/* MOBILE SLIDE-IN MENU */}
+  <AnimatePresence>
+    {mobileOpen && (
+      <motion.div
+        key="mobile-menu"
+        initial={{ x: "100%", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: "100%", opacity: 0 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className="md:hidden fixed top-[65px] left-0 w-full 
+           h-[calc(100vh-65px)] 
+           bg-[#00040F]/95 backdrop-blur-xl z-[998] flex flex-col 
+           px-6 py-6 space-y-6 overflow-y-auto"
 
-      {/* PLATFORM */}
-      <div className="flex flex-col space-y-2">
-        <p className="text-white font-semibold text-lg">Platform</p>
-        <a href="#hero" className="text-gray-300 text-sm">Overview</a>
-        <a href="#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
-        <a href="#relay" className="text-gray-300 text-sm">Relay Gateway</a>
-        <a href="#workloads" className="text-gray-300 text-sm">AI Workloads</a>
-        <a href="#blockchain" className="text-gray-300 text-sm">Blockchain</a>
-        <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
-      </div>
-
-      <div className="w-full h-px bg-white/10" />
-
-      {/* SOLUTIONS */}
-      <div className="flex flex-col space-y-2">
-        <p className="text-white font-semibold text-lg">Solutions</p>
-        <a href="#workloads" className="text-gray-300 text-sm">AI Companies</a>
-        <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
-        <a href="#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
-        <a href="#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
-      </div>
-
-      <div className="w-full h-px bg-white/10" />
-
-      {/* DOCS */}
-      <div className="flex flex-col space-y-2">
-        <p className="text-white font-semibold text-lg">Docs</p>
-        <a href="https://opengpu.network/docs" className="text-gray-300 text-sm">Developer Docs</a>
-        <a href="https://opengpu.network/docs/whitepaper.pdf" className="text-gray-300 text-sm">Whitepaper</a>
-        <a href="https://opengpu.network/docs/litepaper.pdf" className="text-gray-300 text-sm">Litepaper</a>
-        <a href="https://opengpu.network/roadmap" className="text-gray-300 text-sm">Roadmap</a>
-        <a href="https://opengpu.network/faq" className="text-gray-300 text-sm">FAQ</a>
-        <a href="https://github.com/OpenGPU-Network" className="text-gray-300 text-sm">GitHub</a>
-      </div>
-
-      <div className="w-full h-px bg-white/10" />
-
-      {/* COMPANY */}
-      <div className="flex flex-col space-y-2">
-        <p className="text-white font-semibold text-lg">Company</p>
-        <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
-        <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
-        <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
-        <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
-        <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
-      </div>
-
-      {/* CTA */}
-      <a
-        href="/"
-        className="mt-4 px-5 py-3 rounded-xl font-semibold bg-[#0A84FF] 
-                   text-white shadow-lg w-auto self-center"
       >
-        Back To Main Site
-      </a>
 
-    </motion.div>
-  )}
-</AnimatePresence>
+        {/* PLATFORM */}
+        <div className="flex flex-col space-y-2">
+          <p className="text-white font-semibold text-lg">Platform</p>
+          <a href="#hero" className="text-gray-300 text-sm">Overview</a>
+          <a href="#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
+          <a href="#relay" className="text-gray-300 text-sm">Relay Gateway</a>
+          <a href="#workloads" className="text-gray-300 text-sm">AI Workloads</a>
+          <a href="#blockchain" className="text-gray-300 text-sm">Blockchain</a>
+          <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
+        </div>
 
+        <div className="w-full h-px bg-white/10" />
+
+        {/* SOLUTIONS */}
+        <div className="flex flex-col space-y-2">
+          <p className="text-white font-semibold text-lg">Solutions</p>
+          <a href="#workloads" className="text-gray-300 text-sm">AI Companies</a>
+          <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
+          <a href="#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
+          <a href="#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
+        </div>
+
+        <div className="w-full h-px bg-white/10" />
+
+        {/* DOCS */}
+        <div className="flex flex-col space-y-2">
+          <p className="text-white font-semibold text-lg">Docs</p>
+          <a href="https://opengpu.network/docs" className="text-gray-300 text-sm">Developer Docs</a>
+          <a href="https://opengpu.network/docs/whitepaper.pdf" className="text-gray-300 text-sm">Whitepaper</a>
+          <a href="https://opengpu.network/docs/litepaper.pdf" className="text-gray-300 text-sm">Litepaper</a>
+          <a href="https://opengpu.network/roadmap" className="text-gray-300 text-sm">Roadmap</a>
+          <a href="https://opengpu.network/faq" className="text-gray-300 text-sm">FAQ</a>
+          <a href="https://github.com/OpenGPU-Network" className="text-gray-300 text-sm">GitHub</a>
+        </div>
+
+        <div className="w-full h-px bg-white/10" />
+
+        {/* COMPANY */}
+        <div className="flex flex-col space-y-2">
+          <p className="text-white font-semibold text-lg">Company</p>
+          <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
+          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
+          <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
+          <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
+          <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
+        </div>
+
+        {/* CTA */}
+        <a
+          href="/"
+          className="mt-4 px-5 py-3 rounded-xl text-center font-semibold bg-[#0A84FF] 
+           text-white shadow-lg w-auto self-center"
+
+   >
+          Back To Main Site
+        </a>
+      </motion.div>
+    )}
+  </AnimatePresence>
 
   {/* ELECTRIC GLOW BAR */}
   <div className="relative w-full h-[1.5px] overflow-hidden">
