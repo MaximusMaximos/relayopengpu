@@ -147,6 +147,38 @@ export default function GetStartedPage() {
 </motion.div>
 
           </section>
+          {/* MAP PLACEHOLDER */}
+          <section className="space-y-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              transition={{ duration: 0.45 }}
+              className="space-y-2"
+            >
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
+                Network map
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold">Explore the global provider network</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
+                See how OpenGPU providers are distributed around the world powering AI workloads.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              transition={{ duration: 0.45, delay: 0.05 }}
+            >
+              <div className="relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100/60 px-4 md:px-6 py-10 md:py-16 flex items-center justify-center">
+                <div className="text-center space-y-2 text-xs md:text-sm text-slate-500">
+                  <p className="font-semibold">INSERT MAP COMPONENT HERE (DEV)</p>
+                  <p>This will be replaced by the live provider map from the Management dApp.</p>
+                </div>
+              </div>
+            </motion.div>
+          </section>
 
           {/* PROVIDER SUITE */}
           <section id="provider" className="space-y-6 scroll-mt-32">
@@ -252,38 +284,6 @@ export default function GetStartedPage() {
             </motion.div>
           </section>
 
-          {/* MAP PLACEHOLDER */}
-          <section className="space-y-4">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeUp}
-              transition={{ duration: 0.45 }}
-              className="space-y-2"
-            >
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
-                Network map
-              </p>
-              <h2 className="text-2xl md:text-3xl font-semibold">Explore the global provider network</h2>
-              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
-                See how OpenGPU providers are distributed around the world powering AI workloads.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeUp}
-              transition={{ duration: 0.45, delay: 0.05 }}
-            >
-              <div className="relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-100/60 px-4 md:px-6 py-10 md:py-16 flex items-center justify-center">
-                <div className="text-center space-y-2 text-xs md:text-sm text-slate-500">
-                  <p className="font-semibold">INSERT MAP COMPONENT HERE (DEV)</p>
-                  <p>This will be replaced by the live provider map from the Management dApp.</p>
-                </div>
-              </div>
-            </motion.div>
-          </section>
 
           
 

@@ -182,7 +182,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="/#relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">🔌</div>
               <div>
                 <p className="text-white text-sm font-semibold">Relay Gateway</p>
@@ -190,7 +190,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="/#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⚙️</div>
               <div>
                 <p className="text-white text-sm font-semibold">AI Workloads</p>
@@ -213,6 +213,23 @@ const close = () => {
                 <p className="text-gray-400 text-xs">Tasks, nodes, performance.</p>
               </div>
             </a>
+                     {/* NEW — MULTISENDER */}
+                  <a href="/multisender" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                    <div className="text-[#00E9FF] text-xl">📤</div>
+                    <div>
+                      <p className="text-white text-sm font-semibold">Multisender</p>
+                      <p className="text-gray-400 text-xs">Send tokens at scale.</p>
+                    </div>
+                  </a>
+
+                  {/* NEW — OpenNFT */}
+                  <a href="https://nft.opengpu.network/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                    <div className="text-[#00E9FF] text-xl"></div>
+                    <div>
+                      <p className="text-white text-sm font-semibold">Open NFT</p>
+                      <p className="text-gray-400 text-xs">Unlock exclusive benefits.</p>
+                    </div>
+                  </a>
           </div>
         </div>
       </div>
@@ -240,7 +257,7 @@ const close = () => {
           </div>
 
           <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="/#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⚡</div>
               <div>
                 <p className="text-white text-sm font-semibold">AI Companies</p>
@@ -504,7 +521,7 @@ const close = () => {
             </div>
           </a>
 
-          <a href="https://opengpu.network/takoswap" 
+          <a href="https://takoswap.app/" 
              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
             <div className="text-[#00E9FF] text-xl">🐙</div>
             <div>
@@ -572,10 +589,12 @@ const close = () => {
 
           <a href="/" className="text-gray-300 text-sm">Overview</a>
           <a href="/#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
-          <a href="/#relay" className="text-gray-300 text-sm">Relay Gateway</a>
+          <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
           <a href="/#workloads" className="text-gray-300 text-sm">AI Workloads</a>
           <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
           <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
+          <a href="/tokencreator" className="text-gray-300 text-sm">Multisender</a>
+          <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -1372,7 +1391,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
         {item.text}
       </p>
 
-      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="#">
+      <a className="text-sm font-semibold text-cyan-600 hover:text-blue-600 transition" href="/workloads">
         Learn more →
       </a>
 
@@ -2356,10 +2375,10 @@ className="w-full bg-white py-24 md:py-28 px-6">
     <div>
       <h4 className="font-semibold text-white mb-3 text-sm md:text-base">Product</h4>
       <ul className="space-y-2 text-white/70 text-sm">
-        <li><a href="#" className="hover:text-white transition">Relay</a></li>
+        <li><a href="/relay" className="hover:text-white transition">Relay</a></li>
         <li><a href="#" className="hover:text-white transition">Provider dApp</a></li>
         <li><a href="#" className="hover:text-white transition">OpenNFT</a></li>
-        <li><a href="#" className="hover:text-white transition">Takoswap</a></li>
+        <li><a href="https://takoswap.app/" className="hover:text-white transition">Takoswap</a></li>
         <li><a href="#" className="hover:text-white transition">Bridge</a></li>
       </ul>
     </div>
@@ -2437,7 +2456,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     </a>
 
     {/* Workloads */}
-    <a href="#workloads" className="flex flex-col items-center hover:text-white">
+    <a href="/workloads" className="flex flex-col items-center hover:text-white">
       <span className="text-xl">📦</span>
       <span className="text-[10px]">Loads</span>
     </a>

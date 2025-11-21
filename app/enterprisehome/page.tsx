@@ -90,7 +90,7 @@ export default function EnterprisePage() {
               </div>
             </a>
 
-            <a href="/#relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">🔌</div>
               <div>
                 <p className="text-white text-sm font-semibold">Relay Gateway</p>
@@ -98,7 +98,7 @@ export default function EnterprisePage() {
               </div>
             </a>
 
-            <a href="/#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⚙️</div>
               <div>
                 <p className="text-white text-sm font-semibold">AI Workloads</p>
@@ -147,7 +147,7 @@ export default function EnterprisePage() {
           </div>
 
           <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="/#workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⚡</div>
               <div>
                 <p className="text-white text-sm font-semibold">AI Companies</p>
@@ -474,8 +474,8 @@ export default function EnterprisePage() {
 
           <a href="/" className="text-gray-300 text-sm">Overview</a>
           <a href="/#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
-          <a href="/#relay" className="text-gray-300 text-sm">Relay Gateway</a>
-          <a href="/#workloads" className="text-gray-300 text-sm">AI Workloads</a>
+          <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
+          <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
           <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
           <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
         </div>
@@ -486,7 +486,7 @@ export default function EnterprisePage() {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Solutions</p>
 
-          <a href="/#workloads" className="text-gray-300 text-sm">AI Companies</a>
+          <a href="/workloads" className="text-gray-300 text-sm">AI Companies</a>
           <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
           <a href="/#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
           <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
