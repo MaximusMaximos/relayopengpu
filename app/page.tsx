@@ -535,7 +535,7 @@ const close = () => {
 
       {/* MAIN-PAGE CTA */}
       <a
-        href="https://opengpu.network/get-started"
+        href="/getstarted"
         className="ml-2 px-8 py-3 rounded-xl font-semibold bg-[#0A84FF]
                    text-white text-sm transition hover:bg-[#0A84FF]/90 
                    hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
@@ -750,7 +750,7 @@ const close = () => {
 
   {/* SECONDARY CTA — Get Started */}
   <a
-    href="https://opengpu.network/get-started"
+    href="/getstarted"
     className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
                bg-[#0A84FF] transition-all duration-300 
                hover:bg-[#005DEA] hover:shadow-[0_12px_32px_rgba(10,132,255,0.4)] hover:-translate-y-1"
