@@ -58,11 +58,7 @@ export default function EnterprisePage() {
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: "100%", opacity: 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="md:hidden fixed top-[65px] left-0 w-full 
-           h-[calc(100vh-65px)] 
-           bg-[#00040F]/95 backdrop-blur-xl z-[998] flex flex-col 
-           px-6 py-6 space-y-6 overflow-y-auto"
-
+        className="md:hidden fixed top-[65px] left-0 w-full h-screen bg-[#00040F]/95 backdrop-blur-xl z-[998] flex flex-col px-6 py-6 space-y-6 overflow-y-auto"
       >
 
         {/* PLATFORM */}
@@ -115,10 +111,8 @@ export default function EnterprisePage() {
         {/* CTA */}
         <a
           href="/"
-          className="mt-4 px-5 py-3 rounded-xl text-center font-semibold bg-[#0A84FF] 
-           text-white shadow-lg w-auto self-center"
-
-   >
+          className="mt-4 px-5 py-3 rounded-xl text-center font-semibold bg-[#0A84FF] text-white shadow-lg w-full"
+        >
           Back To Main Site
         </a>
       </motion.div>
@@ -131,6 +125,7 @@ export default function EnterprisePage() {
     <div className="absolute inset-0 bg-[#00E9FF] opacity-40 blur-sm" />
   </div>
 </header>
+
 
 
       {/* PAGE CONTENT */}
