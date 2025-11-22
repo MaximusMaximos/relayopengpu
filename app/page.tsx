@@ -5,6 +5,8 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
 import PricingComparator from "./components/PricingComparator";
+import Livetransactions from "./components/Livetransactions";
+
 
 
 export default function Page() {
@@ -778,8 +780,12 @@ const close = () => {
   </a>
 
 </div>
+<div className="mt-4" />
+<Livetransactions />
     </div>
+    
   </div>
+  
 </section>
 
       {/* Live Stats */}
@@ -895,11 +901,11 @@ chmod +x provider-install.sh
 
     </div>
   </div>
-  
+  <div className="mt-8" />
+  {/* Pricing Comparator */}
+      <PricingComparator />
 </section>
 
-{/* Pricing Comparator */}
-      <PricingComparator />
 
 
 {/* GRADIENT TRANSITION */}
