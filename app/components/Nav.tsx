@@ -530,7 +530,7 @@ export default function Nav() {
               <div className="flex flex-col space-y-2">
                 <p className="text-white font-semibold text-lg">Company</p>
 
-                <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
+                <a href="/about" className="text-gray-300 text-sm">About</a>
                 <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming Soon)</a>
                 <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
                 <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
