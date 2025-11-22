@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
+import PricingComparator from "./components/PricingComparator";
+
 
 export default function Page() {
 
@@ -648,8 +650,6 @@ const close = () => {
 </header>
 
 
-
-
 {/* QUICK NAV MENU (Floating Right Side) */}
 <div className="fixed right-4 top-1/2 -translate-y-1/2 z-[998] hidden md:flex flex-col gap-3">
 
@@ -782,10 +782,10 @@ const close = () => {
   </div>
 </section>
 
-
       {/* Live Stats */}
       <LiveStats />
 
+      
 {/* UNIVERSAL QUICK START */}
 <section id="quickstart"
  className="w-full bg-[#040814] py-24 px-6 border-t border-white/5">
@@ -895,7 +895,11 @@ chmod +x provider-install.sh
 
     </div>
   </div>
+  
 </section>
+
+{/* Pricing Comparator */}
+      <PricingComparator />
 
 
 {/* GRADIENT TRANSITION */}
