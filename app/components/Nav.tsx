@@ -104,7 +104,7 @@ export default function Nav() {
                     </div>
                   </a>
 
-                  <a href="/#blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">⛓️</div>
                     <div>
                       <p className="text-white text-sm font-semibold">Blockchain</p>
@@ -490,7 +490,7 @@ export default function Nav() {
                 <a href="/howogpuworks" className="text-gray-300 text-sm">How OGPU Works</a>
                 <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
                 <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
-                <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
+                <a href="/blockchain" className="text-gray-300 text-sm">Blockchain</a>
                 <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
 
                 {/* Added mobile versions of new links */}

@@ -198,7 +198,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="/#blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⛓️</div>
               <div>
                 <p className="text-white text-sm font-semibold">Blockchain</p>
