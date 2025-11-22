@@ -174,7 +174,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="/#how-ogpu-works" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">🧩</div>
               <div>
                 <p className="text-white text-sm font-semibold">How OGPU Works</p>
@@ -214,11 +214,11 @@ const close = () => {
               </div>
             </a>
                      {/* NEW — MULTISENDER */}
-                  <a href="/multisender" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="https://dapps.opengpu.network/token-creator" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">📤</div>
                     <div>
-                      <p className="text-white text-sm font-semibold">Multisender</p>
-                      <p className="text-gray-400 text-xs">Send tokens at scale.</p>
+                      <p className="text-white text-sm font-semibold">Tokencreator</p>
+                      <p className="text-gray-400 text-xs">Pick the type of ORC-20 token you'd like to create!</p>
                     </div>
                   </a>
 
@@ -257,7 +257,7 @@ const close = () => {
           </div>
 
           <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">⚡</div>
               <div>
                 <p className="text-white text-sm font-semibold">AI Companies</p>
@@ -383,12 +383,12 @@ const close = () => {
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Learn more about OGPU, mission, contributors, and history.
             </p>
-            <a href="https://opengpu.network/about" className="text-sm font-semibold text-[#00E9FF] mb-3">
+            <a href="/about" className="text-sm font-semibold text-[#00E9FF] mb-3">
               About OGPU →
             </a>
 
             <div className="flex flex-col gap-3">
-              <a href="https://opengpu.network/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <a href="/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                 <div className="text-[#00E9FF] text-xl">🏛️</div>
                 <div>
                   <p className="text-white text-sm font-semibold">About OGPU</p>
@@ -400,7 +400,7 @@ const close = () => {
                 <div className="text-[#00E9FF] text-xl">👥</div>
                 <div>
                   <p className="text-white text-sm font-semibold">Team</p>
-                  <p className="text-gray-400 text-xs">Core contributors.</p>
+                  <p className="text-gray-400 text-xs">Core contributors. (Coming Soon)</p>
                 </div>
               </a>
 
@@ -588,12 +588,12 @@ const close = () => {
           <p className="text-white font-semibold text-lg">Platform</p>
 
           <a href="/" className="text-gray-300 text-sm">Overview</a>
-          <a href="/#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
+          <a href="/howogpuworks" className="text-gray-300 text-sm">How OGPU Works</a>
           <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
           <a href="/#workloads" className="text-gray-300 text-sm">AI Workloads</a>
           <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
           <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
-          <a href="/tokencreator" className="text-gray-300 text-sm">Multisender</a>
+          <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Tokencreator</a>
           <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
         </div>
 
@@ -603,7 +603,7 @@ const close = () => {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Solutions</p>
 
-          <a href="/#workloads" className="text-gray-300 text-sm">AI Companies</a>
+          <a href="/#aicompanies" className="text-gray-300 text-sm">AI Companies</a>
           <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
           <a href="/#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
           <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
@@ -629,8 +629,8 @@ const close = () => {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Company</p>
 
-          <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
-          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
+          <a href="/about" className="text-gray-300 text-sm">About</a>
+          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming Soon)</a>
           <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
           <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
           <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
@@ -815,9 +815,15 @@ const close = () => {
           Access decentralized GPUs instantly using the Client Dashboard.
         </p>
 
-        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-          Run Models →
-        </button>
+        <a
+  href="https://client.opengpu.network/"
+  download
+  className="block"
+>
+  <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+    Run Models →
+  </button>
+</a>
 
         <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
           API Docs →
@@ -829,9 +835,15 @@ const close = () => {
         <img src="/Assets/apple.png" className="w-14 mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-white mb-2">macOS</h3>
 
-        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-          Download for macOS →
-        </button>
+        <a
+  href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/osx_arm64/OpenGPU-Provider-Suite-3.1.0.pkg"
+  download
+  className="block"
+>
+  <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+    Download for macOS→
+  </button>
+</a>
 
         <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
           View macOS docs →
@@ -843,9 +855,15 @@ const close = () => {
         <img src="/Assets/windows.png" className="w-14 mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-white mb-2">Windows</h3>
 
-        <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-          Download for Windows →
-        </button>
+        <a
+  href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/windows_64/OpenGPU-Provider-Suite-3.1.0.exe"
+  download
+  className="block"
+>
+  <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+    Download for Windows →
+  </button>
+</a>
 
         <a href="#" className="block mt-4 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
           View Windows docs →
@@ -1824,7 +1842,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
         </p>
         <motion.a 
           whileHover={{ scale: 1.04 }} 
-          href="#"
+          href="https://management.opengpu.network/dashboard"
           className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
                      bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
                      shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
@@ -2145,13 +2163,15 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
           View OGPU Scan
         </motion.a>
 
-        <motion.button
-          whileHover={{ scale: 1.04 }}
-          className="px-7 py-3 rounded-xl font-semibold text-sm md:text-base 
-                     border border-sky-400/60 text-sky-100 hover:bg-sky-500/10 transition"
-        >
-          Read the whitepaper
-        </motion.button>
+        <motion.a
+  href="/blockchain"
+  whileHover={{ scale: 1.04 }}
+  className="px-7 py-3 rounded-xl font-semibold text-sm md:text-base 
+             border border-sky-400/60 text-sky-100 hover:bg-sky-500/10 transition"
+>
+  Learn more about the chain
+</motion.a>
+
       </div>
     </motion.div>
 
@@ -2399,7 +2419,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     <div>
       <h4 className="font-semibold text-white mb-3 text-sm md:text-base">Company</h4>
       <ul className="space-y-2 text-white/70 text-sm">
-        <li><a href="#" className="hover:text-white transition">About</a></li>
+        <li><a href="/about" className="hover:text-white transition">About</a></li>
         <li><a href="#" className="hover:text-white transition">Careers</a></li>
         <li><a href="#" className="hover:text-white transition">Contact</a></li>
       </ul>
@@ -2456,7 +2476,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     </a>
 
     {/* Workloads */}
-    <a href="/workloads" className="flex flex-col items-center hover:text-white">
+    <a href="#workloads" className="flex flex-col items-center hover:text-white">
       <span className="text-xl">📦</span>
       <span className="text-[10px]">Loads</span>
     </a>
@@ -2467,11 +2487,18 @@ className="w-full bg-white py-24 md:py-28 px-6">
       <span className="text-[10px]">Relay</span>
     </a>
 
-    {/* Back to Top */}
+    {/* News */}
+    <a href="#news" className="flex flex-col items-center text-white">
+      <span className="text-xl">📰</span>
+      <span className="text-[10px]">News</span>
+    </a>
+
+      {/* Back To The Top */}
     <a href="#hero" className="flex flex-col items-center text-white">
       <span className="text-xl">⬆️</span>
       <span className="text-[10px]">Top</span>
     </a>
+
 
   </div>
 </div>

@@ -80,7 +80,7 @@ export default function Nav() {
                     </div>
                   </a>
 
-                  <a href="/#how-ogpu-works" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">🧩</div>
                     <div>
                       <p className="text-white text-sm font-semibold">How OGPU Works</p>
@@ -121,11 +121,11 @@ export default function Nav() {
                   </a>
 
                   {/* NEW — MULTISENDER */}
-                  <a href="/multisender" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="https://dapps.opengpu.network/token-creator" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">📤</div>
                     <div>
-                      <p className="text-white text-sm font-semibold">Multisender</p>
-                      <p className="text-gray-400 text-xs">Send tokens at scale.</p>
+                      <p className="text-white text-sm font-semibold">Tokencreator</p>
+                      <p className="text-gray-400 text-xs">Pick the type of ORC-20 token you'd like to create!</p>
                     </div>
                   </a>
 
@@ -133,7 +133,7 @@ export default function Nav() {
                   <a href="https://nft.opengpu.network/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl"></div>
                     <div>
-                      <p className="text-white text-sm font-semibold">Open NFT</p>
+                      <p className="text-white text-sm font-semibold">OpenNFT</p>
                       <p className="text-gray-400 text-xs">Unlock exclusive benefits.</p>
                     </div>
                   </a>
@@ -164,7 +164,7 @@ export default function Nav() {
                 </div>
 
                 <div className="w-1/2 grid grid-cols-1 gap-4">
-                  <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">⚡</div>
                     <div>
                       <p className="text-white text-sm font-semibold">AI Companies</p>
@@ -289,12 +289,12 @@ export default function Nav() {
                   <p className="text-gray-400 text-sm leading-relaxed mb-4">
                     Learn more about OGPU, mission, contributors, and history.
                   </p>
-                  <a href="https://opengpu.network/about" className="text-sm font-semibold text-[#00E9FF] mb-3">
+                  <a href="/about" className="text-sm font-semibold text-[#00E9FF] mb-3">
                     About OGPU →
                   </a>
 
                   <div className="flex flex-col gap-3">
-                    <a href="https://opengpu.network/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                    <a href="/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                       <div className="text-[#00E9FF] text-xl">🏛️</div>
                       <div>
                         <p className="text-white text-sm font-semibold">About OGPU</p>
@@ -306,7 +306,7 @@ export default function Nav() {
                       <div className="text-[#00E9FF] text-xl">👥</div>
                       <div>
                         <p className="text-white text-sm font-semibold">Team</p>
-                        <p className="text-gray-400 text-xs">Core contributors.</p>
+                        <p className="text-gray-400 text-xs">Core contributors. (Coming Soon)</p>
                       </div>
                     </a>
 
@@ -487,15 +487,15 @@ export default function Nav() {
                 <p className="text-white font-semibold text-lg">Platform</p>
 
                 <a href="/" className="text-gray-300 text-sm">Overview</a>
-                <a href="/#how-ogpu-works" className="text-gray-300 text-sm">How OGPU Works</a>
+                <a href="/howogpuworks" className="text-gray-300 text-sm">How OGPU Works</a>
                 <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
                 <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
                 <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
                 <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
 
                 {/* Added mobile versions of new links */}
-                <a href="/multisender" className="text-gray-300 text-sm">Multisender</a>
-                <a href="/token-creator" className="text-gray-300 text-sm">OpenNFT</a>
+                <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Tokencreator</a>
+                <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">OpenNFT</a>
               </div>
 
               <div className="w-full h-px bg-white/10" />
@@ -504,7 +504,7 @@ export default function Nav() {
               <div className="flex flex-col space-y-2">
                 <p className="text-white font-semibold text-lg">Solutions</p>
 
-                <a href="/workloads" className="text-gray-300 text-sm">AI Companies</a>
+                <a href="/aicompanies" className="text-gray-300 text-sm">AI Companies</a>
                 <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
                 <a href="/#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
                 <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
@@ -531,7 +531,7 @@ export default function Nav() {
                 <p className="text-white font-semibold text-lg">Company</p>
 
                 <a href="https://opengpu.network/about" className="text-gray-300 text-sm">About</a>
-                <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
+                <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming Soon)</a>
                 <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
                 <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
                 <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>

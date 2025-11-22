@@ -21,10 +21,10 @@ export default function AIWorkloadsPage() {
 
             <div className="space-y-3">
               <h1 className="text-3xl md:text-4xl font-semibold">
-                AI workloads on OGPU
+                AI workloads on OpenGPU
               </h1>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl">
-                OGPU routes real workloads across a global pool of providers. This page
+                OpenGPU routes real workloads across a global pool of providers. This page
                 explains the main workload categories that run on the network and what
                 they require at the GPU level.
               </p>
@@ -146,7 +146,7 @@ export default function AIWorkloadsPage() {
                 </p>
 
                 <div className="rounded-2xl bg-slate-900 text-slate-100 px-4 py-3 text-xs md:text-sm">
-                  <p className="font-semibold mb-1">How OGPU supports LLM inference</p>
+                  <p className="font-semibold mb-1">How OpenGPU supports LLM inference</p>
                   <ul className="list-disc list-inside space-y-1 text-slate-200/90">
                     <li>Route inference jobs to GPUs matching memory and speed needs.</li>
                     <li>Scale horizontally during traffic spikes.</li>
@@ -216,7 +216,7 @@ export default function AIWorkloadsPage() {
 
                 <div className="rounded-2xl bg-slate-900 text-slate-100 px-4 py-3 text-xs md:text-sm">
                   <p className="font-semibold mb-1">
-                    How OGPU supports training and fine tuning
+                    How OpenGPU supports training and fine tuning
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-slate-200/90">
                     <li>Match long jobs to stable providers.</li>
@@ -270,7 +270,7 @@ export default function AIWorkloadsPage() {
 
                 <div className="rounded-2xl bg-slate-900 text-slate-100 px-4 py-3 text-xs md:text-sm">
                   <p className="font-semibold mb-1">
-                    How OGPU supports generative media and 3D
+                    How OpenGPU supports generative media and 3D
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-slate-200/90">
                     <li>Route bursty workloads across providers.</li>
@@ -309,7 +309,7 @@ export default function AIWorkloadsPage() {
               {/* Scaling */}
               <div className="space-y-3">
                 <h3 className="text-base md:text-lg font-semibold">
-                  Scaling experiments with OGPU
+                  Scaling experiments with OpenGPU
                 </h3>
                 <ul className="space-y-2 text-xs md:text-sm text-slate-600">
                   <li><span className="font-semibold">Horizontal scale.</span></li>
@@ -319,7 +319,7 @@ export default function AIWorkloadsPage() {
 
                 <div className="rounded-2xl bg-slate-900 text-slate-100 px-4 py-3 text-xs md:text-sm">
                   <p className="font-semibold mb-1">
-                    How OGPU supports simulation and research
+                    How OpenGPU supports simulation and research
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-slate-200/90">
                     <li>Launch many small jobs instead of giant clusters.</li>
