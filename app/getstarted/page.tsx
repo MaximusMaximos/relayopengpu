@@ -45,7 +45,7 @@ export default function GetStartedPage() {
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                     Turn idle GPUs into income
                   </h1>
-                  <h2 className="text-xl md:text-2xl font-medium text-cyan-200">
+                  <h2 className="text-xl md:text-2xl font-medium text-cyan-300">
                     Power AI workloads directly, up to 60%–80% cheaper.
                   </h2>
                 </div>

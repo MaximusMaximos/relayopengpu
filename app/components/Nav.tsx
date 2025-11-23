@@ -180,7 +180,7 @@ export default function Nav() {
                     </div>
                   </a>
 
-                  <a href="/#quickstart" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                     <div className="text-[#00E9FF] text-xl">🖥️</div>
                     <div>
                       <p className="text-white text-sm font-semibold">GPU Providers</p>
@@ -506,7 +506,7 @@ export default function Nav() {
 
                 <a href="/aicompanies" className="text-gray-300 text-sm">AI Companies</a>
                 <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
-                <a href="/#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
+                <a href="/provider" className="text-gray-300 text-sm">GPU Providers</a>
                 <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
               </div>
 
@@ -534,7 +534,7 @@ export default function Nav() {
                 <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming Soon)</a>
                 <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
                 <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
-                <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
+                <a href="mailto:info@opengpu.network" className="text-gray-300 text-sm">Contact</a>
               </div>
 
               <a

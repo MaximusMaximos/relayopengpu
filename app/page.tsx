@@ -277,7 +277,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="/#quickstart" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
               <div className="text-[#00E9FF] text-xl">🖥️</div>
               <div>
                 <p className="text-white text-sm font-semibold">GPU Providers</p>
@@ -609,7 +609,7 @@ const close = () => {
 
           <a href="/#aicompanies" className="text-gray-300 text-sm">AI Companies</a>
           <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
-          <a href="/#quickstart" className="text-gray-300 text-sm">GPU Providers</a>
+          <a href="/provider" className="text-gray-300 text-sm">GPU Providers</a>
           <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
         </div>
 
@@ -780,7 +780,7 @@ const close = () => {
   </a>
 
 </div>
-<div className="mt-4" />
+<div className="mt-12" />
 <Livetransactions />
     </div>
     
