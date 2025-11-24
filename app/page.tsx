@@ -938,13 +938,6 @@ const close = () => {
     Relay
   </a>
 
-  <a href="#built-for-everyone"
-     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
-                transition shadow-md">
-    Built For Everyone
-  </a>
-
   <a href="#blockchain"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
                 border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
@@ -952,20 +945,21 @@ const close = () => {
     Blockchain
   </a>
 
-  <a href="#news"
+  <a href="#built-for-everyone"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
                 border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
-    News & Footer
+    Built For Everyone
   </a>
 
-  {/* Back to Top */}
-  <a href="#hero"
-     className="mt-2 px-3 py-2 rounded-lg bg-[#0000] text-white text-xs
-                border border-[#000000]/40 backdrop-blur-lg hover:bg-[#00C6E6]
+    {/* Back to Top */}
+    <a href="#hero"
+     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
-    ↑ Top
+    Top ⬆️
   </a>
+
 
 </div>
 
@@ -1977,219 +1971,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
 
 
 
-
-
-
-      {/* RELAY TRANSITION SECTION */}
-<section className="w-full py-12 bg-white text-center px-6">
-  <motion.div
-    initial={{ opacity: 0, y: 35 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.4 }}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-  >
-    <h3 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] leading-snug">
-      Relay makes OGPU easy to use.
-      <br />
-      <span className="bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
- bg-clip-text text-transparent">
-        Now let us show who it unlocks value for.
-      </span>
-    </h3>
-  </motion.div>
-</section>
-
-{/* ================= SECTION: BUILT FOR EVERYONE ================= */}
-<section id="built-for-everyone"
- className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden">
-  
-  {/* BACKGROUND MESH */}
-  <div className="absolute inset-0 pointer-events-none opacity-[0.20] z-0">
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#7CA9D9]" preserveAspectRatio="none">
-      <defs>
-        <pattern id="mesh" width="160" height="160" patternUnits="userSpaceOnUse">
-          <path d="M0 0 L160 160 M160 0 L0 160" stroke="currentColor" strokeWidth="0.6" strokeOpacity="0.65" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#mesh)" />
-    </svg>
-  </div>
-
-  <div className="relative z-10 max-w-6xl mx-auto text-center">
-
-    {/* HEADER */}
-    <h2 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] mb-4 leading-tight">
-      Built for everyone.
-    </h2>
-
-    <p className="text-base md:text-lg text-[#475569] max-w-3xl mx-auto leading-relaxed mb-20 md:mb-24">
-      A network where everyone can build, contribute and benefit. Developers run models,
-      enterprises migrate workloads, researchers scale experiments and providers earn
-      from compute. OGPU is the connective layer powering them all.
-    </p>
-
-    {/* ROLES */}
-    <div className="relative max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-
-        {/* DEVELOPERS */}
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
-          <motion.div 
-            className="relative mb-5"
-            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 2.6, repeat: Infinity }}
-          >
-            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
-          </motion.div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Developers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
-            Run or experiment instantly without provisioning or DevOps.
-          </p>
-        </motion.div>
-
-        {/* ENTERPRISES */}
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }} className="flex flex-col items-center">
-          <motion.div 
-            className="relative mb-5"
-            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 2.6, repeat: Infinity }}
-          >
-            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
-          </motion.div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Enterprises</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
-            Migrate compute seamlessly and reduce operational cost with Relay.
-          </p>
-        </motion.div>
-
-        {/* RESEARCHERS */}
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="flex flex-col items-center">
-          <motion.div 
-            className="relative mb-5"
-            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 2.6, repeat: Infinity }}
-          >
-            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
-          </motion.div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Researchers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
-            Scale experiments and simulations without GPU wait times.
-          </p>
-        </motion.div>
-
-        {/* GPU PROVIDERS */}
-        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.95 }} className="flex flex-col items-center">
-          <motion.div 
-            className="relative mb-5"
-            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 2.6, repeat: Infinity }}
-          >
-            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
-          </motion.div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">GPU providers</h3>
-          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
-            Earn per task with on-chain verification.
-          </p>
-        </motion.div>
-
-      </div>
-    </div>
-
-    {/* TAGLINE */}
-    <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}
-      className="text-xs md:text-sm text-[#0F172A] font-medium tracking-wide mt-16 md:mt-20 mb-8">
-      The OGPU ecosystem connects everyone through a single global compute network.
-    </motion.p>
-
-    {/* 2 COLUMN CTA BLOCK */}
-    <div className="relative z-10 max-w-5xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left">
-
-      {/* LEFT — EXPLORE ECOSYSTEM */}
-      <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
-        <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Explore the OGPU ecosystem</h3>
-        <p className="text-sm md:text-base text-[#475569] mb-5">
-          Discover workloads, tools, dashboards and open infrastructure powering the global compute network.
-        </p>
-        <motion.a 
-          whileHover={{ scale: 1.04 }} 
-          href="https://management.opengpu.network/dashboard"
-          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
-                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
-          Explore ecosystem →
-        </motion.a>
-      </div>
-
-      {/* RIGHT — JOIN COMMUNITY */}
-      <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
-        <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Join the OGPU community</h3>
-        <p className="text-sm md:text-base text-[#475569] mb-8">
-          Be part of a fast-growing global ecosystem. Get updates, help shape the roadmap, and connect with builders.
-        </p>
-
-        {/* MAIN CTA */}
-        <motion.a 
-          whileHover={{ scale: 1.04 }} 
-          href="https://t.me/opengpu_network"
-          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
-                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all mb-8">
-          Join Telegram →
-        </motion.a>
-
-        {/* SOCIAL GRID */}
-<div className="grid grid-cols-7 gap-4 mt-2">
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://x.com/OGPU_Network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/x.png" className="w-5 h-5 invert" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://t.me/opengpu_network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/telegram.png" className="w-5 h-5" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://discord.com/invite/opengpunetwork" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/discord.png" className="w-5 h-5" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://www.tiktok.com/@opengpu.network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/tiktok.png" className="w-5 h-5 invert" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://www.linkedin.com/company/opengpu" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/linkedin.png" className="w-5 h-5 invert" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://instagram.com/opengpu.network" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/instagram.png" className="w-5 h-5" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-  <motion.a whileHover={{ scale: 1.08 }} href="https://youtube.com/@opengpunetwork" className="flex flex-col items-center gap-1 group">
-    <img src="/Assets/youtube.png" className="w-5 h-5 invert" />
-    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
-  </motion.a>
-
-</div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-    {/* BLOCKCHAIN SECTION — SYSTEM BOOT SEQUENCE */}
+ {/* BLOCKCHAIN SECTION — SYSTEM BOOT SEQUENCE */}
 <section id="blockchain" 
 className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
   {/* BACKGROUND GRID + GLOW */}
@@ -2457,6 +2239,213 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 
   </div>
 </section>
+
+{/* ================= SECTION: BUILT FOR EVERYONE ================= */}
+
+<section
+  id="built-for-everyone"
+  className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden"
+>
+
+  {/* RELAY TRANSITION — NOW INSIDE BUILT FOR EVERYONE */}
+  <div className="relative z-10 max-w-6xl mx-auto mb-20 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.4 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+    >
+      <h3 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] leading-snug">
+        <span className="bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+        bg-clip-text text-transparent">
+          Now let us show who it unlocks value for.
+        </span>
+      </h3>
+    </motion.div>
+  </div>
+
+  
+  {/* BACKGROUND MESH */}
+  <div className="absolute inset-0 pointer-events-none opacity-[0.20] z-0">
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#7CA9D9]" preserveAspectRatio="none">
+      <defs>
+        <pattern id="mesh" width="160" height="160" patternUnits="userSpaceOnUse">
+          <path d="M0 0 L160 160 M160 0 L0 160" stroke="currentColor" strokeWidth="0.6" strokeOpacity="0.65" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#mesh)" />
+    </svg>
+  </div>
+
+  <div className="relative z-10 max-w-6xl mx-auto text-center">
+
+    {/* HEADER */}
+    <h2 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] mb-4 leading-tight">
+      Built for everyone.
+    </h2>
+
+    <p className="text-base md:text-lg text-[#475569] max-w-3xl mx-auto leading-relaxed mb-20 md:mb-24">
+      A network where everyone can build, contribute and benefit. Developers run models,
+      enterprises migrate workloads, researchers scale experiments and providers earn
+      from compute. OGPU is the connective layer powering them all.
+    </p>
+
+    {/* ROLES */}
+    <div className="relative max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+
+        {/* DEVELOPERS */}
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
+          </motion.div>
+          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Developers</h3>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Run or experiment instantly without provisioning or DevOps.
+          </p>
+        </motion.div>
+
+        {/* ENTERPRISES */}
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.85 }} className="flex flex-col items-center">
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
+          </motion.div>
+          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Enterprises</h3>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Migrate compute seamlessly and reduce operational cost with Relay.
+          </p>
+        </motion.div>
+
+        {/* RESEARCHERS */}
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="flex flex-col items-center">
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
+          </motion.div>
+          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">Researchers</h3>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Scale experiments and simulations without GPU wait times.
+          </p>
+        </motion.div>
+
+        {/* GPU PROVIDERS */}
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.95 }} className="flex flex-col items-center">
+          <motion.div 
+            className="relative mb-5"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2.6, repeat: Infinity }}
+          >
+            <div className="w-5 h-5 rounded-full bg-[#00C6FF] shadow-[0_0_20px_6px_rgba(0,198,255,0.45)]" />
+          </motion.div>
+          <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">GPU providers</h3>
+          <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
+            Earn per task with on-chain verification.
+          </p>
+        </motion.div>
+
+      </div>
+    </div>
+
+    {/* TAGLINE */}
+    <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}
+      className="text-xs md:text-sm text-[#0F172A] font-medium tracking-wide mt-16 md:mt-20 mb-8">
+      The OGPU ecosystem connects everyone through a single global compute network.
+    </motion.p>
+
+    {/* 2 COLUMN CTA BLOCK */}
+    <div className="relative z-10 max-w-5xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left">
+
+      {/* LEFT — EXPLORE ECOSYSTEM */}
+      <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
+        <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Explore the OGPU ecosystem</h3>
+        <p className="text-sm md:text-base text-[#475569] mb-5">
+          Discover workloads, tools, dashboards and open infrastructure powering the global compute network.
+        </p>
+        <motion.a 
+          whileHover={{ scale: 1.04 }} 
+          href="https://management.opengpu.network/dashboard"
+          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all">
+          Explore ecosystem →
+        </motion.a>
+      </div>
+
+      {/* RIGHT — JOIN COMMUNITY */}
+      <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
+        <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Join the OGPU community</h3>
+        <p className="text-sm md:text-base text-[#475569] mb-8">
+          Be part of a fast-growing global ecosystem. Get updates, help shape the roadmap, and connect with builders.
+        </p>
+
+        {/* MAIN CTA */}
+        <motion.a 
+          whileHover={{ scale: 1.04 }} 
+          href="https://t.me/opengpu_network"
+          className="inline-block px-8 py-3 rounded-xl font-semibold text-white text-base 
+                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+                     shadow-[0_10px_30px_rgba(0,160,255,0.45)] hover:opacity-95 transition-all mb-8">
+          Join Telegram →
+        </motion.a>
+
+        {/* SOCIAL GRID */}
+<div className="grid grid-cols-7 gap-4 mt-2">
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://x.com/OGPU_Network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/x.png" className="w-5 h-5 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://t.me/opengpu_network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/telegram.png" className="w-5 h-5" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://discord.com/invite/opengpunetwork" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/discord.png" className="w-5 h-5" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://www.tiktok.com/@opengpu.network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/tiktok.png" className="w-5 h-5 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://www.linkedin.com/company/opengpu" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/linkedin.png" className="w-5 h-5 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://instagram.com/opengpu.network" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/instagram.png" className="w-5 h-5" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+  <motion.a whileHover={{ scale: 1.08 }} href="https://youtube.com/@opengpunetwork" className="flex flex-col items-center gap-1 group">
+    <img src="/Assets/youtube.png" className="w-5 h-5 invert" />
+    <span className="text-[11px] text-[#6B7280] group-hover:text-[#0A0F2C]"></span>
+  </motion.a>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
 
 {/* NEWS & MOMENTUM SECTION */}
