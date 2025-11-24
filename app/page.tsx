@@ -952,13 +952,14 @@ const close = () => {
     Built For Everyone
   </a>
 
-    {/* Back to Top */}
-    <a href="#hero"
-     className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
-                transition shadow-md">
-    Top ⬆️
-  </a>
+   {/* Back to Top */}
+<a href="#hero"
+  className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
+             border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
+             transition shadow-md flex items-center gap-1">
+  <span className="text-white text-sm">⬆</span> Top
+</a>
+
 
 
 </div>
@@ -2245,9 +2246,9 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 <section
   id="built-for-everyone"
   className="relative w-full bg-[#F7F9FC] py-24 md:py-28 px-6 overflow-hidden"
->
+> 
 
-  {/* RELAY TRANSITION — NOW INSIDE BUILT FOR EVERYONE */}
+  {/* BUILT FOR EVERYONE */}
   <div className="relative z-10 max-w-6xl mx-auto mb-20 text-center">
     <motion.div
       initial={{ opacity: 0, y: 35 }}
