@@ -135,7 +135,7 @@ const close = () => {
     </a>
 
     {/* DESKTOP NAV */}
-    <div className="hidden md:flex items-center gap-6 text-sm text-gray-200 font-medium">
+    <div className="hidden lg:flex items-center gap-6 text-sm text-gray-200 font-medium">
 
       {/* ===== PLATFORM ===== */}
       <div
