@@ -20,6 +20,13 @@
   }
 }
 
+/* GLOBAL FIX — PREVENT HORIZONTAL OVERFLOW ON IPAD */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
 /* GLOBAL BODY */
 body {
   background: var(--background);

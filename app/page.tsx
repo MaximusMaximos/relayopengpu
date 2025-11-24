@@ -94,7 +94,8 @@ const close = () => {
   }, [controls]);
 
   return (
-    <main className="relative w-full bg-[#040814] text-white">
+    <main className="relative w-full bg-[#040814] text-white overflow-x-hidden">
+
 
       {/* HERO SECTION */}
       <section id="hero" 
