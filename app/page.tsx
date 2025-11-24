@@ -288,170 +288,180 @@ const close = () => {
         </div>
       </div>
 
+
       {/* ===== SOLUTIONS ===== */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Solutions <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
+<div
+  className="relative"
+  onMouseEnter={() => open("solutions")}
+  onMouseLeave={() => close()}
+  onClick={() =>
+    openMenu === "solutions" ? setOpenMenu(null) : open("solutions")
+  }
+>
+  <button
+    className={`px-2 py-1 flex items-center gap-1 transition ${
+      openMenu === "solutions" ? "text-white" : "hover:text-white"
+    }`}
+  >
+    Solutions <span className="text-[10px] mt-[2px]">▾</span>
+  </button>
 
-        {/* DROPDOWN */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-7 opacity-0 invisible
-                     group-hover/nav:opacity-100 group-hover/nav:visible
-                     transition-all duration-200 flex flex-col gap-10 z-[999]"
-        >
-          {/* TITLE + DESCRIPTION */}
-          <div className="flex gap-10">
-            <div className="w-[30%] flex flex-col">
-              <h3 className="text-white text-xl font-bold mb-3">Solutions for Every Use Case</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                Route AI workloads globally with redundancy and scale.
-              </p>
+  {/* DROPDOWN */}
+  <div
+    className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
+                border border-white/10 shadow-xl p-7 z-[999]
+                transition-all duration-200
+                ${
+                  openMenu === "solutions"
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
+                }`}
+  >
+    {/* TITLE + DESCRIPTION */}
+    <div className="flex gap-10">
+      <div className="w-[30%] flex flex-col">
+        <h3 className="text-white text-xl font-bold mb-3">Solutions for Every Use Case</h3>
+        <p className="text-gray-400 text-sm leading-relaxed mb-5">
+          Route AI workloads globally with redundancy and scale.
+        </p>
+      </div>
+
+      {/* RIGHT SIDE: THREE COLUMNS */}
+      <div className="flex-1 grid grid-cols-3 gap-8">
+
+        {/* COLUMN 1 — AI SOLUTIONS */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-gray-400 font-semibold text-sm mb-2">AI Solutions</h4>
+
+          <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">⚡</div>
+            <div>
+              <p className="text-white text-sm font-semibold">AI Companies</p>
+              <p className="text-gray-400 text-xs">Inference and fine tuning.</p>
             </div>
+          </a>
 
-            {/* RIGHT SIDE: THREE COLUMNS */}
-            <div className="flex-1 grid grid-cols-3 gap-8">
-
-              {/* COLUMN 1 — AI SOLUTIONS */}
-              <div className="flex flex-col gap-4">
-                <h4 className="text-gray-400 font-semibold text-sm mb-2">AI Solutions</h4>
-
-                <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">⚡</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">AI Companies</p>
-                    <p className="text-gray-400 text-xs">Inference and fine tuning.</p>
-                  </div>
-                </a>
-
-                <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">⚙️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">AI Workloads</p>
-                    <p className="text-gray-400 text-xs">Training, inference, simulation.</p>
-                  </div>
-                </a>
-
-                <a href="/agents" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🤖</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">AI Agents</p>
-                    <p className="text-gray-400 text-xs">Intelligent automation.</p>
-                  </div>
-                </a>
-              </div>
-
-              {/* COLUMN 2 — INFRASTRUCTURE */}
-              <div className="flex flex-col gap-4">
-                <h4 className="text-gray-400 font-semibold text-sm mb-2">Infrastructure</h4>
-
-                <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🏢</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
-                    <p className="text-gray-400 text-xs">Route workloads globally.</p>
-                  </div>
-                </a>
-
-                <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🖥️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">GPU Providers</p>
-                    <p className="text-gray-400 text-xs">Earn per task.</p>
-                  </div>
-                </a>
-
-                <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🔌</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Relay Gateway</p>
-                    <p className="text-gray-400 text-xs">Fiat on ramp for enterprise.</p>
-                  </div>
-                </a>
-              </div>
-
-              {/* COLUMN 3 — BLOCKCHAIN */}
-              <div className="flex flex-col gap-4">
-                <h4 className="text-gray-400 font-semibold text-sm mb-2">Blockchain</h4>
-
-                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">⛓️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Blockchain Main</p>
-                    <p className="text-gray-400 text-xs">High throughput L1.</p>
-                  </div>
-                </a>
-
-                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🚰</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">OGPU Faucet</p>
-                    <p className="text-gray-400 text-xs">Claim $ToGPU.</p>
-                  </div>
-                </a>
-
-                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🧪</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">OGPU Testnet</p>
-                    <p className="text-gray-400 text-xs">Developer sandbox.</p>
-                  </div>
-                </a>
-              </div>
-
+          <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">⚙️</div>
+            <div>
+              <p className="text-white text-sm font-semibold">AI Workloads</p>
+              <p className="text-gray-400 text-xs">Training, inference, simulation.</p>
             </div>
-          </div>
+          </a>
 
-          {/* dApps COLLAPSIBLE — ALWAYS AT BOTTOM */}
-          <div className="border-t border-white/10 pt-5">
-            <details className="group">
-              <summary className="flex justify-between items-center cursor-pointer list-none">
-                <span className="text-white text-sm font-semibold">dApps</span>
-                <span className="text-gray-400 text-xs group-open:rotate-90 transition">▸</span>
-              </summary>
+          <a href="/agents" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🤖</div>
+            <div>
+              <p className="text-white text-sm font-semibold">AI Agents</p>
+              <p className="text-gray-400 text-xs">Intelligent automation.</p>
+            </div>
+          </a>
+        </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-4">
-                <a href="https://nft.opengpu.network/"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🎨</span>
-                  <span className="text-xs text-gray-300">Open NFT</span>
-                </a>
+        {/* COLUMN 2 — INFRASTRUCTURE */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-gray-400 font-semibold text-sm mb-2">Infrastructure</h4>
 
-                <a href="https://dapps.opengpu.network/token-creator"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🪙</span>
-                  <span className="text-xs text-gray-300">Token Creator</span>
-                </a>
+          <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🏢</div>
+            <div>
+              <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
+              <p className="text-gray-400 text-xs">Route workloads globally.</p>
+            </div>
+          </a>
 
-                <a href="/buy"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">💳</span>
-                  <span className="text-xs text-gray-300">Buy OGPU</span>
-                </a>
+          <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🖥️</div>
+            <div>
+              <p className="text-white text-sm font-semibold">GPU Providers</p>
+              <p className="text-gray-400 text-xs">Earn per task.</p>
+            </div>
+          </a>
 
-                <a href="/dashboard"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">📤</span>
-                  <span className="text-xs text-gray-300">Multisender</span>
-                </a>
+          <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🔌</div>
+            <div>
+              <p className="text-white text-sm font-semibold">Relay Gateway</p>
+              <p className="text-gray-400 text-xs">Fiat on ramp for enterprise.</p>
+            </div>
+          </a>
+        </div>
 
-                <a href="/provider-suite"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🧪</span>
-                  <span className="text-xs text-gray-300">Testnet</span>
-                </a>
+        {/* COLUMN 3 — BLOCKCHAIN */}
+        <div className="flex flex-col gap-4">
+          <h4 className="text-gray-400 font-semibold text-sm mb-2">Blockchain</h4>
 
-                <a href="/provider-suite"
-                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🚰</span>
-                  <span className="text-xs text-gray-300">Faucet</span>
-                </a>
-              </div>
-            </details>
-          </div>
+          <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">⛓️</div>
+            <div>
+              <p className="text-white text-sm font-semibold">Blockchain Main</p>
+              <p className="text-gray-400 text-xs">High throughput L1.</p>
+            </div>
+          </a>
+
+          <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🚰</div>
+            <div>
+              <p className="text-white text-sm font-semibold">OGPU Faucet</p>
+              <p className="text-gray-400 text-xs">Claim $ToGPU.</p>
+            </div>
+          </a>
+
+          <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <div className="text-[#00E9FF] text-xl">🧪</div>
+            <div>
+              <p className="text-white text-sm font-semibold">OGPU Testnet</p>
+              <p className="text-gray-400 text-xs">Developer sandbox.</p>
+            </div>
+          </a>
         </div>
       </div>
+    </div>
+
+    {/* dApps COLLAPSIBLE — ALWAYS AT BOTTOM */}
+    <div className="border-t border-white/10 pt-5">
+      <details className="group">
+        <summary className="flex justify-between items-center cursor-pointer list-none">
+          <span className="text-white text-sm font-semibold">dApps</span>
+          <span className="text-gray-400 text-xs group-open:rotate-90 transition">▸</span>
+        </summary>
+
+        <div className="mt-4 grid grid-cols-3 gap-4">
+          <a href="https://nft.opengpu.network/" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">🎨</span>
+            <span className="text-xs text-gray-300">Open NFT</span>
+          </a>
+
+          <a href="https://dapps.opengpu.network/token-creator" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">🪙</span>
+            <span className="text-xs text-gray-300">Token Creator</span>
+          </a>
+
+          <a href="/buy" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">💳</span>
+            <span className="text-xs text-gray-300">Buy OGPU</span>
+          </a>
+
+          <a href="/dashboard" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">📤</span>
+            <span className="text-xs text-gray-300">Multisender</span>
+          </a>
+
+          <a href="/provider-suite" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">🧪</span>
+            <span className="text-xs text-gray-300">Testnet</span>
+          </a>
+
+          <a href="/provider-suite" className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+            <span className="text-[#00E9FF] text-lg">🚰</span>
+            <span className="text-xs text-gray-300">Faucet</span>
+          </a>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
 
       {/* ===== INDUSTRIES ===== */}
       <div className="relative group/nav">
