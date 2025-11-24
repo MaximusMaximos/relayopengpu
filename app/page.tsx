@@ -119,9 +119,9 @@ const close = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
         </div>
 
-{/* FIXED HEADER — EXACT SAME AS ENTERPRISE, CTA = GET STARTED */}
+{/* FIXED HEADER — CTA = GET STARTED */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-10 py-3 
+  <nav className="w-full flex items-center justify-between px-4 md:px-20 py-3 
                   bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
 
     {/* LOGO */}
@@ -151,89 +151,139 @@ const close = () => {
           Platform <span className="text-[10px] mt-[2px]">▾</span>
         </button>
 
+        {/* PLATFORM DROPDOWN */}
         <div
           className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl 
-                      bg-[#020617] border border-white/10 shadow-xl p-6 flex gap-10 z-[999]
-                      transition-all duration-200 
+                      bg-[#020617] border border-white/10 shadow-xl p-6 flex flex-col gap-6 z-[999]
+                      transition-all duration-200
                       ${openMenu === "platform" ? "opacity-100 visible" : "opacity-0 invisible"}`}
         >
-          {/* LEFT */}
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">The OGPU Platform</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              The routing layer for decentralized AI compute. Explore global workload movement.
-            </p>
-            <a href="/" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              Platform Overview →
-            </a>
+          <div className="flex gap-8">
+            {/* LEFT */}
+            <div className="w-1/2 flex flex-col">
+              <h3 className="text-white text-lg font-semibold mb-2">The OGPU Platform</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                The routing layer for decentralized AI compute. Explore global workload movement.
+              </p>
+            </div>
+
+            {/* RIGHT GRID */}
+            <div className="w-1/2 grid grid-cols-1 gap-4">
+              {/* OGPU Protocol */}
+              <a href="/protocol" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">📘</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">OGPU Protocol</p>
+                  <p className="text-gray-400 text-xs">Smart contract architecture.</p>
+                </div>
+              </a>
+
+              {/* Why OGPU */}
+              <a href="/whyogpu" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">❓</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Why OGPU</p>
+                  <p className="text-gray-400 text-xs">What makes OGPU different.</p>
+                </div>
+              </a>
+
+              {/* How OGPU Works */}
+              <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">🧩</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">How OGPU Works</p>
+                  <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
+                </div>
+              </a>
+
+              {/* Live Network Stats */}
+              <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">📊</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Live Network Stats</p>
+                  <p className="text-gray-400 text-xs">Tasks, nodes, performance.</p>
+                </div>
+              </a>
+
+              {/* Competitions */}
+              <a href="/competitions" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">🏆</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Competitions</p>
+                  <p className="text-gray-400 text-xs">Challenges and rewards.</p>
+                </div>
+              </a>
+            </div>
           </div>
 
-          {/* RIGHT GRID */}
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">📘</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Overview</p>
-                <p className="text-gray-400 text-xs">Datacenter without walls.</p>
-              </div>
-            </a>
+          {/* ACCELERATION CENTER COLLAPSIBLE */}
+          <div className="border-t border-white/10 pt-4 mt-2">
+            <details className="group">
+              <summary className="flex items-center justify-between cursor-pointer list-none">
+                <span className="text-white text-sm font-semibold">Acceleration Center</span>
+                <span className="text-gray-400 text-xs group-open:rotate-90 transition">
+                  ▸
+                </span>
+              </summary>
 
-            <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">🧩</div>
-              <div>
-                <p className="text-white text-sm font-semibold">How OGPU Works</p>
-                <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
-              </div>
-            </a>
+              <div className="mt-3 grid grid-cols-2 gap-3">
+                {/* Acceleration */}
+                <a
+                  href="https://opengpu.network/acceleration"
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
+                >
+                  <div className="text-[#00E9FF] text-xl">🚀</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Acceleration Program</p>
+                    <p className="text-gray-400 text-xs">
+                      $200K program to fuel Web3 and AI innovation.
+                    </p>
+                  </div>
+                </a>
 
-            <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">🔌</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Relay Gateway</p>
-                <p className="text-gray-400 text-xs">Enterprise access with fiat.</p>
-              </div>
-            </a>
+                {/* TakoSwap */}
+                <a
+                  href="https://takoswap.app/"
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
+                >
+                  <div className="text-[#00E9FF] text-xl">🐙</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">TakoSwap</p>
+                    <p className="text-gray-400 text-xs">
+                      Swap and route OGPU ecosystem assets.
+                    </p>
+                  </div>
+                </a>
 
-            <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">⚙️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">AI Workloads</p>
-                <p className="text-gray-400 text-xs">Inference, training, simulation.</p>
-              </div>
-            </a>
+                {/* Opensale */}
+                <a
+                  href="https://opengpu.network/opensale"
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
+                >
+                  <div className="text-[#00E9FF] text-xl">🪙</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Opensale</p>
+                    <p className="text-gray-400 text-xs">
+                      Token launches and primary sales.
+                    </p>
+                  </div>
+                </a>
 
-            <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">⛓️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Blockchain</p>
-                <p className="text-gray-400 text-xs">High throughput L1.</p>
+                {/* Bridge X */}
+                <a
+                  href="https://opengpu.network/bridgex"
+                  className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
+                >
+                  <div className="text-[#00E9FF] text-xl">🌉</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Bridge X</p>
+                    <p className="text-gray-400 text-xs">
+                      Cross chain liquidity and routing.
+                    </p>
+                  </div>
+                </a>
               </div>
-            </a>
-
-            <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">📊</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Live Network Stats</p>
-                <p className="text-gray-400 text-xs">Tasks, nodes, performance.</p>
-              </div>
-            </a>
-                     {/* NEW — MULTISENDER */}
-                  <a href="https://dapps.opengpu.network/token-creator" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                    <div className="text-[#00E9FF] text-xl">📤</div>
-                    <div>
-                      <p className="text-white text-sm font-semibold">Tokencreator</p>
-                      <p className="text-gray-400 text-xs">Pick the type of ORC-20 token you'd like to create!</p>
-                    </div>
-                  </a>
-
-                  {/* NEW — OpenNFT */}
-                  <a href="https://nft.opengpu.network/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                    <div className="text-[#00E9FF] text-xl"></div>
-                    <div>
-                      <p className="text-white text-sm font-semibold">Open NFT</p>
-                      <p className="text-gray-400 text-xs">Unlock exclusive benefits.</p>
-                    </div>
-                  </a>
+            </details>
           </div>
         </div>
       </div>
@@ -244,54 +294,385 @@ const close = () => {
           Solutions <span className="text-[10px] mt-[2px]">▾</span>
         </button>
 
+        {/* DROPDOWN */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-6 opacity-0 invisible
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
+                     border border-white/10 shadow-xl p-7 opacity-0 invisible
                      group-hover/nav:opacity-100 group-hover/nav:visible
-                     transition-all duration-200 flex gap-10 z-[999]"
+                     transition-all duration-200 flex flex-col gap-10 z-[999]"
         >
-          <div className="w-1/2 flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">Solutions for Every Use Case</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Route AI workloads globally with redundancy and scale.
-            </p>
-            <a href="/enterprisehome" className="text-sm font-semibold text-[#00E9FF] hover:text-[#8AF2FF]">
-              Explore Solutions →
-            </a>
+          {/* TITLE + DESCRIPTION */}
+          <div className="flex gap-10">
+            <div className="w-[30%] flex flex-col">
+              <h3 className="text-white text-xl font-bold mb-3">Solutions for Every Use Case</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                Route AI workloads globally with redundancy and scale.
+              </p>
+            </div>
+
+            {/* RIGHT SIDE: THREE COLUMNS */}
+            <div className="flex-1 grid grid-cols-3 gap-8">
+
+              {/* COLUMN 1 — AI SOLUTIONS */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-gray-400 font-semibold text-sm mb-2">AI Solutions</h4>
+
+                <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">⚡</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">AI Companies</p>
+                    <p className="text-gray-400 text-xs">Inference and fine tuning.</p>
+                  </div>
+                </a>
+
+                <a href="/workloads" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">⚙️</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">AI Workloads</p>
+                    <p className="text-gray-400 text-xs">Training, inference, simulation.</p>
+                  </div>
+                </a>
+
+                <a href="/agents" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🤖</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">AI Agents</p>
+                    <p className="text-gray-400 text-xs">Intelligent automation.</p>
+                  </div>
+                </a>
+              </div>
+
+              {/* COLUMN 2 — INFRASTRUCTURE */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-gray-400 font-semibold text-sm mb-2">Infrastructure</h4>
+
+                <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🏢</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
+                    <p className="text-gray-400 text-xs">Route workloads globally.</p>
+                  </div>
+                </a>
+
+                <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🖥️</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">GPU Providers</p>
+                    <p className="text-gray-400 text-xs">Earn per task.</p>
+                  </div>
+                </a>
+
+                <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🔌</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Relay Gateway</p>
+                    <p className="text-gray-400 text-xs">Fiat on ramp for enterprise.</p>
+                  </div>
+                </a>
+              </div>
+
+              {/* COLUMN 3 — BLOCKCHAIN */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-gray-400 font-semibold text-sm mb-2">Blockchain</h4>
+
+                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">⛓️</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">Blockchain Main</p>
+                    <p className="text-gray-400 text-xs">High throughput L1.</p>
+                  </div>
+                </a>
+
+                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🚰</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">OGPU Faucet</p>
+                    <p className="text-gray-400 text-xs">Claim $ToGPU.</p>
+                  </div>
+                </a>
+
+                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <div className="text-[#00E9FF] text-xl">🧪</div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">OGPU Testnet</p>
+                    <p className="text-gray-400 text-xs">Developer sandbox.</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
           </div>
 
-          <div className="w-1/2 grid grid-cols-1 gap-4">
-            <a href="/aicompanies" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">⚡</div>
-              <div>
-                <p className="text-white text-sm font-semibold">AI Companies</p>
-                <p className="text-gray-400 text-xs">Inference & fine tuning.</p>
-              </div>
-            </a>
+          {/* dApps COLLAPSIBLE — ALWAYS AT BOTTOM */}
+          <div className="border-t border-white/10 pt-5">
+            <details className="group">
+              <summary className="flex justify-between items-center cursor-pointer list-none">
+                <span className="text-white text-sm font-semibold">dApps</span>
+                <span className="text-gray-400 text-xs group-open:rotate-90 transition">▸</span>
+              </summary>
 
-            <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">🏢</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
-                <p className="text-gray-400 text-xs">Route workloads globally.</p>
-              </div>
-            </a>
+              <div className="mt-4 grid grid-cols-3 gap-4">
+                <a href="https://nft.opengpu.network/"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">🎨</span>
+                  <span className="text-xs text-gray-300">Open NFT</span>
+                </a>
 
-            <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">🖥️</div>
-              <div>
-                <p className="text-white text-sm font-semibold">GPU Providers</p>
-                <p className="text-gray-400 text-xs">Earn per task.</p>
-              </div>
-            </a>
+                <a href="https://dapps.opengpu.network/token-creator"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">🪙</span>
+                  <span className="text-xs text-gray-300">Token Creator</span>
+                </a>
 
-            <a href="/#built-for-everyone" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <div className="text-[#00E9FF] text-xl">🔬</div>
-              <div>
-                <p className="text-white text-sm font-semibold">Researchers</p>
-                <p className="text-gray-400 text-xs">Zero queue experiments.</p>
+                <a href="/buy"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">💳</span>
+                  <span className="text-xs text-gray-300">Buy OGPU</span>
+                </a>
+
+                <a href="/dashboard"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">📤</span>
+                  <span className="text-xs text-gray-300">Multisender</span>
+                </a>
+
+                <a href="/provider-suite"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">🧪</span>
+                  <span className="text-xs text-gray-300">Testnet</span>
+                </a>
+
+                <a href="/provider-suite"
+                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col">
+                  <span className="text-[#00E9FF] text-lg">🚰</span>
+                  <span className="text-xs text-gray-300">Faucet</span>
+                </a>
               </div>
-            </a>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== INDUSTRIES ===== */}
+      <div className="relative group/nav">
+        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
+          Industries <span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[880px] rounded-2xl bg-[#020617]
+                     border border-white/10 shadow-xl p-7 opacity-0 invisible
+                     group-hover/nav:opacity-100 group-hover/nav:visible
+                     transition-all duration-200 flex flex-col gap-8 z-[999]"
+        >
+          <div className="flex gap-10">
+            {/* LEFT SUMMARY */}
+            <div className="w-[30%] flex flex-col">
+              <h3 className="text-white text-xl font-bold mb-3">Industries we power</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Use OGPU for AI, rendering, research, video, crypto, and more.
+              </p>
+            </div>
+
+            {/* RIGHT TWO COLUMNS */}
+            <div className="flex-1 grid grid-cols-2 gap-4">
+              {/* AI & ML */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">AI and Machine Learning</p>
+                <p className="text-gray-400 text-xs">
+                  Train, fine tune, and serve AI models on global GPUs.
+                </p>
+              </a>
+
+              {/* Rendering & VFX */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Rendering and Visual Effects</p>
+                <p className="text-gray-400 text-xs">
+                  High quality 3D rendering, CGI, and asset generation.
+                </p>
+              </a>
+
+              {/* Scientific Computing */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Scientific Computing and Research</p>
+                <p className="text-gray-400 text-xs">
+                  Run physics, climate, and bioinformatics simulations.
+                </p>
+              </a>
+
+              {/* Developer & Educational */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Developer and Educational Use</p>
+                <p className="text-gray-400 text-xs">
+                  Affordable GPU access for students, indie devs, and labs.
+                </p>
+              </a>
+
+              {/* Video Processing */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Video Processing</p>
+                <p className="text-gray-400 text-xs">
+                  Transcoding, upscaling, and AI powered video editing.
+                </p>
+              </a>
+
+              {/* Blockchain & Crypto */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Blockchain and Crypto</p>
+                <p className="text-gray-400 text-xs">
+                  ZK proofs and decentralized compute for Web3 protocols.
+                </p>
+              </a>
+
+              {/* Gaming */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Gaming</p>
+                <p className="text-gray-400 text-xs">
+                  GPU accelerated servers with AI powered NPCs and content.
+                </p>
+              </a>
+
+              {/* Synthetic Data */}
+              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg-white/5 transition">
+                <p className="text-white text-sm font-semibold">Synthetic Data Generation</p>
+                <p className="text-gray-400 text-xs">
+                  Generate rich training data and simulated environments.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{/* ===== COMPANY & NEWS ===== */}
+      <div className="relative group/nav">
+        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
+          Company &amp; News<span className="text-[10px] mt-[2px]">▾</span>
+        </button>
+
+        <div
+          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[880px] rounded-2xl 
+                      bg-[#020617] border border-white/10 shadow-xl p-6 opacity-0 invisible
+                      group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 z-[999] grid grid-cols-2 gap-8"
+        >
+          {/* LEFT - COMPANY */}
+          <div className="w-full flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-2">About the Company</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Learn more about OGPU, mission, contributors, and history.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <a href="/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">🏛️</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">About OGPU</p>
+                  <p className="text-gray-400 text-xs">Mission and story.</p>
+                </div>
+              </a>
+
+              <a href="https://opengpu.network/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">👥</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Team</p>
+                  <p className="text-gray-400 text-xs">Core contributors. (Coming soon)</p>
+                </div>
+              </a>
+
+              <a href="https://opengpu.network/press" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">📰</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Press and Media</p>
+                  <p className="text-gray-400 text-xs">Live coverage and assets.</p>
+                </div>
+              </a>
+
+              <a href="https://opengpu.network/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">💼</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Careers</p>
+                  <p className="text-gray-400 text-xs">Join the mission.</p>
+                </div>
+              </a>
+
+              <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">✉️</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Contact</p>
+                  <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
+                </div>
+              </a>
+
+              <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <div className="text-[#00E9FF] text-xl">🖼️</div>
+                <div>
+                  <p className="text-white text-sm font-semibold">Media Kit</p>
+                  <p className="text-gray-400 text-xs">Brand kit of OGPU.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT - NEWS */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-3">Latest News</h3>
+
+            <div className="grid grid-cols-1 gap-4">
+              {/* EIN */}
+              <a
+                href="https://www.einpresswire.com/article/860150175/ogpu-network-announces-continued-development-of-decentralized-gpu-compute-infrastructure-amid-growing-ai-demand"
+                target="_blank"
+                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
+              >
+                <img
+                  src="https://img.einpresswire.com/large/977777/ogpu-network-from-hash-to-compu.jpeg"
+                  className="w-full h-24 object-cover"
+                  alt="Press Release"
+                />
+                <div className="p-3">
+                  <p className="text-white text-sm font-semibold">
+                    OGPU Network Announces Continued Development
+                  </p>
+                  <p className="text-gray-400 text-xs">EIN Presswire • 22 Oct, 2025</p>
+                </div>
+              </a>
+
+              {/* FUNCTION1 */}
+              <a
+                href="https://fnctn1.com/"
+                target="_blank"
+                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
+              >
+                <img
+                  src="https://opengpu.network/image/twitter/dubai-event.png"
+                  className="w-full h-24 object-cover"
+                  alt="Function 1"
+                />
+                <div className="p-3">
+                  <p className="text-white text-sm font-semibold">
+                    OGPU is heading to Function 1 Dubai!
+                  </p>
+                  <p className="text-gray-400 text-xs">Festival Arena • 18–19 Nov 2025</p>
+                </div>
+              </a>
+
+              {/* NOSANA */}
+              <a
+                href="https://x.com/fatih_ogpu/status/1974115869392240896"
+                target="_blank"
+                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
+              >
+                <img
+                  src="https://opengpu.network/image/twitter/OGPU-Nosana.png"
+                  className="w-full h-24 object-cover"
+                  alt="OGPU x Nosana"
+                />
+                <div className="p-3">
+                  <p className="text-white text-sm font-semibold">OGPU x Nosana Partnership</p>
+                  <p className="text-gray-400 text-xs">New GPUs now live on OGPU Network</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -302,6 +683,7 @@ const close = () => {
           Docs <span className="text-[10px] mt-[2px]">▾</span>
         </button>
 
+        {/* DOCS DROPDOWN */}
         <div
           className="absolute left-1/2 -translate-x-1/2 mt-3 w-[620px] rounded-2xl bg-[#020617]
                      border border-white/10 shadow-xl p-6 opacity-0 invisible
@@ -313,9 +695,6 @@ const close = () => {
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Explore API references, guides, and protocol documents.
             </p>
-            <a href="https://opengpu.network/docs" className="text-sm font-semibold text-[#00E9FF]">
-              Visit Docs →
-            </a>
           </div>
 
           <div className="w-1/2 grid grid-cols-1 gap-4">
@@ -339,7 +718,7 @@ const close = () => {
               <div className="text-[#00E9FF] text-xl">📑</div>
               <div>
                 <p className="text-white text-sm font-semibold">Litepaper</p>
-                <p className="text-gray-400 text-xs">High-level overview.</p>
+                <p className="text-gray-400 text-xs">High level overview.</p>
               </div>
             </a>
 
@@ -347,7 +726,7 @@ const close = () => {
               <div className="text-[#00E9FF] text-xl">🛣️</div>
               <div>
                 <p className="text-white text-sm font-semibold">Roadmap</p>
-                <p className="text-gray-400 text-xs">What's coming next.</p>
+                <p className="text-gray-400 text-xs">What is next.</p>
               </div>
             </a>
 
@@ -363,209 +742,40 @@ const close = () => {
               <div className="text-[#00E9FF] text-xl">💻</div>
               <div>
                 <p className="text-white text-sm font-semibold">GitHub Repos</p>
-                <p className="text-gray-400 text-xs">Clients & SDKs.</p>
+                <p className="text-gray-400 text-xs">Clients and SDKs.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/OpenGPU-Network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <div className="text-[#00E9FF] text-xl">🎓</div>
+              <div>
+                <p className="text-white text-sm font-semibold">Academy</p>
+                <p className="text-gray-400 text-xs">OGPU Academy.</p>
               </div>
             </a>
           </div>
         </div>
       </div>
 
-            {/* ===== COMPANY (WITH NEWS BLOCK) ===== */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Company & News<span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[880px] rounded-2xl 
-                      bg-[#020617] border border-white/10 shadow-xl p-6 opacity-0 invisible
-                      group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 z-[999] grid grid-cols-2 gap-8"
-        >
-          {/* LEFT - COMPANY LINKS */}
-          <div className="w-full flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-2">About the Company</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Learn more about OGPU, mission, contributors, and history.
-            </p>
-            <a href="/about" className="text-sm font-semibold text-[#00E9FF] mb-3">
-              About OGPU →
-            </a>
-
-            <div className="flex flex-col gap-3">
-              <a href="/about" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">🏛️</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">About OGPU</p>
-                  <p className="text-gray-400 text-xs">Mission & story.</p>
-                </div>
-              </a>
-
-              <a href="https://opengpu.network/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">👥</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Team</p>
-                  <p className="text-gray-400 text-xs">Core contributors. (Coming Soon)</p>
-                </div>
-              </a>
-
-              <a href="https://opengpu.network/press" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">📰</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Press & Media</p>
-                  <p className="text-gray-400 text-xs">Live coverage & assets.</p>
-                </div>
-              </a>
-
-              <a href="https://opengpu.network/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">💼</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Careers</p>
-                  <p className="text-gray-400 text-xs">Join the mission.</p>
-                </div>
-              </a>
-
-              <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">✉️</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Contact</p>
-                  <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* RIGHT - NEWS BLOCK */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-3">Latest News</h3>
-
-            <div className="grid grid-cols-1 gap-4">
-              {/* EIN Presswire */}
-              <a
-                href="https://www.einpresswire.com/article/860150175/ogpu-network-announces-continued-development-of-decentralized-gpu-compute-infrastructure-amid-growing-ai-demand"
-                target="_blank"
-                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
-              >
-                <img
-                  src="https://img.einpresswire.com/large/977777/ogpu-network-from-hash-to-compu.jpeg"
-                  className="w-full h-24 object-cover"
-                  alt="Press Release"
-                />
-                <div className="p-3">
-                  <p className="text-white text-sm font-semibold">
-                    OGPU Network Announces Continued Development
-                  </p>
-                  <p className="text-gray-400 text-xs">EIN Presswire • 22 Oct, 2025</p>
-                </div>
-              </a>
-
-              {/* Function 1 Event */}
-              <a
-                href="https://fnctn1.com/"
-                target="_blank"
-                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
-              >
-                <img
-                  src="https://opengpu.network/image/twitter/dubai-event.png"
-                  className="w-full h-24 object-cover"
-                  alt="Function 1 Event"
-                />
-                <div className="p-3">
-                  <p className="text-white text-sm font-semibold">
-                    OGPU is heading to Function 1 Dubai!
-                  </p>
-                  <p className="text-gray-400 text-xs">Festival Arena • 18–19 Nov 2025</p>
-                </div>
-              </a>
-
-              {/* Nosana Partnership */}
-              <a
-                href="https://x.com/fatih_ogpu/status/1974115869392240896"
-                target="_blank"
-                className="rounded-xl overflow-hidden bg-white/5 hover:bg-white/10 transition border border-white/10"
-              >
-                <img
-                  src="https://opengpu.network/image/twitter/OGPU-Nosana.png"
-                  className="w-full h-24 object-cover"
-                  alt="OGPU x Nosana"
-                />
-                <div className="p-3">
-                  <p className="text-white text-sm font-semibold">OGPU x Nosana Partnership</p>
-                  <p className="text-gray-400 text-xs">New GPUs now live on OGPU Network</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== ACCELERATION CENTER ===== */}
-      <div className="relative group/nav">
-        <button className="px-2 py-1 flex items-center gap-1 text-gray-200 hover:text-white transition">
-          Acceleration Center <span className="text-[10px] mt-[2px]">▾</span>
-        </button>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 mt-3 w-[420px] rounded-2xl bg-[#020617]
-                     border border-white/10 shadow-xl p-5 opacity-0 invisible group-hover/nav:opacity-100 
-                     group-hover/nav:visible transition-all duration-200 flex flex-col gap-3 z-[999]"
-        >
-          <h3 className="text-white text-lg font-semibold mb-1">Acceleration Center</h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-2">
-            OGPU's First Phase Open Acceleration Program of $200K to Fuel Next-Gen Web3 & AI Innovation.
-          </p>
-
-          <a href="https://opengpu.network/acceleration" 
-             className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-            <div className="text-[#00E9FF] text-xl"></div>
-            <div>
-              <p className="text-white text-sm font-semibold">Acceleration</p>
-              <p className="text-gray-400 text-xs">
-                Comprehensive package of support and ecosystem tools.
-              </p>
-            </div>
-          </a>
-
-          <a href="https://takoswap.app/" 
-             className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-            <div className="text-[#00E9FF] text-xl">🐙</div>
-            <div>
-              <p className="text-white text-sm font-semibold">TakoSwap</p>
-              <p className="text-gray-400 text-xs">Swap and route OGPU ecosystem assets.</p>
-            </div>
-          </a>
-
-          <a href="https://opengpu.network/opensale" 
-             className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-            <div className="text-[#00E9FF] text-xl">🪙</div>
-            <div>
-              <p className="text-white text-sm font-semibold">Opensale</p>
-              <p className="text-gray-400 text-xs">Token launches and primary sales.</p>
-            </div>
-          </a>
-
-          <a href="https://opengpu.network/bridgex" 
-             className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-            <div className="text-[#00E9FF] text-xl">🌉</div>
-            <div>
-              <p className="text-white text-sm font-semibold">Bridge X</p>
-              <p className="text-gray-400 text-xs">Cross-chain liquidity and routing.</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      
 
       {/* MAIN-PAGE CTA */}
       <a
         href="/getstarted"
-        className="ml-2 px-8 py-3 rounded-xl font-semibold bg-[#0A84FF]
-                   text-white text-sm transition hover:bg-[#0A84FF]/90 
-                   hover:shadow-[0_8px_25px_rgba(10,132,255,0.35)]"
+        className="
+          ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
+          bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
+          transition-all duration-300 hover:-translate-y-1
+          shadow-[0_0_20px_rgba(0,198,230,0.20)]
+          hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
+          hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]
+        "
       >
         Get Started
       </a>
     </div>
 
-{/* MOBILE HAMBURGER */}
+    {/* MOBILE HAMBURGER */}
     <button
       className="md:hidden text-white text-3xl focus:outline-none"
       onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -592,13 +802,20 @@ const close = () => {
           <p className="text-white font-semibold text-lg">Platform</p>
 
           <a href="/" className="text-gray-300 text-sm">Overview</a>
+          <a href="/protocol" className="text-gray-300 text-sm">OGPU Protocol</a>
+          <a href="/whyogpu" className="text-gray-300 text-sm">Why OGPU</a>
           <a href="/howogpuworks" className="text-gray-300 text-sm">How OGPU Works</a>
           <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
-          <a href="/#workloads" className="text-gray-300 text-sm">AI Workloads</a>
-          <a href="/#blockchain" className="text-gray-300 text-sm">Blockchain</a>
-          <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Stats</a>
-          <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Tokencreator</a>
-          <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
+          <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
+          <a href="/blockchain" className="text-gray-300 text-sm">Blockchain</a>
+          <a href="https://ogpuscan.io" className="text-gray-300 text-sm">Live Network Stats</a>
+          <a href="/competitions" className="text-gray-300 text-sm">Competitions</a>
+
+          <p className="text-white font-semibold text-sm mt-3">Acceleration Center</p>
+          <a href="https://opengpu.network/acceleration" className="text-gray-300 text-sm">Acceleration Program</a>
+          <a href="https://takoswap.app/" className="text-gray-300 text-sm">TakoSwap</a>
+          <a href="https://opengpu.network/opensale" className="text-gray-300 text-sm">Opensale</a>
+          <a href="https://opengpu.network/bridgex" className="text-gray-300 text-sm">Bridge X</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -607,10 +824,39 @@ const close = () => {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Solutions</p>
 
-          <a href="/#aicompanies" className="text-gray-300 text-sm">AI Companies</a>
+          <a href="/aicompanies" className="text-gray-300 text-sm">AI Companies</a>
+          <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
+          <a href="/agents" className="text-gray-300 text-sm">AI Agents</a>
           <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
           <a href="/provider" className="text-gray-300 text-sm">GPU Providers</a>
-          <a href="/#built-for-everyone" className="text-gray-300 text-sm">Researchers</a>
+          <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
+          <a href="/blockchain" className="text-gray-300 text-sm">Blockchain Main</a>
+          <a href="/provider-suite" className="text-gray-300 text-sm">OGPU Faucet</a>
+          <a href="/provider-suite" className="text-gray-300 text-sm">OGPU Testnet</a>
+
+          <p className="text-white font-semibold text-sm mt-3">dApps</p>
+          <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
+          <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Token Creator</a>
+          <a href="/buy" className="text-gray-300 text-sm">Buy OGPU</a>
+          <a href="/dashboard" className="text-gray-300 text-sm">Multisender</a>
+          <a href="/provider-suite" className="text-gray-300 text-sm">Testnet</a>
+          <a href="/provider-suite" className="text-gray-300 text-sm">Faucet</a>
+        </div>
+
+        <div className="w-full h-px bg-white/10" />
+
+        {/* INDUSTRIES */}
+        <div className="flex flex-col space-y-2">
+          <p className="text-white font-semibold text-lg">Industries</p>
+
+          <a href="/industries" className="text-gray-300 text-sm">AI and Machine Learning</a>
+          <a href="/industries" className="text-gray-300 text-sm">Rendering and Visual Effects</a>
+          <a href="/industries" className="text-gray-300 text-sm">Scientific Computing and Research</a>
+          <a href="/industries" className="text-gray-300 text-sm">Developer and Educational Use</a>
+          <a href="/industries" className="text-gray-300 text-sm">Video Processing</a>
+          <a href="/industries" className="text-gray-300 text-sm">Blockchain and Crypto</a>
+          <a href="/industries" className="text-gray-300 text-sm">Gaming</a>
+          <a href="/industries" className="text-gray-300 text.sm">Synthetic Data Generation</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -634,12 +880,11 @@ const close = () => {
           <p className="text-white font-semibold text-lg">Company</p>
 
           <a href="/about" className="text-gray-300 text-sm">About</a>
-          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming Soon)</a>
+          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team (Coming soon)</a>
           <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
           <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
           <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
         </div>
-
       </motion.div>
     )}
   </AnimatePresence>
@@ -652,69 +897,72 @@ const close = () => {
 </header>
 
 
+
+
+
 {/* QUICK NAV MENU (Floating Right Side) */}
 <div className="fixed right-4 top-1/2 -translate-y-1/2 z-[998] hidden md:flex flex-col gap-3">
 
   <a href="#quickstart"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Quick Start
   </a>
 
   <a href="#why-ogpu"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Why OGPU
   </a>
 
   <a href="#how-ogpu-works"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     How It Works
   </a>
 
   <a href="#workloads"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Workloads
   </a>
 
   <a href="#relay"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Relay
   </a>
 
   <a href="#built-for-everyone"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Built For Everyone
   </a>
 
   <a href="#blockchain"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     Blockchain
   </a>
 
   <a href="#news"
      className="px-3 py-2 rounded-lg bg-[#0A0F2C]/70 text-white text-xs 
-                border border-white/10 backdrop-blur-lg hover:bg-[#0A84FF]
+                border border-white/10 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     News & Footer
   </a>
 
   {/* Back to Top */}
   <a href="#hero"
-     className="mt-2 px-3 py-2 rounded-lg bg-[#0A84FF] text-white text-xs
-                border border-[#0A84FF]/40 backdrop-blur-lg hover:bg-[#006CE0]
+     className="mt-2 px-3 py-2 rounded-lg bg-[#0000] text-white text-xs
+                border border-[#000000]/40 backdrop-blur-lg hover:bg-[#00C6E6]
                 transition shadow-md">
     ↑ Top
   </a>
@@ -770,14 +1018,26 @@ const close = () => {
 
 
   {/* SECONDARY CTA — Get Started */}
-  <a
-    href="/getstarted"
-    className="px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg 
-               bg-[#0A84FF] transition-all duration-300 
-               hover:bg-[#005DEA] hover:shadow-[0_12px_32px_rgba(10,132,255,0.4)] hover:-translate-y-1"
-  >
-    Get Started
-  </a>
+<a
+  href="/getstarted"
+  className="
+    px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg
+
+    bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
+
+    transition-all duration-300 hover:-translate-y-1
+
+    shadow-[0_0_25px_rgba(0,198,230,0.20)]
+    hover:shadow-[0_0_40px_rgba(0,198,230,0.45)]
+
+    hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]
+  "
+>
+  Get Started
+</a>
+
+
+
 
 </div>
 <div className="mt-12" />
