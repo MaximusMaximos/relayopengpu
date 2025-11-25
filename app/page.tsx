@@ -27,7 +27,7 @@ export default function Page() {
     }
   };
 
-  // Hero opacity (your existing logic kept)
+  // Hero opacity 
   const [heroOpacity, setHeroOpacity] = useState(1);
 
 
@@ -135,7 +135,7 @@ const close = () => {
       />
     </a>
 
-    {/* DESKTOP NAV — switched to lg breakpoint */}
+    {/* DESKTOP NAV */}
     <div className="hidden lg:flex items-center gap-6 text-sm text-gray-200 font-medium">
 
       {/* ========================= PLATFORM ========================= */}
@@ -454,7 +454,7 @@ const close = () => {
             </div>
 
             <div className="flex-1 grid grid-cols-2 gap-4">
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="/ai-ml" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
                 <p className="text-white text-sm font-semibold">AI and Machine Learning</p>
                 <p className="text-gray-400 text-xs">Train, fine tune, and serve AI models.</p>
               </a>
@@ -743,7 +743,7 @@ const close = () => {
       </a>
     </div>
 
-    {/* MOBILE HAMBURGER — switched to lg:hidden */}
+    {/* MOBILE HAMBURGER */}
     <button
       className="lg:hidden text-white text-3xl focus:outline-none"
       onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -752,7 +752,7 @@ const close = () => {
     </button>
   </nav>
 
-  {/* MOBILE NAV PANEL (unchanged logic) */}
+  {/* MOBILE NAV PANEL */}
   <AnimatePresence>
     {mobileNavOpen && (
       <motion.div
@@ -1009,15 +1009,19 @@ const close = () => {
     
   </div>
   
-</section>
+</section>  
+
 
       {/* Live Stats */}
       <LiveStats />
 
+
+  {/* Pricing Comparator */}
+      <PricingComparator />
       
 {/* UNIVERSAL QUICK START */}
 <section id="quickstart"
- className="w-full bg-[#040814] py-24 px-6 border-t border-white/5">
+ className="w-full bg-[#040814] py-15 px-6 border-t border-white/5">
   <div className="max-w-6xl mx-auto">
 
     {/* Header */}
@@ -1124,9 +1128,7 @@ chmod +x provider-install.sh
 
     </div>
   </div>
-  <div className="mt-8" />
-  {/* Pricing Comparator */}
-      <PricingComparator />
+
 </section>
 
 
@@ -1660,7 +1662,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
     </p>
   </div>
 
-  {/* PIPELINE — unchanged */}
+  {/* PIPELINE */}
   {/* Model → Routing → Provider → Output */}
 </section>
 
@@ -1795,7 +1797,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
     </div>
   </div>
 
-  {/* MOBILE – simple vertical version */}
+  {/* MOBILE */}
   <div className="md:hidden flex flex-col items-center gap-10 relative z-10">
 
     <p className="text-[#0A0F2C] font-medium text-lg">Clients</p>
@@ -1834,7 +1836,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
 
 </motion.div>
 
-  {/* BOTTOM CARDS - unchanged */}
+  {/* BOTTOM CARDS */}
   <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {/* Card 1 */}
     <motion.div
@@ -1943,6 +1945,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
  {/* BLOCKCHAIN SECTION — SYSTEM BOOT SEQUENCE */}
 <section id="blockchain" 
 className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
+
   {/* BACKGROUND GRID + GLOW */}
   <div className="absolute inset-0 pointer-events-none">
     <div className="absolute inset-0 opacity-25">
@@ -2421,7 +2424,7 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 <section id="news"
 className="w-full bg-white py-24 md:py-28 px-6">
 
-  {/* HEADER — fade down */}
+  {/* HEADER */}
   <motion.div
     initial={{ opacity: 0, y: -20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -2443,7 +2446,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     </p>
   </motion.div>
 
-  {/* FILTER TABS — fade up */}
+  {/* FILTER TABS */}
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -2465,7 +2468,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     ))}
   </motion.div>
 
-  {/* 4-CARD NEWS GRID — staggered fade up */}
+  {/* 4-CARD NEWS GRID */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
     {[
       {
@@ -2510,7 +2513,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     ))}
   </div>
 
-  {/* SMALL SUBLINE — fade in */}
+  {/* SMALL SUBLINE */}
   <motion.p
     initial={{ opacity: 0, y: 15 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -2521,7 +2524,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
     One million plus tasks, over two hundred and thirty providers, live since March 2025.
   </motion.p>
 
-  {/* VIEW ALL LINK — fade in slightly after */}
+  {/* VIEW ALL LINK */}
   <motion.div
     initial={{ opacity: 0, y: 15 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -2612,7 +2615,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
       </button>
     </div>
 
-    {/* DISCLAIMER — hidden on mobile */}
+    {/* DISCLAIMER */}
     <p className="hidden md:block text-xs text-white/40 mt-3">
       By subscribing you agree to receive product updates. No spam, unsubscribe anytime.
     </p>
@@ -2685,7 +2688,7 @@ className="w-full bg-white py-24 md:py-28 px-6">
 
 </footer>
 
-{/* MOBILE QUICK NAV — Minimal 5 Icons */}
+{/* MOBILE QUICK NAV */}
 <div className="fixed bottom-0 left-0 w-full z-[999] md:hidden 
                 bg-[#000814]/95 backdrop-blur-xl border-t border-white/10">
 
