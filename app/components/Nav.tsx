@@ -361,7 +361,7 @@ export default function Nav() {
                 <p className="text-gray-400 text-xs">Train, fine tune, and serve AI models.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="/rendering" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
                 <p className="text-white text-sm font-semibold">Rendering and VFX</p>
                 <p className="text-gray-400 text-xs">CGI, assets, and animation workloads.</p>
               </a>
@@ -720,8 +720,8 @@ export default function Nav() {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Industries</p>
 
-          <a href="/industries" className="text-gray-300 text-sm">AI and Machine Learning</a>
-          <a href="/industries" className="text-gray-300 text-sm">Rendering and Visual Effects</a>
+          <a href="/ai-ml" className="text-gray-300 text-sm">AI and Machine Learning</a>
+          <a href="/rendering" className="text-gray-300 text-sm">Rendering and Visual Effects</a>
           <a href="/industries" className="text-gray-300 text-sm">Scientific Computing</a>
           <a href="/industries" className="text-gray-300 text-sm">Developer and Educational</a>
           <a href="/industries" className="text-gray-300 text-sm">Video Processing</a>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
