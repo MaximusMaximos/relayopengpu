@@ -7,10 +7,12 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-[#050B18] text-white pt-32 pb-14 px-6 mt-0">
 
-{/* CTA BANNER (Enterprise on top, Get Started underneath) */}
-<div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6">
+     
+
+{/* CTA BANNER (Enterprise on top, Get Started underneath — MOBILE FIXED) */}
+<div className="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4 md:px-6">
   <div className="rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
-    <div className="relative px-20 py-8 bg-gradient-to-r from-[#071426] via-[#0A2A4A] to-[#0B3C66] text-white">
+    <div className="relative px-6 py-6 md:px-20 md:py-8 bg-gradient-to-r from-[#071426] via-[#0A2A4A] to-[#0B3C66] text-white">
 
       {/* Soft Glows */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
@@ -19,7 +21,7 @@ export default function Footer() {
       </div>
 
       {/* MAIN CTA ROW */}
-      <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
 
         {/* LEFT BLOCK */}
         <div className="max-w-xl">
@@ -31,35 +33,63 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* RIGHT BLOCK — STACKED BUTTONS */}
-        <div className="flex flex-col items-start md:items-end gap-3">
+        {/* RIGHT BLOCK — BUTTONS */}
+        <div className="w-full md:w-auto flex flex-col gap-3 md:items-end">
 
-          {/* ENTERPRISE PILOT — TOP */}
-          <a
-            href="/enterprisehome"
-            className="px-8 py-4 rounded-xl bg-white text-[#0A0F2C] font-semibold text-base md:text-lg
-                       shadow-[0_6px_20px_rgba(255,255,255,0.3)] hover:shadow-[0_10px_28px_rgba(255,255,255,0.45)]
-                       transition-all w-full md:w-auto text-center"
-          >
-            Run an Enterprise Pilot →
-          </a>
+          {/* MOBILE VERSION (side-by-side, smaller, right aligned) */}
+          <div className="flex md:hidden w-full justify-end gap-3">
 
-          {/* GET STARTED — UNDERNEATH */}
-          <a
-            href="/getstarted"
-            className="px-8 py-4 rounded-xl bg-[#FFFFFF] text-[#001221] font-semibold text-base md:text-lg
-                       shadow-[0_6px_20px_rgba(0,198,255,0.35)] hover:shadow-[0_10px_26px_rgba(0,198,255,0.45)]
-                       transition-all w-full md:w-auto text-center"
-          >
-            Get Started →
-          </a>
+            <a
+              href="/enterprisehome"
+              className="w-[48%] px-4 py-3 rounded-lg bg-white text-[#0A0F2C] 
+                         font-semibold text-xs shadow-[0_6px_16px_rgba(255,255,255,0.25)]
+                         text-center"
+            >
+              Enterprise →
+            </a>
+
+            <a
+              href="/getstarted"
+              className="w-[48%] px-4 py-3 rounded-lg bg-[#FFFFFF] text-[#001221] 
+                         font-semibold text-xs shadow-[0_6px_16px_rgba(0,198,255,0.30)]
+                         text-center"
+            >
+              Get Started →
+            </a>
+
+          </div>
+
+          {/* DESKTOP VERSION (unchanged, stacked) */}
+          <div className="hidden md:flex flex-col items-end gap-3">
+
+            <a
+              href="/enterprisehome"
+              className="px-8 py-4 rounded-xl bg-white text-[#0A0F2C] 
+                         font-semibold text-base md:text-lg shadow-[0_6px_20px_rgba(255,255,255,0.3)] 
+                         hover:shadow-[0_10px_28px_rgba(255,255,255,0.45)]
+                         transition-all text-center"
+            >
+              Run an Enterprise Pilot →
+            </a>
+
+            <a
+              href="/getstarted"
+              className="px-8 py-4 rounded-xl bg-[#FFFFFF] text-[#001221] 
+                         font-semibold text-base md:text-lg shadow-[0_6px_20px_rgba(0,198,255,0.35)] 
+                         hover:shadow-[0_10px_26px_rgba(0,198,255,0.45)]
+                         transition-all text-center"
+            >
+              Get Started →
+            </a>
+
+          </div>
 
         </div>
       </div>
 
-      {/* EMAIL SIGNUP (LEFT ALIGNED, SMALL) */}
-      <div className="relative mt-6 max-w-sm">
-        <div className="flex items-center bg-white/15 rounded-lg p-2 border border-white/10">
+      {/* EMAIL SIGNUP */}
+      <div className="relative mt-4 w-full max-w-xs md:max-w-sm">
+        <div className="flex items-center bg-white/15 rounded-lg p-2 border border-white/10 w-full">
           <SafeInput
             type="email"
             placeholder="Enter your email"
@@ -84,86 +114,90 @@ export default function Footer() {
 </div>
 
 
-      {/* ========================================================= */}
-      {/* SNOWFLAKE-STYLE GRID */}
-      {/* ========================================================= */}
+ {/* ========================================================= */}
+{/* SNOWFLAKE-STYLE GRID (Desktop perfect, Mobile = 2 columns) */}
+{/* ========================================================= */}
+
+<div className="
+  max-w-7xl mx-auto mt-36 
+  grid 
+  grid-cols-2     /* MOBILE: Two columns (like Snowflake) */
+  md:grid-cols-5  /* DESKTOP: five columns */
+  gap-10 
+  md:gap-16
+">
+
+{/* COLUMN 1 — LOGO + SUMMARY (Left aligned on all screens) */}
+<div className="col-span-2 md:col-span-1">
+  <img
+    src="/Images/OGPU-LOGO-Main-final.png"
+    alt="OGPU Logo"
+    className="h-14 w-auto mb-4 opacity-95"
+  />
+  <p className="text-white/55 text-xs leading-relaxed max-w-sm text-left">
+    A global decentralized GPU network for AI inference, training,
+    rendering and high-performance workloads routed across global providers.
+  </p>
+</div>
 
 
-      <div className="max-w-7xl mx-auto mt-36 grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
+  {/* DEVELOPERS */}
+  <div>
+    <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
+      Developers
+    </h4>
+    <ul className="space-y-2 text-white/70 text-xs">
+      <li><a href="/litepaper" className="hover:text-white transition">Litepaper</a></li>
+      <li><a href="/whitepaper" className="hover:text-white transition">Whitepaper</a></li>
+      <li><a href="/pitchdeck" className="hover:text-white transition">Pitch Deck</a></li>
+      <li><a href="/academy" className="hover:text-white transition">Academy</a></li>
+      <li><a href="/media-kit" className="hover:text-white transition">Media Kit</a></li>
+    </ul>
+  </div>
 
-        {/* COLUMN 1 — LOGO + SUMMARY */}
-        <div>
-          <img
-            src="/Images/OGPU-LOGO-Main-final.png"
-            alt="OGPU Logo"
-            className="h-14 w-auto mb-4 opacity-95"
-          />
-          <p className="text-white/55 text-xs leading-relaxed max-w-sm">
-            A global decentralized GPU network for AI inference, training,
-            rendering and high-performance workloads routed across global providers.
-          </p>
-        </div>
+  {/* PRODUCTS */}
+  <div>
+    <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
+      Products
+    </h4>
+    <ul className="space-y-2 text-white/70 text-xs">
+      <li><a href="/client" className="hover:text-white transition">Client App</a></li>
+      <li><a href="/openchat" className="hover:text-white transition">OpenChat</a></li>
+      <li><a href="/faucet" className="hover:text-white transition">Faucet</a></li>
+      <li><a href="/orc20" className="hover:text-white transition">ORC-20</a></li>
+    </ul>
+  </div>
 
-        {/* COLUMN 2 — DEVELOPERS */}
-        <div>
-          <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
-            <div className="mt-4" />
-            Developers
-          </h4>
-          <ul className="space-y-2 text-white/70 text-xs">
-            <li><a href="/litepaper" className="hover:text-white transition">Litepaper</a></li>
-            <li><a href="/whitepaper" className="hover:text-white transition">Whitepaper</a></li>
-            <li><a href="/pitchdeck" className="hover:text-white transition">Pitch Deck</a></li>
-            <li><a href="/academy" className="hover:text-white transition">Academy</a></li>
-            <li><a href="/media-kit" className="hover:text-white transition">Media Kit</a></li>
-          </ul>
-        </div>
+  {/* ECOSYSTEM */}
+  <div>
+    <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
+      Ecosystem
+    </h4>
+    <ul className="space-y-2 text-white/70 text-xs">
+      <li><a href="/blockchain" className="hover:text-white transition">Blockchain</a></li>
+      <li><a href="/token-creator" className="hover:text-white transition">Token Creator</a></li>
+      <li><a href="/multisender" className="hover:text-white transition">Multisender</a></li>
+      <li><a href="https://ogpuscan.io" className="hover:text-white transition">Explorer</a></li>
+    </ul>
+  </div>
 
-        {/* COLUMN 3 — PRODUCTS */}
-        <div>
-          <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
-            <div className="mt-4" />
-            Products
-          </h4>
-          <ul className="space-y-2 text-white/70 text-xs">
-            <li><a href="/client" className="hover:text-white transition">Client App</a></li>
-            <li><a href="/openchat" className="hover:text-white transition">OpenChat</a></li>
-            <li><a href="/faucet" className="hover:text-white transition">Faucet</a></li>
-            <li><a href="/orc20" className="hover:text-white transition">ORC-20</a></li>
-          </ul>
-        </div>
+  {/* COMMUNITY */}
+  <div>
+    <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
+      Community
+    </h4>
+    <ul className="space-y-2 text-white/70 text-xs">
+      <li><a href="https://t.me/OpenGPUNetwork" className="hover:text-white transition">Telegram</a></li>
+      <li><a href="https://discord.gg/opengpu" className="hover:text-white transition">Discord</a></li>
+      <li><a href="https://coinmarketcap.com" className="hover:text-white transition">CMC</a></li>
+      <li><a href="https://www.mexc.com" className="hover:text-white transition">MEXC</a></li>
+      <li><a href="https://www.gate.io" className="hover:text-white transition">Gate.io</a></li>
+      <li><a href="https://certik.com" className="hover:text-white transition">Certik</a></li>
+    </ul>
+  </div>
 
-        {/* COLUMN 4 — ECOSYSTEM */}
-        <div>
-          <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
-            <div className="mt-4" />
-            Ecosystem
-          </h4>
-          <ul className="space-y-2 text-white/70 text-xs">
-            <li><a href="/blockchain" className="hover:text-white transition">Blockchain</a></li>
-            <li><a href="/token-creator" className="hover:text-white transition">Token Creator</a></li>
-            <li><a href="/multisender" className="hover:text-white transition">Multisender</a></li>
-            <li><a href="https://ogpuscan.io" className="hover:text-white transition">Explorer</a></li>
-          </ul>
-        </div>
+</div>
 
-        {/* COLUMN 5 — COMMUNITY */}
-        <div>
-          <h4 className="font-semibold text-white mb-3 text-xs tracking-wide uppercase">
-            <div className="mt-4" />
-            Community
-          </h4>
-          <ul className="space-y-2 text-white/70 text-xs">
-            <li><a href="https://t.me/OpenGPUNetwork" className="hover:text-white transition">Telegram</a></li>
-            <li><a href="https://discord.gg/opengpu" className="hover:text-white transition">Discord</a></li>
-            <li><a href="https://coinmarketcap.com" className="hover:text-white transition">CMC</a></li>
-            <li><a href="https://www.mexc.com" className="hover:text-white transition">MEXC</a></li>
-            <li><a href="https://www.gate.io" className="hover:text-white transition">Gate.io</a></li>
-            <li><a href="https://certik.com" className="hover:text-white transition">Certik</a></li>
-          </ul>
-        </div>
-
-      </div>
 
       {/* ========================================================= */}
       {/* BOTTOM BAR */}
@@ -193,6 +227,7 @@ export default function Footer() {
           <a href="https://youtube.com" className="hover:text-white transition">YouTube</a>
           <a href="https://instagram.com" className="hover:text-white transition">Instagram</a>
         </div>
+
       </div>
 
     </footer>
