@@ -109,7 +109,7 @@ const close = () => {
             playsInline
             preload="auto"
             className="w-full h-full object-cover"
-            src="/Videos/MAIN-loop.mp4"
+            src="/Videos/Hero-Visual-Slow.mp4"
             poster="/Images/hero-poster.jpg"
             style={{
               WebkitUserSelect: "none",
@@ -117,7 +117,7 @@ const close = () => {
               WebkitTapHighlightColor: "transparent"
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/65 to-black/80 pointer-events-none" />
         </div>
 
 {/* FIXED HEADER — CTA = GET STARTED */}
