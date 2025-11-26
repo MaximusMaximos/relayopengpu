@@ -147,10 +147,10 @@ export default function Footer() {
       Developers
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
-      <li><a href="/litepaper" className="hover:text-white transition">Litepaper</a></li>
-      <li><a href="/whitepaper" className="hover:text-white transition">Whitepaper</a></li>
-      <li><a href="/pitchdeck" className="hover:text-white transition">Pitch Deck</a></li>
-      <li><a href="/academy" className="hover:text-white transition">Academy</a></li>
+      <li><a href="https://opengpu.network/docs/litepaper.pdf" className="hover:text-white transition">Litepaper</a></li>
+      <li><a href="https://opengpu.network/docs/whitepaper.pdf" className="hover:text-white transition">Whitepaper</a></li>
+      <li><a href="https://opengpu.network/docs/pitch-deck.pdf" className="hover:text-white transition">Pitch Deck</a></li>
+      <li><a href="https://academy.opengpu.network/" className="hover:text-white transition">Academy</a></li>
       <li><a href="/media-kit" className="hover:text-white transition">Media Kit</a></li>
     </ul>
   </div>

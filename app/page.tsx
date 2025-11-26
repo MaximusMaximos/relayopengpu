@@ -235,7 +235,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="https://opengpu.network/opensale" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <a href="https://opensale.finance/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🪙</div>
                   <div>
                     <p className="text-white text-sm font-semibold">Opensale</p>
@@ -243,7 +243,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="https://opengpu.network/bridgex" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <a href="https://chainchangers.app/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🌉</div>
                   <div>
                     <p className="text-white text-sm font-semibold">Bridge X</p>
@@ -311,7 +311,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="/agents" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <a href="https://opengpu.network/ai-agents" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🤖</div>
                   <div>
                     <p className="text-white text-sm font-semibold">AI Agents</p>
@@ -361,7 +361,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://opengpu.network/faucet" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🚰</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Faucet</p>
@@ -369,7 +369,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="/provider-suite" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://testnet.ogpuscan.io/" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🧪</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Testnet</p>
@@ -399,25 +399,17 @@ const close = () => {
                   <span className="text-xs text-gray-300">Token Creator</span>
                 </a>
 
-                <a href="/buy" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a href="https://opengpu.network/how-to-buy" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
                   <span className="text-[#00E9FF] text-lg">💳</span>
                   <span className="text-xs text-gray-300">Buy OGPU</span>
                 </a>
 
-                <a href="/dashboard" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a href="https://dapps.opengpu.network/multisender" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
                   <span className="text-[#00E9FF] text-lg">📤</span>
                   <span className="text-xs text-gray-300">Multisender</span>
                 </a>
 
-                <a href="/provider-suite" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🧪</span>
-                  <span className="text-xs text-gray-300">Testnet</span>
-                </a>
 
-                <a href="/provider-suite" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
-                  <span className="text-[#00E9FF] text-lg">🚰</span>
-                  <span className="text-xs text-gray-300">Faucet</span>
-                </a>
               </div>
             </details>
           </div>
@@ -464,33 +456,33 @@ const close = () => {
                 <p className="text-gray-400 text-xs">CGI, assets, and animation workloads.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Scientific Computing</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Scientific Computing (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">Simulations and research compute.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Developer & Education</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Developer & Education (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">Affordable GPU access.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Video Processing</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Video Processing (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">Transcoding and AI editing.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Blockchain & Crypto</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Blockchain & Crypto (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">ZK proofs and decentralized compute.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Gaming</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Gaming (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">GPU servers, AI NPCs, content gen.</p>
               </a>
 
-              <a href="/industries" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
-                <p className="text-white text-sm font-semibold">Synthetic Data</p>
+              <a href="" className="flex flex-col gap-1 p-3 rounded-xl hover:bg.white/5 transition">
+                <p className="text-white text-sm font-semibold">Synthetic Data (Coming Soon)</p>
                 <p className="text-gray-400 text-xs">Generate training datasets.</p>
               </a>
             </div>
@@ -537,7 +529,7 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="https://opengpu.network/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="/team" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                 <div className="text-[#00E9FF] text-xl">👥</div>
                 <div>
                   <p className="text-white text-sm font-semibold">Team</p>
@@ -545,15 +537,15 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="https://opengpu.network/press" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                 <div className="text-[#00E9FF] text-xl">📰</div>
                 <div>
-                  <p className="text-white text-sm font-semibold">Press & Media</p>
+                  <p className="text-white text-sm font-semibold">Press & Media (Coming Soon)</p>
                   <p className="text-gray-400 text-xs">Coverage and assets.</p>
                 </div>
               </a>
 
-              <a href="https://opengpu.network/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="/careers" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                 <div className="text-[#00E9FF] text-xl">💼</div>
                 <div>
                   <p className="text-white text-sm font-semibold">Careers</p>
@@ -561,7 +553,7 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                 <div className="text-[#00E9FF] text-xl">✉️</div>
                 <div>
                   <p className="text-white text-sm font-semibold">Contact</p>
@@ -569,7 +561,7 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="mailto:hello@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+              <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
                 <div className="text-[#00E9FF] text-xl">🖼️</div>
                 <div>
                   <p className="text-white text-sm font-semibold">Media Kit</p>
@@ -670,7 +662,7 @@ const close = () => {
 
           <div className="w-1/2 grid grid-cols-1 gap-4">
 
-            <a href="https://opengpu.network/docs" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+            <a href="https://docs.opengpu.network/" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
               <div className="text-[#00E9FF] text-xl">📘</div>
               <div>
                 <p className="text-white text-sm font-semibold">Developer Docs</p>
@@ -678,7 +670,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="https://opengpu.network/docs/whitepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+            <a href="https://www.opengpu.network/docs/whitepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
               <div className="text-[#00E9FF] text-xl">📄</div>
               <div>
                 <p className="text-white text-sm font-semibold">Whitepaper</p>
@@ -686,7 +678,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="https://opengpu.network/docs/litepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+            <a href="https://www.opengpu.network/docs/litepaper.pdf" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
               <div className="text-[#00E9FF] text-xl">📑</div>
               <div>
                 <p className="text-white text-sm font-semibold">Litepaper</p>
@@ -710,7 +702,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="https://github.com/OpenGPU-Network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+            <a href="https://github.com/OpenGPUNetwork" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
               <div className="text-[#00E9FF] text-xl">💻</div>
               <div>
                 <p className="text-white text-sm font-semibold">GitHub Repos</p>
@@ -718,7 +710,7 @@ const close = () => {
               </div>
             </a>
 
-            <a href="https://github.com/OpenGPU-Network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+            <a href="https://github.com/OpenGPUNetwork" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
               <div className="text-[#00E9FF] text-xl">🎓</div>
               <div>
                 <p className="text-white text-sm font-semibold">Academy</p>
@@ -783,8 +775,8 @@ const close = () => {
           <p className="text-white font-semibold text-sm mt-3">Acceleration Center</p>
           <a href="https://opengpu.network/acceleration" className="text-gray-300 text-sm">Acceleration Program</a>
           <a href="https://takoswap.app/" className="text-gray-300 text-sm">TakoSwap</a>
-          <a href="https://opengpu.network/opensale" className="text-gray-300 text-sm">Opensale</a>
-          <a href="https://opengpu.network/bridgex" className="text-gray-300 text-sm">Bridge X</a>
+          <a href="https://opensale.finance/" className="text-gray-300 text-sm">Opensale</a>
+          <a href="https://chainchangers.app/" className="text-gray-300 text-sm">Bridge X</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -795,21 +787,19 @@ const close = () => {
 
           <a href="/aicompanies" className="text-gray-300 text-sm">AI Companies</a>
           <a href="/workloads" className="text-gray-300 text-sm">AI Workloads</a>
-          <a href="/agents" className="text-gray-300 text-sm">AI Agents</a>
+          <a href="https://opengpu.network/ai-agents" className="text-gray-300 text-sm">AI Agents</a>
           <a href="/enterprisehome" className="text-gray-300 text-sm">Enterprise Pilot</a>
           <a href="/provider" className="text-gray-300 text-sm">GPU Providers</a>
           <a href="/relay" className="text-gray-300 text-sm">Relay Gateway</a>
           <a href="/blockchain" className="text-gray-300 text-sm">Blockchain Main</a>
-          <a href="/provider-suite" className="text-gray-300 text-sm">OGPU Faucet</a>
-          <a href="/provider-suite" className="text-gray-300 text-sm">OGPU Testnet</a>
+          <a href="https://opengpu.network/faucet" className="text-gray-300 text-sm">OGPU Faucet</a>
+          <a href="https://testnet.ogpuscan.io/" className="text-gray-300 text-sm">OGPU Testnet</a>
 
           <p className="text-white font-semibold text-sm mt-3">dApps</p>
           <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
           <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Token Creator</a>
-          <a href="/buy" className="text-gray-300 text-sm">Buy OGPU</a>
-          <a href="/dashboard" className="text-gray-300 text-sm">Multisender</a>
-          <a href="/provider-suite" className="text-gray-300 text-sm">Testnet</a>
-          <a href="/provider-suite" className="text-gray-300 text-sm">Faucet</a>
+          <a href="https://opengpu.network/how-to-buy" className="text-gray-300 text-sm">Buy OGPU</a>
+          <a href="https://dapps.opengpu.network/multisender" className="text-gray-300 text-sm">Multisender</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -818,14 +808,14 @@ const close = () => {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Industries</p>
 
-          <a href="/industries" className="text-gray-300 text-sm">AI and Machine Learning</a>
+          <a href="/ai-ml" className="text-gray-300 text-sm">AI and Machine Learning</a>
           <a href="/rendering" className="text-gray-300 text-sm">Rendering and Visual Effects</a>
-          <a href="/industries" className="text-gray-300 text-sm">Scientific Computing</a>
-          <a href="/industries" className="text-gray-300 text-sm">Developer and Educational</a>
-          <a href="/industries" className="text-gray-300 text-sm">Video Processing</a>
-          <a href="/industries" className="text-gray-300 text-sm">Blockchain and Crypto</a>
-          <a href="/industries" className="text-gray-300 text-sm">Gaming</a>
-          <a href="/industries" className="text-gray-300 text-sm">Synthetic Data</a>
+          <a href="/" className="text-gray-300 text-sm">Scientific Computing (Coming Soon)</a>
+          <a href="/" className="text-gray-300 text-sm">Developer and Educational (Coming Soon)</a>
+          <a href="/" className="text-gray-300 text-sm">Video Processing (Coming Soon)</a>
+          <a href="/" className="text-gray-300 text-sm">Blockchain and Crypto (Coming Soon)</a>
+          <a href="/" className="text-gray-300 text-sm">Gaming (Coming Soon)</a>
+          <a href="/" className="text-gray-300 text-sm">Synthetic Data (Coming Soon)</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -834,12 +824,12 @@ const close = () => {
         <div className="flex flex-col space-y-2">
           <p className="text-white font-semibold text-lg">Docs</p>
 
-          <a href="https://opengpu.network/docs" className="text-gray-300 text-sm">Developer Docs</a>
+          <a href="https://docs.opengpu.network/" className="text-gray-300 text-sm">Developer Docs</a>
           <a href="https://opengpu.network/docs/whitepaper.pdf" className="text-gray-300 text-sm">Whitepaper</a>
           <a href="https://opengpu.network/docs/litepaper.pdf" className="text-gray-300 text-sm">Litepaper</a>
           <a href="https://opengpu.network/roadmap" className="text-gray-300 text-sm">Roadmap</a>
-          <a href="https://opengpu.network/faq" className="text-gray-300 text-sm">FAQ</a>
-          <a href="https://github.com/OpenGPU-Network" className="text-gray-300 text-sm">GitHub</a>
+          <a href="https://opengpu.network/faq" className="text-gray-300 text-sm">FAQ (Coming Soon)</a>
+          <a href="https://github.com/oGPUNetwork" className="text-gray-300 text-sm">GitHub</a>
         </div>
 
         <div className="w-full h-px bg-white/10" />
@@ -849,10 +839,10 @@ const close = () => {
           <p className="text-white font-semibold text-lg">Company</p>
 
           <a href="/about" className="text-gray-300 text-sm">About</a>
-          <a href="https://opengpu.network/team" className="text-gray-300 text-sm">Team</a>
-          <a href="https://opengpu.network/press" className="text-gray-300 text-sm">Press</a>
-          <a href="https://opengpu.network/careers" className="text-gray-300 text-sm">Careers</a>
-          <a href="mailto:hello@opengpu.network" className="text-gray-300 text-sm">Contact</a>
+          <a href="/team" className="text-gray-300 text-sm">Team</a>
+          <a href="#news" className="text-gray-300 text-sm">Press</a>
+          <a href="/careers" className="text-gray-300 text-sm">Careers (Coming Soon)</a>
+          <a href="mailto:info@opengpu.network" className="text-gray-300 text-sm">Contact</a>
         </div>
 
       </motion.div>
@@ -1121,9 +1111,13 @@ chmod +x provider-install.sh
 ./provider-install.sh`}
         </pre>
 
-        <a href="#" className="block text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition text-center">
+        <a href="https://opengpu.network/download/linux" className="block text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition text-center">
           View Linux docs →
+           <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
+    Get Started →
+  </button>
         </a>
+       
       </div>
 
     </div>
