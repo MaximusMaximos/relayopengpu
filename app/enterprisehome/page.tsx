@@ -109,107 +109,100 @@ export default function EnterprisePage() {
               </div>
 
               <form
-                action="https://network.us6.list-manage.com/subscribe/post?u=9ca8c44250832e3001ac4aaa8&id=1e9492eb62&f_id=004c54e5f0&redirect=https%3A%2F%2Fopengpu.network%2Fpilot-confirmed"
-                method="post"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
-                className="space-y-4"
-                noValidate
-              >
-                {/* ROW 1 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="FNAME"
-                    placeholder="Name *"
-                    required
-                  />
-                  <input
-                    type="text"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="COMPANY"
-                    placeholder="Company"
-                  />
-                </div>
+  id="ogpu-pilot-form"
+  className="space-y-4"
+  onSubmit={async (e) => {
+    e.preventDefault();
 
-                {/* ROW 2 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="email"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="EMAIL"
-                    id="mce-EMAIL"
-                    placeholder="Work email *"
-                    required
-                  />
-                  <input
-                    type="text"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="PROJTYPE"
-                    placeholder="Project type (LLM, RAG, agents, gen AI...)"
-                  />
-                </div>
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
-                {/* ROW 3 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="GPUS"
-                    placeholder="GPU demand (A100, H100, 4090...)"
-                  />
-                  <input
-                    type="text"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF]"
-                    name="PROVIDER"
-                    placeholder="Current provider (AWS, Azure, etc.)"
-                  />
-                </div>
+    // Build URL params
+    const params = new URLSearchParams();
+    data.forEach((v, k) => params.append(k, String(v)));
 
-                {/* MESSAGE */}
-                <div>
-                  <textarea
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00C6FF] focus:border-[#00C6FF] min-h-[120px]"
-                    name="MESSAGE"
-                    placeholder="Tell us about your workload, goals, or timeline..."
-                    aria-label="Message"
-                  />
-                </div>
+    // Final JSONP request with fields included
+    const url =
+      "https://network.us6.list-manage.com/subscribe/post-json?u=9ca8c44250832e3001ac4aaa8&id=1e9492eb62&" +
+      params.toString() +
+      "&c=?";
 
-                {/* TAGS HIDDEN FIELD */}
-                <input type="hidden" name="tags" value="Pilot Lead" />
+    await fetch(url, { method: "GET", mode: "no-cors" });
 
-                {/* HONEYPOT (BOT FIELD) */}
-                <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
-                  <input
-                    type="text"
-                    name="b_9ca8c44250832e3001ac4aaa8_1e9492eb62"
-                    tabIndex={-1}
-                    defaultValue=""
-                  />
-                </div>
+    window.location.href = "https://ogpu-site.vercel.app/pilot-confirmed";
+  }}
+>
 
-                {/* SUBMIT BUTTON */}
-                <button
-                  type="submit"
-                  name="subscribe"
-                  id="mc-embedded-subscribe"
-                  className="w-full mt-2 bg-gradient-to-r from-[#001F4E] to-[#00C6FF] text-white py-3.5 rounded-xl text-sm md:text-base font-semibold border-none cursor-pointer transition-opacity duration-200 hover:opacity-90"
-                >
-                  Submit pilot request
-                </button>
+  {/* ROW 1 */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <input
+      type="text"
+      name="FNAME"
+      placeholder="Name *"
+      required
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+    <input
+      type="text"
+      name="COMPANY"
+      placeholder="Company"
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+  </div>
 
-                {/* RESPONSE PLACEHOLDERS (Mailchimp) */}
-                <div id="mce-responses" className="clear text-xs text-red-600 mt-2 space-y-1">
-                  <div className="response" id="mce-error-response" style={{ display: "none" }} />
-                  <div
-                    className="response"
-                    id="mce-success-response"
-                    style={{ display: "none" }}
-                  />
-                </div>
-              </form>
+  {/* ROW 2 */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <input
+      type="email"
+      name="EMAIL"
+      placeholder="Work email *"
+      required
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+    <input
+      type="text"
+      name="PROJTYPE"
+      placeholder="Project type (LLM, RAG, Agents, GenAI)"
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+  </div>
+
+  {/* ROW 3 */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <input
+      type="text"
+      name="GPUS"
+      placeholder="GPU demand (A100, H100, 4090)"
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+    <input
+      type="text"
+      name="PROVIDER"
+      placeholder="Current provider"
+      className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"
+    />
+  </div>
+
+  {/* MESSAGE */}
+  <textarea
+    name="MESSAGE"
+    placeholder="Workload, scale, timeline..."
+    className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm min-h-[120px] text-[#0F172A] placeholder-slate-400"
+  />
+
+  {/* TAGS */}
+  <input type="hidden" name="tags" value="Pilot Lead" />
+
+  {/* SUBMIT */}
+  <button
+    type="submit"
+    className="w-full bg-gradient-to-r from-[#001F4E] to-[#00C6FF] text-white py-3.5 rounded-xl text-sm font-semibold hover:opacity-90"
+  >
+    Submit Pilot Request
+  </button>
+
+</form>
+
             </div>
           </div>
         </div>
