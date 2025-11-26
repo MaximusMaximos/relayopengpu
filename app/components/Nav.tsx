@@ -746,19 +746,21 @@ export default function Nav() {
           <a href="/careers" className="text-gray-300 text-sm">Careers (Coming Soon)</a>
           <a href="mailto:info@opengpu.network" className="text-gray-300 text-sm">Contact</a>
         </div>
-        {/* CTA BUTTON (Fixed Width, No Stretching) */}
+       {/* CTA BUTTON — Now same size and style as "Get Started" */}
 <a
   href="/"
-  className="ml-2 px-4 py-3 rounded-md font-medium text-white text-[10px]
-    bg-[#00C6E6] border border-[#00C6E6]/80
-    inline-block w-fit
+  className="mx-auto inline-block w-fit whitespace-nowrap
+    px-8 py-3 rounded-xl font-semibold text-white text-sm
+    bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
     transition-all duration-300 hover:-translate-y-1
-    shadow-[0_0_10px_rgba(0,198,230,0.18)]
-    hover:shadow-[0_0_18px_rgba(0,198,230,0.3)]
+    shadow-[0_0_20px_rgba(0,198,230,0.20)]
+    hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
     hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
 >
   Back To Main Site
 </a>
+
+
 
 
 

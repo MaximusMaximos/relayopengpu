@@ -1109,14 +1109,28 @@ const close = () => {
   https://raw.githubusercontent.com/OpenGPU-Network/provider-suite/main/install.sh
 chmod +x provider-install.sh
 ./provider-install.sh`}
-        </pre>
+</pre>
 
-        <a href="https://opengpu.network/download/linux" className="block text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition text-center">
-          View Linux docs →
-           <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-    Get Started →
-  </button>
-        </a>
+{/* Get Started CTA ABOVE Linux link */}
+<a
+  href="/enterprisehome"
+  className="block w-full text-center px-6 py-3 mb-4 rounded-xl bg-gradient-to-r
+             from-[#0A84FF] to-[#00C8FF] text-white font-semibold
+             shadow-[0_10px_24px_rgba(0,160,255,0.35)]
+             hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)]
+             transition"
+>
+  Get Started →
+</a>
+
+{/* Below it — Linux docs link */}
+<a
+  href="https://opengpu.network/download/linux"
+  className="block text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition text-center"
+>
+  View Linux docs →
+</a>
+
        
       </div>
 
@@ -1523,23 +1537,28 @@ chmod +x provider-install.sh
   </div>
 
   {/* BOTTOM CTA */}
-  <motion.div
-    className="relative max-w-3xl mx-auto mt-16 text-center z-10"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.45, ease: "easeOut" }}
-  >
-    <p className="text-sm md:text-base text-[#0A0F2C] mb-4">
-      Single executor by design, with on-chain verification, automatic failover and task-based billing.
-    </p>
+<motion.div
+  className="relative max-w-3xl mx-auto mt-16 text-center z-10"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.2 }}
+  transition={{ duration: 0.45, ease: "easeOut" }}
+>
+  <p className="text-sm md:text-base text-[#0A0F2C] mb-4">
+    Single executor by design, with on-chain verification, automatic failover and task-based billing.
+  </p>
 
-    <button className="px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
-                       bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-                       shadow-md hover:opacity-95 transition">
-      Explore the cost advantage →
-    </button>
-  </motion.div>
+  <a
+    href="/howogpuworks"
+    className="px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
+               bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
+               shadow-md hover:opacity-95 hover:translate-x-1 
+               transition-all duration-200 inline-block"
+  >
+    Learn more →
+  </a>
+</motion.div>
+
 
 </section>
 

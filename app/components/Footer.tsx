@@ -115,7 +115,7 @@ export default function Footer() {
 
 
  {/* ========================================================= */}
-{/* SNOWFLAKE-STYLE GRID (Desktop perfect, Mobile = 2 columns) */}
+{/* SNOWFLAKE-STYLE GRID */}
 {/* ========================================================= */}
 
 <div className="
@@ -151,7 +151,7 @@ export default function Footer() {
       <li><a href="https://opengpu.network/docs/whitepaper.pdf" className="hover:text-white transition">Whitepaper</a></li>
       <li><a href="https://opengpu.network/docs/pitch-deck.pdf" className="hover:text-white transition">Pitch Deck</a></li>
       <li><a href="https://academy.opengpu.network/" className="hover:text-white transition">Academy</a></li>
-      <li><a href="/media-kit" className="hover:text-white transition">Media Kit</a></li>
+      <li><a href="https://opengpu.network/about/discover/media-kit/logo" className="hover:text-white transition">Media Kit</a></li>
     </ul>
   </div>
 
@@ -161,10 +161,10 @@ export default function Footer() {
       Products
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
-      <li><a href="/client" className="hover:text-white transition">Client App</a></li>
-      <li><a href="/openchat" className="hover:text-white transition">OpenChat</a></li>
-      <li><a href="/faucet" className="hover:text-white transition">Faucet</a></li>
-      <li><a href="/orc20" className="hover:text-white transition">ORC-20</a></li>
+      <li><a href="https://client.opengpu.network/" className="hover:text-white transition">Client App</a></li>
+      <li><a href="https://chat.opengpu.network/" className="hover:text-white transition">OpenChat</a></li>
+      <li><a href="https://opengpu.network/faucet" className="hover:text-white transition">Faucet</a></li>
+      <li><a href="https://opengpu.network/docs/orc20" className="hover:text-white transition">ORC-20</a></li>
     </ul>
   </div>
 
@@ -175,8 +175,8 @@ export default function Footer() {
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
       <li><a href="/blockchain" className="hover:text-white transition">Blockchain</a></li>
-      <li><a href="/token-creator" className="hover:text-white transition">Token Creator</a></li>
-      <li><a href="/multisender" className="hover:text-white transition">Multisender</a></li>
+      <li><a href="https://dapps.opengpu.network/" className="hover:text-white transition">Token Creator</a></li>
+      <li><a href="https://dapps.opengpu.network/multisender" className="hover:text-white transition">Multisender</a></li>
       <li><a href="https://ogpuscan.io" className="hover:text-white transition">Explorer</a></li>
     </ul>
   </div>
@@ -218,14 +218,14 @@ export default function Footer() {
 
         {/* RIGHT */}
         <div className="flex flex-wrap gap-5 text-white/45">
-          <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
-          <a href="/cookies" className="hover:text-white transition">Cookie Policy</a>
-          <a href="/agreement" className="hover:text-white transition">User Agreement</a>
-          <a href="/legal" className="hover:text-white transition">Legal Disclaimer</a>
+          <a href="https://opengpu.network/privacy-policy" className="hover:text-white transition">Privacy Policy</a>
+          <a href="https://opengpu.network/cookies-policy" className="hover:text-white transition">Cookie Policy</a>
+          <a href="https://opengpu.network/user-agreement" className="hover:text-white transition">User Agreement</a>
+          <a href="https://opengpu.network/docs/legal-disclaimer.pdf" className="hover:text-white transition">Legal Disclaimer</a>
           <a href="https://linkedin.com/company/opengpu" className="hover:text-white transition">LinkedIn</a>
           <a href="https://medium.com/@opengpunetwork" className="hover:text-white transition">Medium</a>
-          <a href="https://youtube.com" className="hover:text-white transition">YouTube</a>
-          <a href="https://instagram.com" className="hover:text-white transition">Instagram</a>
+          <a href="https://www.youtube.com/@opengpunetwork" className="hover:text-white transition">YouTube</a>
+          <a href="https://instagram.com/opengpunetwork" className="hover:text-white transition">Instagram</a>
         </div>
 
       </div>
