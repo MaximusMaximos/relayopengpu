@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "OGPU routes AI workloads across global GPU capacity pools without splitting tasks. Faster, cheaper and more reliable compute for inference, training, RAG and agents.",
 
-  // ★ MAIN DOMAIN (Switched to ogpunetwork.com)
+  // ★ MAIN DOMAIN
   metadataBase: new URL("https://ogpunetwork.com"),
   alternates: { canonical: "https://ogpunetwork.com" },
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 
-  // 🔍 SEO WEIGHT + TOPICAL RELEVANCY SIGNAL
+  // 🔍 SEO + Relevancy Signals
   keywords: [
     "OGPU",
     "OpenGPU",
@@ -62,16 +62,20 @@ export const metadata: Metadata = {
     "agent compute infrastructure"
   ],
 
-  // 🟢 Google Indexing Policy
+  // 🟢 GOOGLE + STANDARD ROBOTS DIRECTIVES (PATCHED)
   robots: {
     index: true,
     follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
+
     googleBot: {
       index: true,
       follow: true,
-      maxSnippet: -1,
-      maxImagePreview: "large",
-      maxVideoPreview: -1,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   },
 
