@@ -86,13 +86,16 @@ export default function Nav() {
                 </div>
               </a>
 
-              <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">🧩</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">How OGPU Works</p>
-                  <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
-                </div>
-              </a>
+               <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <img src="/Images/nav/gradiant/ogpu-works.png"
+                alt="ogpuworks icon"
+                className="w-6 h-6 object-contain"/>
+
+                <div className="flex flex-col">
+                <span className="text-sm font-medium text-white">How OGPU Works?</span>
+                <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
+  </div>
+</a>
 
               <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                 <div className="text-[#00E9FF] text-xl">📊</div>
@@ -158,14 +161,22 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* ========================= SOLUTIONS ========================= */}
+            {/* ========================= SOLUTIONS ========================= */}
       <div
         className="relative"
         onMouseEnter={() => open("solutions")}
         onMouseLeave={() => close()}
-        onClick={() => (openMenu === "solutions" ? setOpenMenu(null) : open("solutions"))}
       >
         <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (openMenu === "solutions") {
+              setOpenMenu(null);
+            } else {
+              open("solutions");
+            }
+          }}
           className={`px-2 py-1 flex items-center gap-1 transition ${
             openMenu === "solutions" ? "text-white" : "hover:text-white"
           }`}
@@ -174,15 +185,13 @@ export default function Nav() {
         </button>
 
         <div
-          className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
-                      border border-white/10 shadow-xl p-7 z-[999]
-                      transition-all duration-200
-                      ${
-                        openMenu === "solutions"
-                          ? "opacity-100 visible"
-                          : "opacity-0 invisible"
-                      }`}
-        >
+  id="solutions-menu"
+  className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
+              border border-white/10 shadow-xl p-7 z-[999]
+              transition-all duration-200
+              ${openMenu === "solutions" ? "opacity-100 visible" : "opacity-0 invisible"}`}
+>
+
           <div className="flex gap-10">
             <div className="w-[30%] flex flex-col">
               <h3 className="text-white text-xl font-bold mb-3">Solutions for Every Use Case</h3>
@@ -227,25 +236,40 @@ export default function Nav() {
                 <h4 className="text-gray-400 font-semibold text-sm mb-2">Infrastructure</h4>
 
                 <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🏢</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
+                  <img
+                    src="/Images/nav/gradiant/enterprise-icon.png"
+                    alt="enterprise icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Enterprise Pilot</span>
                     <p className="text-gray-400 text-xs">Route workloads globally.</p>
                   </div>
                 </a>
 
                 <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🖥️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">GPU Providers</p>
+                  <img
+                    src="/Images/nav/gradiant/providers-icon.png"
+                    alt="provider icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">GPU Providers</span>
                     <p className="text-gray-400 text-xs">Earn per task.</p>
                   </div>
                 </a>
 
                 <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🔌</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Relay Gateway</p>
+                  <img
+                    src="/Images/nav/gradiant/relay.png"
+                    alt="relay icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Relay Gateway</span>
                     <p className="text-gray-400 text-xs">Fiat on ramp for enterprise.</p>
                   </div>
                 </a>
@@ -255,15 +279,20 @@ export default function Nav() {
               <div className="flex flex-col gap-4">
                 <h4 className="text-gray-400 font-semibold text-sm mb-2">Blockchain</h4>
 
-                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">⛓️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Blockchain Main</p>
+                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <img
+                    src="/Images/nav/gradiant/blockchain-icon.png"
+                    alt="blockchain icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Blockchain Main</span>
                     <p className="text-gray-400 text-xs">High throughput L1.</p>
                   </div>
                 </a>
 
-                <a href="https://opengpu.network/faucet" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://opengpu.network/faucet" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🚰</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Faucet</p>
@@ -271,7 +300,7 @@ export default function Nav() {
                   </div>
                 </a>
 
-                <a href="https://testnet.ogpuscan.io/" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://testnet.ogpuscan.io/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🧪</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Testnet</p>
@@ -291,27 +320,37 @@ export default function Nav() {
               </summary>
 
               <div className="mt-4 grid grid-cols-3 gap-4">
-                <a href="https://nft.opengpu.network/" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://nft.opengpu.network/"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">🎨</span>
                   <span className="text-xs text-gray-300">Open NFT</span>
                 </a>
 
-                <a href="https://dapps.opengpu.network/token-creator" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://dapps.opengpu.network/token-creator"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">🪙</span>
                   <span className="text-xs text-gray-300">Token Creator</span>
                 </a>
 
-                <a href="https://opengpu.network/how-to-buy" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://opengpu.network/how-to-buy"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">💳</span>
                   <span className="text-xs text-gray-300">Buy OGPU</span>
                 </a>
 
-                <a href="https://dapps.opengpu.network/multisender" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://dapps.opengpu.network/multisender"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">📤</span>
                   <span className="text-xs text-gray-300">Multisender</span>
                 </a>
-
-
               </div>
             </details>
           </div>
@@ -455,12 +494,16 @@ export default function Nav() {
                 </div>
               </a>
 
-              <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
-                <div className="text-[#00E9FF] text-xl">✉️</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Contact</p>
-                  <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
-                </div>
+              <a href="mailto:info@opengpu.network"
+              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <img src="/Images/Nav/Gradiant/email-icon.png"
+              alt="Email Icon"
+              className="w-6 h-6 object-contain"/>
+
+              <div>
+              <p className="text-white text-sm font-semibold">Contact</p>
+              <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
+              </div>
               </a>
 
               <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">

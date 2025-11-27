@@ -184,13 +184,16 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="text-[#00E9FF] text-xl">🧩</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">How OGPU Works</p>
-                  <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
-                </div>
-              </a>
+               <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <img src="/Images/nav/gradiant/ogpu-works.png"
+                alt="ogpuworks icon"
+                className="w-6 h-6 object-contain"/>
+
+                <div className="flex flex-col">
+                <span className="text-sm font-medium text-white">How OGPU Works?</span>
+                <p className="text-gray-400 text-xs">Routing, marketplace, verification.</p>
+  </div>
+</a>
 
               <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                 <div className="text-[#00E9FF] text-xl">📊</div>
@@ -256,14 +259,22 @@ const close = () => {
         </div>
       </div>
 
-      {/* ========================= SOLUTIONS ========================= */}
+            {/* ========================= SOLUTIONS ========================= */}
       <div
         className="relative"
         onMouseEnter={() => open("solutions")}
         onMouseLeave={() => close()}
-        onClick={() => (openMenu === "solutions" ? setOpenMenu(null) : open("solutions"))}
       >
         <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (openMenu === "solutions") {
+              setOpenMenu(null);
+            } else {
+              open("solutions");
+            }
+          }}
           className={`px-2 py-1 flex items-center gap-1 transition ${
             openMenu === "solutions" ? "text-white" : "hover:text-white"
           }`}
@@ -272,15 +283,13 @@ const close = () => {
         </button>
 
         <div
-          className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
-                      border border-white/10 shadow-xl p-7 z-[999]
-                      transition-all duration-200
-                      ${
-                        openMenu === "solutions"
-                          ? "opacity-100 visible"
-                          : "opacity-0 invisible"
-                      }`}
-        >
+  id="solutions-menu"
+  className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[900px] rounded-2xl bg-[#020617]
+              border border-white/10 shadow-xl p-7 z-[999]
+              transition-all duration-200
+              ${openMenu === "solutions" ? "opacity-100 visible" : "opacity-0 invisible"}`}
+>
+
           <div className="flex gap-10">
             <div className="w-[30%] flex flex-col">
               <h3 className="text-white text-xl font-bold mb-3">Solutions for Every Use Case</h3>
@@ -325,25 +334,40 @@ const close = () => {
                 <h4 className="text-gray-400 font-semibold text-sm mb-2">Infrastructure</h4>
 
                 <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🏢</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Enterprise Pilot</p>
+                  <img
+                    src="/Images/nav/gradiant/enterprise-icon.png"
+                    alt="enterprise icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Enterprise Pilot</span>
                     <p className="text-gray-400 text-xs">Route workloads globally.</p>
                   </div>
                 </a>
 
                 <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🖥️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">GPU Providers</p>
+                  <img
+                    src="/Images/nav/gradiant/providers-icon.png"
+                    alt="provider icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">GPU Providers</span>
                     <p className="text-gray-400 text-xs">Earn per task.</p>
                   </div>
                 </a>
 
                 <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🔌</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Relay Gateway</p>
+                  <img
+                    src="/Images/nav/gradiant/relay.png"
+                    alt="relay icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Relay Gateway</span>
                     <p className="text-gray-400 text-xs">Fiat on ramp for enterprise.</p>
                   </div>
                 </a>
@@ -353,15 +377,20 @@ const close = () => {
               <div className="flex flex-col gap-4">
                 <h4 className="text-gray-400 font-semibold text-sm mb-2">Blockchain</h4>
 
-                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">⛓️</div>
-                  <div>
-                    <p className="text-white text-sm font-semibold">Blockchain Main</p>
+                <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                  <img
+                    src="/Images/nav/gradiant/blockchain-icon.png"
+                    alt="blockchain icon"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">Blockchain Main</span>
                     <p className="text-gray-400 text-xs">High throughput L1.</p>
                   </div>
                 </a>
 
-                <a href="https://opengpu.network/faucet" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://opengpu.network/faucet" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🚰</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Faucet</p>
@@ -369,7 +398,7 @@ const close = () => {
                   </div>
                 </a>
 
-                <a href="https://testnet.ogpuscan.io/" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
+                <a href="https://testnet.ogpuscan.io/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <div className="text-[#00E9FF] text-xl">🧪</div>
                   <div>
                     <p className="text-white text-sm font-semibold">OGPU Testnet</p>
@@ -389,27 +418,37 @@ const close = () => {
               </summary>
 
               <div className="mt-4 grid grid-cols-3 gap-4">
-                <a href="https://nft.opengpu.network/" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://nft.opengpu.network/"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">🎨</span>
                   <span className="text-xs text-gray-300">Open NFT</span>
                 </a>
 
-                <a href="https://dapps.opengpu.network/token-creator" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://dapps.opengpu.network/token-creator"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">🪙</span>
                   <span className="text-xs text-gray-300">Token Creator</span>
                 </a>
 
-                <a href="https://opengpu.network/how-to-buy" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://opengpu.network/how-to-buy"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">💳</span>
                   <span className="text-xs text-gray-300">Buy OGPU</span>
                 </a>
 
-                <a href="https://dapps.opengpu.network/multisender" className="p-3 rounded-lg hover:bg.white/5 transition flex flex-col">
+                <a
+                  href="https://dapps.opengpu.network/multisender"
+                  className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
+                >
                   <span className="text-[#00E9FF] text-lg">📤</span>
                   <span className="text-xs text-gray-300">Multisender</span>
                 </a>
-
-
               </div>
             </details>
           </div>
@@ -553,12 +592,16 @@ const close = () => {
                 </div>
               </a>
 
-              <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
-                <div className="text-[#00E9FF] text-xl">✉️</div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Contact</p>
-                  <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
-                </div>
+              <a href="mailto:info@opengpu.network"
+              className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+              <img src="/Images/Nav/Gradiant/email-icon.png"
+              alt="Email Icon"
+              className="w-6 h-6 object-contain"/>
+
+              <div>
+              <p className="text-white text-sm font-semibold">Contact</p>
+              <p className="text-gray-400 text-xs">Reach OGPU directly.</p>
+              </div>
               </a>
 
               <a href="mailto:info@opengpu.network" className="flex items-start gap-3 p-3 rounded-xl hover:bg.white/5 transition">
@@ -731,7 +774,7 @@ const close = () => {
           hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
           hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
       >
-        Get Started
+        Join the Network →
       </a>
     </div>
 
@@ -986,7 +1029,7 @@ const close = () => {
     hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]
   "
 >
-  Get Started
+  Join the Network →
 </a>
 
 
@@ -1113,7 +1156,7 @@ chmod +x provider-install.sh
 
 {/* Get Started CTA ABOVE Linux link */}
 <a
-  href="/enterprisehome"
+  href="https://opengpu.network/download/linux"
   className="block w-full text-center px-6 py-3 mb-4 rounded-xl bg-gradient-to-r
              from-[#0A84FF] to-[#00C8FF] text-white font-semibold
              shadow-[0_10px_24px_rgba(0,160,255,0.35)]
@@ -2696,11 +2739,11 @@ className="w-full bg-white py-24 md:py-28 px-6">
       Developers
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
-      <li><a href="/litepaper" className="hover:text-white transition">Litepaper</a></li>
-      <li><a href="/whitepaper" className="hover:text-white transition">Whitepaper</a></li>
-      <li><a href="/pitchdeck" className="hover:text-white transition">Pitch Deck</a></li>
-      <li><a href="/academy" className="hover:text-white transition">Academy</a></li>
-      <li><a href="/media-kit" className="hover:text-white transition">Media Kit</a></li>
+      <li><a href="https://opengpu.network/docs/litepaper.pdf" className="hover:text-white transition">Litepaper</a></li>
+      <li><a href="https://opengpu.network/docs/whitepaper.pdf" className="hover:text-white transition">Whitepaper</a></li>
+      <li><a href="https://opengpu.network/docs/pitch-deck.pdf" className="hover:text-white transition">Pitch Deck</a></li>
+      <li><a href="https://academy.opengpu.network/" className="hover:text-white transition">Academy</a></li>
+      <li><a href="https://opengpu.network/about/discover/media-kit/logo" className="hover:text-white transition">Media Kit</a></li>
     </ul>
   </div>
 
@@ -2710,10 +2753,10 @@ className="w-full bg-white py-24 md:py-28 px-6">
       Products
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
-      <li><a href="/client" className="hover:text-white transition">Client App</a></li>
-      <li><a href="/openchat" className="hover:text-white transition">OpenChat</a></li>
-      <li><a href="/faucet" className="hover:text-white transition">Faucet</a></li>
-      <li><a href="/orc20" className="hover:text-white transition">ORC-20</a></li>
+      <li><a href="https://client.opengpu.network/" className="hover:text-white transition">Client App</a></li>
+      <li><a href="https://chat.opengpu.network/" className="hover:text-white transition">OpenChat</a></li>
+      <li><a href="https://opengpu.network/faucet" className="hover:text-white transition">Faucet</a></li>
+      <li><a href="https://opengpu.network/docs/orc20" className="hover:text-white transition">ORC-20</a></li>
     </ul>
   </div>
 
@@ -2724,8 +2767,8 @@ className="w-full bg-white py-24 md:py-28 px-6">
     </h4>
     <ul className="space-y-2 text-white/70 text-xs">
       <li><a href="/blockchain" className="hover:text-white transition">Blockchain</a></li>
-      <li><a href="/token-creator" className="hover:text-white transition">Token Creator</a></li>
-      <li><a href="/multisender" className="hover:text-white transition">Multisender</a></li>
+      <li><a href="https://dapps.opengpu.network/" className="hover:text-white transition">Token Creator</a></li>
+      <li><a href="https://dapps.opengpu.network/multisender" className="hover:text-white transition">Multisender</a></li>
       <li><a href="https://ogpuscan.io" className="hover:text-white transition">Explorer</a></li>
     </ul>
   </div>
@@ -2767,14 +2810,14 @@ className="w-full bg-white py-24 md:py-28 px-6">
 
         {/* RIGHT */}
         <div className="flex flex-wrap gap-5 text-white/45">
-          <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
-          <a href="/cookies" className="hover:text-white transition">Cookie Policy</a>
-          <a href="/agreement" className="hover:text-white transition">User Agreement</a>
-          <a href="/legal" className="hover:text-white transition">Legal Disclaimer</a>
+          <a href="https://opengpu.network/privacy-policy" className="hover:text-white transition">Privacy Policy</a>
+          <a href="https://opengpu.network/cookies-policy" className="hover:text-white transition">Cookie Policy</a>
+          <a href="https://opengpu.network/user-agreement" className="hover:text-white transition">User Agreement</a>
+          <a href="https://opengpu.network/docs/legal-disclaimer.pdf" className="hover:text-white transition">Legal Disclaimer</a>
           <a href="https://linkedin.com/company/opengpu" className="hover:text-white transition">LinkedIn</a>
-          <a href="https://medium.com/@opengpunetwork" className="hover:text-white transition">Medium</a>
-          <a href="https://youtube.com" className="hover:text-white transition">YouTube</a>
-          <a href="https://instagram.com" className="hover:text-white transition">Instagram</a>
+          <a href="https://medium.com/@ogpunetwork" className="hover:text-white transition">Medium</a>
+          <a href="https://youtube.com/@opengpunetwork" className="hover:text-white transition">YouTube</a>
+          <a href="https://instagram.com/opengpunetwork" className="hover:text-white transition">Instagram</a>
         </div>
 
       </div>

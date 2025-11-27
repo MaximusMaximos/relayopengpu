@@ -1,117 +1,102 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function PilotConfirmed() {
+
+  // Auto redirect → homepage after 10s
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.href = "/";
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <html lang="en">
-      <head>
-        <title>OGPU | Pilot Request Confirmed</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <style>{`
-          body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #001F4E 0%, #00C6FF 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-          }
-          .ogpu-card {
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            max-width: 760px;
-            width: 100%;
-            padding: 60px 50px;
-            text-align: center;
-            animation: fadeIn 0.6s ease-in-out;
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .ogpu-logo {
-            width: 120px;
-            margin-bottom: 32px;
-          }
-          h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 16px;
-          }
-          p {
-            font-size: 17px;
-            color: #4B5563;
-            line-height: 1.7;
-            margin-bottom: 36px;
-          }
-          a.ogpu-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #001F4E 0%, #00C6FF 100%);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: opacity 0.25s, transform 0.2s;
-            margin-bottom: 40px;
-          }
-          a.ogpu-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-          }
-          .ogpu-next {
-            background: #F8FAFC;
-            border: 1px solid #E5E7EB;
-            border-radius: 14px;
-            padding: 32px;
-            text-align: left;
-          }
-          .ogpu-next h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #0F172A;
-            margin-bottom: 12px;
-          }
-          .ogpu-next p {
-            font-size: 15px;
-            color: #475569;
-            margin: 0;
-            line-height: 1.6;
-          }
-          @media (max-width: 640px) {
-            .ogpu-card { padding: 40px 24px; }
-            h1 { font-size: 26px; }
-          }
-        `}</style>
-      </head>
+    <div className="min-h-screen w-full bg-[#020616] flex flex-col items-center justify-center px-6 py-20 text-white">
 
-      <body>
-        <div className="ogpu-card">
-          <img src="/Images/OGPU-LOGO-Main-black.png" alt="OGPU Logo" className="ogpu-logo" />
+      {/* OGPU LOGO */}
+      <img
+        src="/Images/OGPU-LOGO-Main-final.png"
+        alt="OGPU"
+        className="h-14 w-auto mb-10 opacity-95"
+      />
 
-          <h1>✅ Pilot Request Received</h1>
-          <p>
-            Thank you for submitting your pilot request.<br />
-            Our engineering team is now reviewing your workload.<br />
-            You will receive next steps within <strong>24–48 hours</strong>.
+      {/* CARD */}
+      <div className="max-w-xl w-full p-10 md:p-14 text-center border border-white/10 rounded-2xl bg-white/5 backdrop-blur-sm shadow-[0_0_40px_rgba(0,200,255,0.15)] animate-[fadeUp_0.55s_ease]">
+
+        {/* Success Icon */}
+        <div className="mx-auto mb-6 h-16 w-16 rounded-full bg-[#00C8FF]/20 flex items-center justify-center animate-[popIn_0.4s_ease]">
+          <span className="text-[#00C8FF] text-3xl font-bold">✓</span>
+        </div>
+
+        <h1 className="text-3xl font-semibold mb-3">
+          Pilot Request Received
+        </h1>
+
+        <p className="text-gray-300 leading-relaxed text-base mb-8">
+          Thank you — your details are now with the OGPU engineering team.<br />
+          Expect workload review + onboarding instructions within{" "}
+          <span className="text-white font-semibold">24–48 hours.</span>
+        </p>
+
+        {/* MAIN CTA */}
+        <button
+          onClick={() => window.location.href = "/"}
+          className="w-full mb-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition"
+        >
+          Return to Homepage →
+        </button>
+
+        {/* TELEGRAM */}
+        <button
+          onClick={() => window.open("https://t.me/opengpuportal")}
+          className="w-full mb-3 px-6 py-3 rounded-xl border border-[#00C8FF]/50 text-[#00C8FF] font-semibold hover:bg-[#00C8FF]/10 transition"
+        >
+          Join OGPU Telegram
+        </button>
+
+        {/* X LINK */}
+        <button
+          onClick={() => window.open("https://x.com/OGPU_Network")}
+          className="w-full px-6 py-3 rounded-xl border border-[#00C8FF]/50 text-[#00C8FF] font-semibold hover:bg-[#00C8FF]/10 transition"
+        >
+          Follow us on X
+        </button>
+
+        {/* NEXT STEPS BOX */}
+        <div className="mt-10 text-left border border-white/10 bg-white/5 rounded-xl p-6">
+          <p className="text-[11px] tracking-[0.25em] text-[#00C8FF] mb-4 font-semibold">
+            WHAT HAPPENS NEXT
           </p>
 
-          <a href="https://t.me/opengpuportal" target="_blank" className="ogpu-btn">
-            Join the OGPU Telegram →
-          </a>
-
-          <div className="ogpu-next">
-            <h3>What Happens Next?</h3>
-            <p>
-              • We assess your compute and scaling requirements<br />
-              • We route your workload to optimal regions<br />
-              • You receive pricing benchmarks and pilot onboarding<br />
-            </p>
+          <div className="space-y-3 text-sm text-gray-300">
+            <div className="flex gap-3 items-start">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[#00C8FF]" />
+              We assess your workload scale + memory profile
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[#00C8FF]" />
+              We route benchmarks to optimal regions on-network
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[#00C8FF]" />
+              You receive pricing output + pilot activation window
+            </div>
           </div>
         </div>
-      </body>
-    </html>
+      </div>
+
+      {/* ANIMATIONS */}
+      <style>{`
+        @keyframes fadeUp { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+        @keyframes popIn { 0%{scale:0.6; opacity:0;} 100%{scale:1; opacity:1;} }
+      `}</style>
+
+      {/* Redirect message */}
+      <p className="text-xs text-gray-400 mt-4">Redirecting to homepage in 10 seconds…</p>
+
+    </div>
   );
 }

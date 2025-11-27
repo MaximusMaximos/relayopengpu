@@ -298,7 +298,7 @@ export default function CompanyPage() {
                   building this network full time.
                 </p>
                 <a
-                  href="https://opengpu.network/team"
+                  href="/team"
                   className="inline-flex text-xs md:text-sm font-semibold text-sky-600 hover:text-sky-700 mt-1"
                 >
                   Meet the team →
@@ -314,7 +314,7 @@ export default function CompanyPage() {
                   the network and keep it grounded in real world use.
                 </p>
                 <a
-                  href="https://opengpu.network/team#advisors"
+                  href="/team"
                   className="inline-flex text-xs md:text-sm font-semibold text-sky-600 hover:text-sky-700 mt-1"
                 >
                   Meet the advisors →

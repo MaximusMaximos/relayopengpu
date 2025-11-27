@@ -223,7 +223,7 @@ export default function Footer() {
           <a href="https://opengpu.network/user-agreement" className="hover:text-white transition">User Agreement</a>
           <a href="https://opengpu.network/docs/legal-disclaimer.pdf" className="hover:text-white transition">Legal Disclaimer</a>
           <a href="https://linkedin.com/company/opengpu" className="hover:text-white transition">LinkedIn</a>
-          <a href="https://medium.com/@opengpunetwork" className="hover:text-white transition">Medium</a>
+          <a href="https://medium.com/@ogpunetwork" className="hover:text-white transition">Medium</a>
           <a href="https://www.youtube.com/@opengpunetwork" className="hover:text-white transition">YouTube</a>
           <a href="https://instagram.com/opengpunetwork" className="hover:text-white transition">Instagram</a>
         </div>
