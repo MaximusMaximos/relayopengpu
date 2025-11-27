@@ -87,7 +87,7 @@ export default function Nav() {
               </a>
 
                <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <img src="/Images/nav/gradiant/ogpu-works.png"
+                <img src="/Images/nav/gradient/ogpu-works.png"
                 alt="ogpuworks icon"
                 className="w-6 h-6 object-contain"/>
 
@@ -237,7 +237,7 @@ export default function Nav() {
 
                 <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradiant/enterprise-icon.png"
+                    src="/Images/nav/gradient/enterprise-main-icon.png"
                     alt="enterprise icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -250,7 +250,7 @@ export default function Nav() {
 
                 <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradiant/providers-icon.png"
+                    src="/Images/nav/gradient/providers-icon.png"
                     alt="provider icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -263,7 +263,7 @@ export default function Nav() {
 
                 <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradiant/relay.png"
+                    src="/Images/nav/gradient/relay-main.png"
                     alt="relay icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -281,7 +281,7 @@ export default function Nav() {
 
                 <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradiant/blockchain-icon.png"
+                    src="/Images/nav/gradient/blockchain-icon.png"
                     alt="blockchain icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -496,7 +496,7 @@ export default function Nav() {
 
               <a href="mailto:info@opengpu.network"
               className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <img src="/Images/Nav/Gradiant/email-icon.png"
+              <img src="/Images/Nav/Gradient/email-icon.png"
               alt="Email Icon"
               className="w-6 h-6 object-contain"/>
 
