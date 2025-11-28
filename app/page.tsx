@@ -185,7 +185,7 @@ const close = () => {
               </a>
 
                <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <img src="/Images/nav/ogpu-works.png"
+                <img src="/Images/Nav/ogpu-works.png"
                 alt="ogpuworks icon"
                 className="w-6 h-6 object-contain"/>
 
@@ -335,7 +335,7 @@ const close = () => {
 
                 <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/enterprise-main-icon.png"
+                    src="/Images/Nav/enterprise-main-icon.png"
                     alt="enterprise icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -348,7 +348,7 @@ const close = () => {
 
                 <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/providers-icon.png"
+                    src="/Images/Nav/providers-icon.png"
                     alt="provider icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -361,7 +361,7 @@ const close = () => {
 
                 <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/relay-main.png"
+                    src="/Images/Nav/relay-main.png"
                     alt="relay icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -379,7 +379,7 @@ const close = () => {
 
                 <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/blockchain-icon.png"
+                    src="/Images/Nav/blockchain-icon.png"
                     alt="blockchain icon"
                     className="w-6 h-6 object-contain"
                   />
