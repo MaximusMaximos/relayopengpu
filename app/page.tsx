@@ -185,7 +185,7 @@ const close = () => {
               </a>
 
                <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <img src="/Images/nav/"
+                <img src="/Images/nav/ogpu-works.png"
                 alt="ogpuworks icon"
                 className="w-6 h-6 object-contain"/>
 
