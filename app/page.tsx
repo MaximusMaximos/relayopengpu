@@ -1842,7 +1842,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
     {/* ROUTING LAYER */}
     <div className="flex flex-col items-center gap-2">
       <img
-        src="/Images/clean_swivel-gradiant.png"
+        src="/Images/swivel.png"
         alt="OGPU Routing Logo"
         className="h-20 w-auto drop-shadow-xl"
       />
