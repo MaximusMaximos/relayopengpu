@@ -8,7 +8,7 @@ export default function PilotConfirmed() {
   useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = "/";
-    }, 10000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -95,7 +95,7 @@ export default function PilotConfirmed() {
       `}</style>
 
       {/* Redirect message */}
-      <p className="text-xs text-gray-400 mt-4">Redirecting to homepage in 10 seconds…</p>
+      <p className="text-xs text-gray-400 mt-4">Redirecting to homepage in 15 seconds…</p>
 
     </div>
   );

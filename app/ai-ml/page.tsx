@@ -75,16 +75,19 @@ export default function AiMlPage() {
             </div>
           </section>
 
-          {/* ANIMATION / VISUAL */}
-          <section>
-            {/* ANIMATION / VISUAL */}
-<section>
-  
+          
+<section className="overflow-hidden">
+  {/* Desktop Animation ONLY */}
+  <div className="hidden md:block">
     <AiFlowAnimation />
-  
-</section>
+  </div>
 
-          </section>
+  {/* Mobile: nothing shown at all */}
+  <div className="block md:hidden h-0"></div>
+
+  </section>
+
+          
 
           {/* KEY BENEFITS */}
           <section className="space-y-6">
