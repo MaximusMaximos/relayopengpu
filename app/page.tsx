@@ -185,7 +185,7 @@ const close = () => {
               </a>
 
                <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <img src="/Images/nav/gradient/ogpu-works.png"
+                <img src="/Images/nav/ogpu-works.png"
                 alt="ogpuworks icon"
                 className="w-6 h-6 object-contain"/>
 
@@ -335,7 +335,7 @@ const close = () => {
 
                 <a href="/enterprisehome" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradient/enterprise-main-icon.png"
+                    src="/Images/nav/enterprise-main-icon.png"
                     alt="enterprise icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -348,7 +348,7 @@ const close = () => {
 
                 <a href="/provider" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradient/providers-icon.png"
+                    src="/Images/nav/providers-icon.png"
                     alt="provider icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -361,7 +361,7 @@ const close = () => {
 
                 <a href="/relay" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradient/relay-main.png"
+                    src="/Images/nav/relay-main.png"
                     alt="relay icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -379,7 +379,7 @@ const close = () => {
 
                 <a href="/blockchain" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                   <img
-                    src="/Images/nav/gradient/blockchain-icon.png"
+                    src="/Images/nav/blockchain-icon.png"
                     alt="blockchain icon"
                     className="w-6 h-6 object-contain"
                   />
@@ -594,7 +594,7 @@ const close = () => {
 
               <a href="mailto:info@opengpu.network"
               className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-              <img src="/Images/Nav/Gradient/email-icon.png"
+              <img src="/Images/Nav/email-icon.png"
               alt="Email Icon"
               className="w-6 h-6 object-contain"/>
 
@@ -766,7 +766,7 @@ const close = () => {
 
       {/* CTA BUTTON */}
       <a
-        href="/getstarted"
+        href="/"
         className="ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
           bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
           transition-all duration-300 hover:-translate-y-1
@@ -774,7 +774,7 @@ const close = () => {
           hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
           hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
       >
-        Join the Network →
+        Back To Main Site
       </a>
     </div>
 
@@ -887,8 +887,27 @@ const close = () => {
           <a href="/careers" className="text-gray-300 text-sm">Careers (Coming Soon)</a>
           <a href="mailto:info@opengpu.network" className="text-gray-300 text-sm">Contact</a>
         </div>
+       {/* CTA BUTTON — Now same size and style as "Get Started" */}
+<a
+  href="/"
+  className="mx-auto inline-block w-fit whitespace-nowrap
+    px-8 py-3 rounded-xl font-semibold text-white text-sm
+    bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
+    transition-all duration-300 hover:-translate-y-1
+    shadow-[0_0_20px_rgba(0,198,230,0.20)]
+    hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
+    hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
+>
+  Back To Main Site
+</a>
+
+
+
+
+
 
       </motion.div>
+      
     )}
   </AnimatePresence>
 
@@ -1823,7 +1842,7 @@ className="w-full bg-[#F6F9FA] py-24 px-6">
     {/* ROUTING LAYER */}
     <div className="flex flex-col items-center gap-2">
       <img
-        src="/Images/clean_swivel-gradient.png"
+        src="/Images/clean_swivel-gradiant.png"
         alt="OGPU Routing Logo"
         className="h-20 w-auto drop-shadow-xl"
       />
