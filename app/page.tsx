@@ -185,7 +185,7 @@ const close = () => {
               </a>
 
                <a href="/howogpuworks" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                <img src="/Images/nav/ogpu-works.png"
+                <img src="/Images/nav/"
                 alt="ogpuworks icon"
                 className="w-6 h-6 object-contain"/>
 
@@ -766,7 +766,7 @@ const close = () => {
 
       {/* CTA BUTTON */}
       <a
-        href="/"
+        href="/getstarted"
         className="ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
           bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
           transition-all duration-300 hover:-translate-y-1
@@ -774,7 +774,7 @@ const close = () => {
           hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
           hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
       >
-        Back To Main Site
+        Join the Network →
       </a>
     </div>
 
