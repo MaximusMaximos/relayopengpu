@@ -12,8 +12,13 @@ export default function HowToBuyOgpuPage() {
       {/* HERO */}
       <BuyHero />
 
-      {/* MAIN BODY */}
+      
+    {/* MAIN BODY */}
+    
       <main className="min-h-screen bg-[#020617] text-slate-100 font-sans">
+        {/* Mobile-only spacer (fixes overlap) */}
+<div className="block md:hidden h-32"></div>
+
 
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-10 pb-20 space-y-16 md:space-y-20">
 
@@ -243,7 +248,7 @@ export default function HowToBuyOgpuPage() {
         </div>
 
         {/* PAGE BOTTOM SPACER */}
-<div className="h-20 md:h-20"></div>
+<div className="h-15 md:h-15"></div>
 </main>
 
 
