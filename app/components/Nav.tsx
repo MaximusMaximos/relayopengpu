@@ -97,6 +97,17 @@ export default function Nav() {
   </div>
 </a>
 
+<a href="/howtobuy" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+                <img src="/Images/clean_swivel.png"
+                alt="ogpuworks icon"
+                className="w-6 h-6 object-contain"/>
+
+                <div className="flex flex-col">
+                <span className="text-sm font-medium text-white">How To Buy OGPU</span>
+                <p className="text-gray-400 text-xs">Our native token.</p>
+  </div>
+</a>
+
               <a href="https://ogpuscan.io" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
                 <div className="text-[#00E9FF] text-xl">📊</div>
                 <div>
@@ -337,7 +348,7 @@ export default function Nav() {
                 </a>
 
                 <a
-                  href="https://opengpu.network/how-to-buy"
+                  href="/howtobuy"
                   className="p-3 rounded-lg hover:bg-white/5 transition flex flex-col"
                 >
                   <span className="text-[#00E9FF] text-lg">💳</span>
@@ -743,7 +754,7 @@ export default function Nav() {
           <p className="text-white font-semibold text-sm mt-3">dApps</p>
           <a href="https://nft.opengpu.network/" className="text-gray-300 text-sm">Open NFT</a>
           <a href="https://dapps.opengpu.network/token-creator" className="text-gray-300 text-sm">Token Creator</a>
-          <a href="https://opengpu.network/how-to-buy" className="text-gray-300 text-sm">Buy OGPU</a>
+          <a href="/howtobuy" className="text-gray-300 text-sm">Buy OGPU</a>
           <a href="https://dapps.opengpu.network/multisender" className="text-gray-300 text-sm">Multisender</a>
         </div>
 

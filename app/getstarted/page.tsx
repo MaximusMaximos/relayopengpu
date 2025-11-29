@@ -22,141 +22,166 @@ export default function GetStartedPage() {
           {/* HERO */}
           <section className="relative rounded-3xl bg-gradient-to-br from-[#050816] via-[#050B1F] to-[#071426] text-white px-6 md:px-10 lg:px-14 py-10 md:py-14 overflow-hidden">
 
-  {/* Glows */}
-  <div className="pointer-events-none">
-    <div className="absolute -top-32 -left-20 w-72 h-72 bg-cyan-500/25 blur-3xl" />
-    <div className="absolute -bottom-40 -right-10 w-80 h-80 bg-blue-500/30 blur-3xl" />
-  </div>
+            {/* Glows */}
+            <div className="pointer-events-none">
+              <div className="absolute -top-32 -left-20 w-72 h-72 bg-cyan-500/25 blur-3xl" />
+              <div className="absolute -bottom-40 -right-10 w-80 h-80 bg-blue-500/30 blur-3xl" />
+            </div>
 
-  <motion.div
-    initial="hidden"
-    animate="visible"
-    variants={fadeUp}
-    transition={{ duration: 0.5 }}
-    className="relative grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center"
-  >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+              className="relative grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center"
+            >
 
-    {/* TEXT SIDE */}
-    <div className="space-y-6">
-      <div className="space-y-3">
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-cyan-300">
-          Get Started
-        </p>
+              {/* TEXT SIDE */}
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-cyan-300">
+                    Get Started
+                  </p>
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-          Join the OpenGPU Network
-        </h1>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+                    Join the OpenGPU Network
+                  </h1>
 
-        <h2 className="text-xl md:text-2xl font-medium text-cyan-300">
-          Save on compute. Earn from idle GPUs.
-        </h2>
-      </div>
+                  <h2 className="text-xl md:text-2xl font-medium text-cyan-300">
+                    Save on compute. Earn from idle GPUs.
+                  </h2>
+                </div>
 
-      <p className="text-sm md:text-base text-slate-200 max-w-xl">
-        OpenGPU connects clients and GPU providers worldwide through a unified routing layer. 
-        AI teams run workloads up to <span className="text-cyan-300 font-semibold">60%–80% cheaper</span>, 
-        while providers earn by contributing unused compute to the global network. 
-        No middlemen, no wasted hardware.
-      </p>
+                <p className="text-sm md:text-base text-slate-200 max-w-xl">
+                  OpenGPU connects clients and GPU providers worldwide through a unified routing layer.
+                  AI teams run workloads up to <span className="text-cyan-300 font-semibold">60%–80% cheaper</span>,
+                  while providers earn by contributing unused compute to the global network.
+                  No middlemen, no wasted hardware.
+                </p>
 
-      <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap gap-3 pt-2">
 
-        {/* CLIENT CTA */}
-        <a
-          href="https://client.opengpu.network/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] shadow-[0_14px_45px_rgba(0,0,0,0.55)] hover:translate-y-0.5 hover:shadow-[0_20px_65px_rgba(0,0,0,0.65)] transition"
-        >
-          Get Compute Power →
-        </a>
+                  {/* CLIENT CTA */}
+                  <a
+                    href="https://client.opengpu.network/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] shadow-[0_14px_45px_rgba(0,0,0,0.55)] hover:translate-y-0.5 hover:shadow-[0_20px_65px_rgba(0,0,0,0.65)] transition"
+                  >
+                    Get Compute Power →
+                  </a>
 
-        {/* PROVIDER CTA */}
-        <a
-          href="#provider"
-          className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium border border-slate-500/70 bg-white/5 hover:bg-white/10 transition"
-        >
-          Start Earning →
-        </a>
+                  {/* PROVIDER CTA */}
+                  <a
+                    href="#provider"
+                    className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium border border-slate-500/70 bg-white/5 hover:bg-white/10 transition"
+                  >
+                    Start Earning →
+                  </a>
 
-      </div>
+                </div>
 
-      <p className="text-xs md:text-sm text-slate-300 max-w-xl pt-2">
-        OpenGPU is building AI’s open compute layer, where global scale meets fair economics.
-      </p>
-    </div>
+                <p className="text-xs md:text-sm text-slate-300 max-w-xl pt-2">
+                  OpenGPU is building AI’s open compute layer, where global scale meets fair economics.
+                </p>
+              </div>
 
-    {/* HERO VIDEO */}
-    <div className="relative space-y-3">
-      <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm">
-        <div className="aspect-video">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/7UnpFqUNFBQ"
-            title="OpenGPU Windows provider setup"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </div>
+              {/* HERO VIDEO */}
+              <div className="relative space-y-3">
+                <div className="rounded-2xl overflow-hidden border border-white/15 bg-white/10 backdrop-blur-sm">
+                  <div className="aspect-video">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/7UnpFqUNFBQ"
+                      title="OpenGPU Windows provider setup"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
 
-      <a
-        href="https://www.youtube.com/watch?v=6ZARCPQrJGM"
-        target="_blank"
-        className="text-xs md:text-sm text-cyan-300 hover:text-cyan-100 underline"
-      >
-        macOS users: click here to watch the macOS setup tutorial →
-      </a>
+                <a
+                  href="https://www.youtube.com/watch?v=6ZARCPQrJGM"
+                  target="_blank"
+                  className="text-xs md:text-sm text-cyan-300 hover:text-cyan-100 underline"
+                >
+                  macOS users: click here to watch the macOS setup tutorial →
+                </a>
 
-      {/* RIGHT – LIVE MINI STATS */}
-      <LiveMiniStats />
-    </div>
+                <LiveMiniStats />
+              </div>
 
-  </motion.div>
-</section>
+            </motion.div>
+          </section>
 
+          {/* NEWCOMERS SECTION */}
+          <section className="space-y-4">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
+              New here?
+            </p>
+
+            <div className="space-y-3 max-w-3xl">
+              <h2 className="text-xl md:text-2xl font-semibold">
+                First time using OpenGPU?
+              </h2>
+
+              <p className="text-sm md:text-base text-slate-600">
+                If you're new to the network, start with the{" "}
+                <a
+                  href="/howtobuy"
+                  className="text-cyan-600 hover:text-cyan-500 underline"
+                >
+                  How to Buy OGPU
+                </a>{" "}
+                page. It shows the safest places to buy OGPU, how to bridge to the
+                OGPU Native Chain, and how to confirm your tokens are ready.
+                Once you're holding OGPU, return here to begin earning or accessing compute.
+              </p>
+            </div>
+          </section>
 
           {/* HOW IT WORKS */}
           <section className="space-y-6">
-           <motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={fadeUp}
-  transition={{ duration: 0.45, delay: 0.05 }}
-  className="grid gap-4 md:gap-5 md:grid-cols-4"
->
-  {[
-    {
-      title: "Connect your GPU and wallet",
-      body: "Install the OpenGPU Provider Suite and connect your wallet so you can receive rewards and register your hardware.",
-    },
-    {
-      title: "Workloads are assigned automatically",
-      body: "The network distributes AI and ML tasks to your GPU based on availability and performance. No Relay interaction needed.",
-    },
-    {
-      title: "Tasks execute instantly",
-      body: "Your GPU processes real AI, ML, and rendering jobs with zero DevOps or manual configuration.",
-    },
-    {
-      title: "Earn in real time",
-      body: "Track rewards, utilization, and tasks through the Management dApp as they happen.",
-    },
-  ].map((item) => (
-    <div
-      key={item.title}
-      className="rounded-2xl border border-slate-200 bg-white px-4 py-4 md:px-5 md:py-5 shadow-sm"
-    >
-      <h3 className="text-sm md:text-base font-semibold mb-2">
-        {item.title}
-      </h3>
-      <p className="text-xs md:text-sm text-slate-600">{item.body}</p>
-    </div>
-  ))}
-</motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeUp}
+              transition={{ duration: 0.45, delay: 0.05 }}
+              className="grid gap-4 md:gap-5 md:grid-cols-4"
+            >
+              {[
+                {
+                  title: "Connect your GPU and wallet",
+                  body: "Install the OpenGPU Provider Suite and connect your wallet so you can receive rewards and register your hardware.",
+                },
+                {
+                  title: "Workloads are assigned automatically",
+                  body: "The network distributes AI and ML tasks to your GPU based on availability and performance. No Relay interaction needed.",
+                },
+                {
+                  title: "Tasks execute instantly",
+                  body: "Your GPU processes real AI, ML, and rendering jobs with zero DevOps or manual configuration.",
+                },
+                {
+                  title: "Earn in real time",
+                  body: "Track rewards, utilization, and tasks through the Management dApp as they happen.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-4 md:px-5 md:py-5 shadow-sm"
+                >
+                  <h3 className="text-sm md:text-base font-semibold mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600">{item.body}</p>
+                </div>
+              ))}
+            </motion.div>
 
           </section>
+
           {/* MAP PLACEHOLDER */}
           <section className="space-y-4">
             <motion.div
@@ -190,90 +215,89 @@ export default function GetStartedPage() {
             </motion.div>
           </section>
 
-{/* PROVIDER SUITE */}
-<section id="provider" className="space-y-6 scroll-mt-32">
-  <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    variants={fadeUp}
-    transition={{ duration: 0.45 }}
-    className="space-y-2"
-  >
-    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
-      Provider suite
-    </p>
-    <h2 className="text-2xl md:text-3xl font-semibold">Download the OpenGPU Provider Suite</h2>
-    <p className="text-sm md:text-base text-slate-600 max-w-2xl">
-      Start earning with your GPU resources. Download the Provider Suite for your operating system.
-    </p>
-  </motion.div>
+          {/* PROVIDER SUITE */}
+          <section id="provider" className="space-y-6 scroll-mt-32">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeUp}
+              transition={{ duration: 0.45 }}
+              className="space-y-2"
+            >
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
+                Provider suite
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold">Download the OpenGPU Provider Suite</h2>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl">
+                Start earning with your GPU resources. Download the Provider Suite for your operating system.
+              </p>
+            </motion.div>
 
-  <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    variants={fadeUp}
-    transition={{ duration: 0.45, delay: 0.05 }}
-    className="grid gap-4 md:grid-cols-3"
-  >
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeUp}
+              transition={{ duration: 0.45, delay: 0.05 }}
+              className="grid gap-4 md:grid-cols-3"
+            >
 
-    {/* macOS */}
-    <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">macOS</h3>
-        <p className="text-xs md:text-sm text-slate-600">Optimized installer for Apple silicon and Intel Macs.</p>
-      </div>
-      <a
-        href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/osx_arm64/OpenGPU-Provider-Suite-3.1.0.pkg"
-        download
-        className="mt-4"
-      >
-        <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
-          Download for macOS →
-        </button>
-      </a>
-    </div>
+              {/* macOS */}
+              <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">macOS</h3>
+                  <p className="text-xs md:text-sm text-slate-600">Optimized installer for Apple silicon and Intel Macs.</p>
+                </div>
+                <a
+                  href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/osx_arm64/OpenGPU-Provider-Suite-3.1.0.pkg"
+                  download
+                  className="mt-4"
+                >
+                  <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
+                    Download for macOS →
+                  </button>
+                </a>
+              </div>
 
-    {/* Windows */}
-    <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">Windows</h3>
-        <p className="text-xs md:text-sm text-slate-600">Compatible with NVIDIA-based Windows desktops.</p>
-      </div>
-      <a
-        href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/windows_64/OpenGPU-Provider-Suite-3.1.0.exe"
-        download
-        className="mt-4"
-      >
-        <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
-          Download for Windows →
-        </button>
-      </a>
-    </div>
+              {/* Windows */}
+              <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Windows</h3>
+                  <p className="text-xs md:text-sm text-slate-600">Compatible with NVIDIA-based Windows desktops.</p>
+                </div>
+                <a
+                  href="https://oerelease.opengpu.network/download/flavor/default/3.1.0/windows_64/OpenGPU-Provider-Suite-3.1.0.exe"
+                  download
+                  className="mt-4"
+                >
+                  <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
+                    Download for Windows →
+                  </button>
+                </a>
+              </div>
 
-    {/* Linux */}
-    <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">Linux</h3>
-        <p className="text-xs md:text-sm text-slate-600">Run OpenGPU providers on your Linux rigs.</p>
-      </div>
-      <a
-        href="https://opengpu.network/download/linux"
-        download
-        className="mt-4"
-      >
-        <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
-          Download for Linux →
-        </button>
-      </a>
-    </div>
+              {/* Linux */}
+              <div className="rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Linux</h3>
+                  <p className="text-xs md:text-sm text-slate-600">Run OpenGPU providers on your Linux rigs.</p>
+                </div>
+                <a
+                  href="https://opengpu.network/download/linux"
+                  download
+                  className="mt-4"
+                >
+                  <button className="w-full inline-flex items-center justify-center rounded-full px-4 py-2 text-xs md:text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_10px_30px_rgba(15,23,42,0.45)] hover:translate-y-0.5 hover:shadow-[0_16px_45px_rgba(15,23,42,0.55)] transition">
+                    Download for Linux →
+                  </button>
+                </a>
+              </div>
 
-  </motion.div>
-</section>
+            </motion.div>
+          </section>
 
-
-{/* MANAGEMENT DAPP */}
+          {/* MANAGEMENT DAPP */}
           <section className="space-y-6">
             <motion.div
               initial="hidden"
@@ -317,26 +341,22 @@ export default function GetStartedPage() {
                   ))}
                 </div>
 
-               <a
-  href="https://management.opengpu.network/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_14px_40px_rgba(15,23,42,0.55)] hover:translate-y-0.5 hover:shadow-[0_20px_60px_rgba(15,23,42,0.65)] transition"
->
-  Launch Management dApp
-</a>
-
+                <a
+                  href="https://management.opengpu.network/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] text-white shadow-[0_14px_40px_rgba(15,23,42,0.55)] hover:translate-y-0.5 hover:shadow-[0_20px_60px_rgba(15,23,42,0.65)] transition"
+                >
+                  Launch Management dApp
+                </a>
 
                 <p className="text-xs text-slate-500">
                   After installing the Provider Suite, use the Management dApp to keep full control of your GPUs and rewards.
                 </p>
               </div>
-              
+
             </motion.div>
           </section>
-
-
-          
 
           {/* LEARN MORE */}
           <section className="space-y-6 mb-24 md:mb-32">
