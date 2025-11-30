@@ -22,23 +22,28 @@ export default function Nav() {
 
   return (
     <>
-{/* FIXED HEADER — CTA = GET STARTED */}
+{/* FIXED HEADER — CENTERED NAV + RIGHT CTA */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-20 py-3 
-                  bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
+  <nav
+    className="w-full px-4 md:px-20 py-3 
+               bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40
+               flex items-center justify-between"
+  >
 
-    {/* LOGO */}
-    <a href="/" className="relative z-[1000] bg-transparent">
-      <img
-        src="/Images/OGPU-LOGO-Main-final.png"
-        alt="OGPU Logo"
-        className="h-10 w-auto md:h-16"
-        style={{ backdropFilter: "none", WebkitBackdropFilter: "none" }}
-      />
-    </a>
+    {/* LEFT — LOGO */}
+    <div className="flex-shrink-0">
+      <a href="/" className="relative z-[1000]">
+        <img
+          src="/Images/OGPU-LOGO-Main-final.png"
+          className="h-10 md:h-16 w-auto"
+          alt="OGPU Logo"
+        />
+      </a>
+    </div>
 
-    {/* DESKTOP NAV */}
-    <div className="hidden lg:flex items-center gap-6 text-sm text-gray-200 font-medium">
+    {/* CENTER — NAV MENU */}
+    <div className="hidden lg:flex flex-1 items-center justify-center 
+                    gap-7 text-[15px] text-gray-200 font-semibold">
 
       {/* ========================= PLATFORM ========================= */}
       <div
@@ -677,18 +682,19 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* CTA BUTTON */}
-      <a
-        href="/"
-        className="ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
-          bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
-          transition-all duration-300 hover:-translate-y-1
-          shadow-[0_0_20px_rgba(0,198,230,0.20)]
-          hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
-          hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
-      >
-        Back To Main Site
-      </a>
+{/* CTA BUTTON — EXACT SAME PADDING, STYLES, EVERYTHING */}
+<a
+  href="/"
+  className="absolute right-4 md:right-20 ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
+    bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
+    transition-all duration-300 hover:-translate-y-1
+    shadow-[0_0_20px_rgba(0,198,230,0.20)]
+    hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
+    hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
+>
+  Back To Main Site
+</a>
+
     </div>
 
     {/* MOBILE HAMBURGER */}

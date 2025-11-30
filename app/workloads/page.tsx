@@ -329,6 +329,12 @@ export default function AIWorkloadsPage() {
                 </div>
               </div>
             </div>
+
+            <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                      bg-gradient-to-br from-[#0A84FF]/75 to-[#00C6FF]/75
+                      shadow-inner shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                      transition-transform duration-300 hover:scale-110
+                      [filter:none]"></div>
           </section>
 
         </div>

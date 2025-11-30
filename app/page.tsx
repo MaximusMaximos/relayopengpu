@@ -120,27 +120,33 @@ const close = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/65 to-black/80 pointer-events-none" />
         </div>
 
-{/* FIXED HEADER — CTA = GET STARTED */}
+{/* FIXED HEADER — CENTERED NAV + RIGHT CTA */}
 <header className="fixed top-0 left-0 w-full z-[999]">
-  <nav className="w-full flex items-center justify-between px-4 md:px-20 py-3 
-                  bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40">
+  <nav
+    className="w-full px-4 md:px-20 py-3 
+               bg-[#00040F]/70 backdrop-blur-xl border-b border-[#0A84FF]/40
+               flex items-center justify-between"
+  >
 
-    {/* LOGO */}
-    <a href="/" className="relative z-[1000] bg-transparent">
-      <img
-        src="/Images/OGPU-LOGO-Main-final.png"
-        alt="OGPU Logo"
-        className="h-10 w-auto md:h-16"
-        style={{ backdropFilter: "none", WebkitBackdropFilter: "none" }}
-      />
-    </a>
+    {/* LEFT — LOGO */}
+    <div className="flex-shrink-0">
+      <a href="/" className="relative z-[1000]">
+        <img
+          src="/Images/OGPU-LOGO-Main-final.png"
+          alt="OGPU Logo"
+          className="h-10 md:h-16 w-auto"
+        />
+      </a>
+    </div>
 
-    {/* DESKTOP NAV */}
-    <div className="hidden lg:flex items-center gap-6 text-sm text-gray-200 font-medium">
+    {/* CENTER — NAV */}
+    <div className="hidden lg:flex flex-1 items-center justify-center 
+                    gap-7 text-[15px] text-gray-200 font-semibold">
+     
+  
 
       {/* ========================= PLATFORM ========================= */}
-      <div
-        className="relative"
+      <div className="relative"
         onMouseEnter={() => open("platform")}
         onMouseLeave={() => close()}
       >
@@ -556,12 +562,13 @@ const close = () => {
         </button>
 
         <div
-          className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[880px] rounded-2xl 
-                      bg-[#020617] border border-white/10 shadow-xl p-6 z-[999]
-                      grid grid-cols-2 gap-8
-                      transition-all duration-200
-                      ${openMenu === "company" ? "opacity-100 visible" : "opacity-0 invisible"}`}
-        >
+  className={`absolute left-[42%] -translate-x-[42%] mt-3 w-[880px] rounded-2xl 
+              bg-[#020617] border border-white/10 shadow-xl p-6 z-[999]
+              grid grid-cols-2 gap-8
+              transition-all duration-200
+              ${openMenu === "company" ? "opacity-100 visible" : "opacity-0 invisible"}`}
+>
+
 
           {/* LEFT */}
           <div className="w-full flex flex-col">
@@ -775,18 +782,7 @@ const close = () => {
         </div>
       </div>
 
-      {/* CTA BUTTON */}
-      <a
-        href="/getstarted"
-        className="ml-2 px-8 py-3 rounded-xl font-semibold text-white text-sm
-          bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
-          transition-all duration-300 hover:-translate-y-1
-          shadow-[0_0_20px_rgba(0,198,230,0.20)]
-          hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
-          hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
-      >
-        Join the Network →
-      </a>
+
     </div>
 
     {/* MOBILE HAMBURGER */}
@@ -999,80 +995,137 @@ const close = () => {
 
 
   {/* HERO CONTENT */}
-  <div className="relative z-20 flex flex-col h-full">
-    <div className="pt-40 md:pt-48 lg:pt-52" />
+<div className="relative z-20 flex flex-col h-full">
 
-    <div
-      style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-      className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-16 md:pb-20 lg:pb-24"
-    >
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-xl">
-        A Datacenter
-        <br />
-        Without Walls
-      </h1>
+  {/* Top spacer (reduced) */}
+  <div className="pt-32 md:pt-40 lg:pt-44" />
 
-      <p className="text-lg md:text-xl text-[#00e9ff] font-semibold mb-5 drop-shadow-md">
-        A global compute network for AI workloads.
-      </p>
+  <div
+    style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
+    className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-10 md:pb-12 lg:pb-14"
+  >
 
-      <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mb-6 drop-shadow">
-        OGPU routes workloads to the best available GPU capacity across data centers,
-        cloud providers and independent operators without splitting jobs.
-        This improves performance, reliability and cost efficiency at scale.
-      </p>
+    {/* MAIN TITLE */}
+    <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 drop-shadow-xl">
+      A Datacenter <br /> Without Walls
+    </h1>
 
-      <p className="text-base md:text-lg font-semibold text-white mb-10 drop-shadow-lg">
-        We do not replace the cloud, we route across it.
-      </p>
+    {/* LIVE STATS MOVED UP */}
+    <div className="mb-6">
+      <Livetransactions />
+    </div>
 
-      {/* HERO BUTTONS */}
-      <div className="flex flex-wrap justify-center gap-5">
+    {/* SUBHEAD */}
+    <p className="text-lg md:text-xl text-[#00e9ff] font-semibold mb-4 drop-shadow-md">
+      A global compute network for AI workloads.
+    </p>
 
-  {/* PRIMARY CTA — Run an Enterprise Pilot */}
- <button
-  onClick={() => (window.location.href = "/enterprisehome")}
-  className="px-12 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg
-             border-[2px] border-[#00E9FF]/80 bg-white/10 backdrop-blur-md
-             hover:bg-white/20 hover:border-[#00E9FF]
-             transition-all duration-300 hover:-translate-y-1
-             shadow-[0_0_25px_rgba(0,233,255,0.20)] hover:shadow-[0_0_40px_rgba(0,233,255,0.45)]">
-  Run A Free Enterprise Pilot
-</button>
+    {/* BODY TEXT */}
+    <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mb-5 drop-shadow">
+      OGPU routes workloads to the best available GPU capacity across data centers,
+      cloud providers and independent operators without splitting jobs.
+      This improves performance, reliability and cost efficiency at scale.
+    </p>
+
+    <p className="text-base md:text-lg font-semibold text-white mb-8 drop-shadow-lg">
+      We do not replace the cloud, we route across it.
+    </p>
+  </div>
+
+  {/* DOORWAYS — tightened spacing */}
+  <div className="max-w-6xl mx-auto px-6 pb-6 grid gap-6 md:grid-cols-3">
+
+{/* JOIN THE NETWORK */}
+<div className="rounded-2xl p-6 
+                bg-gradient-to-br from-[#00C6E6]/25 to-[#00E9FF]/10
+                border border-[#00C6E6]/40 
+                shadow-lg hover:shadow-xl 
+                backdrop-blur-md transition hover:-translate-y-1">
+
+  <h3 className="text-2xl font-semibold text-white mb-2">Join the Network</h3>
+
+  <p className="text-slate-300 text-sm mb-4">
+    Run compute tasks or earn by contributing your GPU power.
+  </p>
+
+  <a
+    href="/getstarted"
+    className="inline-flex items-center justify-center w-full rounded-xl 
+               px-5 py-3 text-sm font-semibold text-white
+
+               bg-[#00C6E6] 
+               border border-[#00C6E6]/70
+
+               shadow-[0_0_20px_rgba(0,198,230,0.35)]
+               hover:shadow-[0_0_30px_rgba(0,198,230,0.55)]
+               hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]
+               transition"
+  >
+    Get Started →
+  </a>
+</div>
 
 
+      {/* ENTERPRISE COMPUTE */}
+      <div className="rounded-2xl p-6 
+                      bg-black/40 
+                      border border-cyan-400/40 
+                      shadow-lg hover:shadow-xl 
+                      backdrop-blur-xl transition hover:-translate-y-1">
+        
+        <h3 className="text-2xl font-semibold text-white mb-2">Enterprise Compute</h3>
+        <p className="text-slate-300 text-sm mb-4">
+          High-performance GPU workloads with SLAs, Relay and global routing.
+        </p>
+
+        <a
+          href="/enterprisehome"
+          className="inline-flex items-center justify-center w-full rounded-xl 
+                     px-5 py-3 text-sm font-semibold text-white
+                     border border-[#00E9FF]/80
+                     bg-white/10
+                     shadow-[0_0_20px_rgba(0,233,255,0.35)]
+                     hover:shadow-[0_0_35px_rgba(0,233,255,0.55)]
+                     hover:bg-white/20
+                     transition"
+        >
+          Run A Free Enterprise Pilot →
+        </a>
+      </div>
+
+     {/* INVESTORS */}
+<div className="rounded-2xl p-6 
+                bg-gradient-to-br from-[#0B84FF]/20 to-[#00C6FF]/10
+                border border-[#0B84FF]/30 
+                shadow-lg hover:shadow-xl 
+                backdrop-blur-md transition hover:-translate-y-1">
+
+  <h3 className="text-2xl font-semibold text-white mb-2">Investors</h3>
+
+  <p className="text-slate-300 text-sm mb-4">
+    Explore the OGPU token and network-driven utility model.
+  </p>
+
+  <a
+    href="/howtobuy"
+    className="inline-flex items-center justify-center w-full rounded-xl 
+               px-5 py-3 text-sm font-semibold text-white
+
+               bg-gradient-to-r from-[#0B84FF] to-[#00C6FF]
+               shadow-[0_0_25px_rgba(0,140,255,0.3)]
+               hover:shadow-[0_0_35px_rgba(0,160,255,0.6)]
+
+               hover:opacity-90 transition"
+  >
+    View Token Guide →
+  </a>
+</div>
 
 
-  {/* SECONDARY CTA — Get Started */}
-<a
-  href="/getstarted"
-  className="
-    px-10 py-3.5 rounded-xl font-semibold text-white text-base md:text-lg
-
-    bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
-
-    transition-all duration-300 hover:-translate-y-1
-
-    shadow-[0_0_25px_rgba(0,198,230,0.20)]
-    hover:shadow-[0_0_40px_rgba(0,198,230,0.45)]
-
-    hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]
-  "
->
-  Join the Network →
-</a>
-
-
-
+  </div>
 
 </div>
-<div className="mt-12" />
-<Livetransactions />
-    </div>
-    
-  </div>
-  
-</section>  
+</section>
 
 
       {/* Live Stats */}
