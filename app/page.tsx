@@ -248,7 +248,8 @@ const close = () => {
                 </a>
 
                 <a href="https://takoswap.app/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition">
-                  <div className="text-[#00E9FF] text-xl">🐙</div>
+                  <div className="text-
+                  [#00E9FF] text-xl">🐙</div>
                   <div>
                     <p className="text-white text-sm font-semibold">TakoSwap</p>
                     <p className="text-gray-400 text-xs">Swap and route OGPU ecosystem assets.</p>
@@ -1126,6 +1127,58 @@ const close = () => {
 
 </div>
 </section>
+{/* WHY OGPU EXISTS – SIMPLE TEXT */}
+<section className="w-full py-20 md:py-28 bg-[#000104] relative z-20">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-white">
+        Why OGPU Exists
+      </h2>
+
+      <p className="text-base md:text-lg text-slate-300 mt-4">
+        Powerful computers all over the world sit unused. OGPU connects them so anyone can run AI quickly and affordably.
+      </p>
+    </div>
+
+    {/* 3 super simple blocks */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {/* Block 1 */}
+      <div className="rounded-2xl p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
+        <h3 className="text-xl font-semibold text-white mb-3">
+          Computers Not Being Used
+        </h3>
+        <p className="text-slate-300">
+          Many strong computers sit idle every day.
+        </p>
+      </div>
+
+      {/* Block 2 */}
+      <div className="rounded-2xl p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
+        <h3 className="text-xl font-semibold text-white mb-3">
+          OGPU Connects Them
+        </h3>
+        <p className="text-slate-300">
+          We join them together into one big network.
+        </p>
+      </div>
+
+      {/* Block 3 */}
+      <div className="rounded-2xl p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
+        <h3 className="text-xl font-semibold text-white mb-3">
+          You Use Them for AI
+        </h3>
+        <p className="text-slate-300">
+          Anyone can run AI fast and at lower cost.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 
       {/* Live Stats */}
@@ -1323,7 +1376,6 @@ chmod +x provider-install.sh
   </div>
 </section>
 
-
      
       {/* ========== SECTION: WHY OGPU ========== */}
 <section id="why-ogpu"
@@ -1457,236 +1509,156 @@ chmod +x provider-install.sh
 </section>
 
 
-{/* ========== SECTION: HOW OGPU WORKS ========== */}
-<section id="how-ogpu-works"
- className="w-full bg-white py-16 md:py-20 px-6 relative overflow-hidden">
+{/* ========== SECTION: HOW OGPU WORKS (HOMEPAGE VERSION) ========== */}
+<section
+  id="how-ogpu-works"
+  className="w-full bg-[#F7F9FC] py-20 md:py-24 px-6"
+>
+  <div className="max-w-7xl mx-auto">
 
-  {/* Light gradient background */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#F5FAFF] via-white to-[#E6F2FF] opacity-90 pointer-events-none" />
-
-  {/* GRID */}
-  <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-20 z-10">
-
-    {/* LEFT SIDE — Fade + slide from LEFT */}
-    <motion.div
-      className="flex flex-col"
-      initial={{ opacity: 0, x: -25 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
-    >
+    {/* Heading */}
+    <div className="text-center max-w-3xl mx-auto mb-16">
       <span className="text-[#005DEA] font-semibold tracking-wide text-xs md:text-sm uppercase">
-        How It Works
+        How OGPU Works
       </span>
 
-      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mt-3 mb-2 text-[#0A0F2C]">
-        How OGPU connects
+      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mt-3 mb-3 text-[#0A0F2C]">
+        How tasks run on the OGPU Network
       </h2>
 
-      <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-4 
-                     bg-gradient-to-r from-[#005DEA] to-[#00C6FF] bg-clip-text text-transparent">
-        your AI to global GPUs.
-      </h2>
-
-      <p className="text-base md:text-lg text-[#475569] leading-relaxed mb-8 max-w-lg">
-        OGPU automatically routes each workload to the best available GPU across the network,
-        balancing speed, reliability and cost with built-in failover and retry.
+      <p className="text-base md:text-lg text-[#475569] leading-relaxed">
+        A clear, simple view of how workloads enter the network, how routing works,
+        and how providers earn.
       </p>
+    </div>
 
-      {/* STEPS */}
-      <div className="space-y-6 border-l-2 border-[#00C6FF]/50 pl-6">
+    {/* 3-STEP GRID */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-16">
 
-        {/* STEP 1 */}
-        <div className="space-y-2">
-          <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-                             text-white flex items-center justify-center shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" 
-                      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
-              </svg>
-            </span>
-            Step 1 · Submit a workload
-          </h3>
-
-          <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-            You send an AI or rendering task through the dashboard or API. OGPU detects the GPU needed
-            and finds the closest and most efficient provider.
-          </p>
+      {/* STEP 1 */}
+      <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+        {/* ICON CHIP – matches Workloads / Why OGPU */}
+        <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                        bg-gradient-to-br from-[#0A84FF] to-[#00C6FF]
+                        shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                        transition-transform duration-300 hover:scale-110">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12"
+            />
+          </svg>
         </div>
 
-        {/* STEP 2 */}
-        <div className="space-y-2">
-          <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-                             text-white flex items-center justify-center shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" 
-                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
-            Step 2 · Routing and provider selection
-          </h3>
+        <h3 className="text-lg font-semibold text-[#0A0F2C] mb-2">
+          Submit a workload
+        </h3>
+        <p className="text-[#475569] text-sm md:text-base leading-relaxed">
+          Enterprise clients use Relay. Individual users and developers submit workloads through the Client dApp. OGPU detects the required GPU and prepares routing.
 
-          <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-            OGPU evaluates all available GPUs across the network and routes the task to the provider 
-            that can deliver the fastest results. If a machine becomes unavailable mid–run, the protocol 
-            shifts the execution to the next best GPU without interrupting progress.
-          </p>
-        </div>
-
-        {/* STEP 3 */}
-        <div className="space-y-2">
-          <h3 className="flex items-center gap-3 text-lg md:text-xl font-semibold text-[#1E293B]">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-                             text-white flex items-center justify-center shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                   strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
-              </svg>
-            </span>
-            Step 3 · Execute end to end
-          </h3>
-
-          <p className="text-sm md:text-base text-[#475569] leading-relaxed">
-            Each task executes on the chosen GPU for consistency. If a provider fails, OGPU seamlessly
-            migrates the workload to the next best machine.
-          </p>
-        </div>
-
+        </p>
       </div>
 
-      {/* Footer line */}
-      <p className="text-sm md:text-base text-[#0A0F2C] font-medium border-t border-gray-200 pt-6 mt-8">
-        Single executor by design, with on-chain verification, automatic failover and task-based billing.
-      </p>
+      {/* STEP 2 */}
+      <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+        <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                        bg-gradient-to-br from-[#0A84FF] to-[#00C6FF]
+                        shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                        transition-transform duration-300 hover:scale-110">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
 
-      {/* CTA */}
-      <a
-        href="https://ogpuscan.io/"
-        className="mt-4 px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
-                   bg-gradient-to-r from-blue-700 to-[#00C6FF]
-                   shadow-md hover:opacity-95 transition block text-center"
-      >
-        See real workloads running →
-      </a>
-    </motion.div>
+        <h3 className="text-lg font-semibold text-[#0A0F2C] mb-2">
+          Routing and execution
+        </h3>
+        <p className="text-[#475569] text-sm md:text-base leading-relaxed">
+          OGPU selects the fastest available GPU worldwide. Tasks run on a single
+          executor for consistency, with automatic failover if a machine goes offline.
+        </p>
+      </div>
 
-    {/* RIGHT SIDE — Steps Animation + Icons */}
-    <div className="flex flex-col items-center space-y-16">
-      <motion.div
-        initial={{ opacity: 0, x: 25 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
-        className="w-full flex flex-col items-center space-y-16"
-      >
+      {/* STEP 3 */}
+      <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+        <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
+                        bg-gradient-to-br from-[#0A84FF] to-[#00C6FF]
+                        shadow-[0_4px_14px_rgba(0,150,255,0.25)]
+                        transition-transform duration-300 hover:scale-110">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z"
+            />
+          </svg>
+        </div>
 
-        {/* NODE 1 */}
-        <motion.div
-          className="flex flex-col items-center"
-          animate={{ scale: [1, 1.06, 1] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
-              <path strokeLinecap="round" strokeLinejoin="round" 
-                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M16 12l-4-4m0 0l-4 4m4-4v12" />
-            </svg>
-          </div>
-          <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-            Submit workload
-          </p>
-        </motion.div>
+        <h3 className="text-lg font-semibold text-[#0A0F2C] mb-2">
+          Providers run and earn
+        </h3>
+        <p className="text-[#475569] text-sm md:text-base leading-relaxed">
+          Providers execute tasks and earn rewards. All results and settlement are 
+          verified on-chain with transparent task-based billing.
+        </p>
+      </div>
 
-        {/* CONNECTOR 1 */}
-        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-[#005DEA] to-[#00C6FF] rounded-full relative overflow-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#00C6FF] via-[#00C6FF] to-[#005DEA] opacity-70"
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
+    </div>
 
-        {/* NODE 2 */}
-        <motion.div
-          className="flex flex-col items-center"
-          animate={{ scale: [1, 1.06, 1] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.35 }}
-        >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
-              <path strokeLinecap="round" strokeLinejoin="round" 
-                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-            Routing and provider selection
-          </p>
-        </motion.div>
+    {/* CASH FLOW LINE */}
+    <p className="text-center text-sm text-[#475569] mb-20">
+      <span className="font-semibold text-[#0A0F2C]">Client pays</span>
+      <span className="text-[#00C6FF] mx-2">→</span>
+      <span className="font-semibold text-[#0A0F2C]">OGPU routes</span>
+      <span className="text-[#00C6FF] mx-2">→</span>
+      <span className="font-semibold text-[#0A0F2C]">Provider earns</span>
+    </p>
 
-        {/* CONNECTOR 2 */}
-        <motion.div className="w-[3px] h-24 bg-gradient-to-b from-[#005DEA] to-[#00C6FF] rounded-full relative overflow-hidden">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#00C6FF] via-[#00C6FF] to-[#005DEA] opacity-70"
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-          />
-        </motion.div>
-
-        {/* NODE 3 */}
-        <motion.div
-          className="flex flex-col items-center"
-          animate={{ scale: [1, 1.06, 1] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.8 }}
-        >
-          <div className="w-20 h-20 bg-white rounded-2xl shadow-md border border-[#00C6FF]/30 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-                 strokeWidth={1.8} stroke="currentColor" className="w-8 h-8 text-[#00C6FF]">
-              <path strokeLinecap="round" strokeLinejoin="round" 
-                    d="M9.75 3v4.51c0 .45.54.67.85.35l1.4-1.4a.5.5 0 01.7 0l1.4 1.4c.31.32.85.1.85-.35V3m3 18H6a2.25 2.25 0 01-2.25-2.25V9A2.25 2.25 0 016 6.75h12A2.25 2.25 0 0120.25 9v9.75A2.25 2.25 0 0118 21z" />
-            </svg>
-          </div>
-          <p className="mt-3 text-xs font-semibold tracking-wide text-[#0A0F2C] uppercase">
-            Execute end to end
-          </p>
-        </motion.div>
-
-      </motion.div>
+    {/* AUDIENCES */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-center">
+      <div>
+        <h4 className="text-lg font-semibold text-[#0A0F2C] mb-1">Clients</h4>
+        <p className="text-gray-500 text-sm">Run AI workloads.</p>
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold text-[#0A0F2C] mb-1">Providers</h4>
+        <p className="text-gray-500 text-sm">Earn from idle GPUs.</p>
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold text-[#0A0F2C] mb-1">Investors</h4>
+        <p className="text-gray-500 text-sm">Benefit from real network usage.</p>
+      </div>
     </div>
 
   </div>
-
-  {/* BOTTOM CTA */}
-<motion.div
-  className="relative max-w-3xl mx-auto mt-16 text-center z-10"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: false, amount: 0.2 }}
-  transition={{ duration: 0.45, ease: "easeOut" }}
->
-  <p className="text-sm md:text-base text-[#0A0F2C] mb-4">
-    Single executor by design, with on-chain verification, automatic failover and task-based billing.
-  </p>
-
-  <a
-    href="/howogpuworks"
-    className="px-10 py-4 rounded-2xl font-semibold text-base md:text-lg text-white
-               bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-               shadow-md hover:opacity-95 hover:translate-x-1 
-               transition-all duration-200 inline-block"
-  >
-    Learn more →
-  </a>
-</motion.div>
-
-
 </section>
+
 
 
       {/* BUILT FOR REAL AI WORKLOADS SECTION */}

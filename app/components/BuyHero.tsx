@@ -16,7 +16,7 @@ export default function BuyHero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // FIX: Generate random dust positions ONCE (no hydration errors)
+  // FIX: Generate random dust positions ONCE
   const dust = React.useMemo(() => {
     return [...Array(10)].map(() => ({
       top: Math.random() * 90,
@@ -39,26 +39,31 @@ export default function BuyHero() {
 
           {/* LEFT SIDE */}
           <div className="space-y-6 relative z-40 pt-4">
+
+            {/* LABEL */}
             <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-              Token guide
+              Investor Access
             </p>
 
+            {/* TITLE + SUBTEXT */}
             <div className="space-y-3">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white">
-                Buy OGPU.{" "}
+                Invest in OGPU.{" "}
                 <span className="bg-gradient-to-r from-[#0B84FF] to-[#00C6FF] bg-clip-text text-transparent">
-                  In a few clicks.
+                  Start in minutes.
                 </span>
               </h1>
 
               <p className="text-sm md:text-base text-slate-200 max-w-xl">
-                Choose a centralized exchange, a Web3 DEX, or bridge from Ethereum to the OGPU Native Chain.
-                This page walks you through each path so you can start using the network right away.
+                OGPU is the token that powers a global network of GPUs running real AI workloads. 
+                Choose the exchange or method you prefer and get started quickly.
               </p>
             </div>
 
             {/* HERO BUTTONS */}
             <div className="flex flex-wrap gap-3 pt-2">
+
+              {/* MEXC */}
               <a
                 href="https://www.mexc.com/"
                 target="_blank"
@@ -68,14 +73,16 @@ export default function BuyHero() {
                 Buy on MEXC
               </a>
 
+              {/* UNISWAP */}
               <a
                 href="https://app.uniswap.org/"
                 target="_blank"
                 className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-xs md:text-sm font-medium 
                 border border-slate-600/80 bg-slate-900/40 hover:bg-slate-900/70 shadow-[0_10px_30px_rgba(15,23,42,0.6)] transition text-white/90">
-                Swap on Uniswap
+                Buy on Uniswap
               </a>
 
+              {/* BRIDGEX */}
               <a
                 href="https://chainchangers.app/"
                 target="_blank"
@@ -84,29 +91,33 @@ export default function BuyHero() {
                 Bridge with BridgeX
               </a>
 
+              {/* VIEW CHAIN */}
               <a
                 href="https://opengpu.network/blockchain"
                 target="_blank"
                 className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-xs md:text-sm font-medium 
                 border border-slate-600/80 bg-slate-900/40 hover:bg-slate-900/70 transition text-white/90">
-                View OGPU Chain
+                Explore OGPU Chain
               </a>
+
             </div>
 
+            {/* SUBGUIDE */}
             <p className="text-[11px] md:text-xs text-slate-300 pt-3 max-w-md">
-              Once you hold OGPU on the OGPU Native Chain, you can immediately join the network as a provider
-              or use tokens to pay for AI workloads via the{" "}
+              After buying OGPU, you can join the network as a provider or use tokens 
+              to run AI tasks via the{" "}
               <a href="/getstarted" className="underline decoration-slate-500 hover:text-white">
                 Get Started
               </a>{" "}
               page.
             </p>
+
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE (unchanged) */}
           <div className="relative h-[260px] md:h-[300px] mt-20">
 
-            {/* CARD ABOVE ORBIT (unchanged) */}
+            {/* CARD ABOVE ORBIT */}
             <div className="absolute inset-0 z-[40] translate-y-60 rounded-3xl bg-slate-900/60 backdrop-blur-xl 
               border border-slate-700/70 shadow-[0_26px_70px_rgba(0,0,0,0.7)] p-5 flex flex-col justify-between">
 
@@ -147,7 +158,7 @@ export default function BuyHero() {
               </div>
             </div>
 
-            {/* ORBIT SYSTEM WITH PARALLAX + FIXED DUST */}
+            {/* ORBIT SYSTEM WITH PARALLAX + DUST */}
             <div
               className="absolute inset-0 z-[30] pointer-events-none"
               style={{ transform: `translateY(${parallax}px)` }}
@@ -180,6 +191,7 @@ export default function BuyHero() {
                 ))}
               </motion.div>
 
+              {/* ORBIT LOGOS */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative h-[320px] w-[320px]">
 
