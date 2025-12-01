@@ -2004,6 +2004,7 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
     alt="OGPU Logo"
     className="h-14 w-auto mb-4 opacity-95"
   />
+
   <p className="text-white/55 text-xs leading-relaxed max-w-sm text-left">
     A global decentralized GPU network for AI inference, training,
     rendering and high-performance workloads routed across global providers.
