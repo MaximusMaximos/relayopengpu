@@ -1160,7 +1160,8 @@ export default function Nav() {
                 </div>
 
                 {/* Footer CTA (only Get Started) */}
-                <div className="px-5 pb-6 pt-3 border-t border-white/10">
+                <div className="px-20 pb-20 pt-3 flex flex-col gap-3 border-t border-white/10">
+
                   <a
                     href="/getstarted"
                     className="w-full text-center block px-6 py-3 rounded-xl font-semibold text-white text-sm
