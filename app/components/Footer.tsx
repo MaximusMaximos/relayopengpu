@@ -114,10 +114,11 @@ export default function Footer() {
 {/* COLUMN 1 — LOGO + SUMMARY (Left aligned on all screens) */}
 <div className="col-span-2 md:col-span-1">
   <img
-    src="/Images/OGPU-LOGO-Main-final.png"
-    alt="OGPU Logo"
-    className="h-14 w-auto mb-4 opacity-95"
-  />
+  src="/Images/OGPU-LOGO-Main-final.png"
+  alt="OGPU Logo"
+  className="h-14 w-auto mb-4 mt-4 md:mt-0 opacity-95"
+/>
+
   <p className="text-white/55 text-xs leading-relaxed max-w-sm text-left">
     A global decentralized GPU network for AI inference, training,
     rendering and high-performance workloads routed across global providers.

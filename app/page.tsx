@@ -2108,22 +2108,36 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
     </a>
 
     {/* How It Works */}
-    <a href="#how-ogpu-works" className="flex flex-col items-center hover:text-white">
-      <span className="text-xl">🔄</span>
-      <span className="text-[10px]">How</span>
-    </a>
+ <a href="#how-ogpu-works" className="flex flex-col items-center hover:text-white transition">
+  <img
+    src="/Images/Nav/Platform/how_ogpu_works.png"
+    alt="How OGPU Works Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+  />
+  <span className="text-[10px]">How</span>
+</a>
 
-    {/* Workloads */}
-    <a href="#workloads" className="flex flex-col items-center hover:text-white">
-      <span className="text-xl">📦</span>
-      <span className="text-[10px]">Loads</span>
-    </a>
+    {/* AI Workloads */}
+<a href="#workloads" className="flex flex-col items-center hover:text-white transition">
+  <img
+    src="/Images/Nav/Solutions/ai-workloads.png"
+    alt="AI Workloads Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+  />
+  <span className="text-[10px]">AI</span>
+</a>
 
-    {/* Relay */}
-    <a href="#relay" className="flex flex-col items-center hover:text-white">
-      <span className="text-xl">🚀</span>
-      <span className="text-[10px]">Relay</span>
-    </a>
+
+   {/* Relay */}
+<a href="#relay" className="flex flex-col items-center hover:text-white transition">
+  <img
+    src="/Images/Nav/Solutions/relay.png"
+    alt="Relay Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+  />
+  <span className="text-[10px]">Relay</span>
+</a>
+
 
     {/* News */}
     <a href="#news" className="flex flex-col items-center text-white">
