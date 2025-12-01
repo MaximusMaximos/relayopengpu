@@ -888,13 +888,20 @@ export default function Nav() {
   )}
 
   {/* Mobile hamburger */}
-  <button
-    className="lg:hidden text-white text-3xl ml-auto pr-2"
-    onClick={() => setMobileNavOpen(true)}
-    aria-label="Open navigation"
-  >
-    ☰
-  </button>
+<button
+  className="
+    lg:hidden
+    text-white text-3xl
+    focus:outline-none
+    absolute right-4 top-1/2 -translate-y-1/2
+    z-[200]
+  "
+  onClick={() => setMobileNavOpen(true)}
+  aria-label="Open navigation"
+>
+  ☰
+</button>
+
 </div>
 
         </nav>
