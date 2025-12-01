@@ -74,20 +74,27 @@ useEffect(() => {
       {/* ========================= HERO SECTION ========================= */}
       <section id="hero" className="relative w-full min-h-screen">
 
-        {/* ---------------- Background Video ---------------- */}
-        <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover"
-            src="/Videos/Hero-Visual-Slow.mp4"
-            poster="/Images/hero-poster.jpg"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/65 to-black/80" />
-        </div>
+       {/* ---------------- Background Video ---------------- */}
+<div className="absolute inset-0 overflow-hidden flex items-center justify-center bg-[#040814]">
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    src="/Videos/Hero-Visual-Slow.mp4"
+    poster="/Images/hero-poster.jpg"
+    className="
+      w-full h-full
+      object-contain
+      object-top
+    "
+  />
+
+  {/* Premium darkening gradient */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/80 pointer-events-none" />
+</div>
 
         {/* ---------------- Glow Bar Under Nav ---------------- */}
         <div className="relative w-full h-[1.5px] overflow-hidden mt-[65px]">
