@@ -10,7 +10,7 @@ function PilotForm() {
   return (
     <form
       id="ogpu-pilot-form"
-      className="space-y-4"
+      className="space-y-5"
       onSubmit={async (e) => {
         e.preventDefault();
 
@@ -26,42 +26,91 @@ function PilotForm() {
           "&c=?";
 
         await fetch(url, { method: "GET", mode: "no-cors" });
-        window.location.href = "https://ogpu-site.vercel.app/pilot-confirmed";
+
+        window.location.href = "/pilot-confirmed";
       }}
     >
-      {/* ROW 1 */}
+      {/* INPUT GROUP 1 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input type="text" name="FNAME" placeholder="Name *" required
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
-        <input type="text" name="COMPANY" placeholder="Company"
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
+        <div>
+          <label className="text-xs text-slate-600">Name *</label>
+          <input
+            name="FNAME"
+            required
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="Your name"
+          />
+        </div>
+
+        <div>
+          <label className="text-xs text-slate-600">Company</label>
+          <input
+            name="COMPANY"
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="Company name"
+          />
+        </div>
       </div>
 
-      {/* ROW 2 */}
+      {/* INPUT GROUP 2 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input type="email" name="EMAIL" placeholder="Work email *" required
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
-        <input type="text" name="PROJTYPE" placeholder="Project type (LLM, RAG, Agents, GenAI)"
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
+        <div>
+          <label className="text-xs text-slate-600">Work Email *</label>
+          <input
+            name="EMAIL"
+            type="email"
+            required
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="you@company.com"
+          />
+        </div>
+
+        <div>
+          <label className="text-xs text-slate-600">Project Type</label>
+          <input
+            name="PROJTYPE"
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="LLM, Agents, GenAI..."
+          />
+        </div>
       </div>
 
-      {/* ROW 3 */}
+      {/* INPUT GROUP 3 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input type="text" name="GPUS" placeholder="GPU demand (A100, H100, 4090)"
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
-        <input type="text" name="PROVIDER" placeholder="Current provider"
-          className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-[#0F172A] placeholder-slate-400"/>
+        <div>
+          <label className="text-xs text-slate-600">GPU Demand</label>
+          <input
+            name="GPUS"
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="A100, H100, 4090..."
+          />
+        </div>
+
+        <div>
+          <label className="text-xs text-slate-600">Current Provider</label>
+          <input
+            name="PROVIDER"
+            className="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+            placeholder="AWS, RunPod, Lambda..."
+          />
+        </div>
       </div>
 
       {/* MESSAGE */}
-      <textarea name="MESSAGE" placeholder="Workload, scale, timeline..."
-        className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm min-h-[120px] text-[#0F172A] placeholder-slate-400"/>
+      <div>
+        <label className="text-xs text-slate-600">Workload Details</label>
+        <textarea
+          name="MESSAGE"
+          className="w-full min-h-[120px] px-3 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-[#0F172A] outline-none focus:border-[#00C6FF]"
+          placeholder="Describe your workload, scale, model, timeline..."
+        />
+      </div>
 
       <input type="hidden" name="tags" value="Pilot Lead" />
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-[#001F4E] to-[#00C6FF] text-white py-3.5 rounded-xl text-sm font-semibold hover:opacity-90"
+        className="w-full bg-gradient-to-r from-[#001F4E] to-[#00C6FF] text-white py-3.5 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90"
       >
         Submit Pilot Request
       </button>
@@ -70,76 +119,74 @@ function PilotForm() {
 }
 
 
+
 /* ===========================
          MAIN PAGE
 =========================== */
 export default function EnterprisePage() {
   return (
-    <main className="relative w-full min-h-screen bg-[#040814] text-white">
+    <main className="w-full min-h-screen bg-[#040814] text-white">
       <Nav />
 
-      {/* PAGE CONTENT */}
-      <section className="w-full min-h-screen bg-[#040814] pt-40 pb-24 px-6 flex items-center">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start">
+      <section className="pt-40 pb-24 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] gap-16 items-start">
 
-          {/* LEFT SIDE TEXT */}
+          {/* TEXT PANEL */}
           <div className="space-y-6">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#00C6FF] uppercase">Enterprise Pilot</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-              Run an OGPU pilot.<br/>Benchmark real AI workloads.
-            </h1>
-
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              Test your inference, training or generative pipelines on the OGPU Network,
-              a decentralized GPU infrastructure delivering
-              <span className="font-semibold text-[#00C6FF]"> roughly 60–80 percent lower compute cost</span>.
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#00C6FF] uppercase">
+              Enterprise Pilot
             </p>
 
-            <div className="space-y-3 text-sm md:text-base text-gray-300">
-              <p><span className="font-semibold text-white">Task-based billing.</span> Pay only for work, not idle GPUs.</p>
-              <p><span className="font-semibold text-white">Real production workloads.</span> Not demos.</p>
-              <p><span className="font-semibold text-white">Automatic failover.</span> On-chain verification.</p>
-              <p><span className="font-semibold text-white">No commitment.</span> You keep benchmark data.</p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+              Run an OpenGPU pilot.  
+              Benchmark real AI workloads.
+            </h1>
+
+            <p className="text-lg text-gray-300 leading-relaxed max-w-md">
+              Evaluate inference, training, or generative workloads on decentralized GPUs delivering
+              <span className="text-[#00C6FF] font-semibold"> 60 to 80 percent lower compute cost </span>
+              with enterprise-grade performance.
+            </p>
+
+            <div className="space-y-3 text-base text-gray-300">
+              <p><span className="text-white font-semibold">Task-based billing.</span> Only pay for executed work.</p>
+              <p><span className="text-white font-semibold">Real workloads.</span> No demos or toy tasks.</p>
+              <p><span className="text-white font-semibold">Auto failover.</span> Network-level reliability.</p>
+              <p><span className="text-white font-semibold">On-chain verification.</span> Transparent execution.</p>
             </div>
 
-            <p className="text-xs md:text-sm text-gray-400 mt-4 max-w-sm">
-              After submission, our team will review your workload and reply with GPU recommendations.
+            <p className="text-xs text-gray-400">
+              After submission, our team replies same day with GPU recommendations.
             </p>
           </div>
 
-
-          {/* RIGHT FORM CARD */}
-          <div className="w-full">
-            <div className="bg-white rounded-2xl shadow-[0_18px_50px_rgba(0,0,0,0.45)] border border-slate-200 p-6 md:p-8">
-              <div className="flex flex-col items-center mb-6">
-                <img src="/Images/OGPU-LOGO-Main-black.png" className="h-20 mb-3"/>
-                <h2 className="text-xl md:text-2xl font-semibold text-[#0F172A]">Request your pilot</h2>
-                <p className="text-sm md:text-base text-[#4B5563] mt-1 text-center">
-                  Tell us about your workload and we will review same day.
-                </p>
+          {/* FORM CARD */}
+          <div>
+            <div className="bg-white rounded-2xl p-8 shadow-[0_18px_50px_rgba(0,0,0,0.5)] border border-slate-200">
+              <div className="text-center mb-6">
+                <img src="/Images/OGPU-LOGO-Main-black.png" className="h-20 mx-auto mb-3" />
+                <h2 className="text-2xl font-semibold text-[#0F172A]">Request your pilot</h2>
+                <p className="text-sm text-slate-600">We review every submission same day.</p>
               </div>
 
-              {/* ⬇️ Client-only form (no hydration errors ever) */}
               <PilotForm />
-
             </div>
           </div>
 
         </div>
       </section>
 
-
       {/* FOOTER */}
-      <footer className="w-full bg-[#020617] text-white/70 text-sm py-6 px-6 border-t border-white/10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <img src="/Images/OGPU-LOGO-Main-final.png" className="h-10 opacity-90"/>
-            <span>© {new Date().getFullYear()} OGPU Network</span>
+      <footer className="bg-[#020617] border-t border-white/10 text-white/70 text-sm py-6 px-6">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="flex gap-3 items-center">
+            <img src="/Images/OGPU-LOGO-Main-final.png" className="h-10 opacity-90" />
+            © {new Date().getFullYear()} OpenGPU Network
           </div>
           <div className="flex gap-4">
             <a href="/" className="hover:text-white">Main Site</a>
-            <a href="/#" className="hover:text-white">Privacy</a>
-            <a href="/#" className="hover:text-white">Terms</a>
+            <a href="/privacy" className="hover:text-white">Privacy</a>
+            <a href="/terms" className="hover:text-white">Terms</a>
           </div>
         </div>
       </footer>

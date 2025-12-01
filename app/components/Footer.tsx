@@ -2,6 +2,8 @@
 
 import React from "react";
 import SafeInput from "../components/SafeInput";
+import FooterSubscribe from "../components/FooterSubscribe";
+
 
 export default function Footer() {
   return (
@@ -87,32 +89,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* EMAIL SIGNUP */}
-      <div className="relative mt-4 w-full max-w-xs md:max-w-sm">
-        <div className="flex items-center bg-white/15 rounded-lg p-2 border border-white/10 w-full">
-          <SafeInput
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 bg-transparent outline-none text-white placeholder-white/60 px-2 text-xs"
-          />
-
-          <button
-            className="px-4 py-2 rounded-md bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-                       font-semibold text-white hover:opacity-90 transition text-xs whitespace-nowrap"
-          >
-            Subscribe
-          </button>
-        </div>
+     <FooterSubscribe />
 
         <p className="text-[10px] text-white/45 mt-1">
-          No spam. Updates only.
         </p>
       </div>
 
     </div>
   </div>
-</div>
-
 
  {/* ========================================================= */}
 {/* SNOWFLAKE-STYLE GRID */}

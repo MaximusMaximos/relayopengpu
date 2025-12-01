@@ -2,12 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import featured from "@/data/featured.json";
+import news from "@/data/news.json";
+
 
 import Nav from "./components/Nav";                    // ⭐ GLOBAL NAV
 import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
 import PricingComparator from "./components/PricingComparator";
 import Livetransactions from "./components/Livetransactions";
+import FooterSubscribe from "./components/FooterSubscribe";
+
 
 export default function Page() {
 
@@ -37,23 +42,28 @@ export default function Page() {
   }, []);
 
   // PARTNER LOGO SCROLLER
-  const baseLogos = [
-    { src: "/Images/nosana.png", alt: "Nosana" },
-    { src: "/Images/lena.png", alt: "Lena AI" },
-    { src: "/Images/ozak.png", alt: "Ozak AI" }
-  ];
-  const logos = [...baseLogos, ...baseLogos, ...baseLogos, ...baseLogos];
+const baseLogos = [
+  { src: "/Images/Partners/nosana.png", alt: "Nosana" },
+  { src: "/Images/Partners/lenaai.png", alt: "Lena AI" },
+  { src: "/Images/Partners/ozakai.png", alt: "Ozak AI" },
+  { src: "/Images/Partners/seeweb.png", alt: "SeeWeb" },
+  { src: "/Images/Partners/ovhcloud.png", alt: "OVH Cloud" }
+];
 
-  useEffect(() => {
-    controls.start({
-      x: ["0%", "-50%"],
-      transition: {
-        duration: 28,
-        repeat: Infinity,
-        ease: "linear"
-      }
-    });
-  }, [controls]);
+// Duplicate for smooth endless scroll
+const logos = [...baseLogos, ...baseLogos];
+
+useEffect(() => {
+  controls.start({
+    x: ["0%", "-50%"],
+    transition: {
+      duration: 35,
+      repeat: Infinity,
+      ease: "linear"
+    }
+  });
+}, [controls]);
+
 
   return (
     <main className="relative w-full bg-[#040814] text-white overflow-x-hidden">
@@ -379,7 +389,7 @@ export default function Page() {
   className="block"
 >
   <button className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A84FF] to-[#00C8FF] text-white font-semibold shadow-[0_10px_24px_rgba(0,160,255,0.35)] hover:shadow-[0_14px_32px_rgba(0,160,255,0.45)] transition">
-    Download for macOS→
+    Download for macOS →
   </button>
 </a>
 
@@ -461,56 +471,69 @@ chmod +x provider-install.sh
 
 
 
-{/* PARTNER SLIDER — FIXED FOR MOBILE PORTRAIT */}
 <section className="w-full bg-white py-16 md:py-20 overflow-hidden relative">
-  <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#0A0F2C] mb-10 leading-tight">
-    Trusted by teams building the future of AI infrastructure
-  </h2>
+  <h2 className="text-xl md:text-2xl font-semibold text-center text-[#0A0F2C] mb-6">
+  Trusted by teams building the future of AI infrastructure
+</h2>
+
 
   <div className="relative overflow-hidden w-full">
-    <div className="flex w-max"> 
-      {/* TRACK 1 */}
+
+    {/* LEFT FADE */}
+    <div className="
+      pointer-events-none
+      absolute left-0 top-0 
+      h-full w-[140px]
+      bg-gradient-to-r from-white to-transparent
+      z-20
+    "></div>
+
+    {/* RIGHT FADE */}
+    <div className="
+      pointer-events-none
+      absolute right-0 top-0 
+      h-full w-[140px]
+      bg-gradient-to-l from-white to-transparent
+      z-20
+    "></div>
+
+    {/* LOGO TRACKS */}
+    <div className="flex w-max">
+
       <motion.div
-        className="flex items-center gap-16 pr-16 flex-none"
+        className="flex items-center gap-12 pr-12 flex-none"
         animate={{ x: ["0%", "-100%"] }}
         transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
       >
         {baseLogos.map((logo, i) => (
-          <div
-            key={`t1-${i}`}
-            className="flex items-center justify-center opacity-80 hover:opacity-100 transition flex-none"
-          >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="h-12 md:h-14 object-contain flex-none"
-            />
+          <div key={`t1-${i}`} className="flex items-center justify-center">
+            <div className="w-[190px] h-[85px] flex items-center justify-center">
+              <img src={logo.src} className="max-h-full max-w-full object-contain" />
+            </div>
           </div>
         ))}
       </motion.div>
 
-      {/* TRACK 2 (duplicate) */}
       <motion.div
-        className="flex items-center gap-16 pr-16 flex-none"
+        className="flex items-center gap-12 pr-12 flex-none"
         animate={{ x: ["0%", "-100%"] }}
         transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
       >
         {baseLogos.map((logo, i) => (
-          <div
-            key={`t2-${i}`}
-            className="flex items-center justify-center opacity-80 hover:opacity-100 transition flex-none"
-          >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="h-12 md:h-14 object-contain flex-none"
-            />
+          <div key={`t2-${i}`} className="flex items-center justify-center">
+            <div className="w-[190px] h-[85px] flex items-center justify-center">
+              <img src={logo.src} className="max-h-full max-w-full object-contain" />
+            </div>
           </div>
         ))}
       </motion.div>
+
     </div>
   </div>
 </section>
+
+
+
 
      
       {/* ========== SECTION: WHY OGPU ========== */}
@@ -1667,124 +1690,196 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 
 
 
-{/* NEWS & MOMENTUM SECTION */}
-<section id="news"
-className="w-full bg-white py-24 md:py-28 px-6">
+{/* NEWSROOM SECTION */}
+<section
+  id="news"
+  className="w-full bg-white py-24 md:py-32 px-6 relative overflow-hidden"
+>
+  {/* Decorative subtle backdrop */}
+  <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[url('/Images/ogpu-grid-light.png')] bg-cover bg-center" />
 
-  {/* HEADER */}
-  <motion.div
-    initial={{ opacity: 0, y: -20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ amount: 0.3 }}
-    transition={{ duration: 0.7, ease: "easeOut" }}
-    className="max-w-7xl mx-auto mb-10 md:mb-12"
-  >
-    <span className="text-xs font-semibold tracking-[0.15em] text-[#007BFF] uppercase">
-      Latest
-    </span>
+  <div className="relative max-w-7xl mx-auto">
 
-    <h2 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] mt-2 mb-3 leading-tight">
-      News and momentum
-    </h2>
+    {/* HEADER */}
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      className="mb-14"
+    >
+      <span className="text-xs font-semibold tracking-[0.18em] text-[#00C6FF] uppercase">
+        Latest Updates
+      </span>
 
-    <p className="text-base md:text-lg text-[#475569] max-w-3xl leading-relaxed">
-      OGPU momentum across AI and DePIN, tracked by real adoption.
-      Product releases, integrations and ecosystem growth in AI and decentralized compute.
-    </p>
-  </motion.div>
+      <h2 className="text-3xl md:text-4xl font-semibold text-[#0A0F2C] mt-3 leading-tight">
+        News and momentum across AI and decentralized compute
+      </h2>
 
-  {/* FILTER TABS */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ amount: 0.3 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
-    className="max-w-7xl mx-auto flex flex-wrap gap-3 md:gap-4 mb-8 md:mb-10"
-  >
-    {["Featured", "News", "Events", "Webinars"].map((tab, idx) => (
-      <button
-        key={tab}
-        className={`px-5 py-2 rounded-full text-sm font-medium border transition ${
-          idx === 0
-            ? "bg-[#2563EB] text-white border-[#2563EB]"
-            : "bg-white text-[#0A0F2C] border-gray-300 hover:border-[#2563EB] hover:text-[#2563EB]"
-        }`}
-      >
-        {tab}
-      </button>
-    ))}
-  </motion.div>
+      <div className="w-16 h-[3px] bg-[#00C6FF] rounded-full mt-5"></div>
 
-  {/* 4-CARD NEWS GRID */}
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
-    {[
-      {
-        src: "",
-        date: "EIN Presswire · Nov 17, 2025",
-        title: "OGPU launches task based layer for AI",
-        link: "Learn more →",
-      },
-      {
-        date: "Medium · Nov 17, 2025",
-        title: "Nosana and OGPU partner on compute",
-        link: "Read article →",
-      },
-      {
-        date: "Update · Nov 17, 2025",
-        title: "OGPU Scan hits one million tasks",
-        link: "View update →",
-      },
-      {
-        date: "Community · Nov 17, 2025",
-        title: "Relay enters pilot phase",
-        link: "Read more →",
-      },
-    ].map((card, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.3 }}
-        transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
-        className="flex flex-col"
-      >
-        <div className="w-full h-40 bg-gray-300 rounded-xl animate-pulse mb-4" />
-        <p className="text-xs text-[#475569] mb-1">{card.date}</p>
-        <h3 className="font-semibold text-lg text-[#0A0F2C] leading-snug mb-2">
-          {card.title}
-        </h3>
-        <a className="text-sm text-[#2563EB] font-medium hover:underline" href="#">
-          {card.link}
-        </a>
-      </motion.div>
-    ))}
+      <p className="text-base md:text-lg text-[#475569] max-w-2xl mt-6 leading-relaxed">
+        Live progress across the OGPU Network, including product launches,
+        enterprise integrations, infrastructure milestones and verified DePIN
+        activity.
+      </p>
+    </motion.div>
+
+    {/* SPOTLIGHT FEATURED ARTICLE */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      className="
+        w-full rounded-2xl overflow-hidden mb-20
+        bg-gradient-to-br from-[#0A0F2C] via-[#0F1C3A] to-[#071427]
+        border border-black/10 shadow-xl
+        flex flex-col md:flex-row
+      "
+    >
+{/* Featured Thumbnail */}
+<div className="md:w-1/2 flex items-center justify-center p-4">
+  <div className="w-full max-w-[580px] h-[340px] rounded-xl overflow-hidden shadow-lg bg-[#0F1C3A]/40">
+    <div className="relative w-full h-full">
+      <img
+        src="/Images/News/featured.png"
+        alt="Featured update"
+        className="w-full h-full object-cover object-center"
+      />
+
+      {/* Soft overlay for premium feel */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00000020] to-transparent"></div>
+    </div>
   </div>
+</div>
 
-  {/* SMALL SUBLINE */}
-  <motion.p
-    initial={{ opacity: 0, y: 15 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ amount: 0.3 }}
-    transition={{ duration: 0.6 }}
-    className="text-sm text-[#475569] max-w-7xl mx-auto mt-6"
-  >
-    One million plus tasks, over two hundred and thirty providers, live since March 2025.
-  </motion.p>
 
-  {/* VIEW ALL LINK */}
-  <motion.div
-    initial={{ opacity: 0, y: 15 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ amount: 0.3 }}
-    transition={{ duration: 0.6, delay: 0.1 }}
-    className="max-w-7xl mx-auto mt-3"
-  >
-    <a href="#" className="text-[#2563EB] text-sm font-medium hover:underline">
+
+      {/* Featured Content */}
+      <div className="md:w-1/2 p-8 md:p-10 text-white flex flex-col justify-center">
+  
+
+        <p className="text-xs tracking-wide text-[#60A5FA] font-semibold mb-2">
+  FEATURED · OGPU UPDATE · DEC 2025
+</p>
+
+<h3 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+  OGPU launches new global website built for full enterprise adoption
+</h3>
+
+<p className="text-base md:text-lg text-gray-300 leading-relaxed">
+  The redesigned OGPU platform site introduces a unified enterprise experience for AI workloads,
+  GPU providers and ecosystem partners. It now includes structured routing documentation,
+  an enterprise-grade pilot onboarding flow, Relay gateway visibility, real-time network insights,
+  and a modular architecture built for scalability.
+</p>
+
+
+        <a
+          href="#"
+          className="inline-flex items-center gap-1 text-[#00C6FF] font-medium hover:underline"
+        >
+      
+        </a>
+      </div>
+    </motion.div>
+
+    {/* GRID NEWS CARDS */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+  {/* CARD COMPONENT */}
+  {[
+    {
+      tag: "Press",
+      date: "Oct 22, 2025",
+      source: "EIN Presswire",
+      title: "OGPU Network Announces Continued Development",
+      img: "https://img.einpresswire.com/large/977777/ogpu-network-from-hash-to-compu.jpeg",
+      link: "https://www.einpresswire.com/article/860150175/ogpu-network-announces-continued-development-of-decentralized-gpu-compute-infrastructure-amid-growing-ai-demand"
+    },
+    {
+      tag: "Event",
+      date: "Nov 18–19, 2025",
+      source: "Function 1 Dubai",
+      title: "OGPU Featured at Function 1, Dubai",
+      img: "https://opengpu.network/image/twitter/dubai-event.png",
+      link: "https://fnctn1.com/"
+    },
+    {
+      tag: "Partnership",
+      date: "Nov 17, 2025",
+      source: "Update",
+      title: "OGPU x Nosana Partnership Goes Live",
+      img: "https://opengpu.network/image/twitter/OGPU-Nosana.png",
+      link: "https://x.com/fatih_ogpu/status/1974115869392240896"
+    }
+  ].map((card, i) => (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.3 }}
+      transition={{ duration: 0.5, delay: i * 0.15 }}
+      whileHover={{ y: -6 }}
+      className="
+        rounded-2xl bg-white border border-slate-200 shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+        overflow-hidden cursor-pointer transition
+      "
+    >
+      {/* Card Thumbnail */}
+      <div className="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
+        <img
+          src={card.img}
+          className="w-full h-full object-cover opacity-90"
+          alt={card.title}
+        />
+      </div>
+
+      <div className="p-6">
+        {/* Tag */}
+        <span className="inline-block px-3 py-1 mb-3 text-[11px] font-semibold rounded-full bg-[#E6F6FF] text-[#007ACC]">
+          {card.tag}
+        </span>
+
+        {/* Metadata */}
+        <p className="text-xs text-[#6B7280] mb-1">
+          {card.source} · {card.date}
+        </p>
+
+        {/* Title */}
+        <h4 className="text-lg font-semibold text-[#0A0F2C] leading-snug mb-3">
+          {card.title}
+        </h4>
+
+        <a
+          className="text-sm text-[#2563EB] font-medium hover:underline"
+          href={card.link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn more →
+        </a>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
+
+    {/* FOOTER LINE */}
+    <div className="mt-12 text-sm text-[#475569]">
+      Live since March 2025. Over one million routed tasks, more than two hundred and thirty providers.
+    </div>
+
+    <a
+      href="#"
+      className="mt-2 inline-block text-[#2563EB] text-sm font-medium hover:underline"
+    >
       View all updates →
     </a>
-  </motion.div>
+  </div>
+</section>
 
-</section>   
 
 
 
@@ -1870,31 +1965,16 @@ className="w-full bg-white py-24 md:py-28 px-6">
         </div>
       </div>
 
-      {/* EMAIL SIGNUP */}
-      <div className="relative mt-4 w-full max-w-xs md:max-w-sm">
-        <div className="flex items-center bg-white/15 rounded-lg p-2 border border-white/10 w-full">
-          <SafeInput
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 bg-transparent outline-none text-white placeholder-white/60 px-2 text-xs"
-          />
+      <FooterSubscribe />
 
-          <button
-            className="px-4 py-2 rounded-md bg-gradient-to-r from-[#005DEA] to-[#00C6FF] 
-                       font-semibold text-white hover:opacity-90 transition text-xs whitespace-nowrap"
-          >
-            Subscribe
-          </button>
-        </div>
 
         <p className="text-[10px] text-white/45 mt-1">
-          No spam. Updates only.
         </p>
       </div>
 
     </div>
   </div>
-</div>
+
 
 
  {/* ========================================================= */}
