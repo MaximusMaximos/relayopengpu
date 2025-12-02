@@ -128,7 +128,7 @@ export default function Page() {
     mb-3 md:mb-5
   "
 >
-  The Global Routing Layer For AI Compute.
+  The Global Routing Layer For AI.
 </h2>
 
 {/* LIVE TRANSACTIONS */}
