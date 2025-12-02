@@ -1484,13 +1484,8 @@ chmod +x provider-install.sh
 
 </section>
 
-
-
-
-
     <footer className="relative w-full bg-[#050B18] text-white pt-32 pb-14 px-6 mt-0">
-
-     
+  
 
 {/* CTA BANNER (Enterprise on top, Get Started underneath — MOBILE FIXED) */}
 <div className="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 w-full max-w-6xl px-4 md:px-6">
@@ -1570,8 +1565,7 @@ chmod +x provider-install.sh
         </div>
       </div>
 
-      <FooterSubscribe />
-
+     <FooterSubscribe />
 
         <p className="text-[10px] text-white/45 mt-1">
         </p>
@@ -1580,10 +1574,8 @@ chmod +x provider-install.sh
     </div>
   </div>
 
-
-
  {/* ========================================================= */}
-{/* SNOWFLAKE-STYLE GRID (Desktop perfect, Mobile = 2 columns) */}
+{/* SNOWFLAKE-STYLE GRID */}
 {/* ========================================================= */}
 
 <div className="
@@ -1598,10 +1590,10 @@ chmod +x provider-install.sh
 {/* COLUMN 1 — LOGO + SUMMARY (Left aligned on all screens) */}
 <div className="col-span-2 md:col-span-1">
   <img
-    src="/Images/OGPU-LOGO-Main-final.png"
-    alt="OGPU Logo"
-    className="h-14 w-auto mb-4 opacity-95"
-  />
+  src="/Images/OGPU-LOGO-Main-final.png"
+  alt="OGPU Logo"
+  className="h-14 w-auto mb-4 mt-4 md:mt-0 opacity-95"
+/>
 
   <p className="text-white/55 text-xs leading-relaxed max-w-sm text-left">
     A global decentralized GPU network for AI inference, training,
@@ -1693,7 +1685,7 @@ chmod +x provider-install.sh
           <a href="https://opengpu.network/docs/legal-disclaimer.pdf" className="hover:text-white transition">Legal Disclaimer</a>
           <a href="https://linkedin.com/company/opengpu" className="hover:text-white transition">LinkedIn</a>
           <a href="https://medium.com/@ogpunetwork" className="hover:text-white transition">Medium</a>
-          <a href="https://youtube.com/@opengpunetwork" className="hover:text-white transition">YouTube</a>
+          <a href="https://www.youtube.com/@opengpunetwork" className="hover:text-white transition">YouTube</a>
           <a href="https://instagram.com/opengpunetwork" className="hover:text-white transition">Instagram</a>
         </div>
 
