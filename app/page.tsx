@@ -128,7 +128,7 @@ export default function Page() {
     mb-3 md:mb-5
   "
 >
-  The unified global routing layer<br />for AI compute.
+  The Global Routing <br></br> Layer For AI Compute.
 </h2>
 
 {/* LIVE TRANSACTIONS */}
@@ -150,7 +150,7 @@ export default function Page() {
 
 
     <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
-      <span className=" font-semibold">A datacenter without walls.</span><br></br>
+      <span className=" font-semibold">A data center without walls.</span><br></br>
       Workloads run faster and scale worldwide when compute isn’t limited to a single cloud.<br></br>
       <span className="italic"> Scale intelligently at a fraction of the cost.</span>
     </p>
