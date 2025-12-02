@@ -30,28 +30,48 @@ export default function LiveTransactions() {
 
   return (
     <div className="w-full flex justify-center">
+
+      {/* ================= MOBILE VERSION ================= */}
       <div
-  className="
-    flex items-center gap-3 px-5 py-2
-    rounded-full
-    bg-black/60
-    border border-[#00C8FF]/40
-    shadow-[0_0_12px_rgba(0,200,255,0.35)]
-    text-white text-xs font-medium
-  "
->
-
-        {/* RED PULSE */}
+        className="
+          flex md:hidden items-center gap-2
+          px-3 py-1 text-[10px]
+          bg-black/40
+          border border-white/20
+          rounded-full
+          backdrop-blur
+        "
+      >
         <span
-          className={`
-            w-2 h-2 rounded-full bg-red-500
-            ${justUpdated ? "animate-ping" : ""}
-          `}
+          className={`w-2 h-2 rounded-full bg-red-500 ${
+            justUpdated ? "animate-ping" : ""
+          }`}
         />
+        <span>[LIVE]</span>
+        <span className="text-[#00E9FF] font-semibold tracking-wide">
+          {txs ? txs.toLocaleString() : "--"}
+        </span>
+        <span>txs</span>
+      </div>
 
+      {/* ================= DESKTOP VERSION (UNTOUCHED) ================= */}
+      <div
+        className="
+          hidden md:flex items-center gap-3 px-5 py-2
+          rounded-full
+          bg-black/60
+          border border-[#00C8FF]/40
+          shadow-[0_0_12px_rgba(0,200,255,0.35)]
+          text-white text-xs font-medium
+        "
+      >
+        <span
+          className={`w-2 h-2 rounded-full bg-red-500 ${
+            justUpdated ? "animate-ping" : ""
+          }`}
+        />
         <span>[LIVE]</span>
 
-        {/* ELECTRIC BLUE COUNT */}
         <span className="text-[#00E9FF] font-semibold tracking-wide">
           {txs ? txs.toLocaleString() : "--"}
         </span>
@@ -59,9 +79,9 @@ export default function LiveTransactions() {
         <span>transactions</span>
 
         <span className="opacity-40">•</span>
-
         <span className="text-white/70">Data verified via OGPUScan</span>
       </div>
+
     </div>
   );
 }
