@@ -99,80 +99,66 @@ export default function Page() {
     {/* Top spacing — MOBILE NORMALIZED */}
     <div className="pt-12 md:pt-20 lg:pt-24" />
 
-    {/* HERO COPY */}
+{/* HERO COPY BLOCK — SNOWFLAKE WIDTH */}
 <div
   style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-  className="flex flex-col items-center text-center w-full px-6 pb-12 md:pb-14"
+  className="flex flex-col items-center text-center w-full mx-auto pb-12 md:pb-14"
 >
 
-  {/* Snowflake-wide text container */}
-  <div className="w-full max-w-[1800px] md:max-w-[2200px] mx-auto text-center px-4 md:px-10">
+  {/* ULTRAWIDE CONTAINER */}
+  <div className="w-full max-w-[1800px] mx-auto px-6">
 
+    {/* HEADLINES */}
+    <h1 className="
+  text-4xl md:text-6xl 
+  font-bold uppercase tracking-tight drop-shadow-xl
+">
+  COMPUTE WITHOUT BOUNDARIES
+</h1>
 
-
-    <h1
-      className="
-        text-4xl md:text-7xl
-        font-bold
-        tracking-tight
-        leading-[1.05]
-        mb-4 md:mb-6
-        drop-shadow-xl
-        uppercase
-      "
-      style={{ letterSpacing: "-0.5px" }}
-    >
-      Compute Without Boundaries
-    </h1>
-
-    <h2
+<h2
   className="
-    text-2xl md:text-5xl
-    font-bold
-    text-[#00E9FF]
-    uppercase
-    tracking-[0.03em]
-    leading-[1.05]
-    mb-4 md:mb-6
-    drop-shadow
+    text-4xl md:text-6xl font-bold uppercase tracking-tight 
+    bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
+    bg-clip-text text-transparent
+   drop-shadow
+    mb-3 md:mb-5
   "
 >
-  A Data Center Without Walls
+  A DATA CENTER WITHOUT WALLS
 </h2>
 
 
 
+    {/* LIVE TRANSACTIONS */}
     <div className="mb-3 md:mb-5">
       <Livetransactions />
     </div>
 
-    <p className="text-base md:text-xl text-white font-semibold mb-3 md:mb-4 drop-shadow-md">
+    {/* SUBLINES */}
+    <p className="text-base md:text-xl text-white font-semibold mb-2 md:mb-4 drop-shadow-md">
       Global GPU routing for high-demand AI workloads.
     </p>
 
     <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
-      Workloads run faster and scale globally when compute isn’t locked into a single cloud.<br></br>
+      Workloads run faster and scale globally when compute isn’t locked into a single cloud.
       <span className="italic"> Scale your AI workloads at a fraction of the cost.</span>
     </p>
 
   </div>
 </div>
 
-
-{/* Doorways */}
+{/* DOORWAYS — unchanged */}
 <div className="max-w-6xl mx-auto px-6 pb-12 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
-
 
   {/* Join the Network */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
                   backdrop-blur-xl shadow-lg hover:shadow-xl 
                   transition hover:-translate-y-1">
     <h3 className="text-xl font-semibold text-white mb-2">Join the Network</h3>
-
     <p className="text-slate-300 text-sm mb-5">
       Run workloads or contribute GPU capacity to earn.
     </p>
-
     <a
       href="/getstarted"
       className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
@@ -191,11 +177,9 @@ export default function Page() {
                   backdrop-blur-xl shadow-lg hover:shadow-xl 
                   transition hover:-translate-y-1">
     <h3 className="text-xl font-semibold text-white mb-2">Enterprise Compute</h3>
-
     <p className="text-slate-300 text-sm mb-5">
       High-performance workloads with global routing and SLAs.
     </p>
-
     <a
       href="/enterprisehome"
       className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
@@ -214,11 +198,9 @@ export default function Page() {
                   backdrop-blur-xl shadow-lg hover:shadow-xl 
                   transition hover:-translate-y-1">
     <h3 className="text-xl font-semibold text-white mb-2">Investors</h3>
-
     <p className="text-slate-300 text-sm mb-5">
       Learn about the OGPU token and network utility model.
     </p>
-
     <a
       href="/howtobuy"
       className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
@@ -233,6 +215,7 @@ export default function Page() {
   </div>
 
 </div>
+
 
 </div>
 </section>
