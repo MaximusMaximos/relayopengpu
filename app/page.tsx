@@ -96,17 +96,15 @@ export default function Page() {
   {/* Hero content */}
   <div className="relative z-20 flex flex-col h-full">
 
-    {/* Top spacing — MOBILE REDUCED */}
-    <div className="pt-10 md:pt-20 lg:pt-24" />
+    {/* Top spacing — MOBILE NORMALIZED */}
+    <div className="pt-12 md:pt-20 lg:pt-24" />
 
     {/* HERO COPY */}
     <div
       style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-      className="
-        flex flex-col items-center text-center max-w-4xl mx-auto px-6
-        pb-10 md:pb-14
-      "
+      className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-12 md:pb-14"
     >
+
       <h1 className="
         text-3xl md:text-6xl font-bold leading-tight 
         mb-3 md:mb-4 drop-shadow-xl
@@ -142,7 +140,8 @@ export default function Page() {
 
 
 {/* Doorways */}
-<div className="max-w-6xl mx-auto px-6 pb-14 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
+<div className="max-w-6xl mx-auto px-6 pb-12 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
+
 
   {/* Join the Network */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
@@ -219,6 +218,7 @@ export default function Page() {
 </section>
 
 <section className="w-full bg-[#020617] py-12 md:py-24">
+
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
@@ -267,7 +267,7 @@ export default function Page() {
 
 
 
-<section className="w-full bg-[#020617] py-10 md:py-0 px-6">
+<section className="w-full bg-[#020617] py-12 md:py-0 px-6">
   <div className="max-w-7xl mx-auto px-6">
     
     <div className="mb-6 md:mb-12">
@@ -278,16 +278,15 @@ export default function Page() {
 
   {/* Pricing Comparator */}
   <PricingComparator />
-
 </section>
 
 
 
 
 
-<section
+< section
   id="quickstart"
-  className="w-full bg-[#020617] py-12 md:py-24 px-6 border-t border-white/5"
+  className="w-full bg-[#020617] py-12 pb-12 md:py-24 px-6 border-t border-white/5"
 >
   <div className="max-w-7xl mx-auto">
 
@@ -403,7 +402,7 @@ chmod +x provider-install.sh
 
 
 {/* Partner Slider */}
-<section className="w-full bg-white py-12 md:py-16">
+<section className="w-full bg-white py-12 md:py-12">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
@@ -479,7 +478,8 @@ chmod +x provider-install.sh
 >
 
   {/* Image + Text Row */}
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[52%_48%] gap-8 md:gap-14 items-center">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[52%_48%] gap-6 md:gap-14 items-center">
+
 
     {/* Image */}
     <motion.div
@@ -582,12 +582,12 @@ chmod +x provider-install.sh
 {/* How OGPU Works */}
 <section
   id="how-ogpu-works"
-  className="w-full bg-[#F7F9FC] py-20 md:py-0 px-6"
+  className="w-full bg-[#F7F9FC] py-12 md:py-0 px-6"
 >
   <div className="max-w-7xl mx-auto">
 
     {/* Heading */}
-    <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
+    <div className="text-center max-w-3xl mx-auto mb-8 md:mb-14">
       <span className="text-[#005DEA] font-semibold tracking-wide text-xs md:text-sm uppercase">
         How OGPU Works
       </span>
@@ -603,7 +603,7 @@ chmod +x provider-install.sh
     </div>
 
     {/* 3-STEP GRID */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14">
 
       {/* STEP 1 */}
       <div className="bg-white rounded-2xl p-7 md:p-8 border border-gray-200 shadow-sm">
@@ -686,7 +686,7 @@ chmod +x provider-install.sh
     </div>
 
     {/* CASH FLOW LINE */}
-    <p className="text-center text-sm text-[#475569] mb-14">
+    <p className="text-center text-sm text-[#475569] mb-10 md:mb-14">
       <span className="font-semibold text-[#0A0F2C]">Client pays</span>
       <span className="text-[#00C6FF] mx-2">→</span>
       <span className="font-semibold text-[#0A0F2C]">OGPU routes</span>
@@ -715,7 +715,6 @@ chmod +x provider-install.sh
 
 
 
-
       {/* BUILT FOR REAL AI WORKLOADS SECTION */}
 <section id="workloads"
   className="w-full bg-[#F6F9FA] py-20 md:py-24 px-6">
@@ -739,7 +738,7 @@ chmod +x provider-install.sh
     />
 
     {/* Content */}
-    <div className="relative z-10 px-8 md:px-10 py-14 md:py-16 text-center text-white">
+    <div className="relative z-10 px-8 md:px-10 py-14 md:py-12 text-center text-white">
       <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
         Built for real AI workloads, not demos.
       </h2>
@@ -995,7 +994,7 @@ chmod +x provider-install.sh
  {/* BLOCKCHAIN SECTION — CLEAN ENTERPRISE OGPU STYLE */}
 <section
   id="blockchain"
-  className="relative w-full bg-[#040814] py-20 md:py-24 px-6 text-white overflow-hidden"
+  className="relative w-full bg-[#040814] py-12 md:py-24 px-6 text-white overflow-hidden"
 >
 
   {/* BACKGROUND CYAN MIST */}
@@ -1008,12 +1007,12 @@ chmod +x provider-install.sh
   <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
 
     {/* HEADER */}
-    <h2 className="text-3xl md:text-5xl font-semibold text-center mb-4 leading-tight">
+    <h2 className="text-3xl md:text-5xl font-semibold text-center mb-3 md:mb-4 leading-tight">
       The OGPU Blockchain
     </h2>
 
     {/* Verified Pill */}
-    <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full 
+    <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full 
                     bg-[#00E9FF]/10 border border-[#00E9FF]/30 backdrop-blur-sm">
       <span className="w-2 h-2 rounded-full bg-[#00E9FF] shadow-[0_0_8px_rgba(0,233,255,1)] animate-ping"></span>
       <span className="text-[#00E9FF] text-xs font-semibold tracking-wide uppercase">
@@ -1021,13 +1020,13 @@ chmod +x provider-install.sh
       </span>
     </div>
 
-    <p className="text-base md:text-lg text-gray-300 max-w-3xl text-center leading-relaxed mb-14">
+    <p className="text-base md:text-lg text-gray-300 max-w-3xl text-center leading-relaxed mb-10 md:mb-14">
       A high-throughput, compute-optimized blockchain purpose-built for routing, verifying and
       settling GPU workloads. Sub-second blocks, parallel execution and task-based settlement.
     </p>
 
     {/* MAIN GRID ROW */}
-    <div className="grid grid-cols-1 lg:grid-cols-[58%_42%] gap-14 items-center w-full mb-16">
+    <div className="grid grid-cols-1 lg:grid-cols-[58%_42%] gap-10 md:gap-14 items-center w-full mb-12 md:mb-16">
 
       {/* LEFT — BLOCK GRID */}
       <div className="w-full">
@@ -1059,7 +1058,7 @@ chmod +x provider-install.sh
 
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#00E9FF] shadow-[0_0_12px_rgba(0,233,255,0.9)]" />
-              <span className="tracking-wide">Live verification</span>
+              <span className="tracking-wider">Live verification</span>
             </span>
           </div>
         </div>
@@ -1070,12 +1069,12 @@ chmod +x provider-install.sh
       </div>
 
       {/* RIGHT — EXPLANATION */}
-      <div className="space-y-6">
+      <div className="space-y-5 md:space-y-6">
         <p className="text-xs font-semibold tracking-widest text-[#00E9FF] uppercase">
           Purpose-built L1
         </p>
 
-        <h3 className="text-xl md:text-2xl font-semibold">
+        <h3 className="text-lg md:text-2xl font-semibold">
           A blockchain engineered for compute, not speculation.
         </h3>
 
@@ -1118,13 +1117,13 @@ chmod +x provider-install.sh
     </div>
 
     {/* PIPELINE BAR */}
-    <div className="w-full max-w-5xl mb-16">
-      <div className="w-full bg-[#00E9FF]/10 border border-[#00E9FF]/30 rounded-2xl px-6 md:px-8 py-7 
+    <div className="w-full max-w-5xl mb-12 md:mb-16">
+      <div className="w-full bg-[#00E9FF]/10 border border-[#00E9FF]/30 rounded-2xl px-6 md:px-8 py-6 md:py-7 
                       shadow-[0_20px_60px_rgba(0,233,255,0.25)]">
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div className="text-left">
-            <p className="text-xs font-semibold tracking-widest text-[#00E9FF] uppercase mb-2">
+            <p className="text-xs font-semibold tracking-widest text-[#00E9FF] uppercase mb-1 md:mb-2">
               On-chain verification pipeline
             </p>
             <p className="text-sm text-gray-300 max-w-md">
@@ -1162,7 +1161,7 @@ chmod +x provider-install.sh
     </div>
 
     {/* CTA ROW */}
-    <div className="w-full max-w-4xl flex flex-col md:flex-row items-center justify-between gap-6">
+    <div className="w-full max-w-4xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-6">
       <p className="text-sm md:text-base text-gray-300 text-center md:text-left max-w-xl">
         Millions of compute tasks verified on mainnet. Explore live execution on OGPU Scan.
       </p>
@@ -1186,17 +1185,18 @@ chmod +x provider-install.sh
       </div>
     </div>
 
-    <p className="text-xs md:text-sm text-gray-400 mt-8 tracking-widest uppercase text-center">
+    <p className="text-xs md:text-sm text-gray-400 mt-6 md:mt-8 tracking-widest uppercase text-center">
       Real workloads. Real verification. Real settlement.
     </p>
   </div>
 </section>
 
 
+
 {/* ================= SECTION: BUILT FOR EVERYONE ================= */}
 <section
   id="built-for-everyone"
-  className="relative w-full bg-[#F7F9FC] py-20 md:py-24 px-6 overflow-hidden"
+  className="relative w-full bg-[#F7F9FC] py-12 md:py-24 px-6 overflow-hidden"
 >
 
   {/* BACKGROUND MESH */}
@@ -1211,13 +1211,13 @@ chmod +x provider-install.sh
     </svg>
   </div>
 
-  {/* INTRO LINE (FADE-IN) */}
+  {/* INTRO LINE */}
   <motion.div
     initial={{ opacity: 0, y: 25 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: false, amount: 0.4 }}
     transition={{ duration: 0.9, ease: "easeOut" }}
-    className="relative z-10 text-center mb-10"
+    className="relative z-10 text-center mb-8 md:mb-10"
   >
     <h3 className="text-2xl md:text-4xl font-semibold leading-snug
                    bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
@@ -1227,8 +1227,8 @@ chmod +x provider-install.sh
   </motion.div>
 
   {/* HEADER */}
-  <div className="relative z-10 max-w-6xl mx-auto text-center mb-10 md:mb-12">
-    <h2 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] leading-tight mb-4">
+  <div className="relative z-10 max-w-6xl mx-auto text-center mb-8 md:mb-12">
+    <h2 className="text-3xl md:text-5xl font-semibold text-[#0A0F2C] leading-tight mb-3">
       Built for everyone.
     </h2>
 
@@ -1240,10 +1240,9 @@ chmod +x provider-install.sh
   </div>
 
   {/* ROLES */}
-  <div className="relative z-10 max-w-5xl mx-auto mb-12 md:mb-16">
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+  <div className="relative z-10 max-w-5xl mx-auto mb-10 md:mb-16">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
 
-      {/* ROLE TEMPLATE */}
       {[
         { title: "Developers", text: "Run or experiment instantly without provisioning or DevOps." },
         { title: "Enterprises", text: "Migrate compute seamlessly and reduce operational cost." },
@@ -1257,7 +1256,7 @@ chmod +x provider-install.sh
           transition={{ duration: 0.7, delay: i * 0.1 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="w-5 h-5 mb-5 rounded-full bg-[#00C6FF] shadow-[0_0_18px_rgba(0,198,255,0.4)]" />
+          <div className="w-5 h-5 mb-4 rounded-full bg-[#00C6FF] shadow-[0_0_18px_rgba(0,198,255,0.4)]" />
           <h3 className="text-lg md:text-xl font-semibold text-[#0A0F2C] mb-2">{role.title}</h3>
           <p className="text-sm md:text-base text-[#475569] max-w-xs leading-relaxed">
             {role.text}
@@ -1269,7 +1268,7 @@ chmod +x provider-install.sh
   </div>
 
   {/* TAGLINE */}
-  <p className="relative z-10 text-xs md:text-sm text-[#0F172A] font-medium tracking-wide text-center mb-12">
+  <p className="relative z-10 text-xs md:text-sm text-[#0F172A] font-medium tracking-wide text-center mb-10 md:mb-12">
     The OGPU ecosystem connects everyone through a single global compute network.
   </p>
 
@@ -1277,9 +1276,9 @@ chmod +x provider-install.sh
   <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
     {/* LEFT */}
-    <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
+    <div className="bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
       <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Explore the OGPU ecosystem</h3>
-      <p className="text-sm md:text-base text-[#475569] mb-5">
+      <p className="text-sm md:text-base text-[#475569] mb-4 md:mb-5">
         Discover workloads, tools, dashboards and infrastructure powering the network.
       </p>
       <a
@@ -1293,9 +1292,9 @@ chmod +x provider-install.sh
     </div>
 
     {/* RIGHT */}
-    <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-gray-200">
+    <div className="bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
       <h3 className="text-xl font-semibold text-[#0A0F2C] mb-3">Join the OGPU community</h3>
-      <p className="text-sm md:text-base text-[#475569] mb-6">
+      <p className="text-sm md:text-base text-[#475569] mb-5 md:mb-6">
         Be part of a global ecosystem shaping decentralized compute.
       </p>
 
@@ -1303,7 +1302,7 @@ chmod +x provider-install.sh
         href="https://t.me/opengpu_network"
         className="inline-block px-8 py-3 rounded-xl font-semibold text-white
                    bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-                   shadow-[0_10px_30px_rgba(0,160,255,0.35)] hover:opacity-95 transition mb-6"
+                   shadow-[0_10px_30px_rgba(0,160,255,0.35)] hover:opacity-95 transition mb-5 md:mb-6"
       >
         Join Telegram →
       </a>
@@ -1329,6 +1328,7 @@ chmod +x provider-install.sh
   </div>
 
 </section>
+
 
 
 
