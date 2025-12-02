@@ -956,8 +956,7 @@ export default function Nav() {
       {/* Developer Docs */}
       <a
         href="https://docs.opengpu.network/"
-        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
-      >
+        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"  >
         <img
           src="/Images/Nav/Docs/developer-docs.png"
           alt="Developer Docs"
@@ -973,8 +972,11 @@ export default function Nav() {
       <a
         href="https://www.opengpu.network/docs/whitepaper.pdf"
         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
-      >
-       
+      ><img
+          src="/Images/Nav/Docs/whitepaper-white.png"
+          alt="Whitepaper icon"
+          className="w-6 h-6 object-contain"
+        />
         <div>
           <p className="text-white text-sm font-semibold">Whitepaper</p>
           <p className="text-gray-400 text-xs">Technical protocol.</p>
@@ -985,8 +987,11 @@ export default function Nav() {
       <a
         href="https://www.opengpu.network/docs/litepaper.pdf"
         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
-      >
-        
+      ><img
+          src="/Images/Nav/Docs/litepaper-white.png"
+          alt="Litepaper icon"
+          className="w-6 h-6 object-contain"
+        />
         <div>
           <p className="text-white text-sm font-semibold">Litepaper</p>
           <p className="text-gray-400 text-xs">High-level overview.</p>
@@ -997,11 +1002,17 @@ export default function Nav() {
       <a
         href="https://opengpu.network/roadmap"
         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
-      >
-       
+      ><img
+          src="/Images/Nav/Docs/roadmap-white.png"
+          alt="Roadmap icon"
+          className="w-6 h-6 object-contain"
+        />
         <div>
+      
           <p className="text-white text-sm font-semibold">Roadmap</p>
           <p className="text-gray-400 text-xs">What’s next.</p>
+
+          
         </div>
       </a>
 
@@ -1010,7 +1021,11 @@ export default function Nav() {
         href="https://opengpu.network/faq"
         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
       >
-        
+        <img
+          src="/Images/Nav/Docs/faq-white.png"
+          alt="FAQ icon"
+          className="w-6 h-6 object-contain"
+        />
         <div>
           <p className="text-white text-sm font-semibold">FAQ</p>
           <p className="text-gray-400 text-xs">Common questions.</p>
@@ -1038,7 +1053,11 @@ export default function Nav() {
         href="https://academy.opengpu.network/"
         className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
       >
-        
+       <img
+          src="/Images/Nav/Docs/academy-white.png"
+          alt="Academy icon"
+          className="w-6 h-6 object-contain"
+        />
         <div>
           <p className="text-white text-sm font-semibold">Academy</p>
           <p className="text-gray-400 text-xs">Learn the ecosystem.</p>
