@@ -100,31 +100,63 @@ export default function Page() {
     <div className="pt-12 md:pt-20 lg:pt-24" />
 
     {/* HERO COPY */}
-    <div
-      style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-      className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-12 md:pb-14"
-    >
-   
- <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-3 md:mb-4 drop-shadow-xl">
-  Compute Without Boundaries
-</h1>
+<div
+  style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
+  className="flex flex-col items-center text-center w-full px-6 pb-12 md:pb-14"
+>
 
-<h2 className="text-base md:text-2xl font-semibold text-[#00E9FF] mb-2 md:mb-3 drop-shadow">
-  Stop paying ransom to one cloud.
+  {/* Snowflake-wide text container */}
+  <div className="w-full max-w-[1800px] md:max-w-[2200px] mx-auto text-center px-4 md:px-10">
+
+
+
+    <h1
+      className="
+        text-4xl md:text-7xl
+        font-bold
+        tracking-tight
+        leading-[1.05]
+        mb-4 md:mb-6
+        drop-shadow-xl
+        uppercase
+      "
+      style={{ letterSpacing: "-0.5px" }}
+    >
+      Compute Without Boundaries
+    </h1>
+
+    <h2
+  className="
+    text-2xl md:text-5xl
+    font-bold
+    text-[#00E9FF]
+    uppercase
+    tracking-[0.03em]
+    leading-[1.05]
+    mb-4 md:mb-6
+    drop-shadow
+  "
+>
+  A Data Center Without Walls
 </h2>
 
-<div className="mb-3 md:mb-4">
-  <Livetransactions />
-</div>
-
-<p className="text-base md:text-xl text-white font-semibold mb-3 md:mb-4 drop-shadow-md">
-  Global GPU routing results in faster runs, unlimited scale and a fraction of the cost.
-</p>
 
 
-
-
+    <div className="mb-3 md:mb-5">
+      <Livetransactions />
     </div>
+
+    <p className="text-base md:text-xl text-white font-semibold mb-3 md:mb-4 drop-shadow-md">
+      Global GPU routing for high-demand AI workloads.
+    </p>
+
+    <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
+      Workloads run faster and scale globally when compute isn’t locked into a single cloud.
+      <span className="italic"> Scale your AI workloads at a fraction of the cost.</span>
+    </p>
+
+  </div>
+</div>
 
 
 {/* Doorways */}
