@@ -151,7 +151,7 @@ export default function Page() {
     </p>
 
     <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
-      Workloads run faster and scale globally when compute isn’t locked into a single cloud.
+      Workloads run faster and scale globally when compute isn’t locked into a single cloud.<br></br>
       <span className="italic"> Scale your AI workloads at a fraction of the cost.</span>
     </p>
 
