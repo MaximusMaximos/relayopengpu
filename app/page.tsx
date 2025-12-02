@@ -141,8 +141,8 @@ export default function Page() {
     </p>
 
     <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
-      Workloads run faster and scale globally when compute isn’t locked into a single cloud.
-      <span className="italic"> Scale your AI workloads at a fraction of the cost.</span>
+      Workloads run faster and scale worldwide when compute isn’t limited to a single cloud.<br></br>
+      <span className="italic"> Scale intelligently at a fraction of the cost.</span>
     </p>
 
   </div>
