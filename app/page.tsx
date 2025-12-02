@@ -121,14 +121,14 @@ export default function Page() {
 
 <h2
   className="
-    text-4xl md:text-6xl font-bold uppercase tracking-tight
+    text-3xl md:text-5xl font-bold uppercase tracking-tight
     bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
     bg-clip-text text-transparent
     drop-shadow
     mb-3 md:mb-5
   "
 >
-  The Global Routing <br></br> Layer For AI Compute.
+  The Global Routing Layer For AI Compute.
 </h2>
 
 {/* LIVE TRANSACTIONS */}
