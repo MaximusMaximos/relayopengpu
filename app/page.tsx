@@ -104,38 +104,53 @@ export default function Page() {
       style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
       className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-12 md:pb-14"
     >
-
-      <h1 className="
-        text-3xl md:text-6xl font-bold leading-tight 
+   
+   <h1
+      className="
+        text-3xl md:text-6xl font-bold leading-tight
         mb-3 md:mb-4 drop-shadow-xl
-      ">
-        A Data Center <br /> Without Walls
-      </h1>
+      "
+    >
+      Compute Without Boundaries
+    </h1>
 
-      <div className="mb-3 md:mb-4">
-        <Livetransactions />
-      </div>
+    <h2
+      className="
+        text-base md:text-2xl font-semibold text-white/90
+        mb-3 md:mb-4 drop-shadow
+      "
+    >
+      A Data Center Without Walls
+    </h2>
 
-      <p className="
-        text-base md:text-xl text-[#00e9ff] font-semibold 
+    <p
+      className="
+        text-base md:text-xl text-[#00e9ff] font-semibold
         mb-3 md:mb-4 drop-shadow-md
-      ">
-        A global network for high-demand workloads.
-      </p>
+      "
+    >
+      Global GPU routing for high-demand AI workloads.
+    </p>
 
-      <p className="
+    <p
+      className="
         text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl
         mb-3 md:mb-4 drop-shadow
-      ">
-        OGPU routes workloads to the best available GPU capacity across data centers, cloud providers, and independent operators without splitting jobs. This improves performance, reliability, and overall efficiency at scale.
-      </p>
+      "
+    >
+      Faster execution, enterprise reliability and up to 60–80 percent lower cost
+      compared to traditional cloud compute.
+    </p>
 
-      <p className="
-        text-sm md:text-lg font-semibold text-white 
+    <p
+      className="
+        text-sm md:text-lg font-semibold text-white
         mb-6 md:mb-8 drop-shadow-lg
-      ">
-        We do not replace the cloud, we route across it.
-      </p>
+      "
+    >
+      We do not replace the cloud, we route across it.
+    </p>
+
     </div>
 
 
