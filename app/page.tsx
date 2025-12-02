@@ -105,43 +105,22 @@ export default function Page() {
       className="flex flex-col items-center text-center max-w-4xl mx-auto px-6 pb-12 md:pb-14"
     >
    
- <h1 className="
-    text-3xl md:text-6xl font-bold leading-tight
-    mb-3 md:mb-4 drop-shadow-xl
-  ">
-    Compute Without Boundaries
-  </h1>
+ <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-3 md:mb-4 drop-shadow-xl">
+  Compute Without Boundaries
+</h1>
 
-  {/* BRAND SUBLINE */}
-  <p className="
-    text-sm md:text-lg 
-    font-medium text-white/80
-    mb-3 md:mb-4
-  ">
-    A Datacenter Without Walls
-  </p>
+<h2 className="text-base md:text-2xl font-semibold text-[#00E9FF] mb-2 md:mb-3 drop-shadow">
+  Stop paying ransom to one cloud.
+</h2>
 
-  {/* LIVE TRANSACTIONS */}
-  <div className="mb-3 md:mb-4">
-    <Livetransactions />
-  </div>
+<div className="mb-3 md:mb-4">
+  <Livetransactions />
+</div>
 
-  {/* SHORT VALUE PROP */}
-  <p className="
-    text-base md:text-xl 
-    text-[#00e9ff] font-semibold
-    mb-3 md:mb-4 drop-shadow-md
-  ">
-    Global GPU routing for high-demand AI workloads.
-  </p>
-
-  {/* PAIN + SOLUTION + COST SAVINGS */}
-  <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mb-3 md:mb-4 drop-shadow">
-  Workloads run faster and cheaper when compute isn’t trapped inside one cloud. <br></br>
-  <em>
-    {" "}Scale your AI workloads at a fraction of the cost.
-  </em>
+<p className="text-base md:text-xl text-white font-semibold mb-3 md:mb-4 drop-shadow-md">
+  Global GPU routing results in faster runs, unlimited scale and a fraction of the cost.
 </p>
+
 
 
 
