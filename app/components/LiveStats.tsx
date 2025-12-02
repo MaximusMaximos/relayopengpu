@@ -2,10 +2,8 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-/* -------------------------------------------------------------------------- */
-/*                                LIVE STATS CONTEXT                           */
-/* -------------------------------------------------------------------------- */
 const LiveStatsContext = createContext<any>(null);
+
 export function useLiveStats() {
   return useContext(LiveStatsContext);
 }
@@ -15,17 +13,12 @@ export default function LiveStats() {
   const [justUpdated, setJustUpdated] = useState(false);
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 
-  /* ---------------------------------------------------------------------- */
-  /*                               FETCH STATS                              */
-  /* ---------------------------------------------------------------------- */
+  // Fetch stats
   async function fetchStats() {
     try {
       const res = await fetch(
         "https://management-backend.opengpu.network/api/dashboard/stats",
-        {
-          cache: "no-store",
-          next: { revalidate: 0 }, // <-- stops Vercel from caching stale data
-        }
+        { cache: "no-store", next: { revalidate: 0 } }
       );
 
       const json = await res.json();
@@ -40,54 +33,46 @@ export default function LiveStats() {
     }
   }
 
-  /* Initial + interval fetch */
   useEffect(() => {
     fetchStats();
     const interval = setInterval(fetchStats, 10000);
     return () => clearInterval(interval);
   }, []);
 
-  /* ---------------------------------------------------------------------- */
-  /*                        REALTIME TPS VERIFICATION                       */
-  /* ---------------------------------------------------------------------- */
+  // Realtime counter
   const BASE_VERIFIED = 532_000_000;
   const TPS = 9500;
 
   const [verified, setVerified] = useState(BASE_VERIFIED);
   useEffect(() => {
-    const t = setInterval(() => setVerified((v) => v + TPS), 1000);
+    const t = setInterval(() => setVerified(v => v + TPS), 1000);
     return () => clearInterval(t);
   }, []);
 
-  /* ---------------------------------------------------------------------- */
-  /*                              STAT BOX UI                                */
-  /* ---------------------------------------------------------------------- */
+  // Stat box component
   const StatBox = ({ value, label, subtitle }: any) => (
-    <div className="flex flex-col items-center text-center max-w-[240px]">
-      <div className="text-4xl font-bold text-[#00E9FF] mb-1">
+    <div className="flex flex-col items-center text-center max-w-[200px]">
+      <div className="text-4xl font-bold text-[#00E9FF] mb-1 tracking-tight">
         {hasLoadedOnce ? value : "--"}
       </div>
-
-      <p className="text-lg font-semibold text-white leading-tight mb-1">
+      <p className="text-lg font-semibold text-white leading-tight mb-1 tracking-tight">
         {label}
       </p>
-
-      <p className="text-sm text-gray-400 leading-snug">{subtitle}</p>
+      <p className="text-sm text-gray-400 leading-snug tracking-tight">
+        {subtitle}
+      </p>
     </div>
   );
 
-  /* ---------------------------------------------------------------------- */
-  /*                                RENDER                                   */
-  /* ---------------------------------------------------------------------- */
-
   return (
     <LiveStatsContext.Provider value={{ data, verified }}>
-      <section className="w-full bg-[#000104] pt-10 pb-20 px-6 border-b border-white/5">
-        {/* TITLE */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-5xl font-bold mb-3">Backed by Global Scale</h2>
+      <div className="w-full">
 
-          <div className="flex items-center justify-center gap-2 text-sm text-cyan-300">
+        {/* Title */}
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-4xl font-bold mb-2">Backed by Global Scale</h2>
+
+          <div className="flex items-center justify-center gap-2 text-sm text-cyan-300 mb-2">
             <span
               className={`w-2.5 h-2.5 rounded-full bg-[#00E9FF] ${
                 justUpdated ? "live-dot-pulse" : ""
@@ -96,14 +81,13 @@ export default function LiveStats() {
             <span>Live • Updates every 10 seconds</span>
           </div>
 
-          <p className="text-lg text-gray-300 mt-4">
-            The OGPU Network is live, production-tested, and running real AI
-            workloads worldwide.
+          <p className="text-base md:text-lg text-gray-300">
+            The OGPU Network is live, production-tested, and running real workloads globally.
           </p>
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 place-items-center">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4 place-items-center">
           <StatBox
             value={`${data?.activeProviders || "--"}+`}
             label="Active GPU Providers"
@@ -111,7 +95,7 @@ export default function LiveStats() {
           />
 
           <StatBox
-            value={data ? "60%–80%" : "--"}
+            value={data ? "60-80%" : "--"}
             label="Cost Reduction"
             subtitle="Compared to centralized cloud pricing."
           />
@@ -119,14 +103,15 @@ export default function LiveStats() {
           <StatBox
             value={`${data?.successRate?.toFixed(2) || "--"}%`}
             label="Network Uptime"
-            subtitle="Automated failover & redundancy."
+            subtitle="Automatic failover and redundancy."
           />
         </div>
 
-        <p className="text-center text-sm text-gray-400 mt-4">
-          Real Providers. Real Workloads. No hypothetical capacity claims.
+        <p className="text-center text-sm text-gray-400">
+          Real providers and real workloads, not simulated capacity.
         </p>
-      </section>
+
+      </div>
     </LiveStatsContext.Provider>
   );
 }

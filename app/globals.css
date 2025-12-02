@@ -77,3 +77,29 @@ body {
     box-shadow: 0 0 0 rgba(0, 233, 255, 0.6);
   }
 }
+
+
+/* ============================================================
+   QUICK NAV LINKS
+   ============================================================ */
+
+.quicknav-link {
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10, 15, 28, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.quicknav-link:hover {
+  background: rgba(0,198,230,0.85);
+  border-color: rgba(0,198,230,0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(0,198,230,0.35);
+}

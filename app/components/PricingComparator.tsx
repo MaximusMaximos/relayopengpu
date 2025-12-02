@@ -7,7 +7,7 @@ export default function PricingComparator() {
   const [aws, setAws] = useState("");
   const parsedAws = parseFloat(aws) || 0;
 
-  const ogpuCost = parsedAws * 0.25;   // adjust your logic
+  const ogpuCost = parsedAws * 0.25;
   const savings = parsedAws - ogpuCost;
   const percentage = parsedAws > 0 ? Math.round((savings / parsedAws) * 100) : 0;
 
@@ -18,30 +18,31 @@ export default function PricingComparator() {
       transition={{ duration: 0.5 }}
       className="
         rounded-3xl
-        border border-[#00C8FF]/40
-        bg-[#020617]
+        border border-white/10
+        bg-white/5
+        backdrop-blur-xl
         text-white
-        shadow-[0_0_40px_rgba(0,200,255,0.25)]
-        p-8
-        space-y-6
+        shadow-[0_0_28px_rgba(0,233,255,0.18)]
+        p-6 md:p-7
+        space-y-5
         max-w-3xl
         mx-auto
       "
     >
       {/* Header */}
       <div className="space-y-1">
-        <h3 className="text-xl md:text-2xl font-semibold text-white">
-          Compare your cloud spend instantly
+        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
+          Compare your GPU costs instantly
         </h3>
-        <p className="text-sm text-slate-300">
-          Enter your current GPU bill to see the real OGPU cost and savings.
+        <p className="text-sm text-slate-300 tracking-tight">
+          Enter your current bill to see OGPU cost and estimated savings.
         </p>
       </div>
 
       {/* Input */}
-      <div className="space-y-2">
-        <label className="text-xs font-medium text-slate-400">
-          Your monthly AWS / GCP GPU spend
+      <div className="space-y-1.5">
+        <label className="text-xs font-medium text-slate-400 tracking-tight">
+          Your monthly GPU spend
         </label>
 
         <input
@@ -52,14 +53,14 @@ export default function PricingComparator() {
             w-full 
             px-4 py-3 
             rounded-xl 
-            bg-[#0A0F2C] 
+            bg-[#040814] 
             text-white
             text-sm
-            border border-slate-700
+            border border-white/10
             placeholder-slate-500
             focus:outline-none
             focus:ring-2
-            focus:ring-[#00C8FF]
+            focus:ring-[#00E9FF]
           "
         />
       </div>
@@ -72,11 +73,12 @@ export default function PricingComparator() {
           transition={{ duration: 0.35 }}
           className="
             rounded-2xl
-            border border-[#00C8FF]/50
-            bg-[#001123]
-            p-6
+            border border-white/10
+            bg-white/10
+            backdrop-blur-xl
+            p-5
             space-y-4
-            shadow-[0_0_30px_rgba(0,200,255,0.18)]
+            shadow-[0_0_20px_rgba(0,233,255,0.15)]
           "
         >
           {/* OGPU cost */}
@@ -84,7 +86,7 @@ export default function PricingComparator() {
             <p className="uppercase text-[11px] font-semibold tracking-wide text-slate-400">
               Estimated OGPU cost
             </p>
-            <p className="text-2xl md:text-3xl font-bold text-[#00C8FF] mt-1">
+            <p className="text-2xl md:text-3xl font-bold text-white mt-1 tracking-tight">
               ${ogpuCost.toLocaleString()}
             </p>
           </div>
@@ -94,13 +96,13 @@ export default function PricingComparator() {
             <p className="uppercase text-[11px] font-semibold tracking-wide text-slate-400">
               Estimated savings
             </p>
-            <p className="text-xl md:text-2xl font-semibold text-emerald-400 mt-1">
+            <p className="text-xl md:text-2xl font-semibold text-white mt-1 tracking-tight">
               ${savings.toLocaleString()}
             </p>
           </div>
 
           {/* Percentage pill */}
-          <div className="pt-2">
+          <div className="pt-1">
             <span
               className="
                 inline-flex 
@@ -109,11 +111,12 @@ export default function PricingComparator() {
                 px-4 py-1.5 
                 text-sm 
                 font-semibold 
-                bg-emerald-500/15 
-                text-emerald-300
+                bg-[#00E9FF]/15 
+                text-[#00E9FF]
+                tracking-tight
               "
             >
-              Save approx {percentage}% with OGPU
+              Estimated savings: {percentage}%
             </span>
           </div>
         </motion.div>
