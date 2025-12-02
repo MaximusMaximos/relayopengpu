@@ -108,39 +108,49 @@ export default function Page() {
   {/* ULTRAWIDE CONTAINER */}
   <div className="w-full max-w-[1800px] mx-auto px-6">
 
-    {/* HEADLINES */}
-    <h1 className="
-  text-4xl md:text-6xl 
-  font-bold uppercase tracking-tight drop-shadow-xl
-">
+  {/* HEADLINES */}
+<h1
+  className="
+    text-4xl md:text-6xl 
+    font-bold uppercase tracking-tight 
+    drop-shadow-xl
+  "
+>
   COMPUTE WITHOUT BOUNDARIES
 </h1>
 
 <h2
   className="
-    text-4xl md:text-6xl font-bold uppercase tracking-tight 
-    bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
+    text-4xl md:text-6xl font-bold uppercase tracking-tight
+    bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
     bg-clip-text text-transparent
-   drop-shadow
+    drop-shadow
     mb-3 md:mb-5
   "
 >
-  A DATA CENTER WITHOUT WALLS
+  The unified global routing layer<br />for AI compute.
 </h2>
 
+{/* LIVE TRANSACTIONS */}
+<div className="mb-3 md:mb-5">
+  <Livetransactions />
+</div>
 
+{/* SUBLINES */}
+<p
+  className="
+    text-base md:text-xl 
+    text-white font-semibold 
+    mb-2 md:mb-4 
+    drop-shadow-md
+  "
+>
+  Run workloads anywhere, automatically.
+</p>
 
-    {/* LIVE TRANSACTIONS */}
-    <div className="mb-3 md:mb-5">
-      <Livetransactions />
-    </div>
-
-    {/* SUBLINES */}
-    <p className="text-base md:text-xl text-white font-semibold mb-2 md:mb-4 drop-shadow-md">
-      Global GPU routing for high-demand AI workloads.
-    </p>
 
     <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
+      <span className=" font-semibold">A datacenter without walls.</span><br></br>
       Workloads run faster and scale worldwide when compute isn’t limited to a single cloud.<br></br>
       <span className="italic"> Scale intelligently at a fraction of the cost.</span>
     </p>
