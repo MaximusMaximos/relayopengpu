@@ -2111,7 +2111,11 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 
     {/* Quick Start */}
     <a href="#quickstart" className="flex flex-col items-center hover:text-white">
-      <span className="text-xl">⚡</span>
+      <img
+    src="/Images/Nav/Quick/quick.png"
+    alt="Quick Nav Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+    />
       <span className="text-[10px]">Quick</span>
     </a>
 
@@ -2149,13 +2153,19 @@ className="relative w-full bg-[#040814] py-28 px-6 overflow-hidden text-white">
 
     {/* News */}
     <a href="#news" className="flex flex-col items-center text-white">
-      <span className="text-xl">📰</span>
+    <img src="/Images/Nav/Quick/news.png"
+    alt="News Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+    />
       <span className="text-[10px]">News</span>
     </a>
 
       {/* Back To The Top */}
     <a href="#hero" className="flex flex-col items-center text-white">
-      <span className="text-xl">⬆️</span>
+      <img src="/Images/Nav/Quick/top.png"
+    alt="Back To The Top Icon"
+    className="w-6 h-6 mb-1 opacity-90"
+    />
       <span className="text-[10px]">Top</span>
     </a>
 
