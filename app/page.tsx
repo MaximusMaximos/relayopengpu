@@ -997,8 +997,8 @@ chmod +x provider-install.sh
  {/* BLOCKCHAIN SECTION — CLEAN ENTERPRISE OGPU STYLE */}
 <section
   id="blockchain"
-  className="relative w-full bg-[#040814] py-12 md:py-24 px-6 text-white overflow-hidden"
->
+  className="relative w-full bg-[#040814] py-12 md:py-24 px-6 overflow-hidden">
+
 
   {/* BACKGROUND CYAN MIST */}
   <div className="absolute inset-0 pointer-events-none">
@@ -1007,12 +1007,15 @@ chmod +x provider-install.sh
                     blur-3xl opacity-70" />
   </div>
 
-  <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
+  {/* Header */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center mb-12">
+        <span className="text-[#00E9FF] font-semibold tracking-wide text-xs md:text-sm uppercase">
+          Blockchain
+        </span>
 
-    {/* HEADER */}
-    <h2 className="text-3xl md:text-5xl font-semibold text-center mb-3 md:mb-4 leading-tight">
-      The OGPU Blockchain
-    </h2>
+        <h2 className="text-3xl md:text-5xl font-semibold leading-tight mt-3 mb-4">
+          The OGPU Blockchain
+        </h2>
 
     {/* Verified Pill */}
     <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full 
@@ -1349,12 +1352,12 @@ chmod +x provider-install.sh
 
     {/* HEADER */}
     <div className="mb-10 md:mb-12 text-center">
-      <span className="text-xs font-semibold tracking-[0.18em] text-[#00C6FF] uppercase">
+      <span className="text-xs font-semibold tracking-[0.18em] text-[#005DEA] uppercase">
         Latest Updates
       </span>
 
       <h2 className="text-3xl md:text-4xl font-semibold text-[#0A0F2C] mt-3 leading-tight">
-        News and momentum across AI and decentralized compute
+        News and momentum
       </h2>
 
       <p className="text-base md:text-lg text-[#475569] max-w-2xl mx-auto mt-5 leading-relaxed">
