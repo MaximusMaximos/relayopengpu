@@ -136,30 +136,20 @@ export default function Page() {
   <Livetransactions />
 </div>
 
-{/* SUBLINES */}
-<p
-  className="
-    text-base md:text-xl 
-    text-white font-semibold 
-    mb-2 md:mb-4 
-    drop-shadow-md
-  "
->
-  Run workloads anywhere, automatically.
+{/* TAGLINE */}
+      <p className="text-base md:text-xl text-white font-medium mb-3 md:mb-4 drop-shadow-md">
+        Route workloads to any GPU worldwide, instantly and automatically at a fraction of the cost.
+      </p>
+
+      {/* POETIC CLOSER */}
+<p className="text-sm md:text-lg text-gray-200 mb-4 md:mb-8 drop-shadow">
+  A data center without walls.
 </p>
-
-
-    <p className="text-sm md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6 md:mb-8 drop-shadow">
-      <span className=" font-semibold">A data center without walls.</span><br></br>
-      Workloads run faster and scale worldwide when compute isn’t limited to a single cloud.<br></br>
-      <span className="italic"> Scale intelligently at a fraction of the cost.</span>
-    </p>
-
-  </div>
+</div>
 </div>
 
-{/* DOORWAYS — unchanged */}
-<div className="max-w-6xl mx-auto px-6 pb-12 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
+{/* DOORWAYS — tightened on mobile only */}
+<div className="max-w-6xl mx-auto px-6 pb-0 md:pb-0 grid gap-0 md:gap-0 md:grid-cols-3">
 
   {/* Join the Network */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
