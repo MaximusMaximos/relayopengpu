@@ -102,54 +102,70 @@ export default function Page() {
 {/* HERO COPY BLOCK — SNOWFLAKE WIDTH */}
 <div
   style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
-  className="flex flex-col items-center text-center w-full mx-auto pb-12 md:pb-14"
+  className="flex flex-col items-center text-center w-full mx-auto pb-10 md:pb-14"
 >
-
-  {/* ULTRAWIDE CONTAINER */}
   <div className="w-full max-w-[1800px] mx-auto px-6">
 
-  {/* HEADLINES */}
-<h1
-  className="
-    text-4xl md:text-6xl 
-    font-bold uppercase tracking-tight 
-    drop-shadow-xl
-  "
->
-  COMPUTE WITHOUT BOUNDARIES
-</h1>
+    {/* HEADLINE */}
+    <h1 className="
+      text-4xl md:text-6xl lg:text-7xl
+      font-bold uppercase
+      tracking-normal
+      leading-[1.1]
+      text-white drop-shadow-xl
+    ">
+      COMPUTE WITHOUT BOUNDARIES
+    </h1>
 
-<h2
-  className="
-    text-3xl md:text-5xl font-bold uppercase tracking-tight
-    bg-gradient-to-r from-[#005DEA] to-[#00C6FF]
-    bg-clip-text text-transparent
-    drop-shadow
-    mb-3 md:mb-5
-  "
->
-  The Global Routing Layer For AI.
-</h2>
+    {/* SUBTITLE */}
+    <h2 className="
+      mt-4
+      text-2xl md:text-4xl lg:text-5xl
+      font-bold uppercase
+      tracking-tight lg:tracking-normal
+      leading-[1.15]
+      bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
+      bg-clip-text text-transparent drop-shadow
+      mb-4 md:mb-6
+    ">
+      The Global Routing Layer For AI
+    </h2>
 
-{/* LIVE TRANSACTIONS */}
-<div className="mb-3 md:mb-5">
-  <Livetransactions />
+    {/* LIVE TX */}
+    <div className="mb-3 md:mb-5">
+      <Livetransactions />
+    </div>
+
+    {/* TAGLINE */}
+    <p className="
+      text-base md:text-xl
+      text-white font-medium
+      leading-relaxed md:leading-normal
+      max-w-2xl mx-auto
+      mb-4 md:mb-6
+      drop-shadow-md
+    ">
+      Route workloads to any GPU worldwide, instantly and automatically at a fraction of traditional cloud cost.
+    </p>
+
+    {/* POETIC LINE */}
+    <p className="
+      text-sm md:text-lg
+      text-gray-200
+      leading-relaxed
+      max-w-3xl mx-auto
+      mb-6 md:mb-8
+      drop-shadow
+    ">
+      <span className="font-semibold">A data center without walls.</span>
+    </p>
+
+  </div>
 </div>
 
-{/* TAGLINE */}
-      <p className="text-base md:text-xl text-white font-medium mb-3 md:mb-4 drop-shadow-md">
-        Route workloads to any GPU worldwide, instantly and automatically at a fraction of the cost.
-      </p>
 
-      {/* POETIC CLOSER */}
-<p className="text-sm md:text-lg text-gray-200 mb-4 md:mb-8 drop-shadow">
-  A data center without walls.
-</p>
-</div>
-</div>
-
-{/* DOORWAYS — tightened on mobile only */}
-<div className="max-w-6xl mx-auto px-6 pb-0 md:pb-0 grid gap-0 md:gap-0 md:grid-cols-3">
+{/* DOORWAYS — unchanged */}
+<div className="max-w-6xl mx-auto px-6 pb-12 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
 
   {/* Join the Network */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
@@ -159,17 +175,15 @@ export default function Page() {
     <p className="text-slate-300 text-sm mb-5">
       Run workloads or contribute GPU capacity to earn.
     </p>
-    <a
-      href="/getstarted"
-      className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
-                 text-sm font-semibold text-white bg-cyan-500 
-                 border border-cyan-400/40
-                 shadow-[0_0_18px_rgba(0,200,255,0.35)]
-                 hover:bg-cyan-400 hover:shadow-[0_0_28px_rgba(0,200,255,0.55)]
-                 transition"
-    >
-      Get Started →
-    </a>
+<a href="/getstarted" className="inline-flex items-center justify-center w-full rounded-xl
+                               px-5 py-3 text-sm font-semibold text-white 
+                               bg-gradient-to-r from-[#0A84FF] to-[#00C6FF] 
+                               shadow-[0_0_22px_rgba(0,160,255,0.35)] 
+                               hover:opacity-90 hover:shadow-[0_0_30px_rgba(0,160,255,0.55)] 
+                               transition" > Get Started → </a>
+
+
+
   </div>
 
   {/* Enterprise Compute */}
@@ -201,17 +215,22 @@ export default function Page() {
     <p className="text-slate-300 text-sm mb-5">
       Learn about the OGPU token and network utility model.
     </p>
-    <a
-      href="/howtobuy"
-      className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
-                 text-sm font-semibold text-white 
-                 bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
-                 shadow-[0_0_22px_rgba(0,160,255,0.35)]
-                 hover:opacity-90 hover:shadow-[0_0_30px_rgba(0,160,255,0.55)]
-                 transition"
-    >
-      View Token Guide →
-    </a>
+<a
+  href="/howtobuy"
+  className="
+    inline-flex items-center justify-center w-full rounded-xl px-5 py-3
+    text-sm font-semibold text-white
+    bg-gradient-to-r from-[#012A47] via-[#01486F] to-[#007A9F]
+    shadow-[0_0_14px_rgba(0,110,160,0.25)]
+    hover:shadow-[0_0_22px_rgba(0,110,160,0.35)]
+    transition
+  "
+>
+  View Token Guide →
+</a>
+
+
+
   </div>
 
 </div>
@@ -248,7 +267,7 @@ export default function Page() {
       </div>
 
       <div className="rounded-2xl p-6 md:p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
-        <h3 className="text-xl font-semibold text-white mb-2">OGPU Unifies It</h3>
+        <h3 className="text-xl font-semibold text-white mb-2">OGPU Connects Them</h3>
         <p className="text-slate-300 text-sm leading-relaxed">
           OGPU connects all these sources into one network and routes workloads to where they run best.
         </p>
@@ -257,7 +276,7 @@ export default function Page() {
       <div className="rounded-2xl p-6 md:p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
         <h3 className="text-xl font-semibold text-white mb-2">Better Performance, Lower Cost</h3>
         <p className="text-slate-300 text-sm leading-relaxed">
-          Workloads execute faster and more efficiently without managing infrastructure yourself.
+          Workloads execute faster and cost less, without managing infrastructure yourself."
         </p>
       </div>
 
@@ -997,8 +1016,8 @@ chmod +x provider-install.sh
  {/* BLOCKCHAIN SECTION — CLEAN ENTERPRISE OGPU STYLE */}
 <section
   id="blockchain"
-  className="relative w-full bg-[#040814] py-12 md:py-24 px-6 overflow-hidden">
-
+  className="relative w-full bg-[#040814] py-12 md:py-24 px-6 text-white overflow-hidden"
+>
 
   {/* BACKGROUND CYAN MIST */}
   <div className="absolute inset-0 pointer-events-none">
@@ -1007,15 +1026,12 @@ chmod +x provider-install.sh
                     blur-3xl opacity-70" />
   </div>
 
-  {/* Header */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center mb-12">
-        <span className="text-[#00E9FF] font-semibold tracking-wide text-xs md:text-sm uppercase">
-          Blockchain
-        </span>
+  <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
 
-        <h2 className="text-3xl md:text-5xl font-semibold leading-tight mt-3 mb-4">
-          The OGPU Blockchain
-        </h2>
+    {/* HEADER */}
+    <h2 className="text-3xl md:text-5xl font-semibold text-center mb-3 md:mb-4 leading-tight">
+      The OGPU Blockchain
+    </h2>
 
     {/* Verified Pill */}
     <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full 
@@ -1352,12 +1368,12 @@ chmod +x provider-install.sh
 
     {/* HEADER */}
     <div className="mb-10 md:mb-12 text-center">
-      <span className="text-xs font-semibold tracking-[0.18em] text-[#005DEA] uppercase">
+      <span className="text-xs font-semibold tracking-[0.18em] text-[#00C6FF] uppercase">
         Latest Updates
       </span>
 
       <h2 className="text-3xl md:text-4xl font-semibold text-[#0A0F2C] mt-3 leading-tight">
-        News and momentum
+        News and momentum across AI and decentralized compute
       </h2>
 
       <p className="text-base md:text-lg text-[#475569] max-w-2xl mx-auto mt-5 leading-relaxed">
@@ -1557,14 +1573,23 @@ chmod +x provider-install.sh
             </a>
 
             <a
-              href="/getstarted"
-              className="px-8 py-4 rounded-xl bg-[#FFFFFF] text-[#001221] 
-                         font-semibold text-base md:text-lg shadow-[0_6px_20px_rgba(0,198,255,0.35)] 
-                         hover:shadow-[0_10px_26px_rgba(0,198,255,0.45)]
-                         transition-all text-center"
-            >
-              Get Started →
-            </a>
+  href="/getstarted"
+  className="
+    inline-flex items-center justify-center w-full
+    rounded-xl px-5 py-3
+    text-sm font-semibold
+    text-[#001422]
+    bg-[#00E9FF]
+    border border-[#00E9FF]/40
+    shadow-[0_0_18px_rgba(0,233,255,0.28)]
+    hover:bg-[#48F0FF]
+    hover:shadow-[0_0_26px_rgba(0,233,255,0.45)]
+    transition
+  "
+>
+  Get Started →
+</a>
+
 
           </div>
 

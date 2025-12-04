@@ -1073,29 +1073,33 @@ export default function Nav() {
 <div className="flex items-center justify-end gap-3">
   {/* Desktop: conditionally show CTA */}
   {pathname === "/" ? (
-    <a
-      href="/getstarted"
-      className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-white text-sm
-        bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
-        transition-all duration-300 hover:-translate-y-1
-        shadow-[0_0_20px_rgba(0,198,230,0.20)]
-        hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
-        hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
-    >
-      Join the Network
-    </a>
+
+<a href="/getstarted"
+  className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-sm md:text-base
+            text-white
+            bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
+            border border-[#00C6FF]/40
+            shadow-[0_0_20px_rgba(0,160,255,0.25)]
+            hover:shadow-[0_0_30px_rgba(0,160,255,0.45)]
+            transition"
+>
+  Join the Network
+</a>
+
+
   ) : (
     <a
-      href="/"
-      className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-white text-sm
-        bg-[#00C6E6] border-[2px] border-[#00C6E6]/80
-        transition-all duration-300 hover:-translate-y-1
-        shadow-[0_0_20px_rgba(0,198,230,0.20)]
-        hover:shadow-[0_0_35px_rgba(0,198,230,0.45)]
-        hover:bg-[#00C6E6]/90 hover:border-[#00C6E6]"
-    >
-      Back To Main Site
-    </a>
+  href="/"
+  className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-sm md:text-base text-white
+            bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
+            border border-[#00C6FF]/60
+            transition-all duration-300 hover:-translate-y-1
+            shadow-[0_0_20px_rgba(0,160,255,0.25)]
+            hover:shadow-[0_0_35px_rgba(0,160,255,0.45)]"
+>
+  Back To Main Site
+</a>
+
   )}
 
  {/* Mobile hamburger */}
