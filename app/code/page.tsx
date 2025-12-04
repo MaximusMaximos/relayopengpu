@@ -90,7 +90,7 @@ export default function Page() {
       mb-4 md:mb-6
       drop-shadow-md
     ">
-      Route workloads to any GPU worldwide, instantly and automatically, at up to 80% lower cost than traditional cloud. Access high-performance compute without exclusive vendor lock-in.
+      Route workloads to any GPU worldwide, instantly and automatically, <br></br> at up to 80% lower cost than traditional cloud. Access high-performance compute without exclusive vendor lock-in.
     </p>
 
     {/* POETIC LINE */}
