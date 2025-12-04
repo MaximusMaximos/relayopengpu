@@ -40,7 +40,7 @@ const Icon = {
 };
 
 /* ===========================
-      PILOT FORM
+      MAILCHIMP FORM
 =========================== */
 function PilotForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,10 +55,13 @@ function PilotForm() {
     const params = new URLSearchParams();
     data.forEach((v, k) => params.append(k, String(v)));
 
-    await fetch(
-      `https://network.us6.list-manage.com/subscribe/post-json?u=9ca8c44250832e3001ac4aaa8&id=1e9492eb62&${params}&c=?`,
-      { method: "GET", mode: "no-cors" }
-    );
+    /* CRITICAL MAILCHIMP ENDPOINT — DO NOT CHANGE */
+    const url =
+      "https://network.us6.list-manage.com/subscribe/post-json?u=9ca8c44250832e3001ac4aaa8&id=1e9492eb62&" +
+      params.toString() +
+      "&c=?";
+
+    await fetch(url, { method: "GET", mode: "no-cors" });
 
     setIsSuccess(true);
     setTimeout(() => (window.location.href = "/pilot-confirmed"), 1800);
@@ -82,9 +85,9 @@ function PilotForm() {
             name="FNAME"
             required
             disabled={isSubmitting}
+            placeholder="Your name"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="Your name"
           />
         </div>
 
@@ -93,9 +96,9 @@ function PilotForm() {
           <input
             name="COMPANY"
             disabled={isSubmitting}
+            placeholder="Company name"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="Company name"
           />
         </div>
 
@@ -106,9 +109,9 @@ function PilotForm() {
             type="email"
             required
             disabled={isSubmitting}
+            placeholder="you@company.com"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="you@company.com"
           />
         </div>
 
@@ -117,9 +120,9 @@ function PilotForm() {
           <input
             name="PROJTYPE"
             disabled={isSubmitting}
+            placeholder="Inference, LLM, Agents, GenAI…"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="Inference, LLM, Agents, GenAI…"
           />
         </div>
       </div>
@@ -131,9 +134,9 @@ function PilotForm() {
           <input
             name="GPUS"
             disabled={isSubmitting}
+            placeholder="H100, A100, 4090…"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="H100, A100, 4090…"
           />
         </div>
 
@@ -142,9 +145,9 @@ function PilotForm() {
           <input
             name="PROVIDER"
             disabled={isSubmitting}
+            placeholder="AWS, Lambda, RunPod…"
             className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
             focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-            placeholder="AWS, Lambda, RunPod…"
           />
         </div>
       </div>
@@ -156,28 +159,28 @@ function PilotForm() {
           name="MESSAGE"
           rows={5}
           disabled={isSubmitting}
+          placeholder="Model details, latency targets, scale, monthly spend, challenges…"
           className="w-full px-4 py-3 bg-gray-50 border border-slate-300 rounded-xl text-sm text-[#0F172A]
           resize-none focus:border-[#00E9FF] focus:ring-4 focus:ring-[#00E9FF]/10 transition"
-          placeholder="Model details, latency targets, scale, monthly spend, challenges…"
         />
       </div>
 
       <input type="hidden" name="tags" value="Pilot Lead" />
 
-      {/* SUBMIT BUTTON */}
       <button
-        type="submit"
-        disabled={isSubmitting || isSuccess}
-        className="w-full bg-gradient-to-r from-[#00204F] to-[#00E9FF] text-white font-semibold py-4 rounded-xl shadow-lg
-        hover:shadow-xl hover:shadow-[#00E9FF]/30 transition-all flex items-center justify-center gap-2 group"
-      >
-        {isSubmitting ? "Submitting…" : isSuccess ? "Sent — redirecting" : "Request Pilot Access"}
-        {!isSubmitting && !isSuccess && (
-          <span className="group-hover:translate-x-1 transition-transform">
-            {Icon.arrow("w-5 h-5 text-[#00E9FF]")}
-          </span>
-        )}
-      </button>
+  type="submit"
+  disabled={isSubmitting || isSuccess}
+  className="w-full bg-gradient-to-r from-[#0A84FF] to-[#00C6FF] text-white font-semibold py-4 rounded-xl shadow-lg
+             hover:shadow-xl hover:shadow-[#00C6FF]/30 transition-all flex items-center justify-center gap-2 group"
+>
+  {isSubmitting ? "Submitting…" : isSuccess ? "Sent — redirecting" : "Request Pilot Access"}
+  {!isSubmitting && !isSuccess && (
+    <span className="group-hover:translate-x-1 transition-transform">
+      {Icon.arrow("w-5 h-5 text-white")}
+    </span>
+  )}
+</button>
+
 
       <p className="text-center text-xs text-slate-500">
         Same-day engineering review • We help size your GPU requirements
@@ -193,7 +196,7 @@ export default function EnterprisePage() {
   const benefits = [
     {
       icon: Icon.zap,
-      title: "60–80% lower cost",
+      title: "Up to 80 percent lower cost",
       desc: "Decentralized supply beats cloud pricing.",
     },
     {
@@ -226,19 +229,19 @@ export default function EnterprisePage() {
               Enterprise Pilot Program
             </p>
 
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-white">
               Run an OpenGPU Pilot  
               <br />
               Benchmark your real workloads.
             </h1>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
-              Evaluate inference, training, agent, or generative workloads on decentralized GPUs delivering
-              <span className="bg-gradient-to-r from-[#0A84FF] to-[#00E9FF] bg-clip-text text-transparent font-semibold">
-                {" "}60–80 percent lower compute cost
-              </span>{" "}
-              with enterprise-grade reliability and routing intelligence.
-            </p>
+           <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+  Evaluate inference, training, agent, or generative workloads on decentralized GPUs delivering
+  <span className="text-[#00E9FF] font-semibold">
+    {" "}up to 80 percent lower compute cost
+  </span>{" "}
+  with enterprise-grade reliability and routing intelligence.
+</p>
 
             <div className="space-y-3 text-base text-gray-300">
               <p><span className="text-white font-semibold">Real workloads only.</span> Evaluate your actual production models.</p>
@@ -249,7 +252,7 @@ export default function EnterprisePage() {
             </div>
 
             <p className="text-xs text-gray-400">
-              After submission, our engineering team responds the same day with GPU recommendations.
+              After submission, our engineering team usually responds the same day with GPU recommendations.
             </p>
 
             {/* BENEFITS GRID */}
