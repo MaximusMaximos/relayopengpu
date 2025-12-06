@@ -1071,37 +1071,51 @@ export default function Nav() {
 
 {/* RIGHT — DESKTOP CTA + MOBILE HAMBURGER */}
 <div className="flex items-center justify-end gap-3">
+  
   {/* Desktop: conditionally show CTA */}
   {pathname === "/" ? (
 
-<a href="/getstarted"
-  className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-sm md:text-base
-            text-white
-            bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
-            border border-[#00C6FF]/40
-            shadow-[0_0_20px_rgba(0,160,255,0.25)]
-            hover:shadow-[0_0_30px_rgba(0,160,255,0.45)]
-            transition"
->
-  Join the Network
-</a>
-
+    <a href="/getstarted"
+       className="hidden lg:inline-flex items-center justify-center px-8 py-3 rounded-xl
+                  font-semibold text-sm md:text-base text-white 
+                  transition-all duration-300
+                  
+                  /* DEFAULT: Minimalist Dark Glass */
+                  bg-white/5 border border-white/10
+                  
+                  /* HOVER: Fills with Universal Gradient + Blue Glow */
+                  hover:bg-gradient-to-r hover:from-[#0A84FF] hover:to-[#00C6FF]
+                  hover:border-transparent
+                  hover:shadow-[0_0_30px_rgba(10,132,255,0.5)]
+                  
+                  /* CLICK */
+                  active:scale-95"
+    >
+      Join the Network
+    </a>
 
   ) : (
-    <a
-  href="/"
-  className="hidden lg:inline-block px-8 py-3 rounded-xl font-semibold text-sm md:text-base text-white
-            bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
-            border border-[#00C6FF]/60
-            transition-all duration-300 hover:-translate-y-1
-            shadow-[0_0_20px_rgba(0,160,255,0.25)]
-            hover:shadow-[0_0_35px_rgba(0,160,255,0.45)]"
->
-  Back To Main Site
-</a>
+    
+    <a href="/"
+       className="hidden lg:inline-flex items-center justify-center px-8 py-3 rounded-xl
+                  font-semibold text-sm md:text-base text-white 
+                  transition-all duration-300
+                  
+                  /* DEFAULT: Minimalist Dark Glass */
+                  bg-white/5 border border-white/10
+                  
+                  /* HOVER: Fills with Universal Gradient + Blue Glow */
+                  hover:bg-gradient-to-r hover:from-[#0A84FF] hover:to-[#00C6FF]
+                  hover:border-transparent
+                  hover:shadow-[0_0_30px_rgba(10,132,255,0.5)]
+                  
+                  /* CLICK */
+                  active:scale-95"
+    >
+      Back To Main Site
+    </a>
 
   )}
-
  {/* Mobile hamburger */}
 <button
   className="

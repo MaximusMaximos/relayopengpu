@@ -65,16 +65,21 @@ export default function Page() {
     {/* SUBTITLE */}
     <h2 className="
       mt-4
-      text-2xl md:text-4xl lg:text-5xl
+      text-2xl md:text-4xl lg:text-[2.6rem]
       font-bold uppercase
-      tracking-tight lg:tracking-normal
-      leading-[1.15]
+      tracking-[0.0125em]
+      leading-[1.2]
       bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
       bg-clip-text text-transparent drop-shadow
-      mb-4 md:mb-6
+      mb-2 md:mb-4
+      mx-auto
+      max-w-none
     ">
-      The Global Routing Layer For AI
+     The global routing layer for AI and <br /> high-performance GPU workloads.
     </h2>
+
+
+
 
     {/* LIVE TX */}
     <div className="mb-3 md:mb-5">
@@ -90,7 +95,7 @@ export default function Page() {
       mb-4 md:mb-6
       drop-shadow-md
     ">
-      Route workloads to any GPU worldwide, instantly and automatically, <br></br> at up to 80% lower cost than traditional cloud. Access high-performance compute without exclusive vendor lock-in.
+      Route workloads to any GPU worldwide, instantly and automatically, at up to 80% lower cost than traditional cloud, without vendor lock-in. 
     </p>
 
     {/* POETIC LINE */}
@@ -190,6 +195,17 @@ export default function Page() {
 
 
 </div>
+<div className="absolute inset-0 bg-gradient-to-t from-[#040814] via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-[#040814]" />
+                
+                <div className="absolute bottom-5 right-5 hidden lg:block text-right z-20">
+                    <div className="text-xs font-mono text-cyan-400/70 tracking-widest animate-pulse">
+                        SYSTEM STATUS: ONLINE
+                    </div>
+                    <div className="text-xs font-mono text-white/40 mt-1">
+                        NODES ACTIVE: GLOBAL
+                    </div>
+                </div>
+            
 </section>
     </main>
   );
