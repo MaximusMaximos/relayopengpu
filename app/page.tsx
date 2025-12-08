@@ -96,10 +96,10 @@ export default function Page() {
   {/* Hero content */}
   <div className="relative z-20 flex flex-col h-full">
 
-    {/* Top spacing — MOBILE NORMALIZED */}
+    {/* Top spacing */}
     <div className="pt-12 md:pt-20 lg:pt-24" />
 
-{/* HERO COPY BLOCK — SNOWFLAKE WIDTH */}
+{/* HERO COPY BLOCK */}
 <div
   style={{ opacity: heroOpacity, transition: "opacity 0.1s linear" }}
   className="flex flex-col items-center text-center w-full mx-auto pb-10 md:pb-14"
@@ -120,16 +120,21 @@ export default function Page() {
     {/* SUBTITLE */}
     <h2 className="
       mt-4
-      text-2xl md:text-4xl lg:text-5xl
+      text-2xl md:text-4xl lg:text-[2.6rem]
       font-bold uppercase
-      tracking-tight lg:tracking-normal
-      leading-[1.15]
+      tracking-[0.0125em]
+      leading-[1.2]
       bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
       bg-clip-text text-transparent drop-shadow
-      mb-4 md:mb-6
+      mb-2 md:mb-4
+      mx-auto
+      max-w-none
     ">
-      The Global Routing Layer For AI
+     The global routing layer for AI and <br /> high-performance GPU workloads.
     </h2>
+
+
+
 
     {/* LIVE TX */}
     <div className="mb-3 md:mb-5">
@@ -145,7 +150,7 @@ export default function Page() {
       mb-4 md:mb-6
       drop-shadow-md
     ">
-      Route workloads to any GPU worldwide, instantly and automatically at a fraction of traditional cloud cost.
+      Route workloads to any GPU, instantly and automatically, at up to 80% lower cost than traditional cloud, without vendor lock-in. 
     </p>
 
     {/* POETIC LINE */}
@@ -164,7 +169,7 @@ export default function Page() {
 </div>
 
 
-{/* DOORWAYS — unchanged */}
+{/* DOORWAYS */}
 <div className="max-w-6xl mx-auto px-6 pb-12 md:pb-20 grid gap-6 md:gap-8 md:grid-cols-3">
 
   {/* Join the Network */}
@@ -173,7 +178,8 @@ export default function Page() {
                   transition hover:-translate-y-1">
     <h3 className="text-xl font-semibold text-white mb-2">Join the Network</h3>
     <p className="text-slate-300 text-sm mb-5">
-      Run workloads or contribute GPU capacity to earn.
+      Join the global network to run workloads efficiently, 
+      or contribute your GPU capacity to earn revenue.
     </p>
 <a href="/getstarted" className="inline-flex items-center justify-center w-full rounded-xl
                                px-5 py-3 text-sm font-semibold text-white 
@@ -188,14 +194,21 @@ export default function Page() {
 
   {/* Enterprise Compute */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
-                  backdrop-blur-xl shadow-lg hover:shadow-xl 
-                  transition hover:-translate-y-1">
-    <h3 className="text-xl font-semibold text-white mb-2">Enterprise Compute</h3>
-    <p className="text-slate-300 text-sm mb-5">
-      High-performance workloads with global routing and SLAs.
-    </p>
+                backdrop-blur-xl shadow-lg hover:shadow-xl 
+                transition hover:-translate-y-1">
+
+  <h3 className="text-xl font-semibold text-white mb-2">
+    OGPU Enterprise Routing
+  </h3>
+
+  <p className="text-slate-300 text-sm mb-5">
+    The production choice for 70–100B models.
+    <span className="font-semibold text-white">
+      {" "}80% cost reduction • Global routing • Instant access • Enterprise billing.
+    </span>
+  </p>
     <a
-      href="/enterprisehome"
+      href="/enterprisemain"
       className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
                  text-sm font-semibold text-[#0A0F2C] bg-white 
                  border border-white/20
@@ -203,17 +216,17 @@ export default function Page() {
                  hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]
                  transition"
     >
-      Run a Free Pilot →
+      Start Free Trial →
     </a>
   </div>
 
-  {/* Investors */}
+  {/* blockchain */}
   <div className="rounded-2xl p-7 bg-white/5 border border-white/10 
                   backdrop-blur-xl shadow-lg hover:shadow-xl 
                   transition hover:-translate-y-1">
-    <h3 className="text-xl font-semibold text-white mb-2">Investors</h3>
+    <h3 className="text-xl font-semibold text-white mb-2">Blockchain</h3>
     <p className="text-slate-300 text-sm mb-5">
-      Learn about the OGPU token and network utility model.
+       Learn how the OGPU blockchain settles workloads and powers the network’s utility model.
     </p>
 <a
   href="/howtobuy"
@@ -237,6 +250,17 @@ export default function Page() {
 
 
 </div>
+<div className="absolute inset-0 bg-gradient-to-t from-[#040814] via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-[#040814]" />
+                
+                <div className="absolute bottom-5 right-5 hidden lg:block text-right z-20">
+                    <div className="text-xs font-mono text-cyan-400/70 tracking-widest animate-pulse">
+                        SYSTEM STATUS: ONLINE
+                    </div>
+                    <div className="text-xs font-mono text-white/40 mt-1">
+                        NODES ACTIVE: GLOBAL
+                    </div>
+                </div>
+            
 </section>
 
 <section className="w-full bg-[#020617] py-12 md:py-24">
@@ -1540,7 +1564,7 @@ chmod +x provider-install.sh
           <div className="flex md:hidden w-full justify-end gap-3">
 
             <a
-              href="/enterprisehome"
+              href="/enterprisemain"
               className="w-[48%] px-4 py-3 rounded-lg bg-white text-[#0A0F2C] 
                          font-semibold text-xs shadow-[0_6px_16px_rgba(255,255,255,0.25)]
                          text-center"
@@ -1563,7 +1587,7 @@ chmod +x provider-install.sh
           <div className="hidden md:flex flex-col items-end gap-3">
 
             <a
-              href="/enterprisehome"
+              href="/enterprisemain"
               className="px-8 py-4 rounded-xl bg-white text-[#0A0F2C] 
                          font-semibold text-base md:text-lg shadow-[0_6px_20px_rgba(255,255,255,0.3)] 
                          hover:shadow-[0_10px_28px_rgba(255,255,255,0.45)]

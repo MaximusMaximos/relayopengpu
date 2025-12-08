@@ -143,13 +143,13 @@ export default function Page() {
                 transition hover:-translate-y-1">
 
   <h3 className="text-xl font-semibold text-white mb-2">
-    Enterprise Compute
+    OGPU Enterprise Routing
   </h3>
 
   <p className="text-slate-300 text-sm mb-5">
-    High-performance workloads with global routing and SLAs.
+    The production choice for 70–100B models.
     <span className="font-semibold text-white">
-      {" "}Reduce cloud GPU spend by up to 80%. Full fiat invoicing available.
+      {" "}80% cost reduction • Global routing • Instant access • Enterprise billing.
     </span>
   </p>
     <a
@@ -161,7 +161,7 @@ export default function Page() {
                  hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]
                  transition"
     >
-      Run a Free Pilot →
+      Start Free Trial →
     </a>
   </div>
 

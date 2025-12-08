@@ -1,0 +1,217 @@
+<svg
+  width="1200"
+  height="460"
+  viewBox="0 0 1200 460"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+
+  <style>
+    .title { font: 600 22px Inter, sans-serif; fill: white; }
+    .section { font: 600 12px Inter, sans-serif; letter-spacing: 0.25em; fill: #22D3EE; text-transform: uppercase; }
+    .step { font: 14px Inter, sans-serif; fill: #D1D5DB; }
+    .label { font: 13px Inter, sans-serif; fill: #D1D5DB; }
+    .num { font: 600 11px Inter, sans-serif; fill: #00E9FF; }
+
+    @keyframes breathingGlow {
+      0% { filter: drop-shadow(0 0 0 rgba(10,132,255,0)); }
+      50% { filter: drop-shadow(0 0 12px rgba(10,132,255,0.6)); }
+      100% { filter: drop-shadow(0 0 0 rgba(10,132,255,0)); }
+    }
+
+    @keyframes flow {
+      0% { stroke-dashoffset: 22; opacity: 0; }
+      20% { opacity: 1; }
+      60% { stroke-dashoffset: 0; opacity: 1; }
+      100% { opacity: 0; stroke-dashoffset: 0; }
+    }
+
+    @keyframes arrowHeadFade {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .chip {
+      transform-origin: left center;
+      animation: chipIdle 4s ease-in-out infinite;
+    }
+
+    @keyframes chipIdle {
+      0% { opacity: .88; }
+      50% { opacity: 1; }
+      100% { opacity: .9; }
+    }
+
+    .chip:hover rect {
+      transform: scale(1.03);
+      stroke: #22D3EE;
+      transition: 0.15s ease;
+    }
+
+    .chip:hover text {
+      fill: #E6F8FF;
+      transition: 0.15s ease;
+    }
+
+    .panel-outline { stroke: #163040; stroke-width: 1; fill: none; }
+  </style>
+
+  <!-- OUTER CARD -->
+  <rect x="10" y="10" width="1180" height="440" rx="26" fill="#04101D" stroke="#0A84FF" stroke-opacity="0.35"/>
+
+  <!-- LEFT TITLE -->
+  <text x="50" y="60" class="section">ROUTING ARCHITECTURE</text>
+  <text x="50" y="100" class="title">One routing layer, many providers,</text>
+  <text x="50" y="132" class="title">single integration.</text>
+
+  <!-- LEFT STEPS -->
+  <g>
+    <rect x="50" y="160" width="22" height="22" rx="11" fill="#022C3A"/>
+    <text x="57" y="175" class="num">1</text>
+    <text x="85" y="170" class="step">Your applications call the OpenGPU API</text>
+    <text x="85" y="190" class="step">using a single HTTPS endpoint.</text>
+
+    <rect x="50" y="210" width="22" height="22" rx="11" fill="#022C3A"/>
+    <text x="57" y="225" class="num">2</text>
+    <text x="85" y="220" class="step">Routing selects the optimal GPU based on</text>
+    <text x="85" y="240" class="step">latency, cost, and capacity.</text>
+
+    <rect x="50" y="260" width="22" height="22" rx="11" fill="#022C3A"/>
+    <text x="57" y="275" class="num">3</text>
+    <text x="85" y="270" class="step">Execution happens on isolated global GPU</text>
+    <text x="85" y="290" class="step">providers.</text>
+
+    <rect x="50" y="310" width="22" height="22" rx="11" fill="#022C3A"/>
+    <text x="57" y="325" class="num">4</text>
+    <text x="85" y="320" class="step">Logs and results return or stream into</text>
+    <text x="85" y="340" class="step">MongoDB/RabbitMQ sinks.</text>
+  </g>
+
+  <!-- RIGHT PANEL OUTLINE -->
+  <rect x="508" y="40" width="680" height="380" rx="22" class="panel-outline"/>
+
+  <!-- CLIENT CHIPS -->
+  <g transform="translate(600, 60)">
+    <g class="chip">
+      <rect width="140" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="22" y="21" class="label">Web apps</text>
+    </g>
+
+    <g class="chip" transform="translate(160,0)">
+      <rect width="140" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="24" y="21" class="label">Backends</text>
+    </g>
+
+    <g class="chip" transform="translate(320,0)">
+      <rect width="180" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="25" y="21" class="label">Data pipelines</text>
+    </g>
+  </g>
+
+  <!-- TOP ARROW LINES -->
+  <g stroke="#1F8EEA" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="22" style="animation: flow 2.6s infinite;">
+    <line x1="670" y1="100" x2="670" y2="145"/>
+    <line x1="830" y1="100" x2="830" y2="145"/>
+    <line x1="1010" y1="100" x2="1010" y2="145"/>
+  </g>
+
+  <!-- TOP ARROWHEADS (TIP = 145, perfect alignment) -->
+  <g style="animation: arrowHeadFade 2.6s infinite;">
+    <polygon fill="#1F8EEA" points="666,125 670,135 674,125"/>
+    <polygon fill="#1F8EEA" points="826,125 830,135 834,125"/>
+    <polygon fill="#1F8EEA" points="1006,125 1010,135 1014,125"/>
+  </g>
+
+  <!-- ROUTING LAYER CAPSULE -->
+  <g transform="translate(630, 135)" style="animation: breathingGlow 3.2s ease-in-out infinite;">
+    <rect width="420" height="64" rx="22" fill="#05101E" stroke="#0EA5E9" stroke-opacity="0.6"/>
+
+    <image
+      x="22"
+      y="18"
+      width="28"
+      height="28"
+      href="/Images/swivel.png"
+      xlink:href="/Images/swivel.png"
+    />
+
+    <text x="60" y="30" class="label" style="letter-spacing:0.15em; fill:#00E9FF; text-transform:uppercase;">
+      OpenGPU Routing Layer
+    </text>
+    <text x="60" y="48" class="label" fill="#9CA3AF">
+      Direct &amp; blockchain routing. Failover. Capacity matching.
+    </text>
+  </g>
+
+  <!-- ROUTING → PROVIDERS ARROW -->
+  <g stroke="#1F8EEA" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="22" style="animation: flow 2.6s infinite;">
+    <line x1="830" y1="200" x2="830" y2="235"/>
+  </g>
+
+  <g style="animation: arrowHeadFade 2.6s infinite;">
+    <polygon fill="#1F8EEA" points="826,226 830,234 834,226"/>
+  </g>
+
+  <!-- PROVIDERS GRID -->
+  <g transform="translate(570, 245)">
+    <g class="chip">
+      <rect width="180" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">GPU marketplaces</text>
+    </g>
+
+    <g class="chip" transform="translate(200,0)">
+      <rect width="160" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">Data centers</text>
+    </g>
+
+    <g class="chip" transform="translate(380,0)">
+      <rect width="160" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="24" y="21" class="label">Cloud providers</text>
+    </g>
+
+    <g class="chip" transform="translate(0,40)">
+      <rect width="130" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="18" y="21" class="label">Edge nodes</text>
+    </g>
+
+    <g class="chip" transform="translate(160,40)">
+      <rect width="200" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">OGPU native nodes</text>
+    </g>
+
+    <g class="chip" transform="translate(380,40)">
+      <rect width="160" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">Private clusters</text>
+    </g>
+  </g>
+
+  <!-- PROVIDERS → SINKS ARROW -->
+  <g stroke="#1F8EEA" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="22" style="animation: flow 2.6s infinite;">
+    <line x1="830" y1="315" x2="830" y2="350"/>
+  </g>
+
+  <g style="animation: arrowHeadFade 2.6s infinite;">
+    <polygon fill="#1F8EEA" points="826,344 830,352 834,344"/>
+  </g>
+
+  <!-- SINKS -->
+  <g transform="translate(600, 355)">
+    <g class="chip">
+      <rect width="140" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">MongoDB sinks</text>
+    </g>
+
+    <g class="chip" transform="translate(180,0)">
+      <rect width="140" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="20" y="21" class="label">RabbitMQ sinks</text>
+    </g>
+
+    <g class="chip" transform="translate(360,0)">
+      <rect width="140" height="32" rx="16" fill="#020818" stroke="#1F2937"/>
+      <text x="22" y="21" class="label">Logs &amp; metrics</text>
+    </g>
+  </g>
+
+</svg>
