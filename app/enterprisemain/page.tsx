@@ -58,7 +58,7 @@ const fadeItemSoft = {
    REUSABLE COMPONENTS
 ============================ */
 
-function WorkloadCard({ label }) {
+function WorkloadCard({ label }: { label: string }) {
   return (
     <motion.div
       variants={fadeItemSoft}
@@ -70,6 +70,7 @@ function WorkloadCard({ label }) {
     </motion.div>
   );
 }
+
 
 export default function Enterprise() {
   return (
