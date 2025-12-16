@@ -147,13 +147,13 @@ export default function Page() {
   </h3>
 
   <p className="text-slate-300 text-sm mb-5">
-    The production choice for 70–100B models.
+    The production choice for 100B+ models.
     <span className="font-semibold text-white">
       {" "}80% cost reduction • Global routing • Instant access • Enterprise billing.
     </span>
   </p>
     <a
-      href="/enterprisehome"
+      href="/enterprisemain"
       className="inline-flex items-center justify-center w-full rounded-xl px-5 py-3 
                  text-sm font-semibold text-[#0A0F2C] bg-white 
                  border border-white/20
