@@ -12,6 +12,7 @@ import SafeInput from "./components/SafeInput";
 import PricingComparator from "./components/PricingComparator";
 import Livetransactions from "./components/Livetransactions";
 import FooterSubscribe from "./components/FooterSubscribe";
+import Protocol from "./components/Protocol";
 
 export default function Page() {
   // Orb workflow
@@ -877,163 +878,10 @@ chmod +x provider-install.sh
   {/* Model → Routing → Provider → Output */}
 </section>
 
-    <section
-      id="relay"
-      className="relative w-full bg-white py-20 md:py-24 px-6 text-[#0A0F2C]"
-    >
-      {/* Header */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center mb-12">
-        <span className="text-[#005DEA] font-semibold tracking-wide text-xs md:text-sm uppercase">
-          Relay
-        </span>
-
-        <h2 className="text-3xl md:text-5xl font-semibold leading-tight mt-3 mb-4">
-          The enterprise gateway to OGPU
-        </h2>
-
-        <p className="text-base md:text-lg text-[#475569] max-w-3xl mx-auto leading-relaxed">
-          Relay unlocks enterprise access to decentralized compute with clean cloud workflows.
-          No wallets. No tokens. No friction.
-        </p>
-      </div>
-
-      {/* Routing Diagram */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative max-w-5xl mx-auto mb-16"
-      >
-        {/* Desktop */}
-        <div className="hidden md:flex items-center justify-between w-full relative z-10">
-
-          {/* Clients */}
-          <div className="flex flex-col items-center">
-            <p className="text-lg font-medium">Clients</p>
-          </div>
-
-          {/* Line + Animated Orb */}
-          <div className="relative h-[2px] w-24 bg-slate-300 rounded-full overflow-hidden">
-            {orbStep === 0 && (
-              <motion.div
-                className="absolute left-0 top-1/2 -translate-y-1/2 
-                           w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,200,255,0.7)]"
-                initial={{ x: 0 }}
-                animate={{ x: 96 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                onAnimationComplete={() => setOrbStep(1)}
-              />
-            )}
-          </div>
-
-          {/* Relay Logo */}
-          <img src="/Images/relay.png" alt="Relay Logo" className="h-10 w-auto" />
-
-          {/* Line + Animated Orb */}
-          <div className="relative h-[2px] w-24 bg-slate-300 rounded-full overflow-hidden">
-            {orbStep === 1 && (
-              <motion.div
-                className="absolute left-0 top-1/2 -translate-y-1/2
-                           w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,200,255,0.7)]"
-                initial={{ x: 0 }}
-                animate={{ x: 96 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                onAnimationComplete={() => setOrbStep(2)}
-              />
-            )}
-          </div>
-
-          {/* Routing Layer */}
-          <div className="flex flex-col items-center">
-            <img src="/Images/swivel.png" alt="Routing Layer" className="h-16 w-auto" />
-            <p className="text-sm mt-2 font-medium text-[#0A0F2C]">Routing Layer</p>
-          </div>
-
-          {/* Line + Animated Orb */}
-          <div className="relative h-[2px] w-24 bg-slate-300 rounded-full overflow-hidden">
-            {orbStep === 2 && (
-              <motion.div
-                className="absolute left-0 top-1/2 -translate-y-1/2 
-                           w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,200,255,0.7)]"
-                initial={{ x: 0 }}
-                animate={{ x: 96 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                onAnimationComplete={() => setOrbStep(0)}
-              />
-            )}
-          </div>
-
-          {/* Providers */}
-          <div className="flex flex-col items-center">
-            <p className="text-lg font-medium">Providers</p>
-          </div>
-        </div>
-
-        {/* Mobile */}
-        <div className="md:hidden flex flex-col items-center gap-10">
-          <p className="text-lg font-medium">Clients</p>
-          <img src="/Images/relay.png" className="h-8 w-auto" />
-          <div className="flex flex-col items-center">
-            <img src="/Images/clean_swivel.png" className="h-14 w-auto" />
-            <p className="text-sm mt-1">Routing Layer</p>
-          </div>
-          <p className="text-lg font-medium">Providers</p>
-        </div>
-
-        <p className="text-center text-sm text-slate-500 mt-8">
-          Results flow back from providers to clients through the same pipeline.
-        </p>
-      </motion.div>
-
-      {/* Feature Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            icon: "/Assets/bsfillcreditcard2frontfill.png",
-            title: "No wallets or tokens",
-            text: "Relay enables full enterprise compute with fiat billing."
-          },
-          {
-            icon: "/Assets/madashboardcustomize.png",
-            title: "Unified usage dashboard",
-            text: "Clean analytics, logs and tracking in one interface."
-          },
-          {
-            icon: "/Assets/bsplugin.png",
-            title: "Drop-in integration",
-            text: "Works with existing workflows without rewrites."
-          }
-        ].map((card, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.12 }}
-            className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition"
-          >
-            <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl
-                            bg-gradient-to-br from-[#0A84FF] to-[#00C6FF]">
-              <img src={card.icon} className="w-6 h-6 object-contain" />
-            </div>
-
-            <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-            <p className="text-sm text-[#475569] leading-relaxed">{card.text}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <div className="text-center mt-16">
-        <a
-          href="https://relay.opengpu.network/"
-          className="px-12 py-4 bg-gradient-to-r from-[#0A84FF] to-[#00C6FF]
-                     text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition"
-        >
-          Request access to Relay →
-        </a>
-      </div>
+    <section>
+      <Protocol />
     </section>
+
 
 
 

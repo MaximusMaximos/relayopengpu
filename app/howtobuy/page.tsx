@@ -214,6 +214,60 @@ export default function HowToBuyOgpuPage() {
               </a>
             </div>
           </section>
+          {/* OGPU TOKEN OVERVIEW */}
+<section className="space-y-6">
+  <h2 className="text-xl md:text-2xl font-semibold">OGPU token overview</h2>
+
+  <div className="grid gap-5 md:grid-cols-2">
+
+    {/* Native Token */}
+    <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 px-5 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.9)] space-y-3">
+      <h3 className="text-lg font-semibold">Native on OpenGPU Mainnet</h3>
+      <p className="text-sm text-slate-300">
+        OGPU is the native token of the OpenGPU blockchain. Like ETH on Ethereum,
+        it exists directly at the protocol level and does not have a smart
+        contract on its own network.
+      </p>
+
+      <ul className="text-sm text-slate-300 list-disc pl-5 space-y-1">
+        <li>No presale, fully live</li>
+        <li>21,000,000 max supply</li>
+        <li>All tokens in circulation</li>
+        <li>Used for gas, routing, and network activity</li>
+      </ul>
+    </div>
+
+    {/* Ethereum Contract */}
+    <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 px-5 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.9)] space-y-3">
+      <h3 className="text-lg font-semibold">Ethereum bridge contract</h3>
+      <p className="text-sm text-slate-300">
+        For trading and liquidity on Ethereum, OGPU is available as an ERC-20
+        bridge token. This contract is used only for Ethereum trading and
+        bridging.
+      </p>
+
+      <div className="rounded-xl bg-slate-950 border border-slate-700 px-4 py-3 text-xs text-slate-200 break-all">
+        0x067def80d66fb69c276e53b641f37ff7525162f6
+      </div>
+
+      <ul className="text-sm text-slate-300 list-disc pl-5 space-y-1">
+        <li>Ethereum (ERC-20) only</li>
+        <li>Used for exchange liquidity</li>
+        <li>Must be bridged to use OpenGPU services</li>
+      </ul>
+    </div>
+
+  </div>
+
+  {/* SECURITY NOTE */}
+  <div className="rounded-2xl border border-emerald-300/60 bg-gradient-to-r from-emerald-50/90 to-emerald-100/90 px-5 py-4 shadow-[0_16px_45px_rgba(16,185,129,0.25)]">
+    <p className="text-sm text-emerald-900 font-medium">
+      Always verify contract addresses from this site or official OpenGPU channels.
+      OpenGPU will never DM you contract details.
+    </p>
+  </div>
+</section>
+
 
           {/* STEP BY STEP */}
           <section className="space-y-5">

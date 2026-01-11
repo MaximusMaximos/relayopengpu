@@ -174,17 +174,17 @@ export default function Nav() {
   </a>
 
                     <a
-                      href="/howtobuy"
+                      href="/token"
                       className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition"
                     >
                       <img
                         src="/Images/Nav/Platform/buy-opengpu.png"
-                        alt="How to buy OGPU"
+                        alt="OGPU Token OGPU"
                         className="w-6 h-6 object-contain"
                       />
                       <div>
-                        <p className="text-white text-sm font-semibold">How To Buy OGPU</p>
-                        <p className="text-gray-400 text-xs">Our native token.</p>
+                        <p className="text-white text-sm font-semibold">OGPU Token</p>
+                        <p className="text-gray-400 text-xs">Supply, contracts, liquidity, status</p>
                       </div>
                     </a>
 
