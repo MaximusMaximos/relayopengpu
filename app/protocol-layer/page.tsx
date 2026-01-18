@@ -373,14 +373,14 @@ export default function CenteredRoutingDemo() {
 
       {step !== 'IDLE' && !animationComplete && (
         <div className="w-full max-w-7xl mb-6 px-6">
-          <div className="bg-white rounded-2xl border border-slate-200 p-3 md:p-6 shadow-sm">
-            <div className="flex items-center justify-between gap-1 md:gap-4">
+          <div className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6 shadow-sm">
+            <div className="flex items-center justify-between gap-2 md:gap-4">
               {Object.entries(STEP_CONFIG).map(([stepName, config], idx) => {
                 const isComplete = currentStepIndex > idx + 1;
                 const isCurrent = currentStepIndex === idx + 1;
                 return (
-                  <div key={stepName} className="flex items-center gap-1 md:gap-4 flex-1">
-                    <div className="flex flex-col items-center gap-1 md:gap-2 flex-1">
+                  <div key={stepName} className="flex items-center gap-2 md:gap-4 flex-1">
+                    <div className="flex flex-col items-center gap-2 flex-1">
                       <div 
                         className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all ${
                           isComplete ? 'bg-emerald-500' : isCurrent ? 'ring-4 ring-blue-100' : 'bg-slate-200'
@@ -388,17 +388,17 @@ export default function CenteredRoutingDemo() {
                         style={isCurrent ? { backgroundColor: OGPU_BLUE } : {}}
                       >
                         {isComplete ? (
-                          <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         ) : (
-                          <span className={`text-xs ${isCurrent ? 'text-white' : 'text-slate-400'}`}>{idx + 1}</span>
+                          <span className={`${isCurrent ? 'text-white' : 'text-slate-400'}`}><small>{idx + 1}</small></span>
                         )}
                       </div>
-                      <span style={{ fontFamily: MONO_FONT }} className={`uppercase tracking-wider text-center text-[0.5rem] md:text-xs leading-tight ${
+                      <span style={{ fontFamily: MONO_FONT }} className={`uppercase tracking-wider text-center ${
                         isCurrent ? 'text-blue-600' : isComplete ? 'text-emerald-600' : 'text-slate-400'
                       }`}>
-                        {config.label}
+                        <small>{config.label}</small>
                       </span>
                     </div>
                     {idx < Object.keys(STEP_CONFIG).length - 1 && (
@@ -589,8 +589,8 @@ export default function CenteredRoutingDemo() {
           </AnimatePresence>
         </svg>
 
-        {/* SHORT GRADIENT - ONLY COVERS TEXT AREA */}
-        <div className="absolute bottom-0 inset-x-0 h-40 md:h-32 bg-gradient-to-t from-white via-white to-transparent flex flex-col items-center justify-end px-3 md:px-6 pb-2 md:pb-6 text-left z-20">
+        {/* FIXED GRADIENT OVERLAY - INCREASED HEIGHT ON MOBILE */}
+        <div className="absolute bottom-0 inset-x-0 h-64 md:h-40 bg-gradient-to-t from-white via-white/95 flex flex-col items-center justify-end px-4 md:px-6 pb-2 md:pb-6 text-left z-20">
           <div className="w-full max-w-6xl space-y-1 md:space-y-2">
             {rewardDelivered && (
               <motion.div 
@@ -603,15 +603,15 @@ export default function CenteredRoutingDemo() {
                     <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-blue-900 text-[0.65rem] md:text-sm" style={{ fontFamily: MONO_FONT }}>
+                    <span className="text-blue-900 text-xs md:text-sm" style={{ fontFamily: MONO_FONT }}>
                       This routing happens on mainnet right now
                     </span>
                   </div>
-                  <div className="flex gap-1.5 md:gap-2 flex-wrap">
+                  <div className="flex gap-2 flex-wrap">
                     <button
                       onClick={resetAnimation}
                       style={{ backgroundColor: DARK_BG }}
-                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider border border-white/8 focus:outline-none focus:ring-2 focus:ring-slate-400 text-[0.65rem]"
+                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider border border-white/8 focus:outline-none focus:ring-2 focus:ring-slate-400 text-xs"
                     >
                       Watch Again
                     </button>
@@ -620,7 +620,7 @@ export default function CenteredRoutingDemo() {
                       target="_blank" 
                       rel="noopener noreferrer"
                       style={{ backgroundColor: OGPU_BLUE }}
-                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-blue-400 text-[0.65rem]"
+                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs"
                     >
                       Explore
                     </a>
@@ -629,7 +629,7 @@ export default function CenteredRoutingDemo() {
                       target="_blank" 
                       rel="noopener noreferrer"
                       style={{ backgroundColor: OGPU_CYAN }}
-                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-cyan-400 text-[0.65rem]"
+                      className="px-2 md:px-3 py-1 md:py-1.5 hover:opacity-90 text-white rounded-lg transition-all duration-250 uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-cyan-400 text-xs"
                     >
                       Build
                     </a>
@@ -637,15 +637,15 @@ export default function CenteredRoutingDemo() {
                 </div>
               </motion.div>
             )}
-            <div className="flex flex-col md:flex-row md:justify-between md:items-center border-b border-slate-100 pb-1 md:pb-2 gap-0.5 md:gap-1">
-              <span style={{ fontFamily: MONO_FONT, color: OGPU_BLUE }} className="uppercase tracking-[0.1em] md:tracking-[0.4em] italic text-[0.6rem] md:text-xs">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center border-b border-slate-100 pb-1 md:pb-2 gap-1">
+              <span style={{ fontFamily: MONO_FONT, color: OGPU_BLUE }} className="uppercase tracking-[0.15em] md:tracking-[0.4em] italic text-xs">
                 OpenGPU Mainnet
               </span>
-              <span style={{ fontFamily: MONO_FONT }} className="text-slate-400 uppercase tracking-[0.05em] md:tracking-[0.2em] italic text-[0.6rem] md:text-xs truncate">
+              <span style={{ fontFamily: MONO_FONT }} className="text-slate-400 uppercase tracking-[0.1em] md:tracking-[0.2em] italic text-xs truncate">
                 {renderStatusWithTooltips(subStatus)}
               </span>
             </div>
-            <h4 style={{ fontFamily: SANS_FONT }} className="text-slate-800 tracking-tight leading-snug text-xs md:text-base pt-0.5">
+            <h4 style={{ fontFamily: SANS_FONT }} className="text-slate-800 tracking-tight leading-tight text-sm md:text-base">
               {getDesc(step)}
             </h4>
           </div>

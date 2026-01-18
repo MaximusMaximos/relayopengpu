@@ -3,9 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-import featured from "@/data/featured.json";
-import news from "@/data/news.json";
-
 import Nav from "./components/Nav";
 import LiveStats from "./components/LiveStats";
 import SafeInput from "./components/SafeInput";
